@@ -1,0 +1,82 @@
+.dashboard_body__lhs {
+  flex: 1.5;
+
+  flex-direction: column;
+  gap: 16px;
+}
+
+.in_out {
+  flex: 1.5;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.dashboard_body__rhs {
+  flex: 1.5;
+
+  flex-direction: row;
+}
+
+.income {
+  flex: 1.5;
+  border-width: 1px;
+  border-radius: 8px;
+  height: 105px;
+  padding: 10px;
+}
+
+.spending {
+  flex: 1.5;
+  border-width: 1px;
+  border-radius: 8px;
+  height: 105px;
+  padding: 10px;
+}
+
+.transactions {
+  flex: 1;
+  border-width: 1px;
+  border-radius: 8px;
+  height: auto;
+  position: relative;
+}
+
+.account_transactions {
+  flex: 1;
+  height: auto;
+}
+
+.assets {
+  flex: 1;
+  border-width: 1px;
+  border-radius: 8px;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .assets {
+    flex: 1;
+    border-width: 0;
+    border-radius: 0;
+    height: auto;
+  }
+  .horizontal_line {
+    display: hidden;
+  }
+
+  .transactions {
+    flex: 1;
+    border-width: 0;
+    border-radius: 0;
+    height: auto;
+  }
+}
+
+.horizontal_line {
+  flex: 1;
+  display: none;
+  height: 1px;
+  background-color: rgb(239, 239, 239);
+}
