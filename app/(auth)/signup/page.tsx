@@ -47,7 +47,7 @@ export default function SignUp() {
             backgroundPosition: "center",
           }}
         >
-          <div className="my-10 px-5 2xl:mx-[150px] 3xl:mx-52">
+          <div className="paddings my-10">
             <div className="flex items-center gap-2">
               <Image className="max-md:hidden" src="/images/logo.png" width={46} height={50} alt="smup" />
               <p className="inter-font font-extrabold max-md:px-4 max-md:text-center max-md:text-[26px]  md:text-4xl">
