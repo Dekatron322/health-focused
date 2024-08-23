@@ -1,13 +1,10 @@
 "use client"
 import Footer from "components/Footer/Footer"
 import Navbar from "components/Navbar/Navbar"
-import Image from "next/image"
-import Link from "next/link"
 import React, { useState } from "react"
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
 import { FiUser } from "react-icons/fi"
 
-const page = () => {
+const Page = () => {
   const [showPasswords, setShowPasswords] = useState<boolean[]>([false, false])
   const [showSelect, setShowSelect] = useState<boolean[]>([false, false])
   const [emailUpdates, setEmailUpdates] = useState<boolean>(false)
@@ -32,23 +29,24 @@ const page = () => {
   const handleTermsAgreement = () => {
     setTermsAgreed(!termsAgreed)
   }
+
   return (
     <>
       <section>
         <Navbar />
-        <div className="paddings my-10  items-center justify-center">
-          <div className="fixedzqawqaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbg  mt-6 flex justify-between   gap-16">
-            <div>
-              <h5 className="inter-font    font-bold leading-[60px] max-md:px-4 max-md:text-[24px] md:text-[60px]">
+        <div className="paddings my-10 items-center justify-center">
+          <div className="mt-6 flex justify-between gap-16">
+            <div className="sticky top-4" style={{ alignSelf: "flex-start" }}>
+              <h5 className="inter-font font-bold leading-[60px] max-md:px-4 max-md:text-[24px] md:text-[60px]">
                 Interested in talking to us?
               </h5>
-              <p className=" text-xl">
+              <p className="text-xl">
                 From questions about pricing to one-on-one personalized<br></br> demos, we'd love to connect and help
                 get you started.
               </p>
             </div>
             <div
-              className="flex basis-1/2 flex-col rounded-3xl bg-[#181059]  max-md:rounded-t-3xl"
+              className="flex basis-1/2 flex-col rounded-3xl bg-[#181059] max-md:rounded-t-3xl"
               style={{
                 backgroundImage: 'url("/images/Group.png")',
                 backgroundSize: "cover",
@@ -56,13 +54,13 @@ const page = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="  p-10">
-                <h5 className="inter-font font-bold  text-[#ffffff] max-md:px-4 max-md:text-[24px] md:text-[24px]">
+              <div className="p-10">
+                <h5 className="inter-font font-bold text-[#ffffff] max-md:px-4 max-md:text-[24px] md:text-[24px]">
                   Contact Us
                 </h5>
 
                 <div className="flex flex-col items-center justify-center gap-16 max-md:mt-6 md:mt-12">
-                  <form className=" flex w-full flex-col max-md:px-4">
+                  <form className="flex w-full flex-col max-md:px-4">
                     <div className="mb-6 flex w-full flex-col items-start">
                       <label htmlFor="adminName" className="label-title text-[#ffffff]">
                         Your Name
@@ -75,7 +73,6 @@ const page = () => {
                           className="bg-transparent outline-none focus:outline-none"
                           style={{ width: "100%", background: "transparent" }}
                         />
-
                         <FiUser />
                       </div>
                     </div>
@@ -92,7 +89,6 @@ const page = () => {
                           className="bg-transparent outline-none focus:outline-none"
                           style={{ width: "100%", background: "transparent" }}
                         />
-
                         <FiUser />
                       </div>
                     </div>
@@ -109,7 +105,6 @@ const page = () => {
                           className="bg-transparent outline-none focus:outline-none"
                           style={{ width: "100%", background: "transparent" }}
                         />
-
                         <FiUser />
                       </div>
                     </div>
@@ -143,4 +138,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

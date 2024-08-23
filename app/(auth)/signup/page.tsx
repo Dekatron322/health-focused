@@ -37,7 +37,7 @@ export default function SignUp() {
   }
   return (
     <main className="">
-      <section className="flex       max-md:flex-col-reverse md:overflow-hidden ">
+      <section className="flex max-md:flex-col-reverse md:overflow-hidden ">
         <div
           className="flex basis-1/2 flex-col    max-md:rounded-t-3xl"
           style={{
