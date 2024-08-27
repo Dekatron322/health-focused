@@ -36,7 +36,7 @@ export default function Web() {
             <p className="mb-6 max-w-2xl font-light  md:text-base lg:mb-8 lg:text-xl">
               SeamlessCare provides an end-to-end digital solution for managing care providers and care homes.
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3 gap-2">
+            <Button href="/signin" className="mr-3 gap-2">
               <Image className="max-md:hidden" src="/hugeicons_start-up-02.png" width={24} height={24} alt="smup" />
               Get started
             </Button>

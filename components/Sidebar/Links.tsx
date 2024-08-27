@@ -9,7 +9,6 @@ import {
   DashboardIcon,
   InvoicingIcon,
   PaymentIcon,
-  ReportsIcon,
   TradingIcon,
   TransactionsIcon,
 } from "./Icons"
@@ -17,18 +16,17 @@ import { useState } from "react"
 import { Box, Skeleton } from "@mui/material"
 
 const links = [
-  { name: "Dashboard", href: "/dashboard", icon: DashboardIcon },
+  { name: "DASHBOARD", href: "/dashboard", icon: DashboardIcon },
   {
-    name: "Accounts",
-    href: "/accounts",
+    name: "SERVICE USERS",
+    href: "/service",
     icon: AccountsIcon,
   },
-  { name: "Cards", href: "/cards", icon: CardsIcon },
-  { name: "Transactions", href: "/transactions", icon: TransactionsIcon },
-  { name: "Payment", href: "/payment", icon: PaymentIcon },
-  { name: "Invoicing", href: "/invoicing", icon: InvoicingIcon },
-  { name: "Trading", href: "/trading", icon: TradingIcon },
-  { name: "Reports", href: "/reports", icon: ReportsIcon },
+  { name: "PLACEMENT", href: "/placement", icon: CardsIcon },
+  { name: "STAFF", href: "/staff", icon: TransactionsIcon },
+  { name: "LOCAL AUTHORITIES", href: "/authorities", icon: PaymentIcon },
+  { name: "POLICY DOCUMENTS", href: "/policy", icon: InvoicingIcon },
+  { name: "SETTINGS", href: "/settings", icon: TradingIcon },
 ]
 
 export function Links() {

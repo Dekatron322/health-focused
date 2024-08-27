@@ -2,7 +2,7 @@
 import Link from "next/link"
 import React, { useState } from "react"
 import { Links } from "./Links"
-import { EurIcon, GbpIcon, LogoIcon, PlusIcon, SettingsIcon, UsdIcon } from "./Icons"
+import { LogoIcon, SettingsIcon } from "./Icons"
 import { Box, Skeleton } from "@mui/material"
 
 const SideBar = () => {
@@ -23,7 +23,7 @@ const SideBar = () => {
           <Links />
         </div>
 
-        <div className="hidden h-full border-0 border-purple-700  lg:block lg:h-auto lg:space-y-4">
+        {/* <div className="hidden h-full border-0 border-purple-700  lg:block lg:h-auto lg:space-y-4">
           <p className="sidbar-title">Balances</p>
 
           <Balances />
@@ -34,7 +34,7 @@ const SideBar = () => {
               <p className="text-sm font-semibold text-[#747A80]">Open a balance</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="my-4 hidden h-auto border-0 border-yellow-700 px-7 lg:block">
@@ -46,39 +46,6 @@ const SideBar = () => {
           <p className="hidden text-sm font-semibold text-[#747A80] lg:block">Profile Settings</p>
         </Link>
       </div>
-    </div>
-  )
-}
-
-const balances = [
-  { amount: "100,50.75", currency: "USD", icon: UsdIcon },
-  {
-    amount: "2310.40",
-    currency: "EUR",
-    icon: EurIcon,
-  },
-  { amount: "9455.50", currency: "GBP", icon: GbpIcon },
-]
-
-const Balances = () => {
-  const [loading, setLoading] = useState(true)
-  setTimeout(() => setLoading(false), 5000)
-  return (
-    <div className="flex h-full w-full flex-row border-0 border-black lg:h-32 lg:flex-col">
-      {balances.map((balance) => {
-        const BalanceIcon = balance.icon
-        return (
-          <div
-            key={balance.currency}
-            className="flex grow items-center justify-center border-0 border-black lg:justify-normal lg:space-x-2"
-          >
-            <div className="flex grow items-center justify-center border-0 border-black px-7 lg:justify-normal lg:space-x-2">
-              <BalanceIcon />
-              <p className="text-sm font-bold  text-[#747A80]">{`${balance.amount} ${balance.currency}`}</p>
-            </div>
-          </div>
-        )
-      })}
     </div>
   )
 }

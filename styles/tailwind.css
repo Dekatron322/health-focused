@@ -69,7 +69,7 @@ h6 {
 }
 
 [data-theme="dark"] .active-dashboard {
-  @apply lg:bg-black lg:text-[#ffffff];
+  @apply lg:bg-black lg:text-[#69B7FF];
 }
 
 [data-theme="dark"] .p-sm.bold {
@@ -145,7 +145,7 @@ h6 {
 }
 
 [data-theme="dark"] .sidebar {
-  @apply bg-[#171818];
+  @apply bg-[#000000];
 }
 
 .flexCenter {
