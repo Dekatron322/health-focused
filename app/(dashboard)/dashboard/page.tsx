@@ -19,7 +19,7 @@ export default function Dashboard() {
         <div className="mx-auto flex min-h-screen ">
           <div className="flex w-full  flex-col ">
             <DashboardNav />
-            <div className="flex items-center justify-between px-16 pb-6 max-md:px-3">
+            {/* <div className="flex items-center justify-between px-16 pb-6 max-md:px-3">
               <div>
                 <h1>$120,420.50</h1>
 
@@ -37,12 +37,11 @@ export default function Dashboard() {
                   <Skeleton variant="text" width={180} />
                 )}
               </div>
-            </div>
+            </div> */}
             <div className="flex w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3">
               <div className={styles.dashboard_body__lhs}>
                 <div className={styles.in_out}>
                   <Income />
-                  <Spendings />
                 </div>
                 <Assets />
               </div>
