@@ -1,15 +1,46 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, SetStateAction } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
 import { IoIosArrowDropleft, IoIosArrowDropdown } from "react-icons/io"
 import { FaCloudArrowUp } from "react-icons/fa6"
+import { useDropzone, FileRejection } from "react-dropzone"
+
+// Extend the File type to include a preview property
+interface PreviewFile extends File {
+  preview: string
+}
 
 export default function NewLogs() {
   // Simulating user account existence with a state
-  const [hasTransactions, setHasTransactions] = useState(true)
+  const [hasTransactions, setHasTransactions] = useState<boolean>(true)
 
-  // Render the content conditionally based on the 'hasAccount' state
+  // Use an array of PreviewFile for files state
+  const [files, setFiles] = useState<PreviewFile[]>([])
+
+  const onDrop = (acceptedFiles: File[]) => {
+    setFiles(
+      acceptedFiles.map((file) =>
+        Object.assign(file, {
+          preview: URL.createObjectURL(file),
+        })
+      )
+    )
+  }
+
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    accept: {
+      "image/*": [],
+      "video/*": [],
+      "application/pdf": [],
+      "application/msword": [],
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [],
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [],
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation": [],
+    },
+  })
+
   return (
     <>
       <section className="h-full">
@@ -30,13 +61,13 @@ export default function NewLogs() {
                 </div>
                 <form className=" flex w-full flex-col ">
                   <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="adminName" className="label-title">
+                    <label htmlFor="serviceUserName" className="label-title">
                       Name of Service User
                     </label>
                     <div className="input-field ">
                       <input
                         type="text"
-                        id="email"
+                        id="serviceUserName"
                         placeholder="Type and select your name"
                         className="w-40 bg-transparent outline-none focus:outline-none"
                         style={{ width: "100%" }}
@@ -46,13 +77,13 @@ export default function NewLogs() {
                   </div>
 
                   <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="adminName" className="label-title">
+                    <label htmlFor="updatedBy" className="label-title">
                       Updated by
                     </label>
                     <div className="input-field w-40">
                       <input
                         type="text"
-                        id="email"
+                        id="updatedBy"
                         placeholder="Type and select your name"
                         className="w-40 bg-transparent outline-none focus:outline-none"
                         style={{ width: "100%" }}
@@ -62,13 +93,13 @@ export default function NewLogs() {
                   </div>
 
                   <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="adminName" className="label-title">
+                    <label htmlFor="placement" className="label-title">
                       Placement
                     </label>
                     <div className="input-field w-40">
                       <input
                         type="text"
-                        id="email"
+                        id="placement"
                         placeholder="Select the Placement"
                         className="w-40 bg-transparent outline-none focus:outline-none"
                         style={{ width: "100%" }}
@@ -78,13 +109,13 @@ export default function NewLogs() {
                   </div>
 
                   <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="adminName" className="label-title">
+                    <label htmlFor="staffOnDuty" className="label-title">
                       Staff on Duty
                     </label>
                     <div className="input-field w-40">
                       <input
                         type="text"
-                        id="email"
+                        id="staffOnDuty"
                         placeholder="Separate names by comma"
                         className="w-40 bg-transparent outline-none focus:outline-none"
                         style={{ width: "100%" }}
@@ -93,7 +124,7 @@ export default function NewLogs() {
                     </div>
                   </div>
                   <div className="mb-6 flex w-full flex-col items-start">
-                    <label htmlFor="adminName" className="label-title ">
+                    <label htmlFor="email" className="label-title ">
                       Email Address
                     </label>
                     <div className="input-field ">
@@ -106,13 +137,26 @@ export default function NewLogs() {
                     </div>
                   </div>
                   <div className="mb-6 flex w-full flex-col items-start">
-                    <label htmlFor="adminName" className="label-title ">
+                    <label htmlFor="addMedia" className="label-title ">
                       Add Media
                     </label>
-                    <div className="flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4">
+                    <div
+                      {...getRootProps({
+                        className:
+                          "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
+                      })}
+                    >
+                      <input {...getInputProps()} />
                       <FaCloudArrowUp className="text-3xl" />
                       <p className="text-sm">Drag and Drop files here or Browse</p>
                       <p className="text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
+                    </div>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {files.map((file) => (
+                        <div key={file.name} className="relative h-20 w-20">
+                          <img src={file.preview} alt={file.name} className="h-full w-full rounded object-cover" />
+                        </div>
+                      ))}
                     </div>
                   </div>
 
