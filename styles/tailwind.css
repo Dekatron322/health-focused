@@ -101,7 +101,7 @@ h6 {
 }
 
 .input-field {
-  @apply flex h-16 w-full items-center rounded-lg border p-3 hover:border-[#0052FF] focus:border-[#0052FF] active:border-[#0052FF];
+  @apply flex h-12 w-full items-center rounded-lg border p-3 hover:border-[#0052FF] focus:border-[#0052FF] active:border-[#0052FF];
 }
 
 .label-title {

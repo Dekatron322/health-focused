@@ -25,10 +25,10 @@ export const Assets = () => {
   return (
     <div className={styles.assets}>
       <div className="flex items-center justify-between px-4 py-3">
-        <button className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
+        <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
           <p className="text-white max-md:px-0">New Daily Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
-        </button>
+        </Link>
         <div className="flex gap-3">
           <div className="lg:w-[180px]">
             <CustomDropdown
