@@ -126,6 +126,18 @@ export default function NewLogs() {
                     <p className="text-xs">Martin’s Recipe Notes</p>
                   </div>
                 </div>
+                <div className="flex items-center justify-between p-4">
+                  <p>Marked relevant for weekly report</p>
+                  <div className="flex gap-4">
+                    <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] p-2 text-xs">
+                      VIEW IN LOG
+                    </button>
+
+                    <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] px-4 py-2 text-xs">
+                      Edit
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
