@@ -5,6 +5,8 @@ import Footer from "components/Footer/Footer"
 import { IoIosArrowDropleft, IoIosArrowDropdown } from "react-icons/io"
 import { FaCloudArrowUp } from "react-icons/fa6"
 import { useDropzone, FileRejection } from "react-dropzone"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 // Extend the File type to include a preview property
 interface PreviewFile extends File {
@@ -41,6 +43,12 @@ export default function NewLogs() {
     },
   })
 
+  const router = useRouter()
+
+  const handleBackButtonClick = () => {
+    router.back()
+  }
+
   return (
     <>
       <section className="h-full">
@@ -50,7 +58,10 @@ export default function NewLogs() {
               <DashboardNav />
             </div>
             <div className="mt-8 flex flex-row  justify-center gap-3">
-              <button className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs">
+              <button
+                onClick={handleBackButtonClick}
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+              >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
@@ -160,9 +171,13 @@ export default function NewLogs() {
                     </div>
                   </div>
 
-                  <button type="button" className="h-[52px] rounded-lg bg-[#0052FF] p-3 text-sm text-white">
+                  <Link
+                    href="/dashboard/post/"
+                    type="button"
+                    className="flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+                  >
                     POST
-                  </button>
+                  </Link>
                 </form>
               </div>
             </div>
