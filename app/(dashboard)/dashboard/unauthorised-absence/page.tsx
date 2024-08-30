@@ -182,7 +182,7 @@ export default function UnauthorisedAbsense() {
                     <label htmlFor="email" className="label-title ">
                       Notes
                     </label>
-                    <div className="input-field ">
+                    <div className="textarea-field ">
                       <textarea
                         id="email"
                         placeholder="Separate names by comma"
