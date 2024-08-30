@@ -109,7 +109,7 @@ h6 {
 }
 
 [data-theme="dark"] .bg-gray {
-  @apply bg-gray-950;
+  @apply bg-[#151b23];
 }
 
 .report-card {

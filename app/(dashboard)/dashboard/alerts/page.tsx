@@ -7,6 +7,7 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Search from "components/Search/Search"
 import CustomDropdown from "components/Search/CustomDropdown"
 import { HiOutlineDotsVertical } from "react-icons/hi"
+import { CiCircleChevDown } from "react-icons/ci"
 
 // Define the structure of a table row
 interface TableRow {
@@ -172,7 +173,13 @@ export default function NewLogs() {
               </button>
               <div className="mb-6 flex w-2/3 flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
-                  <p className="text-2xl">Alerts</p>
+                  <div className="flex items-center gap-3">
+                    <p className="text-2xl">Alerts</p>
+                    <div className="flex h-10 items-center gap-6 rounded-md border-[1px] border-[#0085FF] p-2 text-xs">
+                      New Alert
+                      <CiCircleChevDown />
+                    </div>
+                  </div>
                   <Search />
                 </div>
 
