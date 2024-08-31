@@ -2,12 +2,13 @@
 import { useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
-import { IoIosArrowDropleft } from "react-icons/io"
+import { IoIosArrowDropleft, IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
 import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Search from "components/Search/Search"
 import CustomDropdown from "components/Search/CustomDropdown"
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import { CiCircleChevDown } from "react-icons/ci"
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 
 // Define the structure of a table row
 interface TableRow {
@@ -20,7 +21,7 @@ interface TableRow {
   status: string
 }
 
-export default function NewLogs() {
+export default function Alerts() {
   const [tableData, setTableData] = useState<TableRow[]>([
     {
       id: 1,
@@ -114,6 +115,9 @@ export default function NewLogs() {
     status: "",
   })
 
+  const [currentPage, setCurrentPage] = useState(1)
+  const rowsPerPage = 5
+
   // Function to extract unique values for dropdowns
   const getUniqueValues = (key: keyof TableRow) => {
     const uniqueValues = Array.from(new Set(tableData.map((row) => row[key])))
@@ -147,6 +151,29 @@ export default function NewLogs() {
       (filters.status === "" || row.status === filters.status)
     )
   })
+
+  // Pagination calculations
+  const indexOfLastRow = currentPage * rowsPerPage
+  const indexOfFirstRow = indexOfLastRow - rowsPerPage
+  const currentRows = filteredData.slice(indexOfFirstRow, indexOfLastRow)
+  const totalPages = Math.ceil(filteredData.length / rowsPerPage)
+
+  // Function to change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
+
+  // Function to go to previous page
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
+
+  // Function to go to next page
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
 
   // Function to add a new row
   const addRow = () => {
@@ -238,7 +265,7 @@ export default function NewLogs() {
                       </tr>
                     </thead>
                     <tbody>
-                      {filteredData.map((row, index) => (
+                      {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm">
                             <MdCheckBoxOutlineBlank size={18} />
@@ -286,6 +313,37 @@ export default function NewLogs() {
                       ))}
                     </tbody>
                   </table>
+                  <div className="mt-4 flex items-center justify-center gap-2">
+                    <button
+                      className={`flex items-center justify-center gap-3 rounded p-2 ${
+                        currentPage === 1 ? "inactive cursor-not-allowed" : "active hover:bg-gray-400"
+                      }`}
+                      onClick={prevPage}
+                      disabled={currentPage === 1}
+                    >
+                      <IoMdArrowBack />
+                      Previous
+                    </button>
+                    {[...Array(totalPages)].map((_, i) => (
+                      <button
+                        key={i + 1}
+                        onClick={() => paginate(i + 1)}
+                        className={`rounded-md px-4 py-2 ${currentPage === i + 1 ? "active text-white" : "inactive"}`}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+                    <button
+                      className={`flex items-center justify-center gap-4 rounded p-2 ${
+                        currentPage === totalPages ? "inactive cursor-not-allowed" : "active "
+                      }`}
+                      onClick={nextPage}
+                      disabled={currentPage === totalPages}
+                    >
+                      Next
+                      <IoMdArrowForward />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

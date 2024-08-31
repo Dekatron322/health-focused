@@ -112,6 +112,18 @@ h6 {
   @apply bg-[#151b23];
 }
 
+.inactive {
+  @apply bg-[#1E1E1E] text-[#ffffff];
+}
+
+.active {
+  @apply bg-[#69B7FF] text-[#1E1E1E] transition-colors duration-300;
+}
+
+.active:hover {
+  @apply bg-blue-500 text-[#ffffff];
+}
+
 .report-card {
   @apply small-card flex h-[114px] basis-1/2 flex-col justify-center rounded-md border p-3 max-md:border-0;
 }
