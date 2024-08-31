@@ -19,7 +19,7 @@ const links = [
   { name: "DASHBOARD", href: "/dashboard", icon: DashboardIcon },
   {
     name: "SERVICE USERS",
-    href: "/service",
+    href: "/service-users",
     icon: AccountsIcon,
   },
   { name: "PLACEMENT", href: "/placement", icon: CardsIcon },
