@@ -13,6 +13,8 @@ import Income from "components/Dashboard/Income"
 import { Assets } from "components/Dashboard/Assets"
 import { Transactions } from "components/AccountDetails/Transactions"
 import Services from "components/Dashboard/ServiceUsers"
+import Link from "next/link"
+import { IoAddCircleOutline } from "react-icons/io5"
 
 // Define the structure of a table row
 interface TableRow {
@@ -209,10 +211,13 @@ export default function ServiceUsers() {
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 items-center gap-6 rounded-md border-[1px] border-[#0085FF] p-2 text-xs">
-                      New Service Users
-                      <CiCircleChevDown />
-                    </div>
+                    <Link
+                      href="/service-users/add"
+                      className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
+                    >
+                      <p className="text-white max-md:px-0">New Service Users</p>
+                      <IoAddCircleOutline className="text-white" size={20} />
+                    </Link>
                   </div>
                   <div className="flex items-center gap-4">
                     <Search />
