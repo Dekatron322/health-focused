@@ -11,6 +11,7 @@ import { Skeleton } from "@mui/material"
 import { useState } from "react"
 import { ProfileInfo } from "components/Dashboard/ProfileInfo"
 import { SkillsInfo } from "components/Dashboard/SkillsInfo"
+import { Logger } from "components/Dashboard/Logger"
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true)
@@ -27,7 +28,7 @@ export default function Dashboard() {
                 <ProfileInfo />
               </div>
               <div className={styles.dashboard_body__lhs}>
-                <Assets />
+                <Logger />
               </div>
               <div className={styles.dashboard_body__rhs}>
                 <SkillsInfo />
