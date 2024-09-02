@@ -259,6 +259,60 @@ export const OtherInfo = [
   },
 ]
 
+export const SkillDevelopment = [
+  {
+    id: 1,
+    title: "Medical Registrations",
+  },
+  {
+    id: 2,
+    title: "In Education",
+  },
+  {
+    id: 3,
+    title: "Job Ready",
+  },
+  {
+    id: 4,
+    title: "Risk Assessed",
+  },
+]
+
+export const Plans = [
+  {
+    id: 1,
+    title: "Weekly Key Work and Activity Planner",
+  },
+  {
+    id: 2,
+    title: "Care/Support Plan",
+  },
+  {
+    id: 3,
+    title: "LAC Reports",
+  },
+  {
+    id: 4,
+    title: "Risk Assessment",
+  },
+  {
+    id: 5,
+    title: "Missing Child Resources",
+  },
+  {
+    id: 6,
+    title: "Independent Living Skills Assessment",
+  },
+  {
+    id: 7,
+    title: "Personal Education Plan",
+  },
+  {
+    id: 8,
+    title: "Miscellaneous Reports ",
+  },
+]
+
 export const Alerts = [
   {
     date: "28 August",

@@ -10,6 +10,7 @@ import { Transactions } from "components/Dashboard/Transactions"
 import { Skeleton } from "@mui/material"
 import { useState } from "react"
 import { ProfileInfo } from "components/Dashboard/ProfileInfo"
+import { SkillsInfo } from "components/Dashboard/SkillsInfo"
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true)
@@ -29,7 +30,7 @@ export default function Dashboard() {
                 <Assets />
               </div>
               <div className={styles.dashboard_body__rhs}>
-                <Transactions />
+                <SkillsInfo />
               </div>
             </div>
 
