@@ -149,6 +149,116 @@ export const Transaction = [
   },
 ]
 
+export const Placement = [
+  {
+    id: 1,
+    icon: "/pepicons-pop_enter-circle.svg",
+    title: "Start Date",
+    value: "12/11/2024",
+  },
+  {
+    id: 2,
+    icon: "/solar_home-broken.svg",
+    title: "Unit",
+    value: "King’s Court",
+  },
+  {
+    id: 3,
+    icon: "/uil_user-nurse.svg",
+    title: "Allocated Keyworker",
+    value: "Michael Lana",
+  },
+]
+
+export const About = [
+  {
+    id: 1,
+    icon: "/icons8_gender.svg",
+    title: "Gender",
+    value: "Male",
+  },
+  {
+    id: 2,
+    icon: "/jam_birthday-cake.svg",
+    title: "Date of Birth",
+    value: "12/11/2024",
+  },
+  {
+    id: 3,
+    icon: "/clarity_language-line.svg",
+    title: "Language",
+    value: "English",
+  },
+  {
+    id: 4,
+    icon: "/tdesign_map-location.svg",
+    title: "Ethnic Origin",
+    value: "Welsh",
+  },
+]
+
+export const Contact = [
+  {
+    id: 1,
+    icon: "/icons8_gender.svg",
+    title: "Phone Number",
+    value: "01020203993",
+  },
+  {
+    id: 2,
+    icon: "/email.svg",
+    title: "Email",
+    value: "london@mavinlondon.com",
+  },
+]
+
+export const OtherInfo = [
+  {
+    id: 1,
+    title: "Care Professional",
+  },
+  {
+    id: 2,
+    title: "Reason for Referral",
+  },
+  {
+    id: 3,
+    title: "Health Summary",
+  },
+  {
+    id: 4,
+    title: "Risk Summary",
+  },
+  {
+    id: 5,
+    title: "Identified Needsy",
+  },
+  {
+    id: 6,
+    title: "Education Training",
+  },
+  {
+    id: 7,
+    title: "Employment",
+  },
+  {
+    id: 8,
+    title: "Family and Friends Contacts",
+  },
+  {
+    id: 9,
+    title: "Health Contacts",
+  },
+  {
+    id: 10,
+    title: "Additional Contacts",
+  },
+  {
+    id: 11,
+    title: "Additional Information",
+  },
+]
+
 export const Alerts = [
   {
     date: "28 August",

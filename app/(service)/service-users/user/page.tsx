@@ -1,7 +1,42 @@
-import React from "react"
+"use client"
+import DashboardNav from "components/Navbar/DashboardNav"
+import Footer from "components/Footer/Footer"
+import { IoMdAddCircleOutline } from "react-icons/io"
+import styles from "../../../../components/Dashboard/dashboard.module.css"
+import Income from "components/Dashboard/Income"
+import Spendings from "components/Dashboard/Spendings"
+import { Assets } from "components/Dashboard/Assets"
+import { Transactions } from "components/Dashboard/Transactions"
+import { Skeleton } from "@mui/material"
+import { useState } from "react"
+import { ProfileInfo } from "components/Dashboard/ProfileInfo"
 
-const page = () => {
-  return <div>page</div>
+export default function Dashboard() {
+  const [loading, setLoading] = useState(true)
+  setTimeout(() => setLoading(false), 5000)
+  return (
+    <>
+      <section className="h-full">
+        <div className="mx-auto flex min-h-screen ">
+          <div className="flex w-full  flex-col ">
+            <DashboardNav />
+
+            <div className="flex w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3">
+              <div className={styles.dashboard_body__rhs}>
+                <ProfileInfo />
+              </div>
+              <div className={styles.dashboard_body__lhs}>
+                <Assets />
+              </div>
+              <div className={styles.dashboard_body__rhs}>
+                <Transactions />
+              </div>
+            </div>
+
+            <Footer />
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }
-
-export default page
