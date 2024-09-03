@@ -60,9 +60,19 @@ export const Logger = () => {
         </div>
       </div>
 
+      {/* Render the selected tab content */}
+      <div className="grid gap-3 p-4">{renderContent()}</div>
+    </div>
+  )
+}
+
+// Individual Tab Components (You can replace these with your actual content components)
+const DailyLog = () => {
+  return (
+    <>
       <div className="flex items-center justify-between px-4 py-3">
         <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-          <p className="text-white max-md:px-0">New Log</p>
+          <p className="text-white max-md:px-0">New Daily Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
         <div className="flex items-center gap-3">
@@ -80,17 +90,6 @@ export const Logger = () => {
           <MdLocalPrintshop size={24} />
         </div>
       </div>
-
-      {/* Render the selected tab content */}
-      <div className="grid gap-3 p-4">{renderContent()}</div>
-    </div>
-  )
-}
-
-// Individual Tab Components (You can replace these with your actual content components)
-const DailyLog = () => {
-  return (
-    <>
       {Asset.map((assets) => (
         <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
           <div className="flex flex-row gap-2">
@@ -144,17 +143,110 @@ const DailyLog = () => {
 }
 
 const WeeklyReport = () => {
-  return <div>Weekly Report Content</div>
+  return (
+    <>
+      <div className="flex items-center justify-between px-4 py-3">
+        <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
+          <p className="text-white max-md:px-0">New Weekly Log</p>
+          <IoAddCircleOutline className="text-white" size={20} />
+        </Link>
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[160px]">
+            <input
+              type="date"
+              id="search"
+              placeholder="Type to search..."
+              className="w-full bg-transparent outline-none focus:outline-none"
+              style={{ width: "100%" }}
+            />
+          </div>
+          <Search />
+          <MdOutlineMail size={24} />
+          <MdLocalPrintshop size={24} />
+        </div>
+      </div>
+      Weekly Report Content
+    </>
+  )
 }
 
 const MonthlyReport = () => {
-  return <div>Monthly Report Content</div>
+  return (
+    <>
+      <div className="flex items-center justify-between px-4 py-3">
+        <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
+          <p className="text-white max-md:px-0">New Monthly Log</p>
+          <IoAddCircleOutline className="text-white" size={20} />
+        </Link>
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[160px]">
+            <input
+              type="date"
+              id="search"
+              placeholder="Type to search..."
+              className="w-full bg-transparent outline-none focus:outline-none"
+              style={{ width: "100%" }}
+            />
+          </div>
+          <Search />
+          <MdOutlineMail size={24} />
+          <MdLocalPrintshop size={24} />
+        </div>
+      </div>
+    </>
+  )
 }
 
 const SkillsProgress = () => {
-  return <div>Skills Progress Content</div>
+  return (
+    <>
+      <div className="flex items-center justify-between px-4 py-3">
+        <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
+          <p className="text-white max-md:px-0">Add Progress</p>
+          <IoAddCircleOutline className="text-white" size={20} />
+        </Link>
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[160px]">
+            <input
+              type="date"
+              id="search"
+              placeholder="Type to search..."
+              className="w-full bg-transparent outline-none focus:outline-none"
+              style={{ width: "100%" }}
+            />
+          </div>
+          <Search />
+          <MdOutlineMail size={24} />
+          <MdLocalPrintshop size={24} />
+        </div>
+      </div>
+    </>
+  )
 }
 
 const HandoverNote = () => {
-  return <div>Handover Note Content</div>
+  return (
+    <>
+      <div className="flex items-center justify-between px-4 py-3">
+        <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
+          <p className="text-white max-md:px-0">Add Note</p>
+          <IoAddCircleOutline className="text-white" size={20} />
+        </Link>
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[160px]">
+            <input
+              type="date"
+              id="search"
+              placeholder="Type to search..."
+              className="w-full bg-transparent outline-none focus:outline-none"
+              style={{ width: "100%" }}
+            />
+          </div>
+          <Search />
+          <MdOutlineMail size={24} />
+          <MdLocalPrintshop size={24} />
+        </div>
+      </div>
+    </>
+  )
 }
