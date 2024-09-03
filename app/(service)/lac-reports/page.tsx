@@ -177,7 +177,7 @@ export default function LACReports() {
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <Link href="/lac-reports/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-                      <p className="text-white max-md:px-0">Create LAC notes</p>
+                      <p className="text-white max-md:px-0">Create LAC Reports</p>
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
                   </div>
