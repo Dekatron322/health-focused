@@ -215,7 +215,10 @@ const MonthlyReport = () => {
   return (
     <>
       <div className="flex items-center justify-between px-4 py-3">
-        <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
+        <Link
+          href="/service-users/monthly-report"
+          className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
+        >
           <p className="text-white max-md:px-0">New Monthly Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
@@ -234,6 +237,48 @@ const MonthlyReport = () => {
           <MdLocalPrintshop size={24} />
         </div>
       </div>
+      {Asset.map((assets) => (
+        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
+          <div className="flex flex-row gap-2">
+            <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
+            <div className="flex w-full justify-between">
+              <div>
+                <p className="text-xs text-[#69B7FF]">Updated by</p>
+                <h6 className="text-base font-semibold">{assets.name}</h6>
+                <p className="text-xs">{assets.location}</p>
+              </div>
+              <div className="flex flex-col items-end ">
+                <p className="text-xs">January 2024</p>
+              </div>
+            </div>
+          </div>
+          <div className="my-4 flex items-center gap-2">
+            <MdOutlineCheckBoxOutlineBlank />
+            <p className="text-[#0085FF]">22nd January 2024 - 28th January 2024</p>
+          </div>
+
+          <div className="flex items-center justify-end">
+            <div className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
+                <MdOutlineLocalPrintshop />
+
+                <p className="text-xs max-md:px-0">Print</p>
+              </Link>
+
+              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
+                <LuMail />
+                <p className="text-xs max-md:px-0">Share</p>
+              </Link>
+
+              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
+                <TbEdit />
+
+                <p className="text-xs max-md:px-0">Edit</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
     </>
   )
 }
