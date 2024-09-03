@@ -5,9 +5,9 @@ import { Asset } from "utils"
 import Image from "next/image"
 import { IoAddCircleOutline } from "react-icons/io5"
 import Search from "components/Search/Search"
-import { BsChevronDown } from "react-icons/bs"
+import { TbEdit } from "react-icons/tb"
 import Link from "next/link"
-import CustomDropdown from "components/Search/CustomDropdown"
+import { LuMail } from "react-icons/lu"
 import { MdLocalPrintshop, MdOutlineMail } from "react-icons/md"
 
 export const Logger = () => {
@@ -50,7 +50,7 @@ export const Logger = () => {
         {Asset.map((assets) => (
           <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
             <div className="flex flex-row gap-2">
-              <Image className="object-contain" src={assets.image} width={26} height={27} alt="dekalo" />
+              <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
               <div className="flex w-full justify-between">
                 <div>
                   <p className="text-xs text-[#69B7FF]">Updated by</p>
@@ -64,17 +64,34 @@ export const Logger = () => {
               </div>
             </div>
             <div className="py-3">
-              <p>{assets.content}</p>
+              <p>
+                Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
+                Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
+                Martin has engaged the staff for about 30 minutes. They are holding a conversation about how tMartin has
+                engaged the staff for about 30 minutes. They are holding a conversation about how to make ...{" "}
+              </p>
             </div>
             <div className="border"></div>
             <div className="flex items-center justify-between">
-              <div className="py-3">
-                <p className="text-xs text-[#69B7FF]">Service User</p>
-                <p>{assets.user}</p>
+              <div className="flex items-center gap-2">
+                <Image className="object-contain" src="/uil_user-nurse.svg" width={35} height={35} alt="dekalo" />
+                <div className="py-3">
+                  <p className="text-xs text-[#69B7FF]">Service User</p>
+                  <p>{assets.user}</p>
+                </div>
               </div>
-              <Link href="/" className="flex items-center gap-2 rounded-md bg-[#69B7FF] px-3 py-2">
-                <p className="text-xs text-white max-md:px-0">View</p>
-              </Link>
+              <div className="flex items-center gap-2">
+                <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
+                  <LuMail />
+                  <p className="text-xs max-md:px-0">Share</p>
+                </Link>
+
+                <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
+                  <TbEdit />
+
+                  <p className="text-xs max-md:px-0">Edit</p>
+                </Link>
+              </div>
             </div>
           </div>
         ))}
