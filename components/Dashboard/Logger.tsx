@@ -8,6 +8,7 @@ import Search from "components/Search/Search"
 import { BsChevronDown } from "react-icons/bs"
 import Link from "next/link"
 import CustomDropdown from "components/Search/CustomDropdown"
+import { MdLocalPrintshop, MdOutlineMail } from "react-icons/md"
 
 export const Logger = () => {
   const [loading, setLoading] = useState(true)
@@ -29,8 +30,7 @@ export const Logger = () => {
           <p className="text-white max-md:px-0">New Daily Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
-        <div className="flex gap-3">
-          <Search />
+        <div className="flex items-center gap-3">
           <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[160px]">
             <input
               type="date"
@@ -40,6 +40,9 @@ export const Logger = () => {
               style={{ width: "100%" }}
             />
           </div>
+          <Search />
+          <MdOutlineMail size={24} />
+          <MdLocalPrintshop size={24} />
         </div>
       </div>
 
