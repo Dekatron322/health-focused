@@ -182,10 +182,7 @@ export default function PepPlanReport() {
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
-                    <Link
-                      href="/service-users/add"
-                      className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
-                    >
+                    <Link href="/pep-plan/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
                       <p className="text-white max-md:px-0">Create PEP Report</p>
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
