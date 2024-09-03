@@ -12,22 +12,57 @@ import { MdLocalPrintshop, MdOutlineMail } from "react-icons/md"
 
 export const Logger = () => {
   const [loading, setLoading] = useState(true)
-  const [selectedOption, setSelectedOption] = useState("")
+  const [selectedTab, setSelectedTab] = useState("daily-log")
 
   setTimeout(() => setLoading(false), 5000)
 
-  const options = [
-    { id: "1", name: "All Service Users" },
-    { id: "2", name: "Marvin Martin" },
-    { id: "3", name: "Zendaya Ken" },
-    { id: "3", name: "Blon Dale" },
+  const tabs = [
+    { id: "daily-log", name: "Daily Log" },
+    { id: "weekly-report", name: "Weekly Report" },
+    { id: "monthly-report", name: "Monthly Report" },
+    { id: "skills-progress", name: "Skills Progress" },
+    { id: "handover-note", name: "Handover Note" },
   ]
+
+  const renderContent = () => {
+    switch (selectedTab) {
+      case "daily-log":
+        return <DailyLog />
+      case "weekly-report":
+        return <WeeklyReport />
+      case "monthly-report":
+        return <MonthlyReport />
+      case "skills-progress":
+        return <SkillsProgress />
+      case "handover-note":
+        return <HandoverNote />
+      default:
+        return null
+    }
+  }
 
   return (
     <div className={styles.assets}>
+      {/* Tab Navigation */}
+      <div className="flex w-full justify-between px-4 py-3">
+        <div className="flex w-full justify-between">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setSelectedTab(tab.id)}
+              className={`flex justify-between  px-4 py-2 ${
+                selectedTab === tab.id ? "border-b-2 border-[#0052FF] text-[#0052FF]" : "bg-transparent text-black"
+              }`}
+            >
+              {tab.name}
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="flex items-center justify-between px-4 py-3">
         <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-          <p className="text-white max-md:px-0">New Daily Log</p>
+          <p className="text-white max-md:px-0">New Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
         <div className="flex items-center gap-3">
@@ -46,56 +81,80 @@ export const Logger = () => {
         </div>
       </div>
 
-      <div className="grid  gap-3 p-4">
-        {Asset.map((assets) => (
-          <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
-            <div className="flex flex-row gap-2">
-              <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
-              <div className="flex w-full justify-between">
-                <div>
-                  <p className="text-xs text-[#69B7FF]">Updated by</p>
-                  <h6 className="text-base font-semibold">{assets.name}</h6>
-                  <p className="text-xs">{assets.location}</p>
-                </div>
-                <div className="flex flex-col items-end justify-end">
-                  <p className="text-xs">{assets.day}</p>
-                  <p className="">{assets.time}</p>
-                </div>
-              </div>
-            </div>
-            <div className="py-3">
-              <p>
-                Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
-                Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
-                Martin has engaged the staff for about 30 minutes. They are holding a conversation about how tMartin has
-                engaged the staff for about 30 minutes. They are holding a conversation about how to make ...{" "}
-              </p>
-            </div>
-            <div className="border"></div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Image className="object-contain" src="/uil_user-nurse.svg" width={35} height={35} alt="dekalo" />
-                <div className="py-3">
-                  <p className="text-xs text-[#69B7FF]">Service User</p>
-                  <p>{assets.user}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
-                  <LuMail />
-                  <p className="text-xs max-md:px-0">Share</p>
-                </Link>
+      {/* Render the selected tab content */}
+      <div className="grid gap-3 p-4">{renderContent()}</div>
+    </div>
+  )
+}
 
-                <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
-                  <TbEdit />
-
-                  <p className="text-xs max-md:px-0">Edit</p>
-                </Link>
+// Individual Tab Components (You can replace these with your actual content components)
+const DailyLog = () => {
+  return (
+    <>
+      {Asset.map((assets) => (
+        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
+          <div className="flex flex-row gap-2">
+            <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
+            <div className="flex w-full justify-between">
+              <div>
+                <p className="text-xs text-[#69B7FF]">Updated by</p>
+                <h6 className="text-base font-semibold">{assets.name}</h6>
+                <p className="text-xs">{assets.location}</p>
+              </div>
+              <div className="flex flex-col items-end justify-end">
+                <p className="text-xs">{assets.day}</p>
+                <p className="">{assets.time}</p>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
+          <div className="py-3">
+            <p>
+              Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
+              Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
+              Martin has engaged the staff for about 30 minutes. They are holding a conversation about how tMartin has
+              engaged the staff for about 30 minutes. They are holding a conversation about how to make ...{" "}
+            </p>
+          </div>
+          <div className="border"></div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Image className="object-contain" src="/uil_user-nurse.svg" width={35} height={35} alt="dekalo" />
+              <div className="py-3">
+                <p className="text-xs text-[#69B7FF]">Service User</p>
+                <p>{assets.user}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
+                <LuMail />
+                <p className="text-xs max-md:px-0">Share</p>
+              </Link>
+
+              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
+                <TbEdit />
+
+                <p className="text-xs max-md:px-0">Edit</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
   )
+}
+
+const WeeklyReport = () => {
+  return <div>Weekly Report Content</div>
+}
+
+const MonthlyReport = () => {
+  return <div>Monthly Report Content</div>
+}
+
+const SkillsProgress = () => {
+  return <div>Skills Progress Content</div>
+}
+
+const HandoverNote = () => {
+  return <div>Handover Note Content</div>
 }
