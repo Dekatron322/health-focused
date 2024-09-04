@@ -134,30 +134,6 @@ export default function AddServiceUser() {
                 </div>
               </div>
             </div>
-
-            <div className=" flex w-full flex-col items-start">
-              <label htmlFor="addMedia" className="label-title ">
-                Add Media
-              </label>
-              <div
-                {...getRootProps({
-                  className:
-                    "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
-                })}
-              >
-                <input {...getInputProps()} />
-                <FaCloudArrowUp className="text-3xl" />
-                <p className="text-sm">Drag and Drop files here or Browse</p>
-                <p className="text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {files.map((file) => (
-                  <div key={file.name} className="relative h-20 w-20">
-                    <img src={file.preview} alt={file.name} className="h-full w-full rounded object-cover" />
-                  </div>
-                ))}
-              </div>
-            </div>
           </form>
         )
       case "section2":
@@ -297,410 +273,535 @@ export default function AddServiceUser() {
       case "section3":
         return (
           <>
-            <>
-              <p className="mt-4">Care Professional Contact</p>
-              <p className="mb-4 text-xs">The Manager may give final comments on the accident. </p>
-              <form className=" flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
-                <div className="mb-3 flex w-full flex-col items-start">
-                  <label htmlFor="serviceUserName" className="label-title">
-                    Name of Contact
-                  </label>
-                  <div className="input-field ">
-                    <input
-                      type="text"
-                      id="serviceUserName"
-                      placeholder="Enter name"
-                      className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
+            <form className="mt-4 flex w-full flex-col ">
+              <div className="mb-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  General state of physical health
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: Add details of any incident that has affected the young person's affect negatively or
+                  positively. Are there new developments around an existing medical condition? Also include the health
+                  affecting use of any substance abuse, drugs alcohol or excessive smoking. Describe measures taken to
+                  counter any form of compromise to the young person's health. Include details of any developments in an
+                  existing health issue or disability.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
                 </div>
-
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Job Title
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="text"
-                        id="staffOnDuty"
-                        placeholder="job"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Phone Number
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="text"
-                        id="staffOnDuty"
-                        placeholder="enter phone number"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Email
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="email"
-                        id="staffOnDuty"
-                        placeholder="enter email"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-3 flex w-full flex-col items-start">
-                  <label htmlFor="staffOnDuty" className="label-title">
-                    Address
-                  </label>
-                  <div className="input-field w-40">
-                    <input
-                      type="text"
-                      id="staffOnDuty"
-                      placeholder="Separate names by comma"
-                      className="w-40 bg-transparent outline-none focus:outline-none"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-              </form>
-              <button
-                type="submit"
-                className="mt-4 flex h-[52px] w-full items-center justify-center gap-3 rounded-lg bg-[#69B7FF] p-3 text-sm text-white"
-              >
-                Add Another Contact
-                <IoIosAddCircleOutline size={20} />
-              </button>
-            </>
-            <>
-              <p className="mt-4">Family Contact</p>
-              <p className="mb-4 text-xs">The Manager may give final comments on the accident. </p>
-              <form className=" flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
-                <div className="mb-3 flex w-full flex-col items-start">
-                  <label htmlFor="serviceUserName" className="label-title">
-                    Name of Contact
-                  </label>
-                  <div className="input-field ">
-                    <input
-                      type="text"
-                      id="serviceUserName"
-                      placeholder="Enter name"
-                      className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Job Title
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="text"
-                        id="staffOnDuty"
-                        placeholder="job"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Phone Number
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="text"
-                        id="staffOnDuty"
-                        placeholder="enter phone number"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Email
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="email"
-                        id="staffOnDuty"
-                        placeholder="enter email"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-3 flex w-full flex-col items-start">
-                  <label htmlFor="staffOnDuty" className="label-title">
-                    Address
-                  </label>
-                  <div className="input-field w-40">
-                    <input
-                      type="text"
-                      id="staffOnDuty"
-                      placeholder="Separate names by comma"
-                      className="w-40 bg-transparent outline-none focus:outline-none"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-              </form>
-              <button
-                type="submit"
-                className="mt-4 flex h-[52px] w-full items-center justify-center gap-3 rounded-lg bg-[#69B7FF] p-3 text-sm text-white"
-              >
-                Add Another Contact
-                <IoIosAddCircleOutline size={20} />
-              </button>
-            </>
-            <>
-              <p className="mt-4">Health Contact</p>
-              <p className="mb-4 text-xs">The Manager may give final comments on the accident. </p>
-              <form className=" flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
-                <div className="mb-3 flex w-full flex-col items-start">
-                  <label htmlFor="serviceUserName" className="label-title">
-                    Name of Contact
-                  </label>
-                  <div className="input-field ">
-                    <input
-                      type="text"
-                      id="serviceUserName"
-                      placeholder="Enter name"
-                      className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Job Title
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="text"
-                        id="staffOnDuty"
-                        placeholder="job"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Phone Number
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="text"
-                        id="staffOnDuty"
-                        placeholder="enter phone number"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="staffOnDuty" className="label-title">
-                      Email
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="email"
-                        id="staffOnDuty"
-                        placeholder="enter email"
-                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-3 flex w-full flex-col items-start">
-                  <label htmlFor="staffOnDuty" className="label-title">
-                    Address
-                  </label>
-                  <div className="input-field w-40">
-                    <input
-                      type="text"
-                      id="staffOnDuty"
-                      placeholder="Separate names by comma"
-                      className="w-40 bg-transparent outline-none focus:outline-none"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-              </form>
-              <button
-                type="submit"
-                className="mt-4 flex h-[52px] w-full items-center justify-center gap-3 rounded-lg bg-[#69B7FF] p-3 text-sm text-white"
-              >
-                Add Another Contact
-                <IoIosAddCircleOutline size={20} />
-              </button>
-            </>
-
-            <div className="my-3 flex w-full flex-col items-start">
-              <label htmlFor="email" className="label-title ">
-                Additional Contacts
-              </label>
-              <div className="textarea-field ">
-                <textarea
-                  id="email"
-                  placeholder="Separate names by comma"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
               </div>
-            </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <div className="mb-3 flex w-full flex-col items-start">
+                  <label htmlFor="staffOnDuty" className="label-title">
+                    Last date of dental Appointment
+                  </label>
+                  <div className="input-field w-40">
+                    <input
+                      type="date"
+                      id="staffOnDuty"
+                      placeholder="Separate names by comma"
+                      className="w-40 bg-transparent outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+                <div className="mb-3 flex w-full flex-col items-start">
+                  <label htmlFor="staffOnDuty" className="label-title">
+                    Last date of hospital appointment
+                  </label>
+                  <div className="input-field w-40">
+                    <input
+                      type="date"
+                      id="staffOnDuty"
+                      placeholder="Separate names by comma"
+                      className="w-40 bg-transparent outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+                <div className="mb-3 flex w-full flex-col items-start">
+                  <label htmlFor="staffOnDuty" className="label-title">
+                    Last date of optical appointment
+                  </label>
+                  <div className="input-field w-40">
+                    <input
+                      type="date"
+                      id="staffOnDuty"
+                      placeholder="Separate names by comma"
+                      className="w-40 bg-transparent outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                   Emotional Wellbeing
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: Describe in summary the state of the young persons emotional health. How the young person
+                  is coping mentally with challenges and difficult situations. Is the young person exhibiting any form
+                  of outbursts, symptoms of depression, anxiety, fear or worry? Is the young person showing anger and
+                  frustration? Is the young person moody or aggressive? Include any use of medicinal effects, drugs or
+                  substance abuse contributing to the emotional imbalance. Is the young person happy and open, also
+                  include positive emotional wellbeing.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  Education
+                </label>
+
+                <div className="grid w-full grid-cols-4 items-end justify-between gap-2">
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <label htmlFor="staffOnDuty" className="label-title ">
+                      Latest PEP Date
+                    </label>
+                    <div className="input-field w-40">
+                      <input
+                        type="date"
+                        id="staffOnDuty"
+                        placeholder="Separate names by comma"
+                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <p className="label-title">Have the PEP targets been reached?</p>
+                  </div>
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <label htmlFor="staffOnDuty" className="label-title">
+                      Attended
+                    </label>
+                    <div className="input-field__sm w-40">
+                      <input
+                        type="text"
+                        id="staffOnDuty"
+                        placeholder=""
+                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <label htmlFor="staffOnDuty" className="label-title">
+                      Missed
+                    </label>
+                    <div className="input-field__sm w-40">
+                      <input
+                        type="text"
+                        id="staffOnDuty"
+                        placeholder=""
+                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  If no, what are the barriers preventing this?
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: Include self made barriers, external influence or whatever acts as a factor preventing
+                  the education/training progress planned for the young person.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  What actions were taken?
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: Include details of attempts to support the young persons progress in education or
+                  qualification based training. What steps have been made to remove barriers preventing the progress of
+                  the education plan.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  If the PEP target were reached, list them
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: list milestones for PEP targets, this would usually be dates for enrolment, progress made
+                  to a higher level or class, completion of a course or an aspect of it. Getting a young person to start
+                  a course or class attendance where there has been previous resistance.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="my-3 grid grid-cols-2 gap-2">
+                <div className="mb-3 flex w-full flex-col items-start">
+                  <label htmlFor="staffOnDuty" className="label-title">
+                    Date of last parent evening
+                  </label>
+                  <div className="input-field w-40">
+                    <input
+                      type="date"
+                      id="staffOnDuty"
+                      placeholder="Separate names by comma"
+                      className="w-40 bg-transparent outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+                <div className="mb-3 flex w-full flex-col items-start">
+                  <label htmlFor="staffOnDuty" className="label-title">
+                    Who attended?
+                  </label>
+                  <div className="input-field w-40">
+                    <input
+                      type="text"
+                      id="staffOnDuty"
+                      placeholder=""
+                      className="w-40 bg-transparent outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  Education
+                </label>
+
+                <div className="flex w-full  items-end justify-between gap-2">
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <p className="label-title">
+                      Has there been any internal or fixed term exclusions, if 'yes' provide date/s and reason/s
+                    </p>
+                  </div>
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <label htmlFor="staffOnDuty" className="label-title">
+                      Attended
+                    </label>
+                    <div className="input-field__sm ">
+                      <input
+                        type="text"
+                        id="staffOnDuty"
+                        placeholder=""
+                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <label htmlFor="staffOnDuty" className="label-title">
+                      Missed
+                    </label>
+                    <div className="input-field__sm w-40">
+                      <input
+                        type="text"
+                        id="staffOnDuty"
+                        placeholder=""
+                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
           </>
         )
       case "section4":
         return (
-          <form className="mt-4 flex w-full flex-col ">
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Health Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
+          <>
+            <form className="mt-4 flex w-full flex-col ">
+              <p className="mb-4 text-xl">Contact</p>
+              <div className="mb-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  What are the contact arrangements and with whom?
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: Please include contact days and hours and who with. Are there any issues around the
+                  contact arrangements -restrictions or supervision.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
               </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">Medical Registrations</p>
-              </div>
-            </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Education/Training Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
-              </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">In Education</p>
-              </div>
-            </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Employment Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
-              </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">Job Ready</p>
-              </div>
-            </div>
 
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Risk Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
+              <div className="mb-3 flex w-full flex-col items-start">
+                <p className="mb-4 text-xl">Independent Skills</p>
+                <label htmlFor="serviceUserName" className="label-title">
+                  Work undertaken with young person in relation to independent skills
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: Please provide details of staff activities to progress independent skills towards agreed
+                  targets
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
               </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">Risk Assessed</p>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                   Progress being made on independent skills
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: in summary briefly list independent skills showing progress.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
               </div>
-            </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Identified Needs
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <p className="mb-4 text-xl">Achievables</p>
+                <label htmlFor="serviceUserName" className="label-title">
+                  Achieved actions from last review
+                </label>
+                <p className="mb-3 text-xs">
+                  Staff guide: in summary briefly list independent skills showing progress.
+                </p>
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
               </div>
-            </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Additional Information
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
+            </form>
+          </>
+        )
+
+      case "section5":
+        return (
+          <>
+            <form className="mt-4 flex w-full flex-col ">
+              <p className="mb-4 text-xl">Savings</p>
+              <div className="mb-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  Where we the savings held?
+                </label>
+
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
               </div>
-            </div>
-          </form>
+
+              <div className="mb-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  How often has money been paid into the account?
+                </label>
+
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  Total amount paid into the account?
+                </label>
+
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+            </form>
+          </>
         )
       case "section6":
         return (
-          <form className="mt-4 flex w-full flex-col ">
-            <div className=" flex w-full flex-col items-start">
-              <label htmlFor="addMedia" className="label-title ">
-                Add Media
-              </label>
-              <div
-                {...getRootProps({
-                  className:
-                    "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
-                })}
-              >
-                <input {...getInputProps()} />
-                <FaCloudArrowUp className="text-3xl" />
-                <p className="text-sm">Drag and Drop files here or Browse</p>
-                <p className="text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {files.map((file) => (
-                  <div key={file.name} className="relative h-20 w-20">
-                    <img src={file.preview} alt={file.name} className="h-full w-full rounded object-cover" />
+          <>
+            <form className="mt-4 flex w-full flex-col ">
+              <div className="my-3 flex w-full flex-col items-start">
+                <p className="mb-4 text-xl">Holidays</p>
+
+                <div className="flex w-full  items-end justify-between gap-2">
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <p className="label-title">Is the service user booked for a holiday?</p>
                   </div>
-                ))}
+                  <div className="mb-3 flex w-full flex-col ">
+                    <label htmlFor="staffOnDuty" className="label-title">
+                      Attended
+                    </label>
+                    <div className="input-field__sm w-40">
+                      <input
+                        type="text"
+                        id="staffOnDuty"
+                        placeholder=""
+                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-3 flex w-full flex-col ">
+                    <label htmlFor="staffOnDuty" className="label-title">
+                      Missed
+                    </label>
+                    <div className="input-field__sm w-40">
+                      <input
+                        type="text"
+                        id="staffOnDuty"
+                        placeholder=""
+                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                  Holiday destination
+                </label>
+
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <label htmlFor="serviceUserName" className="label-title">
+                   Who with?
+                </label>
+
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="my-3 grid grid-cols-2 gap-2">
+                <div className="mb-3 flex w-full flex-col items-start">
+                  <label htmlFor="staffOnDuty" className="label-title">
+                    Return Date
+                  </label>
+                  <div className="input-field w-40">
+                    <input
+                      type="date"
+                      id="staffOnDuty"
+                      placeholder="Separate names by comma"
+                      className="w-40 bg-transparent outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+                <div className="mb-3 flex w-full flex-col items-start">
+                  <label htmlFor="staffOnDuty" className="label-title">
+                    Departure Date
+                  </label>
+                  <div className="input-field w-40">
+                    <input
+                      type="date"
+                      id="staffOnDuty"
+                      placeholder=""
+                      className="w-40 bg-transparent outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="my-3 flex w-full flex-col items-start">
+                <p className="mb-4 text-xl">Supervisors</p>
+                <label htmlFor="serviceUserName" className="label-title">
+                  Supervising social workers
+                </label>
+
+                <div className="textarea-field ">
+                  <textarea
+                    id="email"
+                    placeholder="Separate names by comma"
+                    className="bg-transparent text-sm outline-none focus:outline-none"
+                    style={{ width: "100%", background: "transparent" }}
+                  ></textarea>
+                </div>
+              </div>
+            </form>
+          </>
         )
       default:
         return null
