@@ -19,7 +19,7 @@ interface PreviewFile extends File {
 export default function AddServiceUser() {
   // Simulating user account existence with a state
   const [hasTransactions, setHasTransactions] = useState<boolean>(true)
-  const [activeTab, setActiveTab] = useState<string>("general-info")
+  const [activeTab, setActiveTab] = useState<string>("section1")
 
   // Use an array of PreviewFile for files state
   const [files, setFiles] = useState<PreviewFile[]>([])
