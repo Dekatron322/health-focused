@@ -11,6 +11,7 @@ import styles from "../../../components/Dashboard/dashboard.module.css"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
 import Placements from "components/Dashboard/Placements"
+import Staffs from "components/Dashboard/Staff"
 
 // Define the structure of a table row
 interface TableRow {
@@ -27,84 +28,84 @@ export default function ServiceUsers() {
   const [tableData, setTableData] = useState<TableRow[]>([
     {
       id: 1,
-      name: "King’s Street",
-      placement: "SW1A 2AA",
-      date: "5",
-      keyWorker: "4",
+      name: "Adeola Odeku",
+      placement: "adeola.ode@ymail.com",
+      date: "08040303032",
+      keyWorker: "Admin",
       //   localAuthority: "Croydon",
-      status: "Croydon",
+      status: "King’s Street",
     },
     {
       id: 2,
-      name: "24 Madrid Road",
-      placement: "W1A 0AX",
-      date: "3",
-      keyWorker: "1",
+      name: "Adewale Peter",
+      placement: "adewalepeter@primarycare.com",
+      date: "133949392",
+      keyWorker: "Staf fUser",
       //   localAuthority: "Kent",
-      status: "Kent",
+      status: "24 Madrid Road",
     },
     {
       id: 3,
-      name: "Queen’s Court",
-      placement: "B33 8TH",
-      date: "2",
-      keyWorker: "1",
+      name: "Marko Dean",
+      placement: "marko.dean@primarycare.com",
+      date: "304493294",
+      keyWorker: "Staff User",
       //   localAuthority: "Kent",
-      status: "Kent",
+      status: "Queen’s Court",
     },
     {
       id: 4,
-      name: "Love Avenue",
-      placement: "DN55 1PT",
-      date: "7",
-      keyWorker: "3",
+      name: "Michael Andrews",
+      placement: "michael.andrews@primarycare.com",
+      date: "594924943",
+      keyWorker: "Staff User",
       //   localAuthority: "Harrington",
-      status: "Harrington",
+      status: "Love Avenue",
     },
     {
       id: 5,
-      name: "Avenue Lane",
-      placement: "EC1A 1BB",
-      date: "8",
-      keyWorker: "2",
+      name: "Iyanu Iyanu",
+      placement: "iyanu.iyanu@primarycare.com",
+      date: "558583495",
+      keyWorker: "Staff User",
       //   localAuthority: "Buckinghamshire",
-      status: "Arlington",
+      status: "Avenue Lane",
     },
     {
       id: 6,
-      name: "King’s Street",
-      placement: "BBND 1ZZ",
-      date: "6",
-      keyWorker: "2",
+      name: "Maxwell Ings",
+      placement: "maxwell.ings@primarycare.com",
+      date: "099334852",
+      keyWorker: "Staff User",
       //   localAuthority: "Arlington",
-      status: "Kent",
+      status: "King’s Street",
     },
     {
       id: 7,
-      name: "Queen’s Court",
-      placement: "BX1 1LT",
-      date: "3",
-      keyWorker: "1",
+      name: "Loretta James",
+      placement: "loretta.james@primarycare.com",
+      date: "09068482054",
+      keyWorker: "Staff User",
       //   localAuthority: "Kent",
-      status: "Croydon",
+      status: "Queen’s Court",
     },
     {
       id: 8,
-      name: "42 Zero Street",
-      placement: "CV35 0DB",
-      date: "4",
-      keyWorker: "3",
+      name: "Tems Ayra",
+      placement: "tems.ayra@primarycare.com",
+      date: "095858494",
+      keyWorker: "Admin",
       //   localAuthority: "Croydon",
-      status: "Hounslow",
+      status: "42 Zero Street",
     },
     {
       id: 9,
-      name: "Mavin Estate",
-      placement: "DH98 1BT",
-      date: "5",
-      keyWorker: "3",
+      name: "Ireoluwa David",
+      placement: "ireoluwa.david@primarycare.com",
+      date: "050558585",
+      keyWorker: "Super Admin",
       //   localAuthority: "Hounslow",
-      status: "Buckinghamshire",
+      status: "Unassigned",
     },
   ])
 
@@ -196,7 +197,7 @@ export default function ServiceUsers() {
               <div className="flex w-full gap-4 px-16  max-md:flex-col max-md:px-3">
                 <div className={styles.dashboard_body__lhs}>
                   <div className={styles.service_users}>
-                    <Placements />
+                    <Staffs />
                   </div>
                 </div>
               </div>
@@ -206,8 +207,8 @@ export default function ServiceUsers() {
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
-                    <Link href="/placement/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-                      <p className="text-white max-md:px-0">New Placements</p>
+                    <Link href="/staff/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
+                      <p className="text-white max-md:px-0">New Staff</p>
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
                   </div>
@@ -256,13 +257,13 @@ export default function ServiceUsers() {
                     <thead>
                       <tr>
                         <th className="p-3"></th>
-                        <th className="p-3">Name of Placement</th>
-                        <th className="p-3">Postcode</th>
-                        <th className="p-3">Number of Rooms</th>
+                        <th className="p-3">Staff Name</th>
+                        <th className="p-3">Email</th>
+                        <th className="p-3">Phone Number</th>
                         <th className="p-3">Active Service Users</th>
-                        <th className="p-3">Location</th>
+                        <th className="p-3">User Role</th>
                         {/* <th className="p-3">Status</th> */}
-                        <th className="p-3">Action</th>
+                        <th className="p-3">Assigned Unit</th>
                       </tr>
                     </thead>
                     <tbody>
