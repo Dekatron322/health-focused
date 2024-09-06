@@ -12,6 +12,7 @@ import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
 import Placements from "components/Dashboard/Placements"
 import Staffs from "components/Dashboard/Staff"
+import LocalAuthorities from "components/Dashboard/LocalAuthorities"
 
 // Define the structure of a table row
 interface TableRow {
@@ -197,7 +198,7 @@ export default function ServiceUsers() {
               <div className="flex w-full gap-4 px-16  max-md:flex-col max-md:px-3">
                 <div className={styles.dashboard_body__lhs}>
                   <div className={styles.service_users}>
-                    <Staffs />
+                    <LocalAuthorities />
                   </div>
                 </div>
               </div>
