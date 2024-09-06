@@ -197,6 +197,45 @@ export const About = [
   },
 ]
 
+export const Policies = [
+  {
+    id: 1,
+    icon: "/images/pdf.png",
+    title: "Child Protection Policy",
+    value: "A document to how to protect children from harm. ",
+  },
+  {
+    id: 2,
+    icon: "/images/pdf.png",
+    title: "Protections of Freedoms Act 2012",
+    value: "A document to how to protect children from harm. ",
+  },
+  {
+    id: 3,
+    icon: "/images/pdf.png",
+    title: "UK Child Law",
+    value: "A document to how to protect children from harm. ",
+  },
+  {
+    id: 4,
+    icon: "/images/pdf.png",
+    title: "Staff Onboarding",
+    value: "A document to how to protect children from harm. ",
+  },
+  {
+    id: 5,
+    icon: "/images/img.png",
+    title: "Organisation Map",
+    value: "A document to how to protect children from harm. ",
+  },
+  {
+    id: 6,
+    icon: "/images/docx.png",
+    title: "Sample Contract",
+    value: "A document to how to protect children from harm. ",
+  },
+]
+
 export const Contact = [
   {
     id: 1,
