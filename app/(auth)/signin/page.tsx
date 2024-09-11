@@ -37,7 +37,7 @@ export default function Signin() {
   }
   return (
     <main className="">
-      <section className="flex       max-md:flex-col-reverse md:overflow-hidden ">
+      <section className="flex max-md:flex-col-reverse  md:h-screen md:overflow-hidden ">
         <div
           className="flex basis-1/2 flex-col    max-md:rounded-t-3xl"
           style={{
@@ -47,10 +47,10 @@ export default function Signin() {
             backgroundPosition: "center",
           }}
         >
-          <div className="my-10 px-5 2xl:mx-[150px] 3xl:mx-52">
+          <div className="my-5 items-center px-5 md:my-auto 2xl:mx-[150px] 3xl:mx-52">
             <div className="flex items-center gap-2">
-              <Image className="max-md:hidden" src="/images/logo.png" width={46} height={50} alt="smup" />
-              <p className="inter-font font-extrabold max-md:px-4 max-md:text-center max-md:text-[26px]  md:text-4xl">
+              <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
+              <p className="inter-font font-extrabold max-md:px-0 max-md:text-center max-md:text-[20px]  md:text-2xl">
                 Health Focused{" "}
               </p>
             </div>
