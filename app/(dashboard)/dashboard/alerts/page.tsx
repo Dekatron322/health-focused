@@ -7,9 +7,10 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Search from "components/Search/Search"
 import CustomDropdown from "components/Search/CustomDropdown"
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import { useRouter } from "next/navigation"
-import router from "next/router"
+import { CiCircleChevDown } from "react-icons/ci"
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 import { Checkbox } from "@mui/material"
+import router from "next/router"
 
 // Define the structure of a table row
 interface TableRow {
@@ -124,12 +125,15 @@ export default function Alerts() {
     const uniqueValues = Array.from(new Set(tableData.map((row) => row[key])))
     return uniqueValues.map((value) => ({ id: value, name: value }))
   }
-
+  const [isAlertDropdownOpen, setIsAlertDropdownOpen] = useState(false)
   const handleFilterChange = (filterName: keyof typeof filters, selectedValue: string) => {
     setFilters({
       ...filters,
       [filterName]: selectedValue,
     })
+  }
+  const toggleAlertDropdown = () => {
+    setIsAlertDropdownOpen(!isAlertDropdownOpen)
   }
 
   const handleDropdownAction = (action: string, row: TableRow) => {
@@ -187,18 +191,22 @@ export default function Alerts() {
   }
 
   const formOptions = [
-    { id: "1", name: "Missing Form", link: "/forms/missing" },
-    { id: "2", name: "Authorized Absence Form", link: "/forms/authorized-absence" },
-    { id: "3", name: "Unauthorized Form", link: "/forms/unauthorized" },
-    { id: "4", name: "Incident Form", link: "/forms/incident" },
-    { id: "5", name: "Accident Form", link: "/forms/accident" },
+    { id: 1, name: "Missing Form", link: "/dashboard/missing" },
+    { id: 2, name: "Authorized Absence Form", link: "/dashboard/authorised-absence" },
+    { id: 3, name: "Unauthorized Form", link: "/dashboard/unauthorised-absence" },
+    { id: 4, name: "Incidence Form", link: "/dashboard/incidence" },
+    { id: 5, name: "Accident Form", link: "/dashboard/accident" },
   ]
 
   const handleFormSelect = (selectedValue: string) => {
     const selectedForm = formOptions.find((option) => option.name === selectedValue)
     if (selectedForm) {
-      router.push(selectedForm.link)
+      window.location.href = selectedForm.link
     }
+  }
+
+  const handleBackButtonClick = () => {
+    router.back()
   }
 
   return (
@@ -210,7 +218,10 @@ export default function Alerts() {
               <DashboardNav />
             </div>
             <div className="mt-8 flex flex-row justify-center gap-3">
-              <button className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs">
+              <button
+                onClick={handleBackButtonClick}
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+              >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
@@ -218,12 +229,30 @@ export default function Alerts() {
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <p className="text-2xl">Alerts</p>
-                    <CustomDropdown
-                      options={formOptions.map((option) => ({ id: option.id, name: option.name }))}
-                      selectedOption=""
-                      onChange={handleFormSelect}
-                      placeholder="New Alert"
-                    />
+                    <div className="relative">
+                      <div
+                        onClick={toggleAlertDropdown}
+                        className="flex h-10 cursor-pointer items-center gap-6 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                      >
+                        New Alert
+                        <CiCircleChevDown />
+                      </div>
+                      {isAlertDropdownOpen && (
+                        <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
+                          <ul className="py-1">
+                            {formOptions.map((option) => (
+                              <li
+                                key={option.id}
+                                className="cursor-pointer whitespace-nowrap px-4 py-2 text-xs hover:bg-gray-100"
+                                onClick={() => handleFormSelect(option.name)}
+                              >
+                                {option.name}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <Search />
                 </div>
