@@ -15,6 +15,7 @@ import { Transactions } from "components/AccountDetails/Transactions"
 import Services from "components/Dashboard/ServiceUsers"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
+import { Checkbox } from "@mui/material"
 
 // Define the structure of a table row
 interface TableRow {
@@ -283,7 +284,7 @@ export default function ServiceUsers() {
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm">
-                            <MdCheckBoxOutlineBlank size={18} />
+                            <Checkbox className="checkboxes" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm">{row.placement}</td>

@@ -10,6 +10,7 @@ import { FaCircleInfo, FaCloudArrowUp } from "react-icons/fa6"
 import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Tab from "components/Search/Tab"
 import { CiCircleChevDown } from "react-icons/ci"
+import { Checkbox } from "@mui/material"
 
 // Extend the File type to include a preview property
 interface PreviewFile extends File {
@@ -643,96 +644,159 @@ export default function WeeklyReport() {
       case "behaviour":
         return (
           <form className="mt-4 flex w-full flex-col ">
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Health Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
-              </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">Medical Registrations</p>
-              </div>
+            <div className="mb-3 flex w-full  justify-end gap-5">
+              <p className="text-end">Happened Just Ones</p>
+              <p className="text-end">Happened More than Ones</p>
             </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Education/Training Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
-              </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">In Education</p>
-              </div>
-            </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Employment Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
-              </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">Job Ready</p>
+
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Bullying</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
               </div>
             </div>
 
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Risk Summary
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
-              </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
-                <p className="text-xs">Risk Assessed</p>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Fire Setting</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Identified Needs
-              </label>
-              <div className="textarea-field">
-                <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
-                  className="bg-transparent outline-none focus:outline-none"
-                  style={{ width: "100%", background: "transparent" }}
-                ></textarea>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Criminal Damage</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 flex w-full flex-col items-start">
-              <label htmlFor="additionalInfo" className="label-title">
-                Additional Information
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Property Damage</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Drug/Substance Use</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Drug Dealing</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Racial Abuse</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Verbal Abuse</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Argument or Altercation</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Assault</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Smoking</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Non-cooperation or non compliance</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Unauthorised Absence</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Inciting Terrorist Acts</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Self Harm</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Suicidal Ideation</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+            <div className="mb-3 border"></div>
+            <div className="mb-3 flex w-full items-center  justify-between">
+              <p className="text-sm">Theft</p>
+              <div className="flex gap-60">
+                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes" />
+              </div>
+            </div>
+
+            <div className="mb-6 border"></div>
+
+            <div className="mb-6 flex w-full flex-col items-start">
+              <label htmlFor="email" className="label-title ">
+                Add Other Risks
               </label>
-              <div className="textarea-field">
+              <div className="textarea-field ">
                 <textarea
-                  id="additionalInfo"
-                  placeholder="Enter additional information"
+                  id="email"
+                  placeholder="e.g johndoe@gmail.com"
                   className="bg-transparent outline-none focus:outline-none"
                   style={{ width: "100%", background: "transparent" }}
                 ></textarea>
