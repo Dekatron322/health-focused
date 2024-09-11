@@ -1696,3 +1696,41 @@ export const TransactionLimits = [
     limit: "3000",
   },
 ]
+
+export const EventList = [
+  {
+    title: "TedX Seminar",
+    time: "1pm - 3pm",
+    date: "7 January 2024",
+    left: "1day 4 hrs left",
+    completed: "90%",
+  },
+  {
+    title: "Interhouse Sports",
+    time: "1pm - 3pm",
+    date: "7 January 2024",
+    left: "1day 4 hrs left",
+    completed: "60%",
+  },
+  {
+    title: "Debate Competition",
+    time: "1pm - 3pm",
+    date: "7 January 2024",
+    left: "1day 4 hrs left",
+    completed: "40%",
+  },
+  {
+    title: "Cultural Competition",
+    time: "1pm - 3pm",
+    date: "7 January 2024",
+    left: "1day 4 hrs left",
+    completed: "30%",
+  },
+  {
+    title: "Educational Tour",
+    time: "1pm - 3pm",
+    date: "7 January 2024",
+    left: "1day 4 hrs left",
+    completed: "20%",
+  },
+]

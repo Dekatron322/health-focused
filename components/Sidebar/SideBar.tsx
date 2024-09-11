@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { Links } from "./Links"
 import { LogoIcon, SettingsIcon } from "./Icons"
 import { Box, Skeleton } from "@mui/material"
+import Image from "next/image"
 
 const SideBar = () => {
   const [loading, setLoading] = useState(true)
@@ -13,7 +14,12 @@ const SideBar = () => {
       <div className="h-full justify-between border-0 border-red-700 lg:mt-6 lg:h-auto lg:space-y-8">
         <div className="hidden border-0 border-white px-7 lg:block">
           <Link href="/">
-            <LogoIcon />
+            <div className="flex items-center gap-2">
+              <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
+              <p className="inter-font font-extrabold max-md:px-0 max-md:text-center max-md:text-[18px]  md:text-lg">
+                Health Focused{" "}
+              </p>
+            </div>
           </Link>
         </div>
 

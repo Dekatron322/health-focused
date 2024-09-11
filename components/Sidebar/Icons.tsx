@@ -8,7 +8,7 @@ import { PiBankBold } from "react-icons/pi"
 import { IoDocumentTextOutline } from "react-icons/io5"
 import { IoSettingsOutline } from "react-icons/io5"
 
-export const LogoIcon = () => <Image src="/Hidden.svg" height={44} width={44} alt="" />
+export const LogoIcon = () => <Image src="/.svg" height={44} width={44} alt="" />
 
 export const DashboardIcon = () => <DashboardOutlinedIcon className="text-lg" />
 

@@ -2347,6 +2347,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fullcalendar/core@npm:^6.1.15":
+  version: 6.1.15
+  resolution: "@fullcalendar/core@npm:6.1.15"
+  dependencies:
+    preact: ~10.12.1
+  checksum: 40c3b237a64ac1f79a35b031a1c10aec70ccd4f638212af0784ff04e7e554b7ca74f5861d8336d5ccd64ed819b185dd4c14c212b3ff19d5930a5a909ad41dc68
+  languageName: node
+  linkType: hard
+
+"@fullcalendar/daygrid@npm:^6.1.15, @fullcalendar/daygrid@npm:~6.1.15":
+  version: 6.1.15
+  resolution: "@fullcalendar/daygrid@npm:6.1.15"
+  peerDependencies:
+    "@fullcalendar/core": ~6.1.15
+  checksum: 16763615c2410be622e428f3f1a7379745769c4a8aa1a3475fce7fc74b7f3f9625f5817a614d46089ff7b54040e6b5e295bd984a8240b49b23c347caec2b9f20
+  languageName: node
+  linkType: hard
+
+"@fullcalendar/interaction@npm:^6.1.15":
+  version: 6.1.15
+  resolution: "@fullcalendar/interaction@npm:6.1.15"
+  peerDependencies:
+    "@fullcalendar/core": ~6.1.15
+  checksum: 25a321c40f4419bdfbd9471fef31b1ed4832d0fc8cdd5fe746fa9c545604ebe6302c7aaf7ced93a289bb167f28e82b55aa8eb3916fd812bbbb2e04380299c2ae
+  languageName: node
+  linkType: hard
+
+"@fullcalendar/react@npm:^6.1.15":
+  version: 6.1.15
+  resolution: "@fullcalendar/react@npm:6.1.15"
+  peerDependencies:
+    "@fullcalendar/core": ~6.1.15
+    react: ^16.7.0 || ^17 || ^18 || ^19
+    react-dom: ^16.7.0 || ^17 || ^18 || ^19
+  checksum: 177f98611a60e6f9d0248c6b9b8ef074ee408a7becf4800d71dd37e53d50a1305c51e7341d196c3a4c3fbe45f0d826e2c52cde18976ce79b5b2e7a3cc14de693
+  languageName: node
+  linkType: hard
+
+"@fullcalendar/timegrid@npm:^6.1.15":
+  version: 6.1.15
+  resolution: "@fullcalendar/timegrid@npm:6.1.15"
+  dependencies:
+    "@fullcalendar/daygrid": ~6.1.15
+  peerDependencies:
+    "@fullcalendar/core": ~6.1.15
+  checksum: 37d2a9d62245b927a48a411142c2b4ea915dc25178242103745749533a949327e618177b370f4cb8ef8f2e07dd53a59fab836156329ea92344ae76fe91e0ce79
+  languageName: node
+  linkType: hard
+
 "@grpc/grpc-js@npm:^1.7.1":
   version: 1.9.5
   resolution: "@grpc/grpc-js@npm:1.9.5"
@@ -16793,6 +16842,11 @@ __metadata:
     "@babel/plugin-transform-react-jsx": ^7.23.4
     "@emotion/react": ^11.11.4
     "@emotion/styled": ^11.11.5
+    "@fullcalendar/core": ^6.1.15
+    "@fullcalendar/daygrid": ^6.1.15
+    "@fullcalendar/interaction": ^6.1.15
+    "@fullcalendar/react": ^6.1.15
+    "@fullcalendar/timegrid": ^6.1.15
     "@jest/globals": ^29.7.0
     "@mui/icons-material": ^5.15.17
     "@mui/material": ^5.15.17
@@ -18488,6 +18542,13 @@ __metadata:
   version: 2.1.0
   resolution: "postinstall-postinstall@npm:2.1.0"
   checksum: e1d34252cf8d2c5641c7d2db7426ec96e3d7a975f01c174c68f09ef5b8327bc8d5a9aa2001a45e693db2cdbf69577094d3fe6597b564ad2d2202b65fba76134b
+  languageName: node
+  linkType: hard
+
+"preact@npm:~10.12.1":
+  version: 10.12.1
+  resolution: "preact@npm:10.12.1"
+  checksum: 0de99f477563ab7f94a0f964952ad216375973c0dcd9eb49881f8eb5effc5ed6948da062548c87d5bb0d82f1a1e516b649020e760eab3a0503dfdd8e64d34a26
   languageName: node
   linkType: hard
 

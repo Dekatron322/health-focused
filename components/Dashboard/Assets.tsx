@@ -24,7 +24,7 @@ export const Assets = () => {
 
   return (
     <div className={styles.assets}>
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between py-3 sm:px-4">
         <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
           <p className="text-white max-md:px-0">New Daily Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
@@ -51,7 +51,7 @@ export const Assets = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2 p-4">
+      <div className="grid grid-cols-3 gap-2 max-sm:grid-cols-1 sm:p-4">
         {Asset.map((assets) => (
           <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
             <div className="flex flex-row gap-2">
