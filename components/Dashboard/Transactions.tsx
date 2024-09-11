@@ -4,6 +4,7 @@ import { Alerts, Transaction } from "utils"
 import { GoArrowUpRight } from "react-icons/go"
 import dynamic from "next/dynamic"
 import clsx from "clsx"
+import Link from "next/link"
 
 const DynamicImage = dynamic(() => import("next/image"), { ssr: false })
 
@@ -14,10 +15,10 @@ export const Transactions = () => {
   return (
     <>
       <div className={styles.transactions}>
-        <div className="flex items-center justify-between p-4 max-md:px-0">
+        <Link href="/dashboard/appointment" className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">Latest Appointments</p>
           <GoArrowUpRight />
-        </div>
+        </Link>
         <div className="border"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Transaction.map((transactions, index) => (
@@ -59,10 +60,10 @@ export const Transactions = () => {
         </div>
       </div>
       <div className={styles.transactions}>
-        <div className="flex items-center justify-between p-4 max-md:px-0">
+        <Link href="/dashboard/alerts" className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">Latest Alerts</p>
           <GoArrowUpRight />
-        </div>
+        </Link>
         <div className="border"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Alerts.map((transactions, index) => (

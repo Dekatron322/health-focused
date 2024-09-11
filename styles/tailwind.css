@@ -233,3 +233,11 @@ h6 {
 [data-theme="dark"] .subscription {
   @apply bg-black;
 }
+
+.checkboxes {
+  @apply text-[#000000];
+}
+
+[data-theme="dark"] .checkboxes {
+  @apply text-[#ffffff];
+}

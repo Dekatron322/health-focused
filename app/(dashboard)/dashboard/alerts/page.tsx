@@ -7,8 +7,9 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Search from "components/Search/Search"
 import CustomDropdown from "components/Search/CustomDropdown"
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import { CiCircleChevDown } from "react-icons/ci"
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
+import { useRouter } from "next/navigation"
+import router from "next/router"
+import { Checkbox } from "@mui/material"
 
 // Define the structure of a table row
 interface TableRow {
@@ -185,6 +186,21 @@ export default function Alerts() {
     // ... (same removeRow logic)
   }
 
+  const formOptions = [
+    { id: "1", name: "Missing Form", link: "/forms/missing" },
+    { id: "2", name: "Authorized Absence Form", link: "/forms/authorized-absence" },
+    { id: "3", name: "Unauthorized Form", link: "/forms/unauthorized" },
+    { id: "4", name: "Incident Form", link: "/forms/incident" },
+    { id: "5", name: "Accident Form", link: "/forms/accident" },
+  ]
+
+  const handleFormSelect = (selectedValue: string) => {
+    const selectedForm = formOptions.find((option) => option.name === selectedValue)
+    if (selectedForm) {
+      router.push(selectedForm.link)
+    }
+  }
+
   return (
     <>
       <section className="h-full">
@@ -202,10 +218,12 @@ export default function Alerts() {
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <p className="text-2xl">Alerts</p>
-                    <div className="flex h-10 items-center gap-6 rounded-md border-[1px] border-[#0085FF] p-2 text-xs">
-                      New Alert
-                      <CiCircleChevDown />
-                    </div>
+                    <CustomDropdown
+                      options={formOptions.map((option) => ({ id: option.id, name: option.name }))}
+                      selectedOption=""
+                      onChange={handleFormSelect}
+                      placeholder="New Alert"
+                    />
                   </div>
                   <Search />
                 </div>
@@ -268,7 +286,7 @@ export default function Alerts() {
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm">
-                            <MdCheckBoxOutlineBlank size={18} />
+                            <Checkbox className="checkboxes" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm">{row.placement}</td>

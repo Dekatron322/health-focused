@@ -3,9 +3,7 @@ import React, { useState } from "react"
 import styles from "../../../../components/Dashboard/dashboard.module.css"
 import { IoChevronForward, IoPrintOutline } from "react-icons/io5"
 import { usePathname } from "next/navigation"
-import Image from "next/image"
-import { LuSlidersHorizontal } from "react-icons/lu"
-import { FaRegCalendarAlt } from "react-icons/fa"
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
 import Link from "next/link"
 
 import Calendar from "components/Dashboard/Calendar"
@@ -28,6 +26,8 @@ import {
 import { BiChevronRight, BiChevronsLeft, BiChevronsRight } from "react-icons/bi"
 import { Transactions } from "components/Dashboard/Transactions"
 import { NextAppointment } from "components/Dashboard/NextAppointment"
+import { IoIosArrowDropleft } from "react-icons/io"
+import { Checkbox } from "@mui/material"
 
 function classNames(...classes: (string | boolean)[]) {
   return classes.filter(Boolean).join(" ")
@@ -125,7 +125,63 @@ const Events = () => {
         <div className="mx-auto flex min-h-screen ">
           <div className="flex w-full  flex-col ">
             <DashboardNav />
-            <div className="flex justify-between pb-16 max-md:px-3">
+            <div className="flex justify-between px-16 pb-16 max-md:px-3">
+              <div>
+                <Link
+                  href="/dashboard/new-appointment"
+                  className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                >
+                  <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
+                  Add Appointment
+                </Link>
+                <p className="mt-4 text-sm">Show Appointments for</p>
+                <div className="mt-3 flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[200px]">
+                  <input
+                    type="text"
+                    id="search"
+                    placeholder="Type to search..."
+                    className="w-full bg-transparent  outline-none focus:outline-none"
+                    style={{ width: "100%" }}
+                  />
+                  <SearchOutlinedIcon />
+                </div>
+                <div className="mt-3 flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>All Placement</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>John Cena</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>Mary Earps</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>Rivaldo Henry</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>Black Widow</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>Alisson Coursera</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>Maria Maria</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>Helen Aaland</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Checkbox className="checkboxes" />
+                  <p>Riquelme Joan</p>
+                </div>
+              </div>
               <div className={styles.teacters_dashboard_lhs}>
                 <div className="flex items-center justify-between">
                   <div className={styles.page}>
@@ -149,7 +205,6 @@ const Events = () => {
 
                 <Calendar />
               </div>
-
               <div className={styles.teacters_dashboard_rhs}>
                 <div className=" my-3 flex justify-between gap-8">
                   <div className="flex  w-full rounded-2xl border bg-[#ffffff] p-2">
@@ -158,9 +213,9 @@ const Events = () => {
                         <div className="">
                           <div className="">
                             <div className="flex items-center">
-                              <h2 className="flex-auto font-semibold text-gray-900">
+                              <h5 className="flex-auto font-semibold text-gray-900">
                                 {format(firstDayCurrentMonth, "MMMM yyyy")}
-                              </h2>
+                              </h5>
                               <button
                                 type="button"
                                 onClick={previousMonth}
