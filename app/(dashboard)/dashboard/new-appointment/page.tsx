@@ -58,13 +58,6 @@ export default function NewLogs() {
               <DashboardNav />
             </div>
             <div className="mt-8 flex flex-row  justify-center gap-3">
-              <button
-                onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
-              >
-                <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
-              </button>
               <div className="mb-6 flex w-1/3 flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <p className="text-2xl">New Appointment</p>

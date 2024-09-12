@@ -9,6 +9,19 @@ import { TbEdit } from "react-icons/tb"
 import Link from "next/link"
 import { LuMail } from "react-icons/lu"
 import { MdLocalPrintshop, MdOutlineCheckBoxOutlineBlank, MdOutlineLocalPrintshop, MdOutlineMail } from "react-icons/md"
+import { Bar } from "react-chartjs-2"
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  LineElement,
+  PointElement,
+  LineController,
+  BarController,
+} from "chart.js"
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, LineController, BarController)
 
 export const Logger = () => {
   const [loading, setLoading] = useState(true)
@@ -284,31 +297,69 @@ const MonthlyReport = () => {
 }
 
 const SkillsProgress = () => {
+  const skills = [
+    { name: "Self Care/Personal Hygiene", progress: 50, target: 80 },
+    { name: "Cooking/Food Shopping", progress: 85, target: 90 },
+    { name: "General Budgeting", progress: 60, target: 91 },
+    { name: "Social Interaction/Relationships", progress: 45, target: 80 },
+    { name: "Emotional Wellbeing", progress: 25, target: 80 },
+    { name: "Cooperation/Compliance", progress: 55, target: 80 },
+    { name: "Physical Health", progress: 95, target: 80 },
+    { name: "Knowledge of local resources", progress: 55, target: 80 },
+    { name: "Education", progress: 45, target: 85 },
+    { name: "Employment", progress: 15, target: 80 },
+    { name: "Appointment Attendance", progress: 55, target: 85 },
+  ]
+
+  const labels = skills.map((skill) => skill.name)
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        type: "bar" as const,
+        label: "Progress",
+        data: skills.map((skill) => skill.progress),
+        backgroundColor: "rgba(54, 162, 235, 0.6)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 1,
+      },
+      {
+        type: "line" as const,
+        label: "Target",
+        data: skills.map((skill) => skill.target),
+        fill: false,
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 2,
+      },
+    ],
+  }
+
+  const options = {
+    responsive: true,
+    indexAxis: "y" as const, // This makes the bars horizontal
+    scales: {
+      x: {
+        beginAtZero: true,
+      },
+    },
+    plugins: {
+      legend: {
+        position: "top" as const,
+      },
+    },
+  }
+
   return (
-    <>
-      <div className="flex items-center justify-between px-4 py-3">
-        <Link href="/dashboard/new-logs" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-          <p className="text-white max-md:px-0">Add Progress</p>
-          <IoAddCircleOutline className="text-white" size={20} />
-        </Link>
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[160px]">
-            <input
-              type="date"
-              id="search"
-              placeholder="Type to search..."
-              className="w-full bg-transparent outline-none focus:outline-none"
-              style={{ width: "100%" }}
-            />
-          </div>
-          <Search />
-          <MdOutlineMail size={24} />
-          <MdLocalPrintshop size={24} />
-        </div>
-      </div>
-    </>
+    <div className="w-full p-4" style={{ height: "800px" }}>
+      {" "}
+      {/* Adjust the height value here */}
+      <Bar data={data} options={options} height={800} width={800} />
+    </div>
   )
 }
+
+export default SkillsProgress
 
 const HandoverNote = () => {
   return (
