@@ -336,7 +336,7 @@ export const Plans = [
   {
     id: 4,
     title: "Risk Assessment",
-    link: "/activity-planner",
+    link: "/risk-assessment",
   },
   {
     id: 5,

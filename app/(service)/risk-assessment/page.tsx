@@ -9,6 +9,7 @@ import CustomDropdown from "components/Search/CustomDropdown"
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
+import { Checkbox } from "@mui/material"
 
 // Define the structure of a table row
 interface TableRow {
@@ -234,7 +235,7 @@ export default function LACReports() {
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm">
-                            <MdCheckBoxOutlineBlank size={18} />
+                            <Checkbox className="checkboxes" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm">{row.placement}</td>
