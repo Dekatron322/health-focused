@@ -161,11 +161,11 @@ export const SkillsInfo = () => {
         <div className="py-4 max-md:px-0">
           {Plans.map((placement) => (
             <div key={placement.id}>
-              <div className="flex cursor-pointer items-center gap-3 px-4 py-3">
+              <Link href={placement.link} className="flex cursor-pointer items-center gap-3 px-4 py-3">
                 <FaFolder size={18} className="text-[#0085FF]" />
 
                 <p className="text-sm font-bold">{placement.title}</p>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

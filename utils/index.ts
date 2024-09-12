@@ -321,34 +321,42 @@ export const Plans = [
   {
     id: 1,
     title: "Weekly Key Work and Activity Planner",
+    link: "/activity-planner",
   },
   {
     id: 2,
     title: "Care/Support Plan",
+    link: "/activity-planner",
   },
   {
     id: 3,
     title: "LAC Reports",
+    link: "/activity-planner",
   },
   {
     id: 4,
     title: "Risk Assessment",
+    link: "/activity-planner",
   },
   {
     id: 5,
     title: "Missing Child Resources",
+    link: "/activity-planner",
   },
   {
     id: 6,
     title: "Independent Living Skills Assessment",
+    link: "/activity-planner",
   },
   {
     id: 7,
     title: "Personal Education Plan",
+    link: "/activity-planner",
   },
   {
     id: 8,
     title: "Miscellaneous Reports ",
+    link: "/activity-planner",
   },
 ]
 
