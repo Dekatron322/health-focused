@@ -326,12 +326,12 @@ export const Plans = [
   {
     id: 2,
     title: "Care/Support Plan",
-    link: "/activity-planner",
+    link: "/support-plan",
   },
   {
     id: 3,
     title: "LAC Reports",
-    link: "/activity-planner",
+    link: "/lac-reports",
   },
   {
     id: 4,
