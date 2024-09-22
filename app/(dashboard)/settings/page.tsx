@@ -287,7 +287,7 @@ export default function AddServiceUser() {
                 <input {...getInputProps()} />
                 <FaCloudArrowUp className="text-3xl" />
                 <p className="text-sm">Drag and Drop files here or Browse</p>
-                <p className="text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
+                <p className="px-2 text-center text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {files.map((file) => (
@@ -429,12 +429,14 @@ export default function AddServiceUser() {
               <div className="flex w-full justify-between">
                 <div className="flex items-center gap-3">
                   <Link href="/placement/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-                    <p className="text-white max-md:px-0">New Placements</p>
+                    <p className="text-white max-md:px-0 max-md:text-xs">New Placements</p>
                     <IoAddCircleOutline className="text-white" size={20} />
                   </Link>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Search />
+                  <div className="max-md:hidden">
+                    <Search />
+                  </div>
 
                   <CustomDropdown
                     options={getUniqueValues("status")}
@@ -460,43 +462,47 @@ export default function AddServiceUser() {
                     onChange={(value) => handleFilterChange("placement", value)}
                     placeholder="Placement"
                   />
-                  <input
-                    type="date"
-                    name="date"
-                    value={filters.date}
-                    onChange={(e) => handleFilterChange("date", e.target.value)}
-                    className="rounded border px-4 py-2"
-                  />
-                  <CustomDropdown
-                    options={getUniqueValues("keyWorker")}
-                    selectedOption={filters.keyWorker}
-                    onChange={(value) => handleFilterChange("keyWorker", value)}
-                    placeholder="Key Worker"
-                  />
+                  <div className="max-md:hidden">
+                    <input
+                      type="date"
+                      name="date"
+                      value={filters.date}
+                      onChange={(e) => handleFilterChange("date", e.target.value)}
+                      className="rounded border px-4 py-2"
+                    />
+                  </div>
+                  <div className="max-md:hidden">
+                    <CustomDropdown
+                      options={getUniqueValues("keyWorker")}
+                      selectedOption={filters.keyWorker}
+                      onChange={(value) => handleFilterChange("keyWorker", value)}
+                      placeholder="Key Worker"
+                    />
+                  </div>
                 </div>
                 <table className="w-full border-collapse text-left">
                   <thead>
                     <tr>
-                      <th className="p-3"></th>
-                      <th className="p-3">Name of Placement</th>
-                      <th className="p-3">Postcode</th>
-                      <th className="p-3">Number of Rooms</th>
-                      <th className="p-3">Active Service Users</th>
-                      <th className="p-3">Location</th>
+                      <th className="p-3 max-md:hidden"></th>
+                      <th className="p-3 max-md:text-sm">Name of Placement</th>
+                      <th className="p-3 max-md:hidden">Postcode</th>
+                      <th className="p-3 max-md:hidden">Number of Rooms</th>
+                      <th className="p-3 max-md:hidden">Active Service Users</th>
+                      <th className="p-3 max-md:hidden">Location</th>
                       {/* <th className="p-3">Status</th> */}
-                      <th className="p-3">Action</th>
+                      <th className="p-3 max-md:text-sm">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     {currentRows.map((row, index) => (
                       <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
-                        <td className="p-3 text-sm">
+                        <td className="p-3 text-sm max-md:hidden">
                           <MdCheckBoxOutlineBlank size={18} />
                         </td>
                         <td className="p-3 text-sm">{row.name}</td>
-                        <td className="p-3 text-sm">{row.placement}</td>
-                        <td className="p-3 text-sm">{row.date}</td>
-                        <td className="p-3 text-sm">{row.keyWorker}</td>
+                        <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
+                        <td className="p-3 text-sm max-md:hidden">{row.date}</td>
+                        <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
 
                         <td className="p-3 text-sm">{row.status}</td>
                         <td className="relative cursor-pointer p-3 text-sm">
@@ -575,17 +581,17 @@ export default function AddServiceUser() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 flex flex-row  justify-center gap-3">
+            <div className="mt-8 flex-row justify-center gap-3  max-md:px-3 md:flex">
               <button
                 onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
-              <div className=" mb-6 flex w-3/4  flex-col rounded-md border-[1px] p-4">
-                <div className="flex w-full justify-between">
-                  <p className="text-2xl">New Service User</p>
+              <div className=" mb-6 flex flex-col  rounded-md border-[1px] p-4 md:w-3/4">
+                <div className="flex w-full items-center justify-between">
+                  <p className="md:text-2xl">New Service User</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <div className="flex w-full justify-between">
