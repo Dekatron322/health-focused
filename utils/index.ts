@@ -341,22 +341,22 @@ export const Plans = [
   {
     id: 5,
     title: "Missing Child Resources",
-    link: "/activity-planner",
+    link: "/missing-person-resource",
   },
   {
     id: 6,
     title: "Independent Living Skills Assessment",
-    link: "/activity-planner",
+    link: "/independent-living",
   },
   {
     id: 7,
     title: "Personal Education Plan",
-    link: "/activity-planner",
+    link: "/pep-plan",
   },
   {
     id: 8,
     title: "Miscellaneous Reports ",
-    link: "/activity-planner",
+    link: "/miscellaneous-reports",
   },
 ]
 
