@@ -202,7 +202,7 @@ export default function ServiceUsers() {
               </div>
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16">
+            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
@@ -212,7 +212,9 @@ export default function ServiceUsers() {
                     </Link>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Search />
+                    <div className="max-md:hidden">
+                      <Search />
+                    </div>
 
                     <CustomDropdown
                       options={getUniqueValues("status")}
@@ -226,25 +228,30 @@ export default function ServiceUsers() {
                 {/* Table */}
                 <div className="mt-4 w-full">
                   <div className="mb-4 flex justify-between gap-4">
-                    <CustomDropdown
-                      options={getUniqueValues("name")}
-                      selectedOption={filters.name}
-                      onChange={(value) => handleFilterChange("name", value)}
-                      placeholder="Service User"
-                    />
+                    <div className="max-md:hidden">
+                      <CustomDropdown
+                        options={getUniqueValues("name")}
+                        selectedOption={filters.name}
+                        onChange={(value) => handleFilterChange("name", value)}
+                        placeholder="Service User"
+                      />
+                    </div>
                     <CustomDropdown
                       options={getUniqueValues("placement")}
                       selectedOption={filters.placement}
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <input
-                      type="date"
-                      name="date"
-                      value={filters.date}
-                      onChange={(e) => handleFilterChange("date", e.target.value)}
-                      className="rounded border px-4 py-2"
-                    />
+
+                    <div className="max-md:hidden">
+                      <input
+                        type="date"
+                        name="date"
+                        value={filters.date}
+                        onChange={(e) => handleFilterChange("date", e.target.value)}
+                        className="rounded border px-4 py-2"
+                      />
+                    </div>
                     <CustomDropdown
                       options={getUniqueValues("keyWorker")}
                       selectedOption={filters.keyWorker}
@@ -255,12 +262,12 @@ export default function ServiceUsers() {
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3"></th>
-                        <th className="p-3">Name of Placement</th>
-                        <th className="p-3">Postcode</th>
+                        <th className="p-3 max-md:hidden"></th>
+                        <th className="p-3 ">Name of Placement</th>
+                        <th className="p-3 max-md:hidden">Postcode</th>
                         <th className="p-3">Number of Rooms</th>
-                        <th className="p-3">Active Service Users</th>
-                        <th className="p-3">Location</th>
+                        <th className="p-3 max-md:hidden">Active Service Users</th>
+                        <th className="p-3 max-md:hidden">Location</th>
                         {/* <th className="p-3">Status</th> */}
                         <th className="p-3">Action</th>
                       </tr>
@@ -268,13 +275,13 @@ export default function ServiceUsers() {
                     <tbody>
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
-                          <td className="p-3 text-sm">
+                          <td className="p-3 text-sm max-md:hidden">
                             <MdCheckBoxOutlineBlank size={18} />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm">{row.placement}</td>
-                          <td className="p-3 text-sm">{row.date}</td>
-                          <td className="p-3 text-sm">{row.keyWorker}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
 
                           <td className="p-3 text-sm">{row.status}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
