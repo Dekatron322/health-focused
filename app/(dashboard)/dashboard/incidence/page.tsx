@@ -253,8 +253,10 @@ export default function IncidenceForm() {
                     >
                       <input {...getInputProps()} />
                       <FaCloudArrowUp className="text-3xl" />
-                      <p className="text-sm">Drag and Drop files here or Browse</p>
-                      <p className="text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
+                      <p className="text-center text-sm">Drag and Drop files here or Browse</p>
+                      <p className="px-3 text-center text-xs">
+                        Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX
+                      </p>
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {files.map((file) => (
