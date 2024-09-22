@@ -1,8 +1,8 @@
 "use client"
-import { useState, SetStateAction } from "react"
+import { useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
-import { IoIosArrowDropleft, IoIosArrowDropdown } from "react-icons/io"
+import { IoIosArrowDropdown, IoIosArrowDropleft } from "react-icons/io"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 
