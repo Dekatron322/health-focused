@@ -9,6 +9,7 @@ import { useDropzone, FileRejection } from "react-dropzone"
 import { FaCloudArrowUp } from "react-icons/fa6"
 import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Tab from "components/Search/Tab"
+import { Checkbox } from "@mui/material"
 
 // Extend the File type to include a preview property
 interface PreviewFile extends File {
@@ -161,7 +162,7 @@ export default function AddServiceUser() {
                 <input {...getInputProps()} />
                 <FaCloudArrowUp className="text-3xl" />
                 <p className="text-sm">Drag and Drop files here or Browse</p>
-                <p className="text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
+                <p className="px-2 text-center text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {files.map((file) => (
@@ -577,8 +578,8 @@ export default function AddServiceUser() {
                   style={{ width: "100%", background: "transparent" }}
                 ></textarea>
               </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
+              <div className="mt-2 flex  items-center ">
+                <Checkbox />
                 <p className="text-xs">Medical Registrations</p>
               </div>
             </div>
@@ -594,8 +595,8 @@ export default function AddServiceUser() {
                   style={{ width: "100%", background: "transparent" }}
                 ></textarea>
               </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
+              <div className="mt-2 flex  items-center ">
+                <Checkbox />
                 <p className="text-xs">In Education</p>
               </div>
             </div>
@@ -611,8 +612,8 @@ export default function AddServiceUser() {
                   style={{ width: "100%", background: "transparent" }}
                 ></textarea>
               </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
+              <div className="mt-2 flex  items-center ">
+                <Checkbox />
                 <p className="text-xs">Job Ready</p>
               </div>
             </div>
@@ -629,8 +630,8 @@ export default function AddServiceUser() {
                   style={{ width: "100%", background: "transparent" }}
                 ></textarea>
               </div>
-              <div className="mt-2 flex  items-center gap-2">
-                <MdCheckBoxOutlineBlank />
+              <div className="mt-2 flex  items-center ">
+                <Checkbox />
                 <p className="text-xs">Risk Assessed</p>
               </div>
             </div>
@@ -675,16 +676,16 @@ export default function AddServiceUser() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 flex flex-row  justify-center gap-3">
+            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
-              <div className=" mb-6 flex w-1/3  flex-col rounded-md border-[1px] p-4">
-                <div className="flex w-full justify-between">
+              <div className=" mb-6 flex flex-col  rounded-md border-[1px] p-4 md:w-1/3">
+                <div className="flex w-full items-center justify-between">
                   <p className="text-2xl">New Service User</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>

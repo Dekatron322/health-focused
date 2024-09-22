@@ -217,7 +217,7 @@ export default function Alerts() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 justify-center gap-3 max-md:px-3  md:flex md:flex-row">
+            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
