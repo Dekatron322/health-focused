@@ -1,13 +1,11 @@
 "use client"
-import { useState, SetStateAction } from "react"
+import { useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
-import { IoIosArrowDropleft, IoIosArrowDropdown } from "react-icons/io"
-import { FaCloudArrowUp } from "react-icons/fa6"
-import { useDropzone, FileRejection } from "react-dropzone"
+import { IoIosArrowDropleft } from "react-icons/io"
+import { useDropzone } from "react-dropzone"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import styles from "components/Dashboard/dashboard.module.css"
 
 // Extend the File type to include a preview property
 interface PreviewFile extends File {
@@ -58,15 +56,15 @@ export default function NewLogs() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 flex flex-row  justify-center gap-3">
+            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
-              <div className="mb-6 flex w-1/2 flex-col  gap-4 rounded-md border-[1px] ">
+              <div className="mb-6 flex flex-col gap-4  rounded-md border-[1px] md:w-1/2 ">
                 <div className="flex w-full justify-between p-4">
                   <div className="flex flex-row gap-3">
                     <Image
@@ -126,7 +124,7 @@ export default function NewLogs() {
                     <p className="text-xs">Martin’s Recipe Notes</p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between p-4">
+                <div className="items-center justify-between p-4 md:flex">
                   <p>Marked relevant for weekly report</p>
                   <div className="flex gap-4">
                     <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] p-2 text-xs">
