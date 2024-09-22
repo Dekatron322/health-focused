@@ -8,13 +8,13 @@ const page = () => {
     <>
       <section>
         <Navbar />
-        <div className="my-10  items-center justify-center">
+        <div className="paddings items-center justify-center md:my-10">
           <p className="text-center text-4xl">Select a plan that works for you</p>
 
-          <div className="mt-6  flex  items-center justify-center gap-10">
-            <div className="w-96 rounded-2xl  bg-[#0085FF]">
+          <div className="my-6  items-center  justify-center gap-10  md:flex">
+            <div className="rounded-2xl bg-[#0085FF]  md:w-96">
               <h5 className="p-4 text-center">Most Popular</h5>
-              <div className=" subscription w-96  rounded-xl border p-4">
+              <div className=" subscription rounded-xl  border p-4 md:w-96">
                 <p className="mb-3 font-extrabold">Basic Plan</p>
 
                 <p className="text-7xl font-extrabold text-[#69B7FF]">
@@ -57,9 +57,9 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-96 rounded-2xl  bg-[#0085FF]">
+            <div className="rounded-2xl bg-[#0085FF] max-md:mt-4  md:w-96">
               <h5 className="p-4 text-center">Most Popular</h5>
-              <div className=" subscription w-96  rounded-xl border p-4">
+              <div className=" subscription rounded-xl  border p-4 md:w-96">
                 <p className="mb-3 font-extrabold">Standard Plan</p>
 
                 <p className="text-7xl font-extrabold text-[#69B7FF]">
@@ -103,8 +103,8 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="paddings">
-            <div className="mt-6  flex  items-center  justify-between gap-10 rounded-xl bg-[#0085FF] p-10">
+          <div className="">
+            <div className="mt-6  items-center  justify-between  gap-10 rounded-xl bg-[#0085FF] max-md:p-4 md:flex md:p-10">
               <div>
                 <p className="text-4xl text-white">Select a plan that works for you</p>
                 <p className="text-white">Send us an email to book a demo or discuss your requirements</p>
