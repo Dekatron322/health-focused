@@ -217,15 +217,15 @@ export default function Alerts() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 flex flex-row justify-center gap-3">
+            <div className="mt-8 justify-center gap-3 max-md:px-3  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
-              <div className="mb-6 flex w-2/3 flex-col items-center gap-4 rounded-md border-[1px] p-4">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] p-4 md:w-2/3">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <p className="text-2xl">Alerts</p>
@@ -254,7 +254,9 @@ export default function Alerts() {
                       )}
                     </div>
                   </div>
-                  <Search />
+                  <div className="max-md:hidden">
+                    <Search />
+                  </div>
                 </div>
 
                 {/* Table */}
@@ -272,57 +274,65 @@ export default function Alerts() {
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <input
-                      type="date"
-                      name="date"
-                      value={filters.date}
-                      onChange={(e) => handleFilterChange("date", e.target.value)}
-                      className="rounded border px-4 py-2"
-                    />
-                    <CustomDropdown
-                      options={getUniqueValues("keyWorker")}
-                      selectedOption={filters.keyWorker}
-                      onChange={(value) => handleFilterChange("keyWorker", value)}
-                      placeholder="Key Worker"
-                    />
-                    <CustomDropdown
-                      options={getUniqueValues("alertType")}
-                      selectedOption={filters.alertType}
-                      onChange={(value) => handleFilterChange("alertType", value)}
-                      placeholder="Alert Type"
-                    />
-                    <CustomDropdown
-                      options={getUniqueValues("status")}
-                      selectedOption={filters.status}
-                      onChange={(value) => handleFilterChange("status", value)}
-                      placeholder="Status"
-                    />
+                    <div className="max-md:hidden">
+                      <input
+                        type="date"
+                        name="date"
+                        value={filters.date}
+                        onChange={(e) => handleFilterChange("date", e.target.value)}
+                        className="rounded border px-4 py-2 "
+                      />
+                    </div>
+                    <div className="max-md:hidden">
+                      <CustomDropdown
+                        options={getUniqueValues("keyWorker")}
+                        selectedOption={filters.keyWorker}
+                        onChange={(value) => handleFilterChange("keyWorker", value)}
+                        placeholder="Key Worker"
+                      />
+                    </div>
+                    <div className="max-md:hidden">
+                      <CustomDropdown
+                        options={getUniqueValues("alertType")}
+                        selectedOption={filters.alertType}
+                        onChange={(value) => handleFilterChange("alertType", value)}
+                        placeholder="Alert Type"
+                      />
+                    </div>
+                    <div className="max-md:hidden">
+                      <CustomDropdown
+                        options={getUniqueValues("status")}
+                        selectedOption={filters.status}
+                        onChange={(value) => handleFilterChange("status", value)}
+                        placeholder="Status"
+                      />
+                    </div>
                   </div>
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3"></th>
-                        <th className="p-3">Service User</th>
-                        <th className="p-3">Placement</th>
-                        <th className="p-3">Date</th>
-                        <th className="p-3">Key Worker</th>
-                        <th className="p-3">Alert Type</th>
-                        <th className="p-3">Status</th>
+                        <th className="p-3 max-md:hidden"></th>
+                        <th className="max-md:text-sm md:p-3">Service User</th>
+                        <th className="max-md:text-sm md:p-3">Placement</th>
+                        <th className="p-3 max-md:hidden">Date</th>
+                        <th className="p-3 max-md:hidden">Key Worker</th>
+                        <th className="max-md:text-sm md:p-3">Alert Type</th>
+                        <th className="p-3 max-md:hidden">Status</th>
                         <th className="p-3">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
-                          <td className="p-3 text-sm">
+                          <td className="p-3 text-sm max-md:hidden">
                             <Checkbox className="checkboxes" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm">{row.placement}</td>
-                          <td className="p-3 text-sm">{row.date}</td>
-                          <td className="p-3 text-sm">{row.keyWorker}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
                           <td className="p-3 text-sm">{row.alertType}</td>
-                          <td className="p-3 text-sm">{row.status}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.status}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
