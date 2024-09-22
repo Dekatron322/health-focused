@@ -1,13 +1,12 @@
 "use client"
-import { useState, SetStateAction } from "react"
+import { useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
-import { IoIosArrowDropleft, IoIosArrowDropdown, IoIosAddCircleOutline } from "react-icons/io"
+import { IoIosArrowDropdown, IoIosArrowDropleft } from "react-icons/io"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { useDropzone, FileRejection } from "react-dropzone"
-import { FaCloudArrowUp } from "react-icons/fa6"
-import { MdCheckBoxOutlineBlank, MdOutlineCheckBoxOutlineBlank } from "react-icons/md"
+import { useDropzone } from "react-dropzone"
+import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md"
 import Tab from "components/Search/Tab"
 
 // Extend the File type to include a preview property
