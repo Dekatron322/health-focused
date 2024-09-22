@@ -36,7 +36,7 @@ export default function Auth() {
               className="flex w-full items-center justify-center gap-3 rounded-md border p-2 text-center font-bold"
               href="/signup"
             >
-              <PiDevicesLight /> Don't have an account Sign Up
+              <PiDevicesLight /> Don&lsquo;t have an account Sign Up
             </Link>
             <Link
               className="flex w-full items-center justify-center gap-3 rounded-md border p-2 text-center font-bold"
@@ -51,7 +51,7 @@ export default function Auth() {
               className="flex w-full items-center justify-between gap-3 border-b  border-t p-2 text-center max-md:px-4"
               href="/signup"
             >
-              <p>Don't have an account </p>
+              <p>Don&lsquo;t have an account </p>
               <p className="text-bold text-blue-700">Sign Up</p>
             </Link>
             <Link

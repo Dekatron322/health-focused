@@ -41,8 +41,8 @@ const Page = () => {
                 Interested in talking to us?
               </h5>
               <p className="text-xl max-md:mb-3">
-                From questions about pricing to one-on-one personalized<br></br> demos, we'd love to connect and help
-                get you started.
+                From questions about pricing to one-on-one personalized<br></br> demos, we&lsquo;d love to connect and
+                help get you started.
               </p>
             </div>
             <div
