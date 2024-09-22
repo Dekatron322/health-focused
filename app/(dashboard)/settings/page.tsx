@@ -1,17 +1,11 @@
 "use client"
-import { useState, SetStateAction } from "react"
+import { useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
-import {
-  IoIosArrowDropleft,
-  IoIosArrowDropdown,
-  IoIosAddCircleOutline,
-  IoMdArrowBack,
-  IoMdArrowForward,
-} from "react-icons/io"
+import { IoMdArrowBack, IoIosArrowDropleft, IoMdArrowForward } from "react-icons/io"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { useDropzone, FileRejection } from "react-dropzone"
+import { useDropzone } from "react-dropzone"
 import { FaCloudArrowUp } from "react-icons/fa6"
 import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Tab from "components/Search/Tab"
