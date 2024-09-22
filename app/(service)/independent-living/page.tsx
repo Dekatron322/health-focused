@@ -198,16 +198,16 @@ export default function MonthlyReport() {
         return (
           <form className="mt-4 flex w-full flex-col ">
             <div className="mb-3 flex w-full  justify-end gap-5">
-              <p className="text-end">Basic</p>
-              <p className="text-end">Intermediate</p>
-              <p className="text-end">Advanced</p>
-              <p className="text-end">Exceptional</p>
+              <p className="text-end max-md:text-xs">Basic</p>
+              <p className="text-end max-md:text-xs">Intermediate</p>
+              <p className="text-end max-md:text-xs">Advanced</p>
+              <p className="text-end max-md:text-xs">Exceptional</p>
             </div>
 
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Money Management and Consumer Awareness</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -218,7 +218,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Food Management</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -229,7 +229,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Personal Appearance and hygiene</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -239,7 +239,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Health</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -249,7 +249,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Housekeeping</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -259,7 +259,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Housing</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -269,7 +269,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Transportation</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -279,7 +279,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Education planning</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -289,7 +289,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Job seeking skills</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -299,7 +299,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Job maintenance skills</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -309,7 +309,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Emergency and Safety Skills</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -319,7 +319,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Knowledge of Community Resources</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -329,7 +329,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Interpersonal skills</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -339,7 +339,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Legal issues</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -349,7 +349,7 @@ export default function MonthlyReport() {
             <div className="mb-3 border"></div>
             <div className="mb-3 flex w-full items-center  justify-between">
               <p className="text-sm">Pregnancy, Parenting and Child Care (CONTINUED)</p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-md:gap-4">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
@@ -373,17 +373,17 @@ export default function MonthlyReport() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 flex flex-row  justify-center gap-3">
+            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
-              <div className=" mb-6 flex w-[45%] flex-col rounded-md border-[1px] p-4">
-                <div className="flex w-full justify-between">
-                  <p className="text-2xl">New Monthly Report</p>
+              <div className=" mb-6 flex flex-col rounded-md border-[1px] p-4 md:w-[45%]">
+                <div className="flex w-full items-center justify-between">
+                  <p className="md:text-2xl">New Monthly Report</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <div className="flex w-full justify-between">
