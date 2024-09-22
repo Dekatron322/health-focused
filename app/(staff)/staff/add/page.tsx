@@ -361,15 +361,15 @@ export default function AddStaff() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 flex flex-row  justify-center gap-3">
+            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
-              <div className=" mb-6 flex w-1/3  flex-col rounded-md border-[1px] p-4">
+              <div className=" mb-6 flex flex-col  rounded-md border-[1px] p-4 md:w-1/3">
                 <div className="flex w-full justify-between">
                   <p className="text-2xl">New Staff</p>
                   <p className="text-xs">25 January 2024</p>
