@@ -194,10 +194,10 @@ export default function AddServiceUser() {
 
             <div className="my-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
-                Young person's thoughts and feedback about their present care provision?
+                Young person&apos;s thoughts and feedback about their present care provision?
               </label>
               <p className="mb-3 text-xs">
-                Staff guide: Please interview the young person to find out what they know about the care expectations
+                Staff guide: Please interview the young person to find out what they know about the care expectations
                 they are entitled to as provided by the care home.
               </p>
               <div className="textarea-field ">
@@ -215,7 +215,7 @@ export default function AddServiceUser() {
                 What are the known risks associated with the young person?
               </label>
               <p className="mb-3 text-xs">
-                Staff guide: Please list in summary the identified risks the young person is exposed to and what are the
+                Staff guide: Please list in summary the identified risks the young person is exposed to and what are the
                 risks the young person may bring to the other residents at the care home
               </p>
               <div className="textarea-field ">
@@ -233,7 +233,7 @@ export default function AddServiceUser() {
                 Current standard of compliance and cooperation
               </label>
               <p className="mb-3 text-xs">
-                Staff guide: Describe the level of cooperation and compliance demonstrated by the young person in terms
+                Staff guide: Describe the level of cooperation and compliance demonstrated by the young person in terms
                 of abiding by the rules of the home and the response to supervised support from duty support workers and
                 management. Does the child display a rebellious , non -compliant attitude to staff correction, requests
                 or supervision
@@ -276,11 +276,11 @@ export default function AddServiceUser() {
                   General state of physical health
                 </label>
                 <p className="mb-3 text-xs">
-                  Staff guide: Add details of any incident that has affected the young person's affect negatively or
-                  positively. Are there new developments around an existing medical condition? Also include the health
-                  affecting use of any substance abuse, drugs alcohol or excessive smoking. Describe measures taken to
-                  counter any form of compromise to the young person's health. Include details of any developments in an
-                  existing health issue or disability.
+                  Staff guide: Add details of any incident that has affected the young person&apos;s affect negatively
+                  or positively. Are there new developments around an existing medical condition? Also include the
+                  health affecting use of any substance abuse, drugs alcohol or excessive smoking. Describe measures
+                  taken to counter any form of compromise to the young person's health. Include details of any
+                  developments in an existing health issue or disability.
                 </p>
                 <div className="textarea-field ">
                   <textarea
@@ -339,10 +339,10 @@ export default function AddServiceUser() {
 
               <div className="my-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
-                   Emotional Wellbeing
+                  Emotional Wellbeing
                 </label>
                 <p className="mb-3 text-xs">
-                  Staff guide: Describe in summary the state of the young persons emotional health. How the young person
+                  Staff guide: Describe in summary the state of the young persons emotional health. How the young person
                   is coping mentally with challenges and difficult situations. Is the young person exhibiting any form
                   of outbursts, symptoms of depression, anxiety, fear or worry? Is the young person showing anger and
                   frustration? Is the young person moody or aggressive? Include any use of medicinal effects, drugs or
@@ -419,7 +419,7 @@ export default function AddServiceUser() {
                   If no, what are the barriers preventing this?
                 </label>
                 <p className="mb-3 text-xs">
-                  Staff guide: Include self made barriers, external influence or whatever acts as a factor preventing
+                  Staff guide: Include self made barriers, external influence or whatever acts as a factor preventing
                   the education/training progress planned for the young person.
                 </p>
                 <div className="textarea-field ">
@@ -437,7 +437,7 @@ export default function AddServiceUser() {
                   What actions were taken?
                 </label>
                 <p className="mb-3 text-xs">
-                  Staff guide: Include details of attempts to support the young persons progress in education or
+                  Staff guide: Include details of attempts to support the young persons progress in education or
                   qualification based training. What steps have been made to remove barriers preventing the progress of
                   the education plan.
                 </p>
@@ -456,7 +456,7 @@ export default function AddServiceUser() {
                   If the PEP target were reached, list them
                 </label>
                 <p className="mb-3 text-xs">
-                  Staff guide: list milestones for PEP targets, this would usually be dates for enrolment, progress made
+                  Staff guide: list milestones for PEP targets, this would usually be dates for enrolment, progress made
                   to a higher level or class, completion of a course or an aspect of it. Getting a young person to start
                   a course or class attendance where there has been previous resistance.
                 </p>
@@ -509,7 +509,8 @@ export default function AddServiceUser() {
                 <div className="flex w-full  items-end justify-between gap-2">
                   <div className="mb-3 flex w-full flex-col items-start">
                     <p className="label-title">
-                      Has there been any internal or fixed term exclusions, if 'yes' provide date/s and reason/s
+                      Has there been any internal or fixed term exclusions, if &apos;yes&apos; provide date/s and
+                      reason/s
                     </p>
                   </div>
                   <div className="mb-3 flex w-full flex-col items-start">
