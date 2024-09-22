@@ -34,13 +34,13 @@ const Page = () => {
     <>
       <section>
         <Navbar />
-        <div className="paddings my-10 items-center justify-center">
-          <div className="mt-6 flex justify-between gap-16">
+        <div className="paddings   items-center justify-center">
+          <div className="justify-between md:mt-6 md:flex md:gap-16">
             <div className="sticky top-4" style={{ alignSelf: "flex-start" }}>
-              <h5 className="inter-font font-bold leading-[60px] max-md:px-4 max-md:text-[24px] md:text-[60px]">
+              <h5 className="inter-font font-bold leading-[60px]  max-md:text-[24px] md:text-[60px]">
                 Interested in talking to us?
               </h5>
-              <p className="text-xl">
+              <p className="text-xl max-md:mb-3">
                 From questions about pricing to one-on-one personalized<br></br> demos, we'd love to connect and help
                 get you started.
               </p>
@@ -54,13 +54,11 @@ const Page = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="p-10">
-                <h5 className="inter-font font-bold text-[#ffffff] max-md:px-4 max-md:text-[24px] md:text-[24px]">
-                  Contact Us
-                </h5>
+              <div className="max-md:p-5 md:p-10">
+                <h5 className="inter-font font-bold text-[#ffffff]  max-md:text-[24px] md:text-[24px]">Contact Us</h5>
 
-                <div className="flex flex-col items-center justify-center gap-16 max-md:mt-6 md:mt-12">
-                  <form className="flex w-full flex-col max-md:px-4">
+                <div className="flex flex-col items-center justify-center  max-md:mt-6 md:mt-12">
+                  <form className="flex w-full flex-col">
                     <div className="mb-6 flex w-full flex-col items-start">
                       <label htmlFor="adminName" className="label-title text-[#ffffff]">
                         Your Name

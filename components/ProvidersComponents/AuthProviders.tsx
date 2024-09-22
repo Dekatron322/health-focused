@@ -4,7 +4,7 @@ import { Button } from "components/Button/Button"
 
 const AuthProviders = () => {
   return (
-    <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
+    <Button href="/signin" className="mr-3">
       Login
     </Button>
   )

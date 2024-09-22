@@ -32,7 +32,7 @@ const Navbar = () => {
         {session ? (
           <>
             UserPhoto
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
+            <Button href="#" className="mr-3">
               go to dashboard
             </Button>
           </>
