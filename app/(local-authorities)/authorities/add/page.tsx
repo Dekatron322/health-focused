@@ -57,17 +57,17 @@ export default function NewLogs() {
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 flex flex-row  justify-center gap-3">
+            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
-                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
+                className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 GO BACK
               </button>
-              <div className="mb-6 flex w-1/3 flex-col items-center gap-4 rounded-md border-[1px] p-4">
-                <div className="flex w-full justify-between">
-                  <p className="text-2xl">New Local Authority</p>
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] p-4 md:w-1/3">
+                <div className="flex w-full items-center justify-between">
+                  <p className="text-2xl max-md:text-xl">New Local Authority</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <form className=" flex w-full flex-col ">
@@ -145,7 +145,9 @@ export default function NewLogs() {
                       <input {...getInputProps()} />
                       <FaCloudArrowUp className="text-3xl" />
                       <p className="text-sm">Drag and Drop files here or Browse</p>
-                      <p className="text-xs">Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX</p>
+                      <p className="px-2 text-center text-xs">
+                        Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX
+                      </p>
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {files.map((file) => (
