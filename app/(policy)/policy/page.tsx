@@ -204,7 +204,7 @@ export default function ServiceUsers() {
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
                   </div>
-                  <div className=" grid grid-cols-3 gap-3">
+                  <div className="my-3 grid gap-3 md:grid-cols-3">
                     <PolicyDocument />
                   </div>
                 </div>
