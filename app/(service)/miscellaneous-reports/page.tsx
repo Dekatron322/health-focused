@@ -15,6 +15,7 @@ import { Transactions } from "components/AccountDetails/Transactions"
 import Services from "components/Dashboard/ServiceUsers"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
+import { Checkbox } from "@mui/material"
 
 // Define the structure of a table row
 interface TableRow {
@@ -178,7 +179,7 @@ export default function PepPlanReport() {
               <DashboardNav />
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16">
+            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
@@ -190,7 +191,7 @@ export default function PepPlanReport() {
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 max-md:hidden">
                     <Search />
                   </div>
                 </div>
@@ -210,42 +211,46 @@ export default function PepPlanReport() {
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <input
-                      type="date"
-                      name="date"
-                      value={filters.date}
-                      onChange={(e) => handleFilterChange("date", e.target.value)}
-                      className="rounded border px-4 py-2"
-                    />
-                    <CustomDropdown
-                      options={getUniqueValues("keyWorker")}
-                      selectedOption={filters.keyWorker}
-                      onChange={(value) => handleFilterChange("keyWorker", value)}
-                      placeholder="Key Worker"
-                    />
+                    <div className="max-md:hidden">
+                      <input
+                        type="date"
+                        name="date"
+                        value={filters.date}
+                        onChange={(e) => handleFilterChange("date", e.target.value)}
+                        className="rounded border px-4 py-2"
+                      />
+                    </div>
+                    <div className="max-md:hidden">
+                      <CustomDropdown
+                        options={getUniqueValues("keyWorker")}
+                        selectedOption={filters.keyWorker}
+                        onChange={(value) => handleFilterChange("keyWorker", value)}
+                        placeholder="Key Worker"
+                      />
+                    </div>
                   </div>
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3"></th>
-                        <th className="p-3">Name of Document</th>
-                        <th className="p-3">Creation Date</th>
-                        <th className="p-3">Plan Date</th>
-                        <th className="p-3">Created by</th>
+                        <th className="p-3 max-md:hidden"></th>
+                        <th className="p-3 max-md:text-sm">Name of Document</th>
+                        <th className="p-3 max-md:hidden">Creation Date</th>
+                        <th className="p-3 max-md:text-sm">Plan Date</th>
+                        <th className="p-3 max-md:hidden">Created by</th>
 
-                        <th className="p-3">Action</th>
+                        <th className="p-3 max-md:text-sm">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
-                          <td className="p-3 text-sm">
-                            <MdCheckBoxOutlineBlank size={18} />
+                          <td className="p-3 text-sm max-md:hidden">
+                            <Checkbox />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm">{row.placement}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
                           <td className="p-3 text-sm">{row.date}</td>
-                          <td className="p-3 text-sm">{row.keyWorker}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
