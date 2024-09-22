@@ -208,7 +208,7 @@ export default function ServiceUsers() {
               </div>
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16">
+            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
@@ -221,7 +221,9 @@ export default function ServiceUsers() {
                     </Link>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Search />
+                    <div className="max-md:hidden">
+                      <Search />
+                    </div>
 
                     <CustomDropdown
                       options={getUniqueValues("status")}
@@ -241,25 +243,30 @@ export default function ServiceUsers() {
                       onChange={(value) => handleFilterChange("name", value)}
                       placeholder="Service User"
                     />
+
                     <CustomDropdown
                       options={getUniqueValues("placement")}
                       selectedOption={filters.placement}
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <input
-                      type="date"
-                      name="date"
-                      value={filters.date}
-                      onChange={(e) => handleFilterChange("date", e.target.value)}
-                      className="rounded border px-4 py-2"
-                    />
-                    <CustomDropdown
-                      options={getUniqueValues("keyWorker")}
-                      selectedOption={filters.keyWorker}
-                      onChange={(value) => handleFilterChange("keyWorker", value)}
-                      placeholder="Key Worker"
-                    />
+                    <div className="max-md:hidden">
+                      <input
+                        type="date"
+                        name="date"
+                        value={filters.date}
+                        onChange={(e) => handleFilterChange("date", e.target.value)}
+                        className="rounded border px-4 py-2"
+                      />
+                    </div>
+                    <div className="max-md:hidden">
+                      <CustomDropdown
+                        options={getUniqueValues("keyWorker")}
+                        selectedOption={filters.keyWorker}
+                        onChange={(value) => handleFilterChange("keyWorker", value)}
+                        placeholder="Key Worker"
+                      />
+                    </div>
                     <CustomDropdown
                       options={getUniqueValues("localAuthority")}
                       selectedOption={filters.localAuthority}
@@ -270,28 +277,28 @@ export default function ServiceUsers() {
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3"></th>
+                        <th className="p-3 max-md:hidden"></th>
                         <th className="p-3">Service User</th>
-                        <th className="p-3">Placement</th>
-                        <th className="p-3">Date</th>
-                        <th className="p-3">Key Worker</th>
-                        <th className="p-3">Alert Type</th>
-                        <th className="p-3">Status</th>
+                        <th className="p-3 max-md:hidden">Placement</th>
+                        <th className="p-3 max-md:hidden">Date</th>
+                        <th className="p-3 max-md:hidden">Key Worker</th>
+                        <th className="p-3 ">Alert Type</th>
+                        <th className="p-3 max-md:hidden">Status</th>
                         <th className="p-3">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
-                          <td className="p-3 text-sm">
+                          <td className="p-3 text-sm max-md:hidden">
                             <Checkbox className="checkboxes" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm">{row.placement}</td>
-                          <td className="p-3 text-sm">{row.date}</td>
-                          <td className="p-3 text-sm">{row.keyWorker}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
                           <td className="p-3 text-sm">{row.localAuthority}</td>
-                          <td className="p-3 text-sm">{row.status}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.status}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
