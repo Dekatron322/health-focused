@@ -173,7 +173,7 @@ export default function LACReports() {
               <DashboardNav />
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16">
+            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
@@ -182,7 +182,7 @@ export default function LACReports() {
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 max-md:hidden">
                     <Search />
                   </div>
                 </div>
@@ -202,28 +202,32 @@ export default function LACReports() {
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <input
-                      type="date"
-                      name="date"
-                      value={filters.date}
-                      onChange={(e) => handleFilterChange("date", e.target.value)}
-                      className="rounded border px-4 py-2"
-                    />
-                    <CustomDropdown
-                      options={getUniqueValues("keyWorker")}
-                      selectedOption={filters.keyWorker}
-                      onChange={(value) => handleFilterChange("keyWorker", value)}
-                      placeholder="Key Worker"
-                    />
+                    <div className="max-md:hidden">
+                      <input
+                        type="date"
+                        name="date"
+                        value={filters.date}
+                        onChange={(e) => handleFilterChange("date", e.target.value)}
+                        className="rounded border px-4 py-2"
+                      />
+                    </div>
+                    <div className="max-md:hidden">
+                      <CustomDropdown
+                        options={getUniqueValues("keyWorker")}
+                        selectedOption={filters.keyWorker}
+                        onChange={(value) => handleFilterChange("keyWorker", value)}
+                        placeholder="Key Worker"
+                      />
+                    </div>
                   </div>
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3"></th>
-                        <th className="p-3">Name of Document</th>
-                        <th className="p-3">Creation Date</th>
-                        <th className="p-3">Plan Date</th>
-                        <th className="p-3">Created by</th>
+                        <th className="p-3 max-md:hidden"></th>
+                        <th className="p-3 max-md:text-sm">Name of Document</th>
+                        <th className="p-3 max-md:hidden">Creation Date</th>
+                        <th className="p-3 max-md:hidden">Plan Date</th>
+                        <th className="p-3 max-md:text-sm">Created by</th>
 
                         <th className="p-3">Action</th>
                       </tr>
@@ -231,12 +235,12 @@ export default function LACReports() {
                     <tbody>
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
-                          <td className="p-3 text-sm">
+                          <td className="p-3 text-sm max-md:hidden">
                             <Checkbox className="checkboxes" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm">{row.placement}</td>
-                          <td className="p-3 text-sm">{row.date}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
                           <td className="p-3 text-sm">{row.keyWorker}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
