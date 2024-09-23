@@ -314,23 +314,14 @@ const SkillsProgress = () => {
   const labels = skills.map((skill) => skill.name)
 
   const data = {
-    labels,
+    labels: ["Skill 1", "Skill 2", "Skill 3", "Skill 4"],
     datasets: [
       {
-        type: "bar" as const,
-        label: "Progress",
-        data: skills.map((skill) => skill.progress),
-        backgroundColor: "rgba(54, 162, 235, 0.6)",
-        borderColor: "rgba(54, 162, 235, 1)",
+        label: "Actual Progress",
+        data: [85, 75, 90, 70],
+        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
-      },
-      {
-        type: "line" as const,
-        label: "Target",
-        data: skills.map((skill) => skill.target),
-        fill: false,
-        borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 2,
       },
     ],
   }
