@@ -13,8 +13,8 @@ import {
   CategoryScale,
   Chart as ChartJS,
   LineController,
-  LineElement,
   LinearScale,
+  LineElement,
   PointElement,
 } from "chart.js"
 import styles from "../../components/Dashboard/dashboard.module.css"
