@@ -1,25 +1,25 @@
 "use client"
 import React, { useState } from "react"
-import styles from "../../components/Dashboard/dashboard.module.css"
-import { Asset } from "utils"
 import Image from "next/image"
-import { IoAddCircleOutline } from "react-icons/io5"
-import Search from "components/Search/Search"
-import { TbEdit } from "react-icons/tb"
 import Link from "next/link"
+import { IoAddCircleOutline } from "react-icons/io5"
 import { LuMail } from "react-icons/lu"
 import { MdLocalPrintshop, MdOutlineCheckBoxOutlineBlank, MdOutlineLocalPrintshop, MdOutlineMail } from "react-icons/md"
+import { TbEdit } from "react-icons/tb"
 import { Bar } from "react-chartjs-2"
 import {
-  Chart as ChartJS,
   BarController,
   BarElement,
   CategoryScale,
+  Chart as ChartJS,
   LineController,
   LineElement,
   LinearScale,
   PointElement,
 } from "chart.js"
+import styles from "../../components/Dashboard/dashboard.module.css"
+import Search from "components/Search/Search"
+import { Asset } from "utils"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, LineController, BarController)
 

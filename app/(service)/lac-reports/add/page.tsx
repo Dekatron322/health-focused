@@ -279,7 +279,7 @@ export default function AddServiceUser() {
                   Staff guide: Add details of any incident that has affected the young person&apos;s affect negatively
                   or positively. Are there new developments around an existing medical condition? Also include the
                   health affecting use of any substance abuse, drugs alcohol or excessive smoking. Describe measures
-                  taken to counter any form of compromise to the young person's health. Include details of any
+                  taken to counter any form of compromise to the young person&apos;s health. Include details of any
                   developments in an existing health issue or disability.
                 </p>
                 <div className="textarea-field ">

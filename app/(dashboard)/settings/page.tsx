@@ -2,7 +2,7 @@
 import { useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
-import { IoMdArrowBack, IoIosArrowDropleft, IoMdArrowForward } from "react-icons/io"
+import { IoIosArrowDropleft, IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { useDropzone } from "react-dropzone"
