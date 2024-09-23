@@ -247,7 +247,7 @@ const Events = () => {
                                 <div
                                   key={day.toString()}
                                   className={classNames(
-                                    dayIdx === 0 && colStartClasses[getDay(day)],
+                                    dayIdx === 0 && (colStartClasses[getDay(day)] || ""),
                                     getDay(day) === 0 && "text-[#780000]",
                                     ""
                                   )}
