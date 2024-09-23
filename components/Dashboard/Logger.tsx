@@ -12,8 +12,8 @@ import {
   BarElement,
   CategoryScale,
   Chart as ChartJS,
-  LineController,
   LinearScale,
+  LineController,
   LineElement,
   PointElement,
 } from "chart.js"
