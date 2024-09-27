@@ -221,7 +221,7 @@ export default function ServiceUsers() {
                     </Link>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <Search />
                     </div>
 
@@ -259,7 +259,7 @@ export default function ServiceUsers() {
                         className="rounded border px-4 py-2"
                       />
                     </div>
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <CustomDropdown
                         options={getUniqueValues("keyWorker")}
                         selectedOption={filters.keyWorker}
