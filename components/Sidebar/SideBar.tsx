@@ -10,7 +10,7 @@ const SideBar = () => {
   const [loading, setLoading] = useState(true)
   setTimeout(() => setLoading(false), 5000)
   return (
-    <div className="sidebar flex h-full flex-col justify-between overflow-auto border-0 border-black ">
+    <div className="sidebar flex h-full flex-col justify-between overflow-auto border-0 border-black max-md:hidden ">
       <div className="h-full justify-between border-0 border-red-700 lg:mt-6 lg:h-auto lg:space-y-8">
         <div className="hidden border-0 border-white px-7 lg:block">
           <Link href="/">

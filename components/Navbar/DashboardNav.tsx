@@ -4,8 +4,13 @@ import axios from "axios"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 import { usePathname, useRouter } from "next/navigation"
-import { MdAccountCircle } from "react-icons/md"
-import { RiLogoutCircleRLine } from "react-icons/ri"
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined"
+import { VscPerson } from "react-icons/vsc"
+import { FaHouseChimneyWindow } from "react-icons/fa6"
+import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined"
+import { PiBankBold } from "react-icons/pi"
+import { IoDocumentTextOutline } from "react-icons/io5"
+import { IoSettingsOutline } from "react-icons/io5"
 import { BiMessageDetail } from "react-icons/bi"
 import { IoIosArrowDown, IoIosNotificationsOutline, IoMdAddCircleOutline, IoMdLock, IoMdSearch } from "react-icons/io"
 
@@ -14,6 +19,7 @@ import { RxCross2 } from "react-icons/rx"
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft"
 import Link from "next/link"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import { LuLogOut } from "react-icons/lu"
 
 interface UserDetails {
   id: number
@@ -169,7 +175,7 @@ const DashboardNav: React.FC = () => {
 
             <div className="flex cursor-pointer items-center gap-1">
               <div
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#46ffa6]"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#000000]"
                 onClick={handleProfileClick}
               >
                 <p className="text-[#000000]">{firstLetter}</p>
@@ -182,18 +188,13 @@ const DashboardNav: React.FC = () => {
       <nav className="block border-b  px-16 py-4 max-md:px-3 md:hidden">
         <div className="flex items-center justify-between">
           <FormatAlignLeftIcon onClick={toggleNav} style={{ cursor: "pointer" }} />
-          <Link href="/" className="icon-style content-center">
-            <Image src="/ic_logo.svg" width={150} height={43} alt="dekalo" />
-          </Link>
-          <Link href="/" className="dark-icon-style content-center">
-            <Image src="/dark_logo.svg" width={150} height={43} alt="dekalo" />
-          </Link>
+
           <div className="redirect flex h-[50px] items-center justify-center gap-1 rounded-full px-1">
             <div
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#46ffa6]"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#044982]"
               onClick={handleProfileClick}
             >
-              <p className="text-[#000000]">{firstLetter}</p>
+              <p className="text-[#ffffff]">{firstLetter}</p>
             </div>
             <KeyboardArrowDownIcon />
           </div>
@@ -206,85 +207,57 @@ const DashboardNav: React.FC = () => {
           }`}
         >
           <div className="flex items-center justify-between p-4 pt-6">
-            <Image className="" src="/alternate.svg" height={80} width={80} alt="" />
+            <Link href="/">
+              <div className="flex items-center gap-2">
+                <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
+                <p className="inter-font font-extrabold text-[#fff] max-md:px-0 max-md:text-center max-md:text-[18px]  md:text-lg">
+                  Health Focused{" "}
+                </p>
+              </div>
+            </Link>
             <RxCross2 className="text-white" onClick={toggleNav} style={{ cursor: "pointer" }} />
           </div>
           <div className="mt-4 flex flex-col items-start space-y-2 p-4">
-            <Link href="/dashboard" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/dashboard")}`}>
-              <Image
-                src={getNavImageSrc("/dashboard", "/Graph.svg", "/Graph-active.svg")}
-                width={20}
-                height={20}
-                alt="avatar"
-              />
-              <p className="mt-1">Dashboard</p>
+            <Link href="/dashboard" className={`flex items-center  gap-2 pb-4 ${getNavLinkClass("/dashboard")}`}>
+              <DashboardOutlinedIcon className="text-lg" />
+              <p>Dashboard</p>
             </Link>
 
-            <Link href="/departments" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/departments")}`}>
-              <Image
-                src={getNavImageSrc("/departments", "/departments.svg", "/departments-active.svg")}
-                width={20}
-                height={20}
-                alt="avatar"
-              />
-              <p className="mt-1">Departments</p>
+            <Link href="/service-users" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/service-users")}`}>
+              <VscPerson className="text-lg" size={18} />
+              <p>Service Users</p>
             </Link>
-            <Link href="/appointments" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/appointments")}`}>
-              <Image
-                src={getNavImageSrc("/appointments", "/appointments.svg", "/appointments-active.svg")}
-                width={20}
-                height={20}
-                alt="avatar"
-              />
-              <p className="mt-1">Appointments</p>
+            <Link href="/placement" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/appointments")}`}>
+              <FaHouseChimneyWindow className="text-lg" size={18} />
+              <p>Placement</p>
             </Link>
 
             <Link href="/staff" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/staff")}`}>
-              <Image
-                src={getNavImageSrc("/staff", "/admin.svg", "/admin-active.svg")}
-                width={20}
-                height={20}
-                alt="avatar"
-              />
-              <p className="mt-1">Staff</p>
+              <BadgeOutlinedIcon className="text-lg" />
+              <p>Staff</p>
             </Link>
 
-            <Link href="/patients" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/patients")}`}>
-              <Image
-                src={getNavImageSrc("/patients", "/appointments.svg", "/appointments-active.svg")}
-                width={20}
-                height={20}
-                alt="avatar"
-              />
-              <p className="mt-1">Patients</p>
+            <Link href="/authorities" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/patients")}`}>
+              <PiBankBold className="text-lg" size={18} />
+              <p>Local Authorities</p>
             </Link>
 
-            <Link href="/finance" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/finance")}`}>
-              <Image
-                src={getNavImageSrc("/finance", "/finance.svg", "/finance-active.svg")}
-                width={20}
-                height={20}
-                alt="avatar"
-              />
-              <p className="mt-1">Finance</p>
+            <Link href="/policy" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/finance")}`}>
+              <IoDocumentTextOutline className="text-lg" size={18} />
+              <p>Policy</p>
             </Link>
 
-            <Link href="/admissions" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/admissions")}`}>
-              <Image
-                src={getNavImageSrc("/admissions", "/departments.svg", "/departments-active.svg")}
-                width={20}
-                height={20}
-                alt="avatar"
-              />
-              <p className="mt-1">Admissions</p>
+            <Link href="/settings" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/admissions")}`}>
+              <IoSettingsOutline className="text-lg" />
+              <p>Settings</p>
             </Link>
 
             <button
               onClick={handleLogoutClick}
               className="fixed bottom-2 mt-10 flex items-center gap-2 pb-4 text-white"
             >
-              <Image src="/logout.svg" width={20} height={20} alt="logout" />
-              <p className="mt-1">Logout</p>
+              <LuLogOut className="text-lg" />
+              <p>Logout</p>
             </button>
           </div>
         </div>
