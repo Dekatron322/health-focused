@@ -23,7 +23,7 @@ export const Assets = () => {
   ]
 
   return (
-    <div className={styles.assets}>
+    <div>
       <div className="flex items-center justify-between gap-3 py-3 sm:px-4">
         <Link
           href="/dashboard/new-logs"

@@ -75,7 +75,7 @@ export const SkillsInfo = () => {
                         </div>
                         <div className="flex flex-col items-end">
                           <p className="text-xs text-black">{item.status}</p>
-                          <p className="text-lg font-bold text-black">{item.time}</p>
+                          <p className="whitespace-nowrap text-lg font-bold text-black">{item.time}</p>
                           <p className="text-xs text-black">{item.date}</p>
                         </div>
                       </div>
@@ -129,12 +129,12 @@ export const SkillsInfo = () => {
                         <div className="flex items-center justify-center gap-2">
                           <div>
                             <p className="text-xs font-medium text-black">{item.user}</p>
-                            <p className="font-bold text-black">{item.name}</p>
+                            <p className="text-sm font-bold text-black">{item.name}</p>
                           </div>
                         </div>
                         <div className="flex flex-col items-end">
                           <p className="text-xs text-black">{item.date}</p>
-                          <p className="text-lg font-bold text-black">{item.time}</p>
+                          <p className="whitespace-nowrap text-lg font-bold text-black">{item.time}</p>
                         </div>
                       </div>
                     </div>

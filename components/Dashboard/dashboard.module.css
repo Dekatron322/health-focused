@@ -71,10 +71,6 @@
 }
 
 .assets {
-  flex: 1;
-  border-width: 1px;
-  border-radius: 8px;
-  height: auto;
 }
 
 @media only screen and (max-width: 600px) {
