@@ -237,17 +237,17 @@ const DashboardNav: React.FC = () => {
               <p>Staff</p>
             </Link>
 
-            <Link href="/authorities" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/patients")}`}>
+            <Link href="/authorities" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/authorities")}`}>
               <PiBankBold className="text-lg" size={18} />
               <p>Local Authorities</p>
             </Link>
 
-            <Link href="/policy" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/finance")}`}>
+            <Link href="/policy" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/policy")}`}>
               <IoDocumentTextOutline className="text-lg" size={18} />
               <p>Policy</p>
             </Link>
 
-            <Link href="/settings" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/admissions")}`}>
+            <Link href="/settings" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/settings")}`}>
               <IoSettingsOutline className="text-lg" />
               <p>Settings</p>
             </Link>
