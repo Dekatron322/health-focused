@@ -1,23 +1,47 @@
-"use client"
-import React, { useEffect, useState } from "react"
-import Search from "components/Search/Search"
-import { IoMdAddCircleOutline, IoMdLock, IoMdSearch } from "react-icons/io"
+import { Skeleton, Tooltip } from "@mui/material"
+import React, { useEffect, useRef, useState } from "react"
+import axios from "axios"
 import Image from "next/image"
 import { useTheme } from "next-themes"
-import { usePathname } from "next/navigation"
-import { Tooltip } from "@mui/material"
-import { MdAccountCircle, MdDeleteForever } from "react-icons/md"
+import { usePathname, useRouter } from "next/navigation"
+import { MdAccountCircle } from "react-icons/md"
 import { RiLogoutCircleRLine } from "react-icons/ri"
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined"
+import { BiMessageDetail } from "react-icons/bi"
+import { IoIosArrowDown, IoIosNotificationsOutline, IoMdAddCircleOutline, IoMdLock, IoMdSearch } from "react-icons/io"
 
-const DashboardNav = () => {
+import Search from "components/Search/Search"
+import { RxCross2 } from "react-icons/rx"
+import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft"
+import Link from "next/link"
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+
+interface UserDetails {
+  id: number
+  username: string
+  email: string
+  phone_number: string
+  address: string
+  account_type: string
+}
+
+const DashboardNav: React.FC = () => {
   const pathname = usePathname()
+  const router = useRouter()
   const [isMoonIcon, setIsMoonIcon] = useState(true)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [loading, setLoading] = useState(true)
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  setTimeout(() => setLoading(false), 5000)
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [isNavOpen, setIsNavOpen] = useState(false)
+  const [isUtilitiesOpen, setIsUtilitiesOpen] = useState(false)
+
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
+
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLDivElement>(null)
 
   const toggleIcon = () => {
     setIsMoonIcon(!isMoonIcon)
@@ -25,7 +49,50 @@ const DashboardNav = () => {
 
   useEffect(() => {
     setMounted(true)
+    fetchUserDetails()
   }, [])
+
+  const fetchUserDetails = async () => {
+    try {
+      const userId = localStorage.getItem("id")
+      if (userId) {
+        const response = await axios.get<UserDetails>(
+          `https://api2.caregiverhospital.com/app_user/get-user-detail/${userId}/`
+        )
+        if (response.data) {
+          setUserDetails(response.data)
+        } else {
+          setError("User details not found.")
+          router.push("/signin")
+        }
+      } else {
+        setError("User ID not found.")
+        router.push("/signin")
+      }
+    } catch (error) {
+      setError("Failed to load user details.")
+      console.error("Error fetching user details:", error)
+      router.push("/signin")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false)
+      }
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsNavOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isDropdownOpen, isNavOpen])
 
   if (!mounted) {
     return null
@@ -33,6 +100,10 @@ const DashboardNav = () => {
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen)
+  }
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen)
   }
 
   const closeDropdown = () => {
@@ -43,69 +114,207 @@ const DashboardNav = () => {
     toggleDropdown()
   }
 
+  const handleLogoutClick = () => {
+    setIsLogoutModalOpen(true)
+    closeDropdown() // Close the dropdown when the logout is clicked
+  }
+
+  const handleLogoutConfirm = () => {
+    localStorage.removeItem("id")
+    localStorage.removeItem("token")
+    router.push("/signin")
+  }
+
+  const handleLogoutCancel = () => {
+    setIsLogoutModalOpen(false)
+  }
+
   const isDashboardPage = pathname.includes("/dashboard")
+
+  const firstLetter = userDetails?.username.charAt(0).toUpperCase() || "M"
+
+  const toggleUtilities = () => {
+    setIsUtilitiesOpen(!isUtilitiesOpen)
+  }
+
+  const getNavLinkClass = (path: string) => {
+    return pathname === path ? "text-[#46ffa6]" : "text-white"
+  }
+
+  const getNavImageSrc = (path: string, defaultSrc: string, activeSrc: string) => {
+    return pathname === path ? activeSrc : defaultSrc
+  }
 
   return (
     <>
-      <nav className="hidden px-16 py-4 md:block">
+      <nav className="hidden border-b px-16 py-4 md:block">
         <div className="flex items-center justify-between">
-          <h6 className="text-lg font-bold capitalize">{pathname.split("/").pop()}</h6>
+          <h5 className="font-bold capitalize">Admin Dashboard</h5>
 
           <div className="flex items-center gap-2">
             <Search />
-
+          </div>
+          <div className="flex items-center gap-2">
             <Tooltip title="Notifications">
-              <div className="flex h-10 w-10 items-center justify-center rounded border border-[#CFDBD5] px-2 py-1">
-                <NotificationsNoneOutlinedIcon />
+              <div className="flex h-8 cursor-pointer items-center rounded border border-[#CFDBD5] px-2 py-1">
+                <IoIosNotificationsOutline />
               </div>
             </Tooltip>
 
-            <Image
-              src="/Img.svg"
-              width={40}
-              height={40}
-              alt="profile"
-              className="pointer rounded-full"
-              onClick={handleProfileClick}
-            />
-          </div>
-        </div>
-      </nav>
-      <nav className="mb-4 block border-b px-16 py-4 max-md:px-3 md:hidden">
-        <div className="flex items-center justify-between">
-          <div className="cursor-pointer p-1 transition duration-300">
-            {isDashboardPage ? <IoMdSearch /> : <IoMdAddCircleOutline />}
-          </div>
-          <h5 className="font-bold capitalize">{pathname.split("/").pop()}</h5>
-          <Image src="/Img.svg" width={35} height={16} alt="profile" />
-        </div>
-      </nav>
-      {isDropdownOpen && (
-        <div className="absolute right-16 top-14 z-10  w-64 rounded border bg-white  shadow-md">
-          <div className="border-b px-4 py-2">
-            <div className="flex items-center gap-2  ">
-              <MdAccountCircle />
+            <Tooltip title="messages">
+              <div className="flex h-8 cursor-pointer items-center rounded border border-[#CFDBD5] px-2 py-1">
+                <BiMessageDetail />
+              </div>
+            </Tooltip>
 
-              <p className="font-semibold">Account Information</p>
+            <div className="flex cursor-pointer items-center gap-1">
+              <div
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#46ffa6]"
+                onClick={handleProfileClick}
+              >
+                <p className="text-[#000000]">{firstLetter}</p>
+              </div>
+              <IoIosArrowDown onClick={handleProfileClick} />
             </div>
-            <small>Dekalo-Inc</small>
-          </div>
-          <div className="flex items-center gap-2 border-b px-4 py-2">
-            <IoMdLock />
-
-            <p className="font-semibold">Security</p>
-          </div>
-          <div className="flex items-center gap-2 border-b px-4 py-2">
-            <RiLogoutCircleRLine />
-
-            <p className="font-semibold">Logout</p>
-          </div>
-          <div className="flex items-center gap-2  px-4 py-2">
-            <MdDeleteForever className="text-red-500" />
-            <p className="font-semibold text-red-500">Delete</p>
           </div>
         </div>
-      )}
+      </nav>
+      <nav className="block border-b  px-16 py-4 max-md:px-3 md:hidden">
+        <div className="flex items-center justify-between">
+          <FormatAlignLeftIcon onClick={toggleNav} style={{ cursor: "pointer" }} />
+          <Link href="/" className="icon-style content-center">
+            <Image src="/ic_logo.svg" width={150} height={43} alt="dekalo" />
+          </Link>
+          <Link href="/" className="dark-icon-style content-center">
+            <Image src="/dark_logo.svg" width={150} height={43} alt="dekalo" />
+          </Link>
+          <div className="redirect flex h-[50px] items-center justify-center gap-1 rounded-full px-1">
+            <div
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#46ffa6]"
+              onClick={handleProfileClick}
+            >
+              <p className="text-[#000000]">{firstLetter}</p>
+            </div>
+            <KeyboardArrowDownIcon />
+          </div>
+        </div>
+
+        <div
+          ref={navRef}
+          className={`fixed left-0 top-0 z-50 h-full w-[250px] bg-[#044982] transition-transform duration-300 ${
+            isNavOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-between p-4 pt-6">
+            <Image className="" src="/alternate.svg" height={80} width={80} alt="" />
+            <RxCross2 className="text-white" onClick={toggleNav} style={{ cursor: "pointer" }} />
+          </div>
+          <div className="mt-4 flex flex-col items-start space-y-2 p-4">
+            <Link href="/dashboard" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/dashboard")}`}>
+              <Image
+                src={getNavImageSrc("/dashboard", "/Graph.svg", "/Graph-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Dashboard</p>
+            </Link>
+
+            <Link href="/departments" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/departments")}`}>
+              <Image
+                src={getNavImageSrc("/departments", "/departments.svg", "/departments-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Departments</p>
+            </Link>
+            <Link href="/appointments" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/appointments")}`}>
+              <Image
+                src={getNavImageSrc("/appointments", "/appointments.svg", "/appointments-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Appointments</p>
+            </Link>
+
+            <Link href="/staff" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/staff")}`}>
+              <Image
+                src={getNavImageSrc("/staff", "/admin.svg", "/admin-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Staff</p>
+            </Link>
+
+            <Link href="/patients" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/patients")}`}>
+              <Image
+                src={getNavImageSrc("/patients", "/appointments.svg", "/appointments-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Patients</p>
+            </Link>
+
+            <Link href="/finance" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/finance")}`}>
+              <Image
+                src={getNavImageSrc("/finance", "/finance.svg", "/finance-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Finance</p>
+            </Link>
+
+            <Link href="/admissions" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/admissions")}`}>
+              <Image
+                src={getNavImageSrc("/admissions", "/departments.svg", "/departments-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Admissions</p>
+            </Link>
+
+            <button
+              onClick={handleLogoutClick}
+              className="fixed bottom-2 mt-10 flex items-center gap-2 pb-4 text-white"
+            >
+              <Image src="/logout.svg" width={20} height={20} alt="logout" />
+              <p className="mt-1">Logout</p>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* <div
+        ref={dropdownRef}
+        className="auth absolute right-16 top-14 z-10 w-64 rounded border shadow-md transition-opacity duration-300"
+      >
+        <div className="border-b px-4 py-2">
+          <div className="flex items-center gap-2">
+            <MdAccountCircle />
+            <p className="text-sm font-semibold">Account Information</p>
+          </div>
+
+          <>
+            <p className="text-xs">xxx</p>
+            <p className="text-xs">xxxx</p>
+            <p className="text-xs">xxx</p>
+          </>
+        </div>
+        <div className="flex items-center gap-2 border-b px-4 py-2" onClick={handleLogoutClick}>
+          <RiLogoutCircleRLine />
+          <p className="cursor-pointer text-sm font-semibold">Logout</p>
+        </div>
+        <div className="flex items-center gap-2 border-b px-4 py-2" onClick={closeDropdown}>
+          <IoMdLock />
+          <p className="text-sm font-semibold">Security</p>
+        </div>
+      </div> */}
     </>
   )
 }
