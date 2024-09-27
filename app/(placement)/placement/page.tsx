@@ -212,7 +212,7 @@ export default function ServiceUsers() {
                     </Link>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <Search />
                     </div>
 
@@ -228,7 +228,7 @@ export default function ServiceUsers() {
                 {/* Table */}
                 <div className="mt-4 w-full">
                   <div className="mb-4 flex justify-between gap-4">
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <CustomDropdown
                         options={getUniqueValues("name")}
                         selectedOption={filters.name}
@@ -243,7 +243,7 @@ export default function ServiceUsers() {
                       placeholder="Placement"
                     />
 
-                    <div className="max-md:hidden">
+                    <div className="w-full ">
                       <input
                         type="date"
                         name="date"

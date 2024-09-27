@@ -175,10 +175,10 @@ const DashboardNav: React.FC = () => {
 
             <div className="flex cursor-pointer items-center gap-1">
               <div
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#000000]"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#044982]"
                 onClick={handleProfileClick}
               >
-                <p className="text-[#000000]">{firstLetter}</p>
+                <p className="text-[#ffffff]">{firstLetter}</p>
               </div>
               <IoIosArrowDown onClick={handleProfileClick} />
             </div>
