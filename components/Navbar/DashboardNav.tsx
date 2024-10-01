@@ -34,15 +34,10 @@ const DashboardNav: React.FC = () => {
   const pathname = usePathname()
   const router = useRouter()
   const [isMoonIcon, setIsMoonIcon] = useState(true)
-  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [userDetails, setUserDetails] = useState<UserDetails | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
   const [isNavOpen, setIsNavOpen] = useState(false)
-  const [isUtilitiesOpen, setIsUtilitiesOpen] = useState(false)
 
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
 
@@ -53,56 +48,56 @@ const DashboardNav: React.FC = () => {
     setIsMoonIcon(!isMoonIcon)
   }
 
-  useEffect(() => {
-    setMounted(true)
-    fetchUserDetails()
-  }, [])
+  // useEffect(() => {
+  //   setMounted(true)
+  //   fetchUserDetails()
+  // }, [])
 
-  const fetchUserDetails = async () => {
-    try {
-      const userId = localStorage.getItem("id")
-      if (userId) {
-        const response = await axios.get<UserDetails>(
-          `https://api2.caregiverhospital.com/app_user/get-user-detail/${userId}/`
-        )
-        if (response.data) {
-          setUserDetails(response.data)
-        } else {
-          setError("User details not found.")
-          router.push("/signin")
-        }
-      } else {
-        setError("User ID not found.")
-        router.push("/signin")
-      }
-    } catch (error) {
-      setError("Failed to load user details.")
-      console.error("Error fetching user details:", error)
-      router.push("/signin")
-    } finally {
-      setLoading(false)
-    }
-  }
+  // const fetchUserDetails = async () => {
+  //   try {
+  //     const userId = localStorage.getItem("id")
+  //     if (userId) {
+  //       const response = await axios.get<UserDetails>(
+  //         `https://api2.caregiverhospital.com/app_user/get-user-detail/${userId}/`
+  //       )
+  //       if (response.data) {
+  //         setUserDetails(response.data)
+  //       } else {
+  //         setError("User details not found.")
+  //         router.push("/signin")
+  //       }
+  //     } else {
+  //       setError("User ID not found.")
+  //       router.push("/signin")
+  //     }
+  //   } catch (error) {
+  //     setError("Failed to load user details.")
+  //     console.error("Error fetching user details:", error)
+  //     router.push("/signin")
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false)
-      }
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setIsNavOpen(false)
-      }
-    }
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+  //       setIsDropdownOpen(false)
+  //     }
+  //     if (navRef.current && !navRef.current.contains(event.target as Node)) {
+  //       setIsNavOpen(false)
+  //     }
+  //   }
 
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [isDropdownOpen, isNavOpen])
+  //   document.addEventListener("mousedown", handleClickOutside)
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside)
+  //   }
+  // }, [isDropdownOpen, isNavOpen])
 
-  if (!mounted) {
-    return null
-  }
+  // if (!mounted) {
+  //   return null
+  // }
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen)
@@ -125,30 +120,8 @@ const DashboardNav: React.FC = () => {
     closeDropdown() // Close the dropdown when the logout is clicked
   }
 
-  const handleLogoutConfirm = () => {
-    localStorage.removeItem("id")
-    localStorage.removeItem("token")
-    router.push("/signin")
-  }
-
-  const handleLogoutCancel = () => {
-    setIsLogoutModalOpen(false)
-  }
-
-  const isDashboardPage = pathname.includes("/dashboard")
-
-  const firstLetter = userDetails?.username.charAt(0).toUpperCase() || "M"
-
-  const toggleUtilities = () => {
-    setIsUtilitiesOpen(!isUtilitiesOpen)
-  }
-
   const getNavLinkClass = (path: string) => {
     return pathname === path ? "text-[#46ffa6]" : "text-white"
-  }
-
-  const getNavImageSrc = (path: string, defaultSrc: string, activeSrc: string) => {
-    return pathname === path ? activeSrc : defaultSrc
   }
 
   return (
@@ -178,7 +151,7 @@ const DashboardNav: React.FC = () => {
                 className="flex h-8 w-8 items-center justify-center rounded-full bg-[#044982]"
                 onClick={handleProfileClick}
               >
-                <p className="text-[#ffffff]">{firstLetter}</p>
+                <p className="text-[#ffffff]">BH</p>
               </div>
               <IoIosArrowDown onClick={handleProfileClick} />
             </div>
@@ -194,7 +167,7 @@ const DashboardNav: React.FC = () => {
               className="flex h-8 w-8 items-center justify-center rounded-full bg-[#044982]"
               onClick={handleProfileClick}
             >
-              <p className="text-[#ffffff]">{firstLetter}</p>
+              <p className="text-[#ffffff]">BH</p>
             </div>
             <KeyboardArrowDownIcon />
           </div>

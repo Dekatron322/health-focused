@@ -6,6 +6,7 @@ import { IoIosArrowDropleft } from "react-icons/io"
 import { useDropzone } from "react-dropzone"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
+import { IoCheckmarkCircle } from "react-icons/io5"
 
 // Extend the File type to include a preview property
 interface PreviewFile extends File {
@@ -56,7 +57,7 @@ export default function NewLogs() {
             <div>
               <DashboardNav />
             </div>
-            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
+            <div className="my-3 justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
@@ -105,7 +106,7 @@ export default function NewLogs() {
                 <div className="flex gap-3 px-4">
                   <div>
                     <Image
-                      className=" object-contain pb-2 max-md:hidden"
+                      className=" object-contain pb-2 "
                       src="/images/cooking.png"
                       width={150}
                       height={170}
@@ -115,7 +116,7 @@ export default function NewLogs() {
                   </div>
                   <div>
                     <Image
-                      className=" object-contain pb-2 max-md:hidden"
+                      className=" object-contain pb-2 "
                       src="/images/cooking.png"
                       width={150}
                       height={170}
@@ -124,14 +125,17 @@ export default function NewLogs() {
                     <p className="text-xs">Martin’s Recipe Notes</p>
                   </div>
                 </div>
-                <div className="items-center justify-between p-4 md:flex">
-                  <p>Marked relevant for weekly report</p>
-                  <div className="flex gap-4">
-                    <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] p-2 text-xs">
+                <div className="items-center justify-between p-4  md:flex">
+                  <div className="flex items-center gap-2">
+                    <IoCheckmarkCircle size={24} className="text-[#B5DBFF]" />
+                    <p>Marked relevant for weekly report</p>
+                  </div>
+                  <div className="flex gap-4 max-md:mt-5">
+                    <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] p-2 text-xs text-[#fff]">
                       VIEW IN LOG
                     </button>
 
-                    <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] px-4 py-2 text-xs">
+                    <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] px-4 py-2 text-xs text-[#fff]">
                       Edit
                     </button>
                   </div>
