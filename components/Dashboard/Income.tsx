@@ -5,6 +5,7 @@ import { FaHouseChimneyWindow } from "react-icons/fa6"
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined"
 import { PiBankBold } from "react-icons/pi"
 import Link from "next/link"
+import { AppointmentMobile } from "./AppointmentMobile"
 
 const Income = () => {
   const [loading, setLoading] = useState(true)

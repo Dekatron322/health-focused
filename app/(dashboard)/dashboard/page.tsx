@@ -22,11 +22,10 @@ export default function Dashboard() {
             <DashboardNav />
 
             <div className="my-3 flex  w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3">
-              <AppointmentMobile />
-
               <div className={styles.dashboard_body__lhs}>
                 <div className={styles.in_out}>
                   <Income />
+                  <AppointmentMobile />
                 </div>
                 <Assets />
               </div>

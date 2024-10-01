@@ -18,7 +18,6 @@ export const AppointmentMobile = () => {
         <p className="font-semibold">Latest Appointments</p>
         <GoArrowUpRight />
       </Link>
-      <div className="border"></div>
 
       {/* Container for horizontal scroll with hidden scrollbar */}
       <div className="scrollbar-hide overflow-x-auto px-4 py-4 max-md:px-0">
