@@ -103,6 +103,40 @@ export const Asset = [
   },
 ]
 
+export const Appointments = [
+  {
+    id: 1,
+    name: "Ear Test Appointment",
+    user: "Marvin Martin",
+    date: "25/05/2024",
+    time: "09.30 AM",
+    status: "Booked",
+  },
+  {
+    id: 2,
+    name: "Ear Test Appointment",
+    user: "Marvin Martin",
+    date: "Today",
+    time: "09.30 AM",
+    status: "Missed",
+  },
+  {
+    id: 3,
+    name: "Ear Test Appointment",
+    user: "Marvin Martin",
+    date: "Today",
+    time: "09.30 AM",
+    status: "Cancelled",
+  },
+  {
+    id: 4,
+    name: "Ear Test Appointment",
+    user: "Marvin Martin",
+    date: "Today",
+    time: "09.30 AM",
+    status: "Cancelled",
+  },
+]
 export const Transaction = [
   {
     date: "28 August",

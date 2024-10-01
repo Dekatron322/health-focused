@@ -10,9 +10,9 @@ const Income = () => {
   const [loading, setLoading] = useState(true)
   setTimeout(() => setLoading(false), 5000)
   return (
-    <>
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
-        <div className="mb-8 flex justify-between">
+    <section className="scrollbar-hide w-full gap-2 overflow-x-auto max-md:flex max-md:flex-shrink-0 md:grid md:grid-cols-2">
+      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
+        <div className="mb-8 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Service Users</h6>
           <Link
             href="/department"
@@ -33,8 +33,8 @@ const Income = () => {
           <p className="text-xs">50</p>
         </div>
       </div>
-      <div className="w-full grid-cols-2 rounded border-[0.5px] p-4 shadow">
-        <div className="mb-8 flex justify-between">
+      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
+        <div className="mb-8 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Placement</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
@@ -52,8 +52,8 @@ const Income = () => {
           <p className="text-xs">09</p>
         </div>
       </div>
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
-        <div className="mb-8 flex justify-between">
+      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
+        <div className="mb-8 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Staff</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
@@ -71,8 +71,8 @@ const Income = () => {
           <p className="text-xs">30</p>
         </div>
       </div>
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
-        <div className="mb-8 flex justify-between">
+      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
+        <div className="mb-8 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Local Authorities</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
@@ -90,7 +90,7 @@ const Income = () => {
           <p className="text-xs">10</p>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

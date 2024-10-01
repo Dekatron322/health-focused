@@ -9,6 +9,7 @@ import { Assets } from "components/Dashboard/Assets"
 import { Transactions } from "components/Dashboard/Transactions"
 import { Skeleton } from "@mui/material"
 import { useState } from "react"
+import { AppointmentMobile } from "components/Dashboard/AppointmentMobile"
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true)
@@ -21,6 +22,8 @@ export default function Dashboard() {
             <DashboardNav />
 
             <div className="my-3 flex  w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3">
+              <AppointmentMobile />
+
               <div className={styles.dashboard_body__lhs}>
                 <div className={styles.in_out}>
                   <Income />

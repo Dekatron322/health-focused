@@ -13,7 +13,7 @@ export const Transactions = () => {
   setTimeout(() => setLoading(false), 5000)
 
   return (
-    <>
+    <section className="max-md:hidden">
       <div className={styles.transactions}>
         <Link href="/dashboard/appointment" className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">Latest Appointments</p>
@@ -103,6 +103,6 @@ export const Transactions = () => {
           ))}
         </div>
       </div>
-    </>
+    </section>
   )
 }

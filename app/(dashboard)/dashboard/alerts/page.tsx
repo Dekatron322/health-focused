@@ -211,13 +211,13 @@ export default function Alerts() {
 
   return (
     <>
-      <section className="h-full">
+      <section className=" h-full">
         <div className="mx-auto flex min-h-screen">
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
             </div>
-            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
+            <div className="my-5 justify-center gap-3 max-md:px-3  md:mt-8 md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
@@ -274,7 +274,7 @@ export default function Alerts() {
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <input
                         type="date"
                         name="date"
@@ -283,7 +283,7 @@ export default function Alerts() {
                         className="rounded border px-4 py-2 "
                       />
                     </div>
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <CustomDropdown
                         options={getUniqueValues("keyWorker")}
                         selectedOption={filters.keyWorker}
@@ -291,7 +291,7 @@ export default function Alerts() {
                         placeholder="Key Worker"
                       />
                     </div>
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <CustomDropdown
                         options={getUniqueValues("alertType")}
                         selectedOption={filters.alertType}
@@ -299,7 +299,7 @@ export default function Alerts() {
                         placeholder="Alert Type"
                       />
                     </div>
-                    <div className="max-md:hidden">
+                    <div className="w-full max-md:hidden">
                       <CustomDropdown
                         options={getUniqueValues("status")}
                         selectedOption={filters.status}
