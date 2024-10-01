@@ -10,6 +10,8 @@ import { Transactions } from "components/Dashboard/Transactions"
 import { Skeleton } from "@mui/material"
 import { useState } from "react"
 import { AppointmentMobile } from "components/Dashboard/AppointmentMobile"
+import Alerts from "./alerts/page"
+import { LatestAlerts } from "components/Dashboard/Alerts"
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true)
@@ -30,6 +32,7 @@ export default function Dashboard() {
                 <Assets />
               </div>
               <div className={styles.dashboard_body__rhs}>
+                <LatestAlerts />
                 <Transactions />
               </div>
             </div>
