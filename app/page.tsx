@@ -29,30 +29,36 @@ export default function Web() {
       <section className="">
         <Navbar />
         <div className="mx-auto flex max-w-screen-xl justify-between max-md:flex-col-reverse md:gap-10   md:py-8  lg:py-16">
-          <div className="mx-auto place-self-center max-md:px-3">
-            <h1 className="mb-4 mt-16 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-[red] md:text-5xl xl:text-6xl">
+          <div className="relative mx-auto place-self-center max-md:px-3">
+            <h1 className="mb-4 mt-16 max-w-2xl text-4xl font-bold leading-none tracking-tight dark:text-[red] md:text-5xl xl:text-6xl">
               The seamless way to manage care homes
             </h1>
-            <p className="mb-6 max-w-2xl font-light  md:text-base lg:mb-8 lg:text-xl">
+            <p className="mb-6 max-w-2xl font-light md:text-base lg:mb-8 lg:text-xl">
               SeamlessCare provides an end-to-end digital solution for managing care providers and care homes.
             </p>
-            <Button href="/signin" className="mr-3 gap-2">
-              <Image className="max-md:hidden" src="/hugeicons_start-up-02.png" width={24} height={24} alt="smup" />
+            <Button href="/signin" className=" mt-10 gap-2">
+              <Image src="/hugeicons_start-up-02.png" width={24} height={24} alt="smup" />
               Get started
             </Button>
-            <div className="mt-10 flex gap-2 max-md:mb-4">
-              <div className="flex flex-row gap-4 rounded-md bg-[#195404] p-2">
-                <Image className="" src="/ion_logo-google-playstore.png" width={24} height={24} alt="smup" />
-                <Link className="text-[#ffffff]" href="/signin">
-                  Get on Google Playstore
-                </Link>
-              </div>
-              <div className="flex flex-row gap-4 rounded-md bg-[#09074A] p-2">
-                <Image className="" src="/mingcute_appstore-fill.png" width={24} height={24} alt="smup" />
-                <Link className="text-[#ffffff]" href="/signin">
-                  Get on Apple App Store
-                </Link>
-              </div>
+
+            {/* Small Shapes in the background */}
+            <div className="absolute left-0 top-0 -z-10 h-full w-full">
+              {/* Circle shape */}
+              <div
+                className="absolute left-10 top-5 h-10 w-10  bg-[#FCF4F4]"
+                style={{ transform: "rotate(45deg)" }}
+              ></div>
+              <div
+                className="absolute right-10 top-5 h-10 w-10 rounded-full bg-[#CAE5FE] "
+                style={{ transform: "rotate(45deg)" }}
+              ></div>
+              {/* Triangle shape */}
+              <div
+                className="absolute bottom-14 right-10 h-10 w-10   bg-[#DCFEEA] "
+                style={{ transform: "rotate(45deg)" }}
+              ></div>
+              {/* Square shape */}
+              <div className="absolute bottom-14 left-5 h-10 w-10 rounded-full bg-[#FDFFE2]"></div>
             </div>
           </div>
           <div
@@ -65,17 +71,17 @@ export default function Web() {
             }}
           ></div>
         </div>
-        <div className="paddings bg-[#69B7FF] ">
+        <div className="paddings bg-[#F5F5F5]">
           <div className="grid gap-10 py-10 md:grid-cols-3">
             <div className="flex w-full flex-col items-center justify-center rounded-2xl bg-[#ffffff] p-10">
-              <Image className="max-md:hidden" src="/Frame11.png" width={225.8} height={170.51} alt="smup" />
+              <Image src="/Frame11.png" width={225.8} height={170.51} alt="smup" />
               <p className="my-4 px-6 text-center text-2xl font-bold text-black">Manage Your Staff and Care Homes</p>
               <p className=" text-center  text-[#100606]">
                 Enjoy an integrated platform that allows you manage your staff at your various care homes.{" "}
               </p>
             </div>
             <div className="flex w-full flex-col items-center justify-center rounded-2xl bg-[#ffffff] p-10">
-              <Image className="max-md:hidden" src="/Frame12.png" width={225.8} height={170.51} alt="smup" />
+              <Image src="/Frame12.png" width={225.8} height={170.51} alt="smup" />
               <p className="my-4 px-6 text-center text-2xl font-bold text-black">
                 Manage and Monitor each ward’s progress
               </p>
@@ -84,19 +90,18 @@ export default function Web() {
               </p>
             </div>
             <div className="flex w-full flex-col items-center justify-center rounded-2xl bg-[#ffffff] p-10">
-              <Image className="max-md:hidden" src="/Frame13.png" width={225.8} height={170.51} alt="smup" />
+              <Image src="/Frame13.png" width={225.8} height={170.51} alt="smup" />
               <p className="my-4 px-6 text-center text-2xl font-bold text-black">Collect, analyse and share reports</p>
               <p className=" text-center  text-[#100606]">Review your wards’ progress against targets in real time.</p>
             </div>
           </div>
         </div>
 
-        <div className="paddings  flex w-full max-w-screen-xl justify-between    max-md:flex-col  ">
-          <div className="place-self-center md:basis-1/2">
+        <div className="mx-auto flex max-w-screen-xl justify-between max-md:flex-col-reverse md:gap-10   md:py-8  lg:py-16">
+          <div className="relative mx-auto place-self-center max-md:px-3">
             <h1 className="mb-4 max-w-2xl   text-4xl font-extrabold leading-none tracking-tight text-[#69B7FF] max-md:whitespace-nowrap  md:text-5xl xl:text-6xl">
               Key Features include
             </h1>
-
             <div className="mt-10 grid justify-between gap-4 md:grid-cols-2">
               <div>
                 <div className="flex items-center gap-2 pb-4">
@@ -145,7 +150,7 @@ export default function Web() {
             </div>
           </div>
           <div
-            className="flex justify-end rounded-lg max-md:h-72 md:basis-1/2"
+            className=" rounded-lg max-md:h-72 max-sm:hidden md:basis-1/2"
             style={{
               backgroundImage: 'url("/images/image2.png")',
               backgroundSize: "cover",
@@ -167,7 +172,7 @@ export default function Web() {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
