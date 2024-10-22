@@ -39,7 +39,7 @@ export default function Signin() {
     <main className="">
       <section className="flex max-md:flex-col-reverse  md:h-screen md:overflow-hidden ">
         <div
-          className="flex basis-1/2 flex-col    max-md:rounded-t-3xl"
+          className="relative flex basis-1/2  flex-col max-md:rounded-t-3xl"
           style={{
             backgroundImage: 'url("/images/xxx.png")',
             backgroundSize: "cover",
@@ -47,7 +47,7 @@ export default function Signin() {
             backgroundPosition: "center",
           }}
         >
-          <div className="my-5 items-center px-5 md:my-auto 2xl:mx-[150px] 3xl:mx-52">
+          <div className="my-5 items-center px-5 md:my-auto lg:px-20 xl:px-28 3xl:px-40 ">
             <div className="flex items-center gap-2">
               <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
               <p className="inter-font font-extrabold max-md:px-0 max-md:text-center max-md:text-[20px]  md:text-2xl">
@@ -124,6 +124,25 @@ export default function Signin() {
                 Create an account
               </Link>
             </div>
+          </div>
+          {/* Small Shapes in the background */}
+          <div className="absolute left-0 top-0 -z-10 h-full w-full">
+            {/* Circle shape */}
+            <div
+              className="absolute left-20 top-40 h-10 w-10  bg-[#FCF4F4]"
+              style={{ transform: "rotate(45deg)" }}
+            ></div>
+            <div
+              className="absolute right-20 top-40 h-10 w-10 rounded-full bg-[#CAE5FE] "
+              style={{ transform: "rotate(45deg)" }}
+            ></div>
+            {/* Triangle shape */}
+            <div
+              className="absolute bottom-40 right-20 h-10 w-10   bg-[#DCFEEA] "
+              style={{ transform: "rotate(45deg)" }}
+            ></div>
+            {/* Square shape */}
+            <div className="absolute bottom-40 left-20 h-10 w-10 rounded-full bg-[#FDFFE2]"></div>
           </div>
         </div>
         <div
