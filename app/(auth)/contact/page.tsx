@@ -37,16 +37,16 @@ const Page = () => {
         <div className="paddings   items-center justify-center">
           <div className="justify-between md:mt-6 md:flex md:gap-16">
             <div className="sticky top-4" style={{ alignSelf: "flex-start" }}>
-              <h5 className="inter-font font-bold leading-[60px]  max-md:text-[24px] md:text-[60px]">
+              <h5 className=" mb-3 font-normal max-md:text-[24px] lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-5xl">
                 Interested in talking to us?
               </h5>
-              <p className="text-xl max-md:mb-3">
-                From questions about pricing to one-on-one personalized<br></br> demos, we&lsquo;d love to connect and
-                help get you started.
+              <p className="text-xl max-lg:text-base max-md:mb-3">
+                From questions about pricing to one-on-one personalized<br className="max-md:hidden"></br> demos,
+                we&lsquo;d love to connect and help get you started.
               </p>
             </div>
             <div
-              className="flex basis-1/2 flex-col rounded-3xl bg-[#181059] max-md:rounded-t-3xl"
+              className="flex basis-1/2 flex-col rounded-3xl bg-[#F5F5F5] max-md:rounded-t-3xl"
               style={{
                 backgroundImage: 'url("/images/Group.png")',
                 backgroundSize: "cover",
@@ -55,12 +55,12 @@ const Page = () => {
               }}
             >
               <div className="max-md:p-5 md:p-10">
-                <h5 className="inter-font font-bold text-[#ffffff]  max-md:text-[24px] md:text-[24px]">Contact Us</h5>
+                <h5 className="inter-font font-bold   max-md:text-[24px] md:text-[24px]">Contact Us</h5>
 
                 <div className="flex flex-col items-center justify-center  max-md:mt-6 md:mt-12">
                   <form className="flex w-full flex-col">
                     <div className="mb-6 flex w-full flex-col items-start">
-                      <label htmlFor="adminName" className="label-title text-[#ffffff]">
+                      <label htmlFor="adminName" className="label-title ">
                         Your Name
                       </label>
                       <div className="input-field bg-[#ffffff]">
@@ -76,7 +76,7 @@ const Page = () => {
                     </div>
 
                     <div className="mb-6 flex w-full flex-col items-start">
-                      <label htmlFor="adminName" className="label-title text-[#ffffff]">
+                      <label htmlFor="adminName" className="label-title ">
                         Email Address
                       </label>
                       <div className="input-field bg-[#ffffff]">
@@ -92,7 +92,7 @@ const Page = () => {
                     </div>
 
                     <div className="mb-6 flex w-full flex-col items-start">
-                      <label htmlFor="adminName" className="label-title text-[#ffffff]">
+                      <label htmlFor="adminName" className="label-title ">
                         Subject
                       </label>
                       <div className="input-field bg-[#ffffff]">
@@ -108,7 +108,7 @@ const Page = () => {
                     </div>
 
                     <div className="mb-6 flex w-full flex-col items-start">
-                      <label htmlFor="adminName" className="label-title text-[#ffffff]">
+                      <label htmlFor="adminName" className="label-title ">
                         Email Address
                       </label>
                       <div className="input-field bg-[#ffffff]">
@@ -131,7 +131,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
