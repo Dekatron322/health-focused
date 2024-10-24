@@ -57,7 +57,7 @@ h6 {
 }
 
 .dashboard-style {
-  @apply flex grow items-center justify-center  border-0 border-black px-2 text-[#747A80] transition duration-300 hover:text-[#000000] lg:justify-normal lg:space-x-2;
+  @apply flex grow items-center justify-center  border-0 border-black px-2 text-[#FFFFFF] transition duration-300 hover:text-[#69B7FF] lg:justify-normal lg:space-x-2;
 }
 
 [data-theme="dark"] .dashboard-style {
@@ -65,7 +65,7 @@ h6 {
 }
 
 .active-dashboard {
-  @apply bg-[#0052FF] font-extrabold max-md:my-2 max-md:rounded-md max-md:text-white lg:border-r-2 lg:border-[#0052FF] lg:bg-inherit lg:text-[#000000];
+  @apply bg-[#0052FF] font-extrabold max-md:my-2 max-md:rounded-md max-md:text-white lg:border-r-2 lg:border-[#0052FF] lg:bg-inherit lg:text-[#69B7FF];
 }
 
 [data-theme="dark"] .active-dashboard {
@@ -177,7 +177,7 @@ h6 {
 }
 
 .sidebar {
-  @apply bg-[#EBF0F0];
+  @apply bg-[#000000];
 }
 
 [data-theme="dark"] .sidebar {

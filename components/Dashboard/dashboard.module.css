@@ -55,6 +55,17 @@
   padding: 10px;
 }
 
+.alerts {
+  flex: 1;
+  border-width: 1px;
+  border-radius: 8px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #09074a;
+  box-shadow: #ffe6e6;
+}
+
 .transactions {
   flex: 1;
   border-width: 1px;
@@ -62,6 +73,8 @@
   height: auto;
   position: relative;
   margin-bottom: 20px;
+  background-color: #100606;
+  box-shadow: #ffe6e6;
 }
 
 .account_transactions {

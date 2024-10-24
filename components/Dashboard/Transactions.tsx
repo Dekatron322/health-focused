@@ -15,10 +15,12 @@ export const Transactions = () => {
   return (
     <section className="max-md:hidden">
       <div className={styles.transactions}>
-        <Link href="/dashboard/appointment" className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Latest Appointments</p>
-          <GoArrowUpRight />
-        </Link>
+        <div className="flex items-center justify-between p-4 max-md:px-0">
+          <p className="font-semibold text-white">Latest Appointments</p>
+          <Link href="/dashboard/appointment" className="rounded-md border p-2 text-xs text-white">
+            VIEW ALL
+          </Link>
+        </div>
         <div className="border"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Transaction.map((transactions, index) => (
@@ -59,11 +61,13 @@ export const Transactions = () => {
           ))}
         </div>
       </div>
-      <div className={styles.transactions}>
-        <Link href="/dashboard/alerts" className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Latest Alerts</p>
-          <GoArrowUpRight />
-        </Link>
+      <div className={styles.alerts}>
+        <div className="flex items-center justify-between p-4 max-md:px-0">
+          <p className="font-semibold text-white">Latest Alerts</p>
+          <Link href="/dashboard/alerts" className="rounded-md border p-2 text-xs text-white">
+            VIEW ALL
+          </Link>
+        </div>
         <div className="border"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Alerts.map((transactions, index) => (

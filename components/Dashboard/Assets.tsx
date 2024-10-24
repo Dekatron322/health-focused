@@ -23,8 +23,8 @@ export const Assets = () => {
   ]
 
   return (
-    <div>
-      <div className="flex items-center justify-between gap-3 py-3 sm:px-4">
+    <div className="bg-[#F5F5F5]">
+      <div className="flex items-center justify-between gap-3 py-3 sm:px-4 ">
         <Link
           href="/dashboard/new-logs"
           className="flex items-center gap-2 whitespace-nowrap rounded-md bg-[#0085FF] px-3 py-2"
@@ -56,7 +56,7 @@ export const Assets = () => {
 
       <div className="grid grid-cols-3 gap-2 max-sm:grid-cols-1 sm:p-4">
         {Asset.map((assets) => (
-          <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
+          <div key={assets.id} className="w-full gap-3 rounded bg-white px-4 py-2 shadow">
             <div className="flex flex-row gap-2">
               <Image className="object-contain" src={assets.image} width={26} height={27} alt="dekalo" />
               <div className="flex w-full justify-between">

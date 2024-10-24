@@ -12,6 +12,7 @@ import { useState } from "react"
 import { AppointmentMobile } from "components/Dashboard/AppointmentMobile"
 import Alerts from "./alerts/page"
 import { LatestAlerts } from "components/Dashboard/Alerts"
+import SideBar from "components/Sidebar/SideBar"
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true)
@@ -23,7 +24,7 @@ export default function Dashboard() {
           <div className="flex w-full  flex-col ">
             <DashboardNav />
 
-            <div className="my-3 flex  w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3">
+            <div className=" flex  w-full gap-4 bg-[#000000B2] px-16 pb-16 max-md:flex-col max-md:px-3">
               <div className={styles.dashboard_body__lhs}>
                 <div className={styles.in_out}>
                   <Income />
@@ -37,7 +38,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

@@ -5,15 +5,14 @@ import { FaHouseChimneyWindow } from "react-icons/fa6"
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined"
 import { PiBankBold } from "react-icons/pi"
 import Link from "next/link"
-import { AppointmentMobile } from "./AppointmentMobile"
 
 const Income = () => {
   const [loading, setLoading] = useState(true)
   setTimeout(() => setLoading(false), 5000)
   return (
-    <section className="scrollbar-hide w-full gap-2 overflow-x-auto max-md:flex max-md:flex-shrink-0 md:grid md:grid-cols-2">
-      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
-        <div className="mb-8 flex  flex-shrink-0 justify-between">
+    <section className="scrollbar-hide w-full gap-2 overflow-x-auto max-md:flex max-md:flex-shrink-0 md:grid md:grid-cols-4">
+      <div className="w-[100%] rounded border-[0.5px] bg-[#FFFFFF] p-4  shadow-md shadow-white max-md:flex-shrink-0">
+        <div className="mb-4 flex  flex-shrink-0 justify-between ">
           <h6 className="text-xs font-bold">Active Service Users</h6>
           <Link
             href="/department"
@@ -34,8 +33,8 @@ const Income = () => {
           <p className="text-xs">50</p>
         </div>
       </div>
-      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
-        <div className="mb-8 flex  flex-shrink-0 justify-between">
+      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0">
+        <div className="mb-4 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Placement</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
@@ -53,8 +52,8 @@ const Income = () => {
           <p className="text-xs">09</p>
         </div>
       </div>
-      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
-        <div className="mb-8 flex  flex-shrink-0 justify-between">
+      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0">
+        <div className="mb-4 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Staff</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
@@ -72,8 +71,8 @@ const Income = () => {
           <p className="text-xs">30</p>
         </div>
       </div>
-      <div className="w-[100%] rounded border-[0.5px] p-4 shadow max-md:flex-shrink-0">
-        <div className="mb-8 flex  flex-shrink-0 justify-between">
+      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0">
+        <div className="mb-4 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Local Authorities</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View

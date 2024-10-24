@@ -16,7 +16,7 @@ const SideBar = () => {
           <Link href="/">
             <div className="flex items-center gap-2">
               <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
-              <p className="inter-font font-extrabold max-md:px-0 max-md:text-center max-md:text-[18px]  md:text-lg">
+              <p className="inter-font font-normal max-md:px-0 max-md:text-center max-md:text-[18px] md:text-lg">
                 Health Focused{" "}
               </p>
             </div>
@@ -24,23 +24,8 @@ const SideBar = () => {
         </div>
 
         <div className="h-full border-0 border-primary-700 lg:h-auto lg:space-y-4">
-          <p className="sidbar-title">Navigation</p>
-
           <Links />
         </div>
-
-        {/* <div className="hidden h-full border-0 border-purple-700  lg:block lg:h-auto lg:space-y-4">
-          <p className="sidbar-title">Balances</p>
-
-          <Balances />
-
-          <div className=" px-7">
-            <div className="flex flex-row items-center space-x-2 text-[#747A80]">
-              <PlusIcon />
-              <p className="text-sm font-semibold text-[#747A80]">Open a balance</p>
-            </div>
-          </div>
-        </div> */}
       </div>
 
       <div className="my-4 hidden h-auto border-0 border-yellow-700 px-7 lg:block">
