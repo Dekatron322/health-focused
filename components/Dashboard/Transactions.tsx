@@ -17,11 +17,11 @@ export const Transactions = () => {
       <div className={styles.transactions}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold text-white">Latest Appointments</p>
-          <Link href="/dashboard/appointment" className="rounded-md border p-2 text-xs text-white">
+          <Link href="/dashboard/appointment" className="rounded-md border p-2 text-[10px] text-white">
             VIEW ALL
           </Link>
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Transaction.map((transactions, index) => (
             <div key={transactions.date}>
@@ -64,11 +64,11 @@ export const Transactions = () => {
       <div className={styles.alerts}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold text-white">Latest Alerts</p>
-          <Link href="/dashboard/alerts" className="rounded-md border p-2 text-xs text-white">
+          <Link href="/dashboard/alerts" className="rounded-md border p-2 text-[10px] text-white">
             VIEW ALL
           </Link>
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Alerts.map((transactions, index) => (
             <div key={transactions.date}>

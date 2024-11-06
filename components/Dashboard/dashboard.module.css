@@ -57,7 +57,7 @@
 
 .alerts {
   flex: 1;
-  border-width: 1px;
+  /* border-width: 1px; */
   border-radius: 8px;
   height: auto;
   position: relative;
@@ -68,7 +68,7 @@
 
 .transactions {
   flex: 1;
-  border-width: 1px;
+  /* border-width: 1px; */
   border-radius: 8px;
   height: auto;
   position: relative;

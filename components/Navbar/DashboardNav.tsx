@@ -131,9 +131,6 @@ const DashboardNav: React.FC = () => {
           <h5 className="font-bold capitalize">Admin Dashboard</h5>
 
           <div className="flex items-center gap-2">
-            <Search />
-          </div>
-          <div className="flex items-center gap-2">
             <Tooltip title="Notifications">
               <div className="flex h-8 cursor-pointer items-center rounded border border-[#CFDBD5] px-2 py-1">
                 <IoIosNotificationsOutline />

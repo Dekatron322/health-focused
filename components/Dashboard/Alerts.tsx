@@ -19,7 +19,7 @@ export const LatestAlerts = () => {
           <p className="font-semibold">Latest Alerts</p>
           <GoArrowUpRight />
         </Link>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Alerts.map((transactions, index) => (
             <div key={transactions.date}>
