@@ -10,6 +10,7 @@
 
 body {
   background-color: #ffffff;
+  color: #171818;
 }
 
 h1 {
@@ -146,9 +147,9 @@ h6 {
 
 [data-theme="dark"] .mobiletab-bg {
   @apply max-md:bg-gray-700;
-}
+} */
 
-[data-theme="dark"] body {
+/* [data-theme="dark"] body {
   background-color: #171818;
 } */
 
@@ -211,6 +212,10 @@ h6 {
 } */
 
 .checkboxes {
+  @apply text-[#ffffff];
+}
+
+.checkboxes2 {
   @apply text-[#000000];
 }
 

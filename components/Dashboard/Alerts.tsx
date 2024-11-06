@@ -14,13 +14,15 @@ export const LatestAlerts = () => {
 
   return (
     <section className="md:hidden">
-      <div className={styles.transactions}>
-        <Link href="/dashboard/alerts" className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Latest Alerts</p>
-          <GoArrowUpRight />
-        </Link>
+      <div className={styles.alerts}>
+        <div className="flex items-center justify-between p-4 max-md:px-2">
+          <p className="font-semibold text-white">Latest Alerts</p>
+          <Link href="/dashboard/alerts" className="rounded-md border p-2 text-[10px] text-white">
+            VIEW ALL
+          </Link>
+        </div>
         <div className="border-b"></div>
-        <div className="px-4 py-4 max-md:px-0">
+        <div className="px-4 py-4 max-md:px-2">
           {Alerts.map((transactions, index) => (
             <div key={transactions.date}>
               {transactions.list.map((item, itemIndex) => (

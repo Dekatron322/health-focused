@@ -11,11 +11,11 @@ const Income = () => {
   setTimeout(() => setLoading(false), 5000)
   return (
     <section className="scrollbar-hide w-full gap-2 overflow-x-auto max-md:flex max-md:flex-shrink-0 md:grid md:grid-cols-4">
-      <div className="w-[100%] rounded border-[0.5px] bg-[#FFFFFF] p-4  shadow-md shadow-white max-md:flex-shrink-0">
+      <div className="w-[100%] rounded border-[0.5px] bg-[#FFFFFF] p-4 shadow-md  shadow-white max-md:flex-shrink-0 max-sm:w-2/3">
         <div className="mb-4 flex  flex-shrink-0 justify-between ">
           <h6 className="text-xs font-bold">Active Service Users</h6>
           <Link
-            href="/department"
+            href="/service-users"
             className="items-center justify-center rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]"
           >
             View
@@ -33,10 +33,10 @@ const Income = () => {
           <p className="text-xs">50</p>
         </div>
       </div>
-      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0">
+      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0 max-sm:w-1/2">
         <div className="mb-4 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Placement</h6>
-          <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
+          <Link href="/placement" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
           </Link>
         </div>
@@ -52,10 +52,10 @@ const Income = () => {
           <p className="text-xs">09</p>
         </div>
       </div>
-      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0">
+      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0 max-sm:w-1/2">
         <div className="mb-4 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Staff</h6>
-          <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
+          <Link href="/staff" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
           </Link>
         </div>
@@ -71,10 +71,10 @@ const Income = () => {
           <p className="text-xs">30</p>
         </div>
       </div>
-      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0">
+      <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0 max-sm:w-1/2">
         <div className="mb-4 flex  flex-shrink-0 justify-between">
           <h6 className="text-xs font-bold">Active Local Authorities</h6>
-          <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
+          <Link href="/authorities" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
           </Link>
         </div>

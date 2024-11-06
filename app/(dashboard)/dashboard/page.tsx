@@ -22,9 +22,9 @@ export default function Dashboard() {
       <section className=" h-full">
         <DashboardNav />
 
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818] max-sm:h-auto">
           <div className="flex w-full  flex-col ">
-            <div className=" flex  w-full gap-4 bg-[#000000B2] px-16 py-16 max-md:flex-col max-md:px-3">
+            <div className=" flex  w-full gap-4 px-16 py-16 max-md:flex-col max-md:px-3">
               <div className={styles.dashboard_body__lhs}>
                 <div className={styles.in_out}>
                   <Income />
@@ -37,8 +37,6 @@ export default function Dashboard() {
                 <Transactions />
               </div>
             </div>
-
-            {/* <Footer /> */}
           </div>
         </div>
       </section>

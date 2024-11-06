@@ -39,7 +39,7 @@ export default function Signin() {
     <main className="">
       <section className="flex max-md:flex-col-reverse  md:h-screen md:overflow-hidden ">
         <div
-          className="relative flex basis-1/2  flex-col max-md:rounded-t-3xl"
+          className="relative flex basis-1/2 flex-col  max-md:rounded-t-3xl"
           style={{
             backgroundImage: 'url("/images/xxx.png")',
             backgroundSize: "cover",

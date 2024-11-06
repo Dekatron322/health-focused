@@ -28,9 +28,9 @@ export default function Web() {
     <>
       <section className="">
         <Navbar />
-        <div className="paddings flex  justify-between max-md:flex-col-reverse md:gap-10   md:py-8  lg:py-16">
+        <div className="paddings flex justify-between  text-black max-md:flex-col-reverse md:gap-10   md:py-8  lg:py-16">
           <div className="relative place-self-center">
-            <h1 className="mb-4 mt-16 max-w-2xl text-3xl font-bold leading-none tracking-tight dark:text-[red] md:text-4xl xl:text-6xl">
+            <h1 className="mb-4 mt-16 max-w-2xl text-3xl font-bold leading-none tracking-tight  md:text-4xl xl:text-6xl">
               The seamless way to manage care homes
             </h1>
             <p className="mb-6 max-w-2xl font-light md:text-base lg:mb-8 lg:text-xl">

@@ -37,7 +37,7 @@ export default function UnauthorisedAbsense() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
@@ -48,9 +48,9 @@ export default function UnauthorisedAbsense() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] p-4 md:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-4 md:w-1/3">
                 <div className="flex w-full justify-between">
                   <p className="text-2xl">Unauthorised Absence Form</p>
                   <p className="text-xs">25 January 2024</p>
@@ -248,7 +248,7 @@ export default function UnauthorisedAbsense() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

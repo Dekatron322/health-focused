@@ -86,7 +86,7 @@ export const Assets = () => {
                 <p className="text-xs text-[#69B7FF]">Service User</p>
                 <p className="text-sm">{assets.user}</p>
               </div>
-              <Link href="/" className="flex items-center gap-2 rounded-md bg-[#69B7FF] px-3 py-2">
+              <Link href="/dashboard/post" className="flex items-center gap-2 rounded-md bg-[#69B7FF] px-3 py-2">
                 <p className="text-xs text-white max-md:px-0">View</p>
               </Link>
             </div>

@@ -16,12 +16,9 @@ export const NextAppointment = () => {
     <>
       <div className={styles.transactions}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Latest Appointments</p>
-          <Link href="/dashboard/new-appointment">
-            <GoArrowUpRight />
-          </Link>
+          <p className="font-semibold text-white">Next Appointments</p>
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Transaction.map((transactions, index) => (
             <div key={transactions.date}>

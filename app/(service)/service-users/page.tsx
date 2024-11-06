@@ -2,16 +2,11 @@
 import { useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
-import { IoIosArrowDropleft, IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
-import { MdCheckBoxOutlineBlank } from "react-icons/md"
+import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
 import Search from "components/Search/Search"
 import CustomDropdown from "components/Search/CustomDropdown"
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import { CiCircleChevDown } from "react-icons/ci"
 import styles from "../../../components/Dashboard/dashboard.module.css"
-import Income from "components/Dashboard/Income"
-import { Assets } from "components/Dashboard/Assets"
-import { Transactions } from "components/AccountDetails/Transactions"
 import Services from "components/Dashboard/ServiceUsers"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
@@ -195,21 +190,22 @@ export default function ServiceUsers() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
-              <div className="flex w-full gap-4 px-16  max-md:flex-col max-md:px-3">
-                <div className={styles.dashboard_body__lhs}>
-                  <div className={styles.service_users}>
-                    <Services />
-                  </div>
+            </div>
+
+            <div className="mt-4 flex w-full gap-4 px-16  max-md:flex-col max-md:px-3">
+              <div className={styles.dashboard_body__lhs}>
+                <div className={styles.service_users}>
+                  <Services />
                 </div>
               </div>
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
-              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
+            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3  ">
+              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <Link

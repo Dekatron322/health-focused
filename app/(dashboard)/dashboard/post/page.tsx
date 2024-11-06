@@ -51,7 +51,7 @@ export default function NewLogs() {
 
   return (
     <>
-      <section className="h-full">
+      <section className="h-full md:bg-[#171818]">
         <div className="mx-auto flex min-h-screen ">
           <div className="flex w-full  flex-col ">
             <div>
@@ -63,10 +63,10 @@ export default function NewLogs() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col gap-4  rounded-md border-[1px] md:w-1/2 ">
-                <div className="flex w-full justify-between p-4">
+              <div className="mb-6 flex flex-col gap-4  rounded-md bg-white md:w-1/2 md:border-[1px]">
+                <div className="flex w-full justify-between md:p-4">
                   <div className="flex flex-row gap-3">
                     <Image
                       className=" object-contain max-md:hidden"
@@ -89,13 +89,13 @@ export default function NewLogs() {
                     <p className="text-xs text-[#69B7FF]">Staff on Duty</p>
                     <p className="text-base">Toby, Adeoye, Kevin</p>
                   </div>
-                  <div>
-                    <p className="text-xs text-[#69B7FF]">11:55 AM</p>
+                  <div className="max-sm:hidden">
+                    <p className="text-xs text-[#69B7FF] ">11:55 AM</p>
                     <p className="text-base">25 January 2024</p>
                   </div>
                 </div>
-                <div className="w-full border"></div>
-                <p className="p-4">
+                <div className="w-full border-b"></div>
+                <p className="md:p-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                   aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -103,7 +103,7 @@ export default function NewLogs() {
                   officia deserunt mollit anim id est laborum.
                 </p>
 
-                <div className="flex gap-3 px-4">
+                <div className="flex gap-3 sm:px-4">
                   <div>
                     <Image
                       className=" object-contain pb-2 "
@@ -125,7 +125,7 @@ export default function NewLogs() {
                     <p className="text-xs">Martin’s Recipe Notes</p>
                   </div>
                 </div>
-                <div className="items-center justify-between p-4  md:flex">
+                <div className="items-center justify-between sm:p-4  md:flex">
                   <div className="flex items-center gap-2">
                     <IoCheckmarkCircle size={24} className="text-[#B5DBFF]" />
                     <p>Marked relevant for weekly report</p>
@@ -142,8 +142,6 @@ export default function NewLogs() {
                 </div>
               </div>
             </div>
-
-            <Footer />
           </div>
         </div>
       </section>

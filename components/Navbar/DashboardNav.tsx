@@ -2,7 +2,7 @@ import { Skeleton, Tooltip } from "@mui/material"
 import React, { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import Image from "next/image"
-import { useTheme } from "next-themes"
+
 import { usePathname, useRouter } from "next/navigation"
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined"
 import { VscPerson } from "react-icons/vsc"
@@ -126,7 +126,7 @@ const DashboardNav: React.FC = () => {
 
   return (
     <>
-      <nav className="hidden border-b px-16 py-4 md:block">
+      <nav className="hidden border-b bg-white px-16 py-4 md:block">
         <div className="flex items-center justify-between">
           <h5 className="font-bold capitalize">Admin Dashboard</h5>
 

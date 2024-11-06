@@ -212,20 +212,20 @@ export default function Alerts() {
   return (
     <>
       <section className=" h-full">
-        <div className="mx-auto flex min-h-screen">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
             </div>
-            <div className="my-5 justify-center gap-3 max-md:px-3  md:mt-8 md:flex md:flex-row">
+            <div className="my-5 justify-center gap-3  max-md:px-3  md:mt-8 md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] p-4 md:w-2/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-4 md:w-2/3">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <p className="text-2xl">Alerts</p>
@@ -261,7 +261,7 @@ export default function Alerts() {
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  <div className="mb-4 flex justify-between gap-4">
+                  <div className="mb-4  flex w-full justify-between gap-2">
                     <CustomDropdown
                       options={getUniqueValues("name")}
                       selectedOption={filters.name}
@@ -274,39 +274,35 @@ export default function Alerts() {
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <div className="w-full max-md:hidden">
-                      <input
-                        type="date"
-                        name="date"
-                        value={filters.date}
-                        onChange={(e) => handleFilterChange("date", e.target.value)}
-                        className="rounded border px-4 py-2 "
-                      />
-                    </div>
-                    <div className="w-full max-md:hidden">
-                      <CustomDropdown
-                        options={getUniqueValues("keyWorker")}
-                        selectedOption={filters.keyWorker}
-                        onChange={(value) => handleFilterChange("keyWorker", value)}
-                        placeholder="Key Worker"
-                      />
-                    </div>
-                    <div className="w-full max-md:hidden">
-                      <CustomDropdown
-                        options={getUniqueValues("alertType")}
-                        selectedOption={filters.alertType}
-                        onChange={(value) => handleFilterChange("alertType", value)}
-                        placeholder="Alert Type"
-                      />
-                    </div>
-                    <div className="w-full max-md:hidden">
-                      <CustomDropdown
-                        options={getUniqueValues("status")}
-                        selectedOption={filters.status}
-                        onChange={(value) => handleFilterChange("status", value)}
-                        placeholder="Status"
-                      />
-                    </div>
+
+                    <input
+                      type="date"
+                      name="date"
+                      value={filters.date}
+                      onChange={(e) => handleFilterChange("date", e.target.value)}
+                      className="rounded border bg-white px-4 py-1 text-xs "
+                    />
+
+                    <CustomDropdown
+                      options={getUniqueValues("keyWorker")}
+                      selectedOption={filters.keyWorker}
+                      onChange={(value) => handleFilterChange("keyWorker", value)}
+                      placeholder="Key Worker"
+                    />
+
+                    <CustomDropdown
+                      options={getUniqueValues("alertType")}
+                      selectedOption={filters.alertType}
+                      onChange={(value) => handleFilterChange("alertType", value)}
+                      placeholder="Alert Type"
+                    />
+
+                    <CustomDropdown
+                      options={getUniqueValues("status")}
+                      selectedOption={filters.status}
+                      onChange={(value) => handleFilterChange("status", value)}
+                      placeholder="Status"
+                    />
                   </div>
                   <table className="w-full border-collapse text-left">
                     <thead>
@@ -325,7 +321,7 @@ export default function Alerts() {
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm max-md:hidden">
-                            <Checkbox className="checkboxes" />
+                            <Checkbox className="checkboxes2" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm">{row.placement}</td>
@@ -407,7 +403,7 @@ export default function Alerts() {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

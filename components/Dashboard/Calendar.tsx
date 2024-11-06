@@ -97,7 +97,7 @@ const Calendar: React.FC<CalendarProps> = () => {
           center: "title",
           end: "dayGridMonth,timeGridWeek,timeGridDay",
         }}
-        height={"90vh"}
+        height={"80vh"}
         events={events}
         eventContent={eventContent}
       />

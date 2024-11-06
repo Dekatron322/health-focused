@@ -125,17 +125,17 @@ const Events = () => {
         <div className="mx-auto flex min-h-screen ">
           <div className="flex w-full  flex-col ">
             <DashboardNav />
-            <div className="flex justify-between px-16 pb-16 max-md:px-3">
-              <div>
+            <div className=" flex justify-between bg-[#171818] px-16 pb-16 max-md:px-3">
+              <div className="mt-6">
                 <Link
                   href="/dashboard/new-appointment"
                   className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
                 >
                   <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                  Add Appointment
+                  <p className="text-base text-[#0085FF]">Add Appointment</p>
                 </Link>
                 <p className="mt-4 text-sm">Show Appointments for</p>
-                <div className="mt-3 flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 lg:w-[200px]">
+                <div className="mt-3 flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] bg-white px-3 py-1 lg:w-[200px]">
                   <input
                     type="text"
                     id="search"
@@ -147,39 +147,39 @@ const Events = () => {
                 </div>
                 <div className="mt-3 flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>All Placement</p>
+                  <p className="text-white">All Placement</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>John Cena</p>
+                  <p className="text-white">John Cena</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>Mary Earps</p>
+                  <p className="text-white">Mary Earps</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>Rivaldo Henry</p>
+                  <p className="text-white">Rivaldo Henry</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>Black Widow</p>
+                  <p className="text-white">Black Widow</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>Alisson Coursera</p>
+                  <p className="text-white">Alisson Coursera</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>Maria Maria</p>
+                  <p className="text-white">Maria Maria</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>Helen Aaland</p>
+                  <p className="text-white">Helen Aaland</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p>Riquelme Joan</p>
+                  <p className="text-white">Riquelme Joan</p>
                 </div>
               </div>
               <div className={styles.teacters_dashboard_lhs}>
@@ -295,7 +295,6 @@ const Events = () => {
                 </div>
               </div>
             </div>
-            <Footer />
           </div>
         </div>
       </section>

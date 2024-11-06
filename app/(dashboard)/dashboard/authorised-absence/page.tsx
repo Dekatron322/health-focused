@@ -37,20 +37,20 @@ export default function AuthorisedAbsense() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
             </div>
-            <div className="mt-8 justify-center gap-3 max-md:px-3  md:flex md:flex-row">
+            <div className="mt-8 justify-center gap-3   max-md:px-3 md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] p-4 md:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-4 md:w-1/3">
                 <div className="flex w-full justify-between">
                   <p className="text-2xl max-md:w-56">Authorised Absence Form</p>
                   <p className="text-xs">25 January 2024</p>
@@ -68,7 +68,7 @@ export default function AuthorisedAbsense() {
                         className="w-40 bg-transparent outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
-                      <IoIosArrowDropdown size={18} />
+                      <IoIosArrowDropdown className="text-[#171818]" size={18} />
                     </div>
                   </div>
 
@@ -126,7 +126,7 @@ export default function AuthorisedAbsense() {
                           type="date"
                           id="staffOnDuty"
                           placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
+                          className="w-40 bg-transparent text-[#171818] outline-none focus:outline-none"
                           style={{ width: "100%" }}
                         />
                       </div>
@@ -262,7 +262,7 @@ export default function AuthorisedAbsense() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

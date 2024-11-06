@@ -20,7 +20,7 @@ export const AppointmentMobile = () => {
       </Link>
 
       {/* Container for horizontal scroll with hidden scrollbar */}
-      <div className="scrollbar-hide overflow-x-auto px-4 py-4 max-md:px-0">
+      <div className="scrollbar-hide overflow-x-auto px-4 max-md:px-0 md:py-4">
         <div className="flex gap-4">
           {Appointments.map((transactions, index) => (
             <div key={transactions.date} className="flex-shrink-0">

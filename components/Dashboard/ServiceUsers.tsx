@@ -11,7 +11,7 @@ const Services = () => {
   setTimeout(() => setLoading(false), 5000)
   return (
     <>
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
+      <div className="w-full rounded border-[0.5px] bg-[#FFFFFF] p-4 shadow">
         <div className="mb-8 flex justify-between">
           <h6 className="text-xs font-bold">Active Service Users</h6>
           <Link
@@ -34,7 +34,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
+      <div className="w-full rounded border-[0.5px] bg-[#FFFFFF] p-4 shadow">
         <div className="mb-8 flex justify-between">
           <h6 className="text-xs font-bold">Inactive Service Users</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
@@ -53,7 +53,7 @@ const Services = () => {
           <p className="text-xs">30</p>
         </div>
       </div>
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
+      <div className="w-full rounded border-[0.5px] bg-[#FFFFFF] p-4 shadow">
         <div className="mb-8 flex justify-between">
           <h6 className="text-xs font-bold">All time Service Users</h6>
           <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
