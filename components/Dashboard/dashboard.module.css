@@ -69,11 +69,33 @@
 .transactions {
   flex: 1;
   /* border-width: 1px; */
-  border-radius: 8px;
+  border-radius: 5px;
   height: auto;
   position: relative;
   margin-bottom: 20px;
   background-color: #100606;
+  box-shadow: #ffe6e6;
+}
+
+.transactions2 {
+  flex: 1;
+  /* border-width: 1px; */
+  border-radius: 5px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: #ffe6e6;
+}
+
+.transactions3 {
+  flex: 1;
+  /* border-width: 1px; */
+  border-radius: 5px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #e3f2ff;
   box-shadow: #ffe6e6;
 }
 

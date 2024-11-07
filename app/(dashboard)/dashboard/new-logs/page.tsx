@@ -184,7 +184,7 @@ export default function NewLogs() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

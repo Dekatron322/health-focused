@@ -14,7 +14,7 @@ export default function Dashboard() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen  bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <DashboardNav />
 
@@ -30,7 +30,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

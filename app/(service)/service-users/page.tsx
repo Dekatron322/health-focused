@@ -233,7 +233,7 @@ export default function ServiceUsers() {
                 {/* Table */}
                 <div className="mt-4 w-full">
                   <div className="mb-4 flex justify-between gap-4">
-                    <CustomDropdown
+                    {/* <CustomDropdown
                       options={getUniqueValues("name")}
                       selectedOption={filters.name}
                       onChange={(value) => handleFilterChange("name", value)}
@@ -246,15 +246,15 @@ export default function ServiceUsers() {
                       onChange={(value) => handleFilterChange("placement", value)}
                       placeholder="Placement"
                     />
-                    <div className="max-md:hidden">
-                      <input
-                        type="date"
-                        name="date"
-                        value={filters.date}
-                        onChange={(e) => handleFilterChange("date", e.target.value)}
-                        className="rounded border px-4 py-2"
-                      />
-                    </div>
+
+                    <input
+                      type="date"
+                      name="date"
+                      value={filters.date}
+                      onChange={(e) => handleFilterChange("date", e.target.value)}
+                      className="rounded bg-white px-4 text-sm text-black max-md:hidden"
+                    />
+
                     <div className="w-full max-md:hidden">
                       <CustomDropdown
                         options={getUniqueValues("keyWorker")}
@@ -268,7 +268,7 @@ export default function ServiceUsers() {
                       selectedOption={filters.localAuthority}
                       onChange={(value) => handleFilterChange("localAuthority", value)}
                       placeholder="Alert Type"
-                    />
+                    /> */}
                   </div>
                   <table className="w-full border-collapse text-left">
                     <thead>
@@ -287,7 +287,7 @@ export default function ServiceUsers() {
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm max-md:hidden">
-                            <Checkbox className="checkboxes" />
+                            <Checkbox className="checkboxes2" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
@@ -368,7 +368,7 @@ export default function ServiceUsers() {
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   )

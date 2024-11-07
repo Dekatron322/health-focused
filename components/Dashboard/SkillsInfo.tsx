@@ -17,12 +17,12 @@ export const SkillsInfo = () => {
 
   return (
     <>
-      <div className={styles.transactions}>
+      <div className={styles.transactions2}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Other Important Information</p>
+          <p className="font-semibold">Skill Developer</p>
           <GoArrowUpRight />
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="py-4 max-md:px-0">
           {SkillDevelopment.map((placement) => (
             <div key={placement.id}>
@@ -37,10 +37,12 @@ export const SkillsInfo = () => {
       </div>
       <div className={styles.transactions}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Latest Appointments</p>
-          <GoArrowUpRight />
+          <p className="font-semibold text-white"> Appointments</p>
+          <Link href="/dashboard/appointment" className="rounded-md border p-2 text-[10px] text-white">
+            VIEW ALL
+          </Link>
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Transaction.length === 0 ? (
             <div className="flex h-20 flex-col items-center justify-center ">
@@ -94,12 +96,14 @@ export const SkillsInfo = () => {
         </div>
       </div>
 
-      <div className={styles.transactions}>
+      <div className={styles.alerts}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Latest Alerts</p>
-          <GoArrowUpRight />
+          <p className="font-semibold text-white">Alerts</p>
+          <Link href="/dashboard/alerts" className="rounded-md border p-2 text-[10px] text-white">
+            VIEW ALL
+          </Link>
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Alerts.length === 0 ? (
             <div className="flex h-20 items-center justify-center">
@@ -152,12 +156,12 @@ export const SkillsInfo = () => {
         </div>
       </div>
 
-      <div className={styles.transactions}>
+      <div className={styles.transactions2}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Other Important Information</p>
+          <p className="font-semibold">Plans, Reports and Resources</p>
           <GoArrowUpRight />
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="py-4 max-md:px-0">
           {Plans.map((placement) => (
             <div key={placement.id}>

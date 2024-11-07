@@ -22,7 +22,7 @@ export const ProfileInfo = () => {
 
   return (
     <>
-      <div className={styles.transactions}>
+      <div className={styles.transactions2}>
         <div className=" px-4 py-4">
           <div className="flex justify-end">
             <BsThreeDotsVertical />
@@ -36,12 +36,12 @@ export const ProfileInfo = () => {
           </p>
         </div>
       </div>
-      <div className={styles.transactions}>
+      <div className={styles.transactions2}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">Placement Info</p>
           <GoArrowUpRight />
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Placement.map((placement, index) => (
             <div key={placement.id}>
@@ -58,12 +58,12 @@ export const ProfileInfo = () => {
           ))}
         </div>
       </div>
-      <div className={styles.transactions}>
+      <div className={styles.transactions2}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">About</p>
           <GoArrowUpRight />
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {About.map((placement, index) => (
             <div key={placement.id}>
@@ -80,12 +80,12 @@ export const ProfileInfo = () => {
           ))}
         </div>
       </div>
-      <div className={styles.transactions}>
+      <div className={styles.transactions2}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">Contact</p>
           <GoArrowUpRight />
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="px-4 py-4 max-md:px-0">
           {Contact.map((placement, index) => (
             <div key={placement.id}>
@@ -102,12 +102,12 @@ export const ProfileInfo = () => {
           ))}
         </div>
       </div>
-      <div className={styles.transactions}>
+      <div className={styles.transactions3}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">Other Important Information</p>
           <GoArrowUpRight />
         </div>
-        <div className="border"></div>
+        <div className="border-b"></div>
         <div className="py-4 max-md:px-0">
           {OtherInfo.map((placement) => (
             <div key={placement.id}>
@@ -124,7 +124,7 @@ export const ProfileInfo = () => {
                   {/* Add more content related to the placement here */}
                 </div>
               )}
-              <div className="border"></div>
+              <div className="border-b"></div>
             </div>
           ))}
         </div>

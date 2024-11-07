@@ -51,31 +51,31 @@ export default function NewLogs() {
 
   return (
     <>
-      <section className="h-full">
-        <div className="mx-auto flex min-h-screen bg-[#171818]">
+      <section className="h-full bg-[#171818]">
+        <div className="mx-auto flex min-h-screen ">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
             </div>
-            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
+            <div className="mt-8 justify-center gap-3 max-md:px-3  md:flex md:flex-row">
               <button
                 onClick={handleBackButtonClick}
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                <p className="text-[#0085FF]">GO BACK</p>
+                <p className="bg-[#1e1e1e] text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-4 md:w-1/3">
-                <div className="flex w-full items-center justify-between">
-                  <p className="w-[60%] font-semibold md:text-xl">Miscellaneous Report Form</p>
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md  bg-[#F5F5F5] p-4  md:w-1/3">
+                <div className="flex w-full justify-between">
+                  <p className="text-xl font-semibold">Handover Note</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <form className=" flex w-full flex-col ">
                   <div className="mb-3 flex w-full flex-col items-start">
                     <label htmlFor="serviceUserName" className="label-title">
-                      Created by
+                      Name of Service User
                     </label>
-                    <div className="input-field bg-white">
+                    <div className="input-field ">
                       <input
                         type="text"
                         id="serviceUserName"
@@ -89,9 +89,9 @@ export default function NewLogs() {
 
                   <div className="mb-3 flex w-full flex-col items-start">
                     <label htmlFor="updatedBy" className="label-title">
-                      Name of Service User
+                      Updated by
                     </label>
-                    <div className="input-field w-40 bg-white">
+                    <div className="input-field w-40">
                       <input
                         type="text"
                         id="updatedBy"
@@ -105,9 +105,9 @@ export default function NewLogs() {
 
                   <div className="mb-3 flex w-full flex-col items-start">
                     <label htmlFor="placement" className="label-title">
-                      Name of Document
+                      Placement
                     </label>
-                    <div className="input-field w-40 bg-white">
+                    <div className="input-field w-40">
                       <input
                         type="text"
                         id="placement"
@@ -115,47 +115,18 @@ export default function NewLogs() {
                         className="w-40 bg-transparent outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
+                      <IoIosArrowDropdown size={18} />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="mb-3 flex w-full flex-col items-start">
-                      <label htmlFor="staffOnDuty" className="label-title">
-                        Report Date
-                      </label>
-                      <div className="input-field w-40 bg-white">
-                        <input
-                          type="date"
-                          id="staffOnDuty"
-                          placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
-                          style={{ width: "100%" }}
-                        />
-                      </div>
-                    </div>
-                    <div className="mb-3 flex w-full flex-col items-start">
-                      <label htmlFor="staffOnDuty" className="label-title">
-                        Creation Date
-                      </label>
-                      <div className="input-field w-40 bg-white">
-                        <input
-                          type="date"
-                          id="staffOnDuty"
-                          placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
-                          style={{ width: "100%" }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-6 flex w-full flex-col items-start">
+                  <div className="my-6 flex w-full flex-col items-start">
                     <label htmlFor="email" className="label-title ">
-                      Report Details
+                      Note
                     </label>
-                    <div className="textarea-field bg-white">
+                    <div className="textarea-field ">
                       <textarea
                         id="email"
-                        placeholder="e.g johndoe@gmail.com"
+                        placeholder="enter note"
                         className="bg-transparent outline-none focus:outline-none"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
@@ -168,17 +139,17 @@ export default function NewLogs() {
                     <div
                       {...getRootProps({
                         className:
-                          "flex w-full bg-white flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
+                          "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
                       })}
                     >
                       <input {...getInputProps()} />
                       <FaCloudArrowUp className="text-3xl" />
-                      <p className="text-sm">Drag and Drop files here or Browse</p>
-                      <p className="px-2 text-center text-xs">
+                      <p className="text-center text-sm">Drag and Drop files here or Browse</p>
+                      <p className="px-3 text-center text-xs">
                         Supported files are JPG, PNG, MP4, PDF, DOC, XLXS, PPTX
                       </p>
                     </div>
-                    <div className="mt-4 flex flex-wrap gap-2 bg-white">
+                    <div className="mt-4 flex flex-wrap gap-2">
                       {files.map((file) => (
                         <div key={file.name} className="relative h-20 w-20">
                           <img src={file.preview} alt={file.name} className="h-full w-full rounded object-cover" />
@@ -192,7 +163,7 @@ export default function NewLogs() {
                     type="button"
                     className="flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
                   >
-                    SAVE AND PUBLISH
+                    POST
                   </Link>
                 </form>
               </div>

@@ -57,7 +57,7 @@ export const Logger = () => {
   return (
     <div>
       {/* Tab Navigation */}
-      <div className="flex w-full justify-between px-2 py-3">
+      <div className="flex w-full justify-between rounded-t-md bg-white  pt-3">
         <div className="flex w-full justify-between">
           {tabs.map((tab) => (
             <button
@@ -83,7 +83,7 @@ export const Logger = () => {
 const DailyLog = () => {
   return (
     <>
-      <div className="flex items-center justify-between gap-3 px-4 py-3">
+      <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
         <Link
           href="/dashboard/new-logs"
           className="flex items-center gap-2 whitespace-nowrap rounded-md bg-[#0085FF] px-3 py-2"
@@ -107,7 +107,7 @@ const DailyLog = () => {
         </div>
       </div>
       {Asset.map((assets) => (
-        <div key={assets.id} className="w-full gap-3 rounded  px-4 py-2 shadow">
+        <div key={assets.id} className="w-full gap-3 rounded  bg-[#FFFFFF] px-4 py-2 shadow">
           <div className="flex flex-row gap-2">
             <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
             <div className="flex w-full justify-between">
@@ -161,7 +161,7 @@ const DailyLog = () => {
 const WeeklyReport = () => {
   return (
     <>
-      <div className="flex items-center justify-between gap-3 px-4 py-3">
+      <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
         <Link href="/service-users/weekly-report" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
           <p className="whitespace-nowrap text-white max-md:hidden max-md:px-0">New Weekly Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
@@ -182,7 +182,7 @@ const WeeklyReport = () => {
         </div>
       </div>
       {Asset.map((assets) => (
-        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
+        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] bg-[#ffffff] px-4 py-2 shadow">
           <div className="flex flex-row gap-2">
             <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
             <div className="flex w-full justify-between">
@@ -230,7 +230,7 @@ const WeeklyReport = () => {
 const MonthlyReport = () => {
   return (
     <>
-      <div className="flex items-center justify-between gap-3 px-4 py-3">
+      <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
         <Link
           href="/service-users/monthly-report"
           className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
@@ -254,7 +254,7 @@ const MonthlyReport = () => {
         </div>
       </div>
       {Asset.map((assets) => (
-        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
+        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] bg-[#ffffff] px-4 py-2 shadow">
           <div className="flex flex-row gap-2">
             <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
             <div className="flex w-full justify-between">
@@ -345,7 +345,7 @@ const SkillsProgress = () => {
   }
 
   return (
-    <div className=" w-full p-4 ">
+    <div className=" w-full bg-[#ffffff] p-4">
       {" "}
       {/* Adjust the height value here */}
       <Bar data={data} options={options} max-height={500} />
@@ -358,11 +358,8 @@ export default SkillsProgress
 const HandoverNote = () => {
   return (
     <>
-      <div className="flex items-center justify-between gap-3 px-4 py-3">
-        <Link
-          href="/service-users/monthly-report"
-          className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
-        >
+      <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
+        <Link href="/service-users/handover-note" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
           <p className="whitespace-nowrap text-white max-md:hidden max-md:px-0">New Handover Note</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
@@ -382,7 +379,7 @@ const HandoverNote = () => {
         </div>
       </div>
       {Asset.map((assets) => (
-        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] px-4 py-2 shadow">
+        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] bg-[#ffffff] px-4 py-2 shadow">
           <div className="flex flex-row gap-2">
             <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
             <div className="flex w-full justify-between">

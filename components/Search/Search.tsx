@@ -4,7 +4,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
 
 const Search = () => {
   return (
-    <div className="flex h-[33px] w-full max-w-[317px] items-center justify-between gap-2 rounded-[5px] border-[0.5px] border-[#000000] px-3 py-1 ">
+    <div className="flex h-[33px] w-full max-w-[317px] items-center justify-between gap-2 rounded-[5px]  bg-white px-3 py-1 ">
       <input
         type="text"
         id="search"

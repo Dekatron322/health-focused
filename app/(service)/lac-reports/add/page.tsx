@@ -54,12 +54,12 @@ export default function AddServiceUser() {
     switch (activeTab) {
       case "section1":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name of Service User
               </label>
-              <div className="input-field ">
+              <div className="input-field bg-white">
                 <input
                   type="text"
                   id="serviceUserName"
@@ -74,7 +74,7 @@ export default function AddServiceUser() {
               <label htmlFor="updatedBy" className="label-title">
                 Update by
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="text"
                   id="updatedBy"
@@ -90,7 +90,7 @@ export default function AddServiceUser() {
               <label htmlFor="placement" className="label-title">
                 Allocated Keyworker
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="text"
                   id="placement"
@@ -106,7 +106,7 @@ export default function AddServiceUser() {
                 <label htmlFor="staffOnDuty" className="label-title">
                   Date of Review
                 </label>
-                <div className="input-field w-40">
+                <div className="input-field w-40 bg-white">
                   <input
                     type="date"
                     id="staffOnDuty"
@@ -120,7 +120,7 @@ export default function AddServiceUser() {
                 <label htmlFor="staffOnDuty" className="label-title">
                   Date of Next Review
                 </label>
-                <div className="input-field w-40">
+                <div className="input-field w-40 bg-white">
                   <input
                     type="date"
                     id="staffOnDuty"
@@ -131,11 +131,18 @@ export default function AddServiceUser() {
                 </div>
               </div>
             </div>
+            <Link
+              href="/dashboard/post/"
+              type="button"
+              className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+            >
+              SAVE AND CONTINUE
+            </Link>
           </form>
         )
       case "section2":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Preparation between carer and young person for LAC review:
@@ -144,7 +151,7 @@ export default function AddServiceUser() {
                 Staff guide: What number LAC review will this be? Add confirmation from young person that they
                 understand the aim of the LAC review and why they are participating.
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -162,7 +169,7 @@ export default function AddServiceUser() {
                 Staff guide: Provide a brief summary of significant milestones, key developments that highlight positive
                 progression.
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -182,7 +189,7 @@ export default function AddServiceUser() {
                 barriers to sustainable care within the placement. This should include self - imposed barriers or
                 barriers imposed by external factors, issues of concern.
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -200,7 +207,7 @@ export default function AddServiceUser() {
                 Staff guide: Please interview the young person to find out what they know about the care expectations
                 they are entitled to as provided by the care home.
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -218,7 +225,7 @@ export default function AddServiceUser() {
                 Staff guide: Please list in summary the identified risks the young person is exposed to and what are the
                 risks the young person may bring to the other residents at the care home
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -238,7 +245,7 @@ export default function AddServiceUser() {
                 management. Does the child display a rebellious , non -compliant attitude to staff correction, requests
                 or supervision
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -256,7 +263,7 @@ export default function AddServiceUser() {
                 Staff guide: add dates where police or EST was called only. For the dates of missing add date child
                 returned
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -265,12 +272,19 @@ export default function AddServiceUser() {
                 ></textarea>
               </div>
             </div>
+            <Link
+              href="/dashboard/post/"
+              type="button"
+              className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+            >
+              SAVE AND CONTINUE
+            </Link>
           </form>
         )
       case "section3":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col ">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
                   General state of physical health
@@ -282,7 +296,7 @@ export default function AddServiceUser() {
                   taken to counter any form of compromise to the young person&apos;s health. Include details of any
                   developments in an existing health issue or disability.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -297,7 +311,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="label-title">
                     Last date of dental Appointment
                   </label>
-                  <div className="input-field w-40">
+                  <div className="input-field w-40 bg-white">
                     <input
                       type="date"
                       id="staffOnDuty"
@@ -311,7 +325,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="label-title">
                     Last date of hospital appointment
                   </label>
-                  <div className="input-field w-40">
+                  <div className="input-field w-40 bg-white">
                     <input
                       type="date"
                       id="staffOnDuty"
@@ -325,7 +339,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="label-title">
                     Last date of optical appointment
                   </label>
-                  <div className="input-field w-40">
+                  <div className="input-field w-40 bg-white">
                     <input
                       type="date"
                       id="staffOnDuty"
@@ -349,7 +363,7 @@ export default function AddServiceUser() {
                   substance abuse contributing to the emotional imbalance. Is the young person happy and open, also
                   include positive emotional wellbeing.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -369,7 +383,7 @@ export default function AddServiceUser() {
                     <label htmlFor="staffOnDuty" className="label-title ">
                       Latest PEP Date
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-40 bg-white">
                       <input
                         type="date"
                         id="staffOnDuty"
@@ -386,7 +400,7 @@ export default function AddServiceUser() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Attended
                     </label>
-                    <div className="input-field__sm w-40">
+                    <div className="input-field__sm w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -401,7 +415,7 @@ export default function AddServiceUser() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Missed
                     </label>
-                    <div className="input-field__sm w-40">
+                    <div className="input-field__sm w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -422,7 +436,7 @@ export default function AddServiceUser() {
                   Staff guide: Include self made barriers, external influence or whatever acts as a factor preventing
                   the education/training progress planned for the young person.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -441,7 +455,7 @@ export default function AddServiceUser() {
                   qualification based training. What steps have been made to remove barriers preventing the progress of
                   the education plan.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -460,7 +474,7 @@ export default function AddServiceUser() {
                   to a higher level or class, completion of a course or an aspect of it. Getting a young person to start
                   a course or class attendance where there has been previous resistance.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -475,7 +489,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="label-title">
                     Date of last parent evening
                   </label>
-                  <div className="input-field w-40">
+                  <div className="input-field w-40 bg-white">
                     <input
                       type="date"
                       id="staffOnDuty"
@@ -489,7 +503,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="label-title">
                     Who attended?
                   </label>
-                  <div className="input-field w-40">
+                  <div className="input-field w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -517,7 +531,7 @@ export default function AddServiceUser() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Attended
                     </label>
-                    <div className="input-field__sm ">
+                    <div className="input-field__sm bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -532,7 +546,7 @@ export default function AddServiceUser() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Missed
                     </label>
-                    <div className="input-field__sm w-40">
+                    <div className="input-field__sm w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -544,13 +558,20 @@ export default function AddServiceUser() {
                   </div>
                 </div>
               </div>
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </form>
           </>
         )
       case "section4":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col ">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
               <p className="mb-4 text-xl">Contact</p>
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
@@ -560,7 +581,7 @@ export default function AddServiceUser() {
                   Staff guide: Please include contact days and hours and who with. Are there any issues around the
                   contact arrangements -restrictions or supervision.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -579,7 +600,7 @@ export default function AddServiceUser() {
                   Staff guide: Please provide details of staff activities to progress independent skills towards agreed
                   targets
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -596,7 +617,7 @@ export default function AddServiceUser() {
                 <p className="mb-3 text-xs">
                   Staff guide: in summary briefly list independent skills showing progress.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -614,7 +635,7 @@ export default function AddServiceUser() {
                 <p className="mb-3 text-xs">
                   Staff guide: in summary briefly list independent skills showing progress.
                 </p>
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -623,6 +644,13 @@ export default function AddServiceUser() {
                   ></textarea>
                 </div>
               </div>
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </form>
           </>
         )
@@ -630,14 +658,14 @@ export default function AddServiceUser() {
       case "section5":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col ">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
               <p className="mb-4 text-xl">Savings</p>
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
                   Where we the savings held?
                 </label>
 
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -652,7 +680,7 @@ export default function AddServiceUser() {
                   How often has money been paid into the account?
                 </label>
 
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -667,7 +695,7 @@ export default function AddServiceUser() {
                   Total amount paid into the account?
                 </label>
 
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -676,13 +704,20 @@ export default function AddServiceUser() {
                   ></textarea>
                 </div>
               </div>
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </form>
           </>
         )
       case "section6":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col ">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
               <div className="my-3 flex w-full flex-col items-start">
                 <p className="mb-4 text-xl">Holidays</p>
 
@@ -694,7 +729,7 @@ export default function AddServiceUser() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Attended
                     </label>
-                    <div className="input-field__sm w-40">
+                    <div className="input-field__sm w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -709,7 +744,7 @@ export default function AddServiceUser() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Missed
                     </label>
-                    <div className="input-field__sm w-40">
+                    <div className="input-field__sm w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -727,7 +762,7 @@ export default function AddServiceUser() {
                   Holiday destination
                 </label>
 
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -742,7 +777,7 @@ export default function AddServiceUser() {
                    Who with?
                 </label>
 
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -757,7 +792,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="label-title">
                     Return Date
                   </label>
-                  <div className="input-field w-40">
+                  <div className="input-field w-40 bg-white">
                     <input
                       type="date"
                       id="staffOnDuty"
@@ -771,7 +806,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="label-title">
                     Departure Date
                   </label>
-                  <div className="input-field w-40">
+                  <div className="input-field w-40 bg-white">
                     <input
                       type="date"
                       id="staffOnDuty"
@@ -789,7 +824,7 @@ export default function AddServiceUser() {
                   Supervising social workers
                 </label>
 
-                <div className="textarea-field ">
+                <div className="textarea-field bg-white">
                   <textarea
                     id="email"
                     placeholder="Separate names by comma"
@@ -798,6 +833,13 @@ export default function AddServiceUser() {
                   ></textarea>
                 </div>
               </div>
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </form>
           </>
         )
@@ -809,7 +851,7 @@ export default function AddServiceUser() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
@@ -820,14 +862,14 @@ export default function AddServiceUser() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col rounded-md border-[1px] p-4 md:w-1/2">
-                <div className="flex w-full items-center justify-between">
-                  <p className="text-2xl max-md:text-xl">LAC Report</p>
+              <div className=" mb-6 flex flex-col rounded-md   md:w-1/2">
+                <div className="flex w-full items-center justify-between rounded-md bg-white p-4">
+                  <p className="text-semibold max-md:text-xl">LAC Report</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
-                <div className="flex w-full justify-between">
+                <div className="mt-3 flex w-full justify-between rounded-t-md bg-white">
                   <Tab label="Section 1" onClick={() => setActiveTab("section1")} active={activeTab === "section1"} />
                   <Tab label="Section 2" onClick={() => setActiveTab("section2")} active={activeTab === "section2"} />
                   <Tab label="Section 3" onClick={() => setActiveTab("section3")} active={activeTab === "section3"} />
@@ -836,17 +878,10 @@ export default function AddServiceUser() {
                   <Tab label="Section 6" onClick={() => setActiveTab("section6")} active={activeTab === "section6"} />
                 </div>
                 {renderContent()}
-                <Link
-                  href="/dashboard/post/"
-                  type="button"
-                  className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
-                >
-                  SAVE AND CONTINUE
-                </Link>
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

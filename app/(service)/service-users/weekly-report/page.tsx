@@ -57,7 +57,7 @@ export default function WeeklyReport() {
     switch (activeTab) {
       case "general-info":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-white p-4">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name of Service User
@@ -172,11 +172,18 @@ export default function WeeklyReport() {
                 ))}
               </div>
             </div>
+            <Link
+              href="/dashboard/post/"
+              type="button"
+              className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+            >
+              SAVE AND CONTINUE
+            </Link>
           </form>
         )
       case "skill":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-white p-4">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Self Care / Personal Hygeine
@@ -307,11 +314,18 @@ export default function WeeklyReport() {
                 <FaCircleInfo size={24} />
               </div>
             </div>
+            <Link
+              href="/dashboard/post/"
+              type="button"
+              className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+            >
+              SAVE AND CONTINUE
+            </Link>
           </form>
         )
       case "skill(2)":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-white p-4">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Social Interaction/Relationships
@@ -471,18 +485,25 @@ export default function WeeklyReport() {
                 <FaCircleInfo size={24} />
               </div>
             </div>
+            <Link
+              href="/dashboard/post/"
+              type="button"
+              className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+            >
+              SAVE AND CONTINUE
+            </Link>
           </form>
         )
       case "appointments":
         return (
           <>
-            <div className="mt-4">
-              <form className=" flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
+            <div className="mt-4 w-full rounded-md bg-white p-6">
+              <form className=" flex w-full flex-col rounded-md border-[1px] border-[#C0C0C0] bg-[#E6E6E6] p-4">
                 <div className="mb-3 flex w-full flex-col items-start">
                   <label htmlFor="serviceUserName" className="label-title">
                     Title of Appointment
                   </label>
-                  <div className="input-field ">
+                  <div className="input-field bg-white">
                     <input
                       type="text"
                       id="serviceUserName"
@@ -498,7 +519,7 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Date
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field flex w-full bg-white">
                       <input
                         type="date"
                         id="staffOnDuty"
@@ -512,7 +533,7 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Appointment Type
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-full bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -527,7 +548,7 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Attended
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-20 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -541,25 +562,25 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Missed
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
                         placeholder=""
                         className="w-40 bg-transparent text-sm outline-none focus:outline-none"
-                        style={{ width: "100%" }}
+                        style={{ width: "50%" }}
                       />
                     </div>
                   </div>
                 </div>
               </form>
 
-              <form className="my-4 flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
+              <form className="my-4 flex w-full flex-col rounded-md border-[1px] border-[#C0C0C0] bg-[#E6E6E6] p-4">
                 <div className="mb-3 flex w-full flex-col items-start">
                   <label htmlFor="serviceUserName" className="label-title">
                     Title of Appointment
                   </label>
-                  <div className="input-field ">
+                  <div className="input-field bg-white">
                     <input
                       type="text"
                       id="serviceUserName"
@@ -575,7 +596,7 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Date
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-40 bg-white">
                       <input
                         type="date"
                         id="staffOnDuty"
@@ -589,7 +610,7 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Appointment Type
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -604,7 +625,7 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Attended
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -618,7 +639,7 @@ export default function WeeklyReport() {
                     <label htmlFor="staffOnDuty" className="label-title">
                       Missed
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-40 bg-white">
                       <input
                         type="text"
                         id="staffOnDuty"
@@ -637,19 +658,26 @@ export default function WeeklyReport() {
                 Add Another Appointment
                 <IoIosAddCircleOutline size={20} />
               </button>
+
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </div>
           </>
         )
       case "behaviour":
         return (
-          <form className="mt-4 flex w-full flex-col ">
-            <div className="mb-3 flex w-full  justify-end gap-5">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-white">
+            <div className="mb-3 flex w-full  justify-end gap-5 px-4 py-2">
               <p className="text-end max-md:text-xs">Happened Just Ones</p>
               <p className="text-end max-md:text-xs">Happened More than Ones</p>
             </div>
 
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+            <div className="my-3 mb-3 flex w-full  items-center justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Bullying</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
@@ -657,128 +685,127 @@ export default function WeeklyReport() {
               </div>
             </div>
 
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Fire Setting</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Criminal Damage</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Property Damage</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Drug/Substance Use</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Drug Dealing</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Racial Abuse</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Verbal Abuse</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Argument or Altercation</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Assault</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Smoking</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Non-cooperation or non compliance</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Unauthorised Absence</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Inciting Terrorist Acts</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Self Harm</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Suicidal Ideation</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
                 <Checkbox className="checkboxes" />
               </div>
             </div>
-            <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full items-center  justify-between">
+
+            <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Theft</p>
               <div className="flex gap-60 max-md:gap-32">
                 <Checkbox className="checkboxes" />
@@ -786,10 +813,8 @@ export default function WeeklyReport() {
               </div>
             </div>
 
-            <div className="mb-6 border"></div>
-
-            <div className="mb-6 flex w-full flex-col items-start">
-              <label htmlFor="email" className="label-title ">
+            <div className="mb-6 flex w-full flex-col items-start  px-4">
+              {/* <label htmlFor="email" className="label-title ">
                 Add Other Risks
               </label>
               <div className="textarea-field ">
@@ -799,7 +824,14 @@ export default function WeeklyReport() {
                   className="bg-transparent outline-none focus:outline-none"
                   style={{ width: "100%", background: "transparent" }}
                 ></textarea>
-              </div>
+              </div> */}
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </div>
           </form>
         )
@@ -811,7 +843,7 @@ export default function WeeklyReport() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
@@ -822,14 +854,14 @@ export default function WeeklyReport() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col items-center  rounded-md border-[1px] p-4 md:w-2/3">
-                <div className="flex w-full justify-between">
-                  <p className="text-2xl">New Service User</p>
+              <div className=" mb-6 flex flex-col items-center   md:w-2/3">
+                <div className="flex w-full justify-between rounded-md bg-white p-4">
+                  <p className="text-base font-semibold">New Weekly Report</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
-                <div className="flex w-full justify-between">
+                <div className="my-4 flex w-full justify-between rounded-md bg-white px-4 pt-4">
                   <Tab
                     label="General"
                     onClick={() => setActiveTab("general-info")}
@@ -853,17 +885,8 @@ export default function WeeklyReport() {
                   />
                 </div>
                 {renderContent()}
-                <Link
-                  href="/dashboard/post/"
-                  type="button"
-                  className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
-                >
-                  SAVE AND CONTINUE
-                </Link>
               </div>
             </div>
-
-            <Footer />
           </div>
         </div>
       </section>
