@@ -16,7 +16,7 @@ const SideBar = () => {
           <Link href="/">
             <div className="flex items-center gap-2">
               <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
-              <p className="inter-font font-normal max-md:px-0 max-md:text-center max-md:text-[18px] md:text-lg">
+              <p className="inter-font font-normal text-white max-md:px-0 max-md:text-center max-md:text-[18px] md:text-lg">
                 Health Focused{" "}
               </p>
             </div>

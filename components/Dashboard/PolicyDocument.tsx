@@ -15,7 +15,7 @@ const PolicyDocument = () => {
   return (
     <>
       {Policies.map((policy, index) => (
-        <div className=" w-full rounded border-[0.5px] p-4 shadow" key={policy.id}>
+        <div className=" w-full rounded border-[0.5px] bg-white p-4 shadow" key={policy.id}>
           <div>
             <Image src={policy.icon} height={45} width={36} alt="" />
             <h6 className="mt-3 text-lg font-bold">{policy.title}</h6>

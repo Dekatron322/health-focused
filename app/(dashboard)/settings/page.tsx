@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { useDropzone } from "react-dropzone"
 import { FaCloudArrowUp } from "react-icons/fa6"
-import { MdCheckBoxOutlineBlank } from "react-icons/md"
+import { MdCheckBoxOutlineBlank, MdOutlineFileDownload } from "react-icons/md"
 import Tab from "components/Search/Tab"
 import CustomDropdown from "components/Search/CustomDropdown"
 import { IoAddCircleOutline } from "react-icons/io5"
@@ -69,84 +69,84 @@ export default function AddServiceUser() {
   const [tableData, setTableData] = useState<TableRow[]>([
     {
       id: 1,
-      name: "King’s Street",
-      placement: "SW1A 2AA",
-      date: "5",
-      keyWorker: "4",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
       //   localAuthority: "Croydon",
-      status: "Croydon",
+      status: "Paid",
     },
     {
       id: 2,
-      name: "24 Madrid Road",
-      placement: "W1A 0AX",
-      date: "3",
-      keyWorker: "1",
-      //   localAuthority: "Kent",
-      status: "Kent",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
+      //   localAuthority: "Croydon",
+      status: "Pending",
     },
     {
       id: 3,
-      name: "Queen’s Court",
-      placement: "B33 8TH",
-      date: "2",
-      keyWorker: "1",
-      //   localAuthority: "Kent",
-      status: "Kent",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
+      //   localAuthority: "Croydon",
+      status: "Paid",
     },
     {
       id: 4,
-      name: "Love Avenue",
-      placement: "DN55 1PT",
-      date: "7",
-      keyWorker: "3",
-      //   localAuthority: "Harrington",
-      status: "Harrington",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
+      //   localAuthority: "Croydon",
+      status: "Cancelled",
     },
     {
       id: 5,
-      name: "Avenue Lane",
-      placement: "EC1A 1BB",
-      date: "8",
-      keyWorker: "2",
-      //   localAuthority: "Buckinghamshire",
-      status: "Arlington",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
+      //   localAuthority: "Croydon",
+      status: "Paid",
     },
     {
       id: 6,
-      name: "King’s Street",
-      placement: "BBND 1ZZ",
-      date: "6",
-      keyWorker: "2",
-      //   localAuthority: "Arlington",
-      status: "Kent",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
+      //   localAuthority: "Croydon",
+      status: "Paid",
     },
     {
       id: 7,
-      name: "Queen’s Court",
-      placement: "BX1 1LT",
-      date: "3",
-      keyWorker: "1",
-      //   localAuthority: "Kent",
-      status: "Croydon",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
+      //   localAuthority: "Croydon",
+      status: "Paid",
     },
     {
       id: 8,
-      name: "42 Zero Street",
-      placement: "CV35 0DB",
-      date: "4",
-      keyWorker: "3",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
       //   localAuthority: "Croydon",
-      status: "Hounslow",
+      status: "Paid",
     },
     {
       id: 9,
-      name: "Mavin Estate",
-      placement: "DH98 1BT",
-      date: "5",
-      keyWorker: "3",
-      //   localAuthority: "Hounslow",
-      status: "Buckinghamshire",
+      name: "INV2030303",
+      placement: "11/12/2024",
+      date: "11/12/2024",
+      keyWorker: "$500",
+      //   localAuthority: "Croydon",
+      status: "Paid",
     },
   ])
 
@@ -222,12 +222,12 @@ export default function AddServiceUser() {
     switch (activeTab) {
       case "general-info":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name
               </label>
-              <div className="input-field ">
+              <div className="input-field bg-white">
                 <input
                   type="text"
                   id="serviceUserName"
@@ -242,7 +242,7 @@ export default function AddServiceUser() {
               <label htmlFor="placement" className="label-title">
                 Organisation Name
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="text"
                   id="placement"
@@ -257,7 +257,7 @@ export default function AddServiceUser() {
               <label htmlFor="updatedBy" className="label-title">
                 Email
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="email"
                   id="updatedBy"
@@ -275,7 +275,7 @@ export default function AddServiceUser() {
               <div
                 {...getRootProps({
                   className:
-                    "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
+                    "flex bg-white w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
                 })}
               >
                 <input {...getInputProps()} />
@@ -291,16 +291,23 @@ export default function AddServiceUser() {
                 ))}
               </div>
             </div>
+            <Link
+              href="/dashboard/post/"
+              type="button"
+              className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+            >
+              SAVE AND CONTINUE
+            </Link>
           </form>
         )
       case "bio":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Current Password
               </label>
-              <div className="input-field ">
+              <div className="input-field bg-white">
                 <input
                   type="password"
                   id="serviceUserName"
@@ -315,7 +322,7 @@ export default function AddServiceUser() {
               <label htmlFor="placement" className="label-title">
                 New Password
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="password"
                   id="placement"
@@ -330,7 +337,7 @@ export default function AddServiceUser() {
               <label htmlFor="staffOnDuty" className="label-title">
                 Confirm Password
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="password"
                   id="staffOnDuty"
@@ -340,13 +347,20 @@ export default function AddServiceUser() {
                 />
               </div>
             </div>
+            <Link
+              href="/dashboard/post/"
+              type="button"
+              className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+            >
+              SAVE AND CONTINUE
+            </Link>
           </form>
         )
       case "contacts":
         return (
           <>
             <>
-              <div className="mt-3 flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
+              <div className="mt-3 flex w-full flex-col rounded-md  bg-[#f5f5f5]  p-4">
                 <p className="font-bold">Plan</p>
                 <p className="mb-4 text-xs">Change your plan, update your billing info, and download your invoices</p>
                 <p className="mb-4 text-xs">
@@ -373,7 +387,7 @@ export default function AddServiceUser() {
               </div>
             </>
             <div className="mt-3">
-              <div className=" flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
+              <div className="mt-3 flex w-full flex-col rounded-md  bg-[#f5f5f5]  p-4">
                 <p className="font-bold">Billing Details</p>
                 <p className="mb-4 text-xs">Your next invoice is for GBP 352.80 on Jul 5, 2024, 10:30 GMT+1</p>
                 <p className="text-sm font-bold">Name</p>
@@ -395,7 +409,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mt-3">
-              <div className=" flex w-full flex-col rounded-md border-[1px] border-[#69B7FF] p-4">
+              <div className="mt-3 flex w-full flex-col rounded-md  bg-[#f5f5f5]  p-4">
                 <p className="font-bold">Payment</p>
                 <p className="mb-4 text-xs">Your next invoice is for GBP 352.80 on Jul 5, 2024, 10:30 GMT+1</p>
                 <p className="text-sm font-bold">
@@ -418,8 +432,8 @@ export default function AddServiceUser() {
         )
       case "others":
         return (
-          <div className=" flex  flex-row justify-center gap-3 py-3">
-            <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
+          <div className=" flex  flex-row justify-center gap-3  py-3">
+            <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-4">
               <div className="flex w-full justify-between">
                 <div className="flex items-center gap-3">
                   <Link href="/placement/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
@@ -443,7 +457,7 @@ export default function AddServiceUser() {
 
               {/* Table */}
               <div className="mt-4 w-full">
-                <div className="mb-4 flex justify-between gap-4">
+                {/* <div className="mb-4 flex justify-between gap-4">
                   <CustomDropdown
                     options={getUniqueValues("name")}
                     selectedOption={filters.name}
@@ -473,18 +487,18 @@ export default function AddServiceUser() {
                       placeholder="Key Worker"
                     />
                   </div>
-                </div>
+                </div> */}
                 <table className="w-full border-collapse text-left">
                   <thead>
                     <tr>
-                      <th className="p-3 max-md:hidden"></th>
-                      <th className="p-3 max-md:text-sm">Name of Placement</th>
-                      <th className="p-3 max-md:hidden">Postcode</th>
-                      <th className="p-3 max-md:hidden">Number of Rooms</th>
-                      <th className="p-3 max-md:hidden">Active Service Users</th>
-                      <th className="p-3 max-md:hidden">Location</th>
+                      <th className="p-3 text-sm max-md:hidden"></th>
+                      <th className="p-3 text-sm">Invoice Number</th>
+                      <th className="p-3 text-sm max-md:hidden">Invoice Date</th>
+                      <th className="p-3 text-sm max-md:hidden">Due Date</th>
+                      <th className="p-3 text-sm max-md:hidden">Amount</th>
+                      <th className="p-3 text-sm max-md:hidden">Status</th>
                       {/* <th className="p-3">Status</th> */}
-                      <th className="p-3 max-md:text-sm">Action</th>
+                      <th className="p-3 text-sm">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -499,29 +513,9 @@ export default function AddServiceUser() {
                         <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
 
                         <td className="p-3 text-sm">{row.status}</td>
-                        <td className="relative cursor-pointer p-3 text-sm">
-                          <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
-                          {visibleDropdownId === row.id && (
-                            <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
-                              <ul className="py-1">
-                                <Link href="/service-users/user/">
-                                  <li
-                                    className="cursor-pointer px-4 py-2  hover:bg-gray-100"
-                                    onClick={() => handleDropdownAction("View", row)}
-                                  >
-                                    View Profile
-                                  </li>
-                                </Link>
-
-                                <li
-                                  className="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                                  onClick={() => handleDropdownAction("End Placement", row)}
-                                >
-                                  Edit
-                                </li>
-                              </ul>
-                            </div>
-                          )}
+                        <td className="relative flex cursor-pointer items-center gap-1 p-3 text-sm text-[#0085FF] underline">
+                          Download
+                          <MdOutlineFileDownload className="etxt-lg text-[#0085FF]" />
                         </td>
                       </tr>
                     ))}
@@ -570,7 +564,7 @@ export default function AddServiceUser() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
@@ -581,14 +575,14 @@ export default function AddServiceUser() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md border-[1px] p-4 md:w-3/4">
-                <div className="flex w-full items-center justify-between">
-                  <p className="md:text-2xl">New Service User</p>
+              <div className=" mb-6 flex flex-col   md:w-3/4">
+                <div className="flex w-full items-center justify-between rounded-md bg-white p-4">
+                  <p className="text-xl font-semibold">Settings</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
-                <div className="flex w-full justify-between">
+                <div className="mt-4 flex w-full justify-between rounded-t-md bg-white px-4">
                   <Tab
                     label="Profile"
                     onClick={() => setActiveTab("general-info")}
@@ -599,13 +593,6 @@ export default function AddServiceUser() {
                   <Tab label="Payment History" onClick={() => setActiveTab("others")} active={activeTab === "others"} />
                 </div>
                 {renderContent()}
-                <Link
-                  href="/dashboard/post/"
-                  type="button"
-                  className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
-                >
-                  SAVE AND CONTINUE
-                </Link>
               </div>
             </div>
 
