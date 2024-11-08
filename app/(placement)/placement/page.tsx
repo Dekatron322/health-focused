@@ -189,11 +189,11 @@ export default function ServiceUsers() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
-              <div className="flex w-full gap-4 px-16  max-md:flex-col max-md:px-3">
+              <div className="my-4 flex w-full gap-4  px-16 max-md:flex-col max-md:px-3">
                 <div className={styles.dashboard_body__lhs}>
                   <div className={styles.service_users}>
                     <Placements />
@@ -203,7 +203,7 @@ export default function ServiceUsers() {
             </div>
 
             <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
-              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
+              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] bg-white p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <Link href="/placement/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
@@ -220,14 +220,14 @@ export default function ServiceUsers() {
                       options={getUniqueValues("status")}
                       selectedOption={filters.status}
                       onChange={(value) => handleFilterChange("status", value)}
-                      placeholder="Service Users"
+                      placeholder="Active Placements"
                     />
                   </div>
                 </div>
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  <div className="mb-4 flex justify-between gap-4">
+                  {/* <div className="mb-4 flex justify-between gap-4">
                     <div className="w-full max-md:hidden">
                       <CustomDropdown
                         options={getUniqueValues("name")}
@@ -258,16 +258,16 @@ export default function ServiceUsers() {
                       onChange={(value) => handleFilterChange("keyWorker", value)}
                       placeholder="Key Worker"
                     />
-                  </div>
+                  </div> */}
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3 max-md:hidden"></th>
-                        <th className="p-3 ">Name of Placement</th>
-                        <th className="p-3 max-md:hidden">Postcode</th>
-                        <th className="p-3">Number of Rooms</th>
-                        <th className="p-3 max-md:hidden">Active Service Users</th>
-                        <th className="p-3 max-md:hidden">Location</th>
+                        <th className="p-3 text-sm max-md:hidden"></th>
+                        <th className="p-3 text-sm">Name of Placement</th>
+                        <th className="p-3 text-sm max-md:hidden">Postcode</th>
+                        <th className="p-3 text-sm">Number of Rooms</th>
+                        <th className="p-3 text-sm max-md:hidden">Active Service Users</th>
+                        <th className="p-3 text-sm max-md:hidden">Location</th>
                         {/* <th className="p-3">Status</th> */}
                         <th className="p-3">Action</th>
                       </tr>
@@ -348,7 +348,7 @@ export default function ServiceUsers() {
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   )

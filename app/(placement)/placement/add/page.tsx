@@ -61,7 +61,7 @@ export default function AddPlacementUser() {
               <label htmlFor="serviceUserName" className="label-title">
                 Name of Placement
               </label>
-              <div className="input-field ">
+              <div className="input-field bg-white">
                 <input
                   type="text"
                   id="serviceUserName"
@@ -76,7 +76,7 @@ export default function AddPlacementUser() {
               <label htmlFor="placement" className="label-title">
                 Location of Placement
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="text"
                   id="placement"
@@ -92,7 +92,7 @@ export default function AddPlacementUser() {
                 <label htmlFor="staffOnDuty" className="label-title">
                   Post Code
                 </label>
-                <div className="input-field w-40">
+                <div className="input-field w-40 bg-white">
                   <input
                     type="text"
                     id="staffOnDuty"
@@ -106,7 +106,7 @@ export default function AddPlacementUser() {
                 <label htmlFor="staffOnDuty" className="label-title">
                   Number of Bedrooms
                 </label>
-                <div className="input-field w-40">
+                <div className="input-field w-40 bg-white">
                   <input
                     type="text"
                     id="staffOnDuty"
@@ -123,7 +123,7 @@ export default function AddPlacementUser() {
               <label htmlFor="email" className="label-title ">
                 Additional Information
               </label>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="Separate names by comma"
@@ -140,7 +140,7 @@ export default function AddPlacementUser() {
               <div
                 {...getRootProps({
                   className:
-                    "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
+                    "flex w-full bg-white flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
                 })}
               >
                 <input {...getInputProps()} />
@@ -655,7 +655,7 @@ export default function AddPlacementUser() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
@@ -666,14 +666,14 @@ export default function AddPlacementUser() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md border-[1px] p-4 md:w-1/3">
+              <div className=" mb-6 flex flex-col  rounded-md bg-[#f5f5f5] p-4 md:w-1/3">
                 <div className="flex w-full justify-between">
-                  <p className="text-2xl">New Placement</p>
+                  <p className="text-lg font-semibold">New Placement</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
-                <div className="flex w-full justify-between">
+                {/* <div className="flex w-full justify-between">
                   <Tab
                     label="General Info"
                     onClick={() => setActiveTab("general-info")}
@@ -682,7 +682,7 @@ export default function AddPlacementUser() {
                   <Tab label="Bio" onClick={() => setActiveTab("bio")} active={activeTab === "bio"} />
                   <Tab label="Contacts" onClick={() => setActiveTab("contacts")} active={activeTab === "contacts"} />
                   <Tab label="Others" onClick={() => setActiveTab("others")} active={activeTab === "others"} />
-                </div>
+                </div> */}
                 {renderContent()}
                 <Link
                   href="/dashboard/post/"
