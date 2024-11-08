@@ -52,7 +52,7 @@ export default function NewLogs() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
@@ -63,11 +63,11 @@ export default function NewLogs() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] p-4 md:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-4 md:w-1/3">
                 <div className="flex w-full items-center justify-between">
-                  <p className="text-2xl max-md:text-xl">New Local Authority</p>
+                  <p className="text-lg font-semibold max-md:text-xl">New Local Authority</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <form className=" flex w-full flex-col ">
@@ -75,7 +75,7 @@ export default function NewLogs() {
                     <label htmlFor="serviceUserName" className="label-title">
                       Name of Local Authority
                     </label>
-                    <div className="input-field ">
+                    <div className="input-field bg-white">
                       <input
                         type="text"
                         id="serviceUserName"
@@ -90,7 +90,7 @@ export default function NewLogs() {
                     <label htmlFor="updatedBy" className="label-title">
                       Email Address
                     </label>
-                    <div className="input-field w-40">
+                    <div className="input-field w-40 bg-white">
                       <input
                         type="text"
                         id="updatedBy"
@@ -106,7 +106,7 @@ export default function NewLogs() {
                       <label htmlFor="staffOnDuty" className="label-title">
                         Phone Number
                       </label>
-                      <div className="input-field w-40">
+                      <div className="input-field w-40 bg-white">
                         <input
                           type="text"
                           id="staffOnDuty"
@@ -120,7 +120,7 @@ export default function NewLogs() {
                       <label htmlFor="email" className="label-title ">
                         Number of Bedrooms
                       </label>
-                      <div className="input-field w-40">
+                      <div className="input-field w-40 bg-white">
                         <input
                           type="text"
                           id="staffOnDuty"
@@ -139,7 +139,7 @@ export default function NewLogs() {
                     <div
                       {...getRootProps({
                         className:
-                          "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
+                          "flex bg-white w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
                       })}
                     >
                       <input {...getInputProps()} />
@@ -169,7 +169,7 @@ export default function NewLogs() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

@@ -11,65 +11,29 @@ const LocalAuthorities = () => {
   setTimeout(() => setLoading(false), 5000)
   return (
     <>
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
+      <div className="h-32 w-full rounded border-[0.5px] bg-white p-4 shadow">
         <div className="mb-8 flex justify-between">
-          <h6 className="text-xs font-bold">Local Authorities</h6>
-          <Link
-            href="/department"
-            className="items-center justify-center rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]"
-          >
-            View
-          </Link>
+          <h6 className="text-base font-semibold">Local Authorities</h6>
         </div>
         <div className="flex justify-between">
           <h6 className="font-bold">12</h6>
         </div>
-        <div className="my-4 h-[1px] w-full bg-slate-300"></div>
-        <div className="flex justify-between">
-          <div className="flex items-center gap-2">
-            <VscPerson />
-            <p className="text-xs">ALL-TIME USER PLACEMENT</p>
-          </div>
-          <p className="text-xs">50</p>
-        </div>
       </div>
 
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
+      <div className="w-full rounded border-[0.5px] bg-white p-4 shadow">
         <div className="mb-8 flex justify-between">
-          <h6 className="text-xs font-bold">Inactive Local Authorities</h6>
-          <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
-            View
-          </Link>
+          <h6 className="text-base font-semibold">Inactive Local Authorities</h6>
         </div>
         <div className="flex justify-between">
           <h6 className="font-bold">18</h6>
         </div>
-        <div className="my-4 h-[1px] w-full bg-slate-300"></div>
-        <div className="flex justify-between">
-          <div className="flex items-center gap-2">
-            <BadgeOutlinedIcon />
-            <p className="text-xs">ALL-TIME USER PLACEMENT</p>
-          </div>
-          <p className="text-xs">30</p>
-        </div>
       </div>
-      <div className="w-full rounded border-[0.5px] p-4 shadow">
+      <div className="w-full rounded border-[0.5px] bg-white p-4 shadow">
         <div className="mb-8 flex justify-between">
-          <h6 className="text-xs font-bold">All Local Authorities</h6>
-          <Link href="/department" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
-            View
-          </Link>
+          <h6 className="text-base font-semibold">All Local Authorities</h6>
         </div>
         <div className="flex justify-between">
           <h6 className="font-bold">7</h6>
-        </div>
-        <div className="my-4 h-[1px] w-full bg-slate-300"></div>
-        <div className="flex justify-between">
-          <div className="flex items-center gap-2">
-            <PiBankBold />
-            <p className="text-xs">ALL-TIME USER PLACEMENT</p>
-          </div>
-          <p className="text-xs">10</p>
         </div>
       </div>
     </>

@@ -191,11 +191,11 @@ export default function ServiceUsers() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
-              <div className="flex w-full gap-4 px-16  max-md:flex-col max-md:px-3">
+              <div className="mt-6 flex w-full gap-4  px-16 max-md:flex-col max-md:px-3">
                 <div className={styles.dashboard_body__lhs}>
                   <div className={styles.service_users}>
                     <LocalAuthorities />
@@ -205,7 +205,7 @@ export default function ServiceUsers() {
             </div>
 
             <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
-              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
+              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] bg-white p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <Link href="/authorities/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
@@ -229,7 +229,7 @@ export default function ServiceUsers() {
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  <div className="mb-4 flex justify-between gap-4">
+                  {/* <div className="mb-4 flex justify-between gap-4">
                     <CustomDropdown
                       options={getUniqueValues("name")}
                       selectedOption={filters.name}
@@ -259,18 +259,18 @@ export default function ServiceUsers() {
                         placeholder="Key Worker"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3 max-md:hidden"></th>
-                        <th className="p-3">Council Name</th>
-                        <th className="p-3 max-md:hidden">Email</th>
-                        <th className="p-3 max-md:hidden">Phone Number</th>
-                        <th className="p-3">Active Placements</th>
-                        <th className="p-3 max-md:hidden">Total Placements</th>
+                        <th className="p-3 text-sm max-md:hidden"></th>
+                        <th className="p-3 text-sm">Council Name</th>
+                        <th className="p-3 text-sm max-md:hidden">Email</th>
+                        <th className="p-3 text-sm max-md:hidden">Phone Number</th>
+                        <th className="p-3 text-sm">Active Placements</th>
+                        <th className="p-3 text-sm max-md:hidden">Total Placements</th>
                         {/* <th className="p-3">Status</th> */}
-                        <th className="p-3">Actions</th>
+                        <th className="p-3 text-sm">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -349,7 +349,7 @@ export default function ServiceUsers() {
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   )
