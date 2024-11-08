@@ -55,12 +55,12 @@ export default function AddServiceUser() {
     switch (activeTab) {
       case "general-info":
         return (
-          <form className="mt-4 flex w-full flex-col ">
-            <div className="mb-3 flex w-full flex-col items-start">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5]">
+            <div className="mb-3 flex w-full flex-col items-start p-4">
               <label htmlFor="serviceUserName" className="label-title">
                 Title
               </label>
-              <div className="input-field ">
+              <div className="input-field bg-white">
                 <input
                   type="text"
                   id="serviceUserName"
@@ -71,14 +71,14 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <p className="mb-6 mt-3 text-xl">Duration for key work</p>
+            <p className="mb-6 mt-3 px-4 text-lg">Duration for key work</p>
 
-            <div className="grid w-full grid-cols-2 gap-3">
+            <div className="grid w-full grid-cols-2 gap-3 px-4">
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="staffOnDuty" className="label-title">
                   Start Date
                 </label>
-                <div className="input-field w-40">
+                <div className="input-field w-40 bg-white">
                   <input
                     type="date"
                     id="staffOnDuty"
@@ -93,7 +93,7 @@ export default function AddServiceUser() {
                 <label htmlFor="staffOnDuty" className="label-title">
                   End Date
                 </label>
-                <div className="input-field w-40">
+                <div className="input-field w-40 bg-white">
                   <input
                     type="date"
                     id="staffOnDuty"
@@ -105,12 +105,12 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="mb-3 flex w-full flex-col items-start">
-              <p className="mb-6 mt-3 text-xl">Staff name</p>
+            <div className="mb-3 flex w-full flex-col items-start px-4">
+              <p className="mb-4 mt-3 text-lg">Staff name</p>
               <label htmlFor="placement" className="label-title">
                 Created by
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="text"
                   id="placement"
@@ -122,11 +122,11 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="mb-3 flex w-full flex-col ">
-              <p className="my-6 text-xl">Choose or Add Key Work Discussion</p>
+            <div className=" flex w-full flex-col px-4">
+              <p className="my-4 text-xl">Choose or Add Key Work Discussion</p>
             </div>
             <div className="mb-3 border"></div>
-            <div className="flex w-full justify-between">
+            <div className="flex w-full justify-between px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -141,7 +141,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -156,7 +156,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -171,7 +171,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -186,7 +186,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -201,7 +201,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -216,7 +216,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -231,7 +231,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -246,11 +246,11 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="my-6 flex w-full flex-col items-start">
+            <div className="my-6 flex w-full flex-col items-start px-4">
               <label htmlFor="email" className="label-title ">
                 Please add other key work discussion not captured.
               </label>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="e.g johndoe@gmail.com"
@@ -260,14 +260,14 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="mb-6 flex w-full flex-col items-start">
+            <div className="mb-6 flex w-full flex-col items-start px-4">
               <label htmlFor="email" className="label-title ">
                 Activity
               </label>
               <p className="mb-3 text-xs">
                 Staff guide: You may add some details about what discussions are to be planned in greater detail here
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="e.g johndoe@gmail.com"
@@ -277,7 +277,7 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="my-3 w-full flex-col items-start md:flex">
+            <div className="my-3 w-full flex-col items-start p-4 md:flex">
               <div className="w-full items-center  justify-between gap-2 md:flex">
                 <div className="mb-3 flex w-full flex-col items-start">
                   <p>Was the service user invited to choose the weekly key work activtity?</p>
@@ -286,7 +286,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     Yes
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -301,7 +301,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     No
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -321,7 +321,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     Yes
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -336,7 +336,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     No
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -347,18 +347,25 @@ export default function AddServiceUser() {
                   </div>
                 </div>
               </div>
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </div>
           </form>
         )
       case "risk-to-self":
         return (
-          <form className="mt-4 flex w-full flex-col ">
-            <p className="mb-3 text-lg">Create/edit key work discussion for the week</p>
-            <div className="mb-3 flex w-full flex-col items-start">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] ">
+            <p className="mb-3 p-4 text-lg">Create/edit key work discussion for the week</p>
+            <div className="mb-3 flex w-full flex-col items-start px-4">
               <label htmlFor="serviceUserName" className="label-title">
                 Staff name
               </label>
-              <div className="input-field ">
+              <div className="input-field bg-white">
                 <input
                   type="text"
                   id="serviceUserName"
@@ -370,13 +377,13 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <p className="mb-6 mt-3 text-xl">Duration for key work</p>
+            <p className="mb-6 mt-3 px-4 text-lg">Duration for key work</p>
 
-            <div className="mb-3 flex w-full flex-col items-start">
+            <div className="mb-3 flex w-full flex-col items-start px-4">
               <label htmlFor="staffOnDuty" className="label-title">
                 Persons or person delivering Key work discussion
               </label>
-              <div className="input-field w-40">
+              <div className="input-field w-40 bg-white">
                 <input
                   type="date"
                   id="staffOnDuty"
@@ -388,17 +395,17 @@ export default function AddServiceUser() {
             </div>
 
             <div className="mb-3 flex w-full flex-col ">
-              <p className="my-6 text-xl">Choose or Add Key Work Discussion</p>
+              <p className="my-4 px-4 text-lg">Choose or Add Key Work Discussion</p>
             </div>
             <div className="mb-3 border"></div>
             <div className="flex w-full justify-between">
-              <div className="mb-3 flex w-full items-center">
+              <div className="mb-3 flex w-full items-center px-4">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
                 </div>
                 <p className="text-sm">Indoor meal with staff</p>
               </div>
-              <div className="mb-3 flex w-full items-center">
+              <div className="mb-3 flex w-full items-center ">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
                 </div>
@@ -406,7 +413,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -421,7 +428,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -436,7 +443,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -451,7 +458,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -466,7 +473,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -481,7 +488,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -496,7 +503,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -511,7 +518,7 @@ export default function AddServiceUser() {
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 px-4">
               <div className="mb-3 flex w-full items-center">
                 <div className="w-20">
                   <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -526,11 +533,11 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="my-6 flex w-full flex-col items-start">
+            <div className="my-6 flex w-full flex-col items-start px-4">
               <label htmlFor="email" className="label-title ">
                 Please add other key work discussion not captured.
               </label>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="e.g johndoe@gmail.com"
@@ -540,14 +547,14 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="mb-6 flex w-full flex-col items-start">
+            <div className="mb-6 flex w-full flex-col items-start px-4">
               <label htmlFor="email" className="label-title ">
                 Activity
               </label>
               <p className="mb-3 text-xs">
                 Staff guide: You may add some details about what discussions are to be planned in greater detail here
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="e.g johndoe@gmail.com"
@@ -557,7 +564,7 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <div className="my-3 flex w-full flex-col items-start">
+            <div className="my-3 flex w-full flex-col items-start px-4">
               <div className="w-full items-center  justify-between gap-2 md:flex">
                 <div className="mb-3 flex w-full flex-col items-start">
                   <p>Was the service user invited to choose the weekly key work activtity?</p>
@@ -566,7 +573,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     Yes
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -581,7 +588,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     No
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -601,7 +608,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     Yes
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -616,7 +623,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     No
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -627,17 +634,24 @@ export default function AddServiceUser() {
                   </div>
                 </div>
               </div>
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </div>
           </form>
         )
       case "risk-to-others":
         return (
-          <form className="mt-4 flex w-full flex-col ">
+          <form className="mt-4 flex w-full flex-col rounded bg-[#f5f5f5] p-4 ">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name of person or persons delivering the key work activity?
               </label>
-              <div className="input-field ">
+              <div className="input-field bg-white">
                 <input
                   type="text"
                   id="serviceUserName"
@@ -652,7 +666,7 @@ export default function AddServiceUser() {
               <label htmlFor="email" className="label-title ">
                 If any, what are the risks involved in this activity?
               </label>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="e.g johndoe@gmail.com"
@@ -669,7 +683,7 @@ export default function AddServiceUser() {
               <p className="mb-3 text-xs">
                 Staff guide: You may add some details about what discussions are to be planned in greater detail here
               </p>
-              <div className="textarea-field ">
+              <div className="textarea-field bg-white">
                 <textarea
                   id="email"
                   placeholder="e.g johndoe@gmail.com"
@@ -688,7 +702,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     Low
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -703,7 +717,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     Medium
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -717,7 +731,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     High
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -731,7 +745,7 @@ export default function AddServiceUser() {
                   <label htmlFor="staffOnDuty" className="">
                     Very High
                   </label>
-                  <div className="input-field__sm w-40">
+                  <div className="input-field__sm w-40 bg-white">
                     <input
                       type="text"
                       id="staffOnDuty"
@@ -746,7 +760,7 @@ export default function AddServiceUser() {
                 <label htmlFor="serviceUserName" className="label-title">
                   Approved by
                 </label>
-                <div className="input-field ">
+                <div className="input-field bg-white">
                   <input
                     type="text"
                     id="serviceUserName"
@@ -761,7 +775,7 @@ export default function AddServiceUser() {
                 <label htmlFor="serviceUserName" className="label-title">
                   Job title
                 </label>
-                <div className="input-field ">
+                <div className="input-field bg-white">
                   <input
                     type="text"
                     id="serviceUserName"
@@ -771,6 +785,13 @@ export default function AddServiceUser() {
                   />
                 </div>
               </div>
+              <Link
+                href="/dashboard/post/"
+                type="button"
+                className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              >
+                SAVE AND CONTINUE
+              </Link>
             </div>
           </form>
         )
@@ -783,7 +804,7 @@ export default function AddServiceUser() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen ">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full  flex-col ">
             <div>
               <DashboardNav />
@@ -794,14 +815,14 @@ export default function AddServiceUser() {
                 className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs max-md:mb-3"
               >
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                GO BACK
+                <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md border-[1px] p-4 md:w-1/2">
-                <div className="flex w-full justify-between">
-                  <p className="text-2xl max-md:text-xl">Risk Assessment Form</p>
+              <div className=" mb-6 flex flex-col  rounded-md  md:w-1/2">
+                <div className="flex w-full justify-between rounded-md bg-white p-4">
+                  <p className="text-lg font-semibold max-md:text-lg">Risk Assessment Form</p>
                   {/* <p className="text-xs">25 January 2024</p> */}
                 </div>
-                <div className="flex w-full justify-between">
+                <div className="mt-4 flex w-full justify-between rounded-t-md bg-white">
                   <Tab
                     label="Key work Discussion Planner"
                     onClick={() => setActiveTab("general-info")}
@@ -819,17 +840,10 @@ export default function AddServiceUser() {
                   />
                 </div>
                 {renderContent()}
-                <Link
-                  href="/dashboard/post/"
-                  type="button"
-                  className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
-                >
-                  SAVE AND CONTINUE
-                </Link>
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

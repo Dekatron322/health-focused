@@ -166,14 +166,15 @@ export default function LACReports() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen">
+        <div className="mx-auto flex min-h-screen bg-[#171818]">
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
             </div>
 
-            <div className="justify-center gap-3 max-md:px-3 md:mt-8  md:flex md:flex-row">
-              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
+            <div className="justify-center gap-3  max-md:px-3  md:mt-8 md:flex md:flex-row lg:px-16">
+              <div className="mb-6 flex w-full flex-col  gap-4 rounded-md border-[1px] bg-[#ffffff] p-4">
+                <p className="text-lg font-semibold">Support Plan</p>
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <Link
@@ -191,7 +192,7 @@ export default function LACReports() {
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  <div className="mb-4 flex justify-between gap-4">
+                  {/* <div className="mb-4 flex justify-between gap-4">
                     <CustomDropdown
                       options={getUniqueValues("name")}
                       selectedOption={filters.name}
@@ -221,17 +222,17 @@ export default function LACReports() {
                         placeholder="Key Worker"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3 max-md:hidden"></th>
-                        <th className="p-3 max-md:text-sm">Name of Document</th>
-                        <th className="p-3 max-md:hidden ">Creation Date</th>
-                        <th className="p-3 max-md:hidden">Plan Date</th>
-                        <th className="p-3 max-md:text-sm">Created by</th>
+                        <th className="p-3 text-sm max-md:hidden"></th>
+                        <th className="p-3 text-sm">Name of Document</th>
+                        <th className="p-3 text-sm max-md:hidden ">Creation Date</th>
+                        <th className="p-3 text-sm max-md:hidden">Plan Date</th>
+                        <th className=":text-sm p-3">Created by</th>
 
-                        <th className="p-3 max-md:text-sm">Action</th>
+                        <th className="p-3 text-sm">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -316,7 +317,7 @@ export default function LACReports() {
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   )

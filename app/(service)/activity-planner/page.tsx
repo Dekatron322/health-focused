@@ -167,14 +167,15 @@ export default function LACNotes() {
   return (
     <>
       <section className="h-full">
-        <div className="mx-auto flex min-h-screen">
+        <div className="mx-auto flex min-h-screen bg-[#171818] ">
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
-              <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] p-4">
+            <div className=" mt-6  flex flex-row justify-center gap-3  px-16 max-md:px-3">
+              <div className="mb-6 flex w-full flex-col  gap-4 rounded-md border-[1px] bg-[#ffffff] p-4">
+                <p className="text-lg font-semibold">Weekly key work & activity planner</p>
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <Link
@@ -192,7 +193,7 @@ export default function LACNotes() {
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  <div className="mb-4 flex justify-between gap-4">
+                  {/* <div className="mb-4 flex justify-between gap-4">
                     <CustomDropdown
                       options={getUniqueValues("name")}
                       selectedOption={filters.name}
@@ -222,24 +223,24 @@ export default function LACNotes() {
                         placeholder="Key Worker"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3 max-md:hidden"></th>
-                        <th className="p-3 max-md:text-sm">Name of Document</th>
-                        <th className="p-3 max-md:text-sm">Creation Date</th>
-                        <th className="p-3 max-md:hidden">Plan Date</th>
-                        <th className="p-3 max-md:hidden">Created by</th>
+                        <th className="p-3 text-sm max-md:hidden"></th>
+                        <th className="p-3 text-sm">Name of Document</th>
+                        <th className="p-3 text-sm">Creation Date</th>
+                        <th className="p-3 text-sm max-md:hidden">Plan Date</th>
+                        <th className="p-3 text-sm max-md:hidden">Created by</th>
 
-                        <th className="p-3 max-md:text-sm">Action</th>
+                        <th className="p-3 text-sm">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       {currentRows.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm max-md:hidden">
-                            <Checkbox className="checkboxes" />
+                            <Checkbox className="checkboxes22" />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm">{row.placement}</td>
