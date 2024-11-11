@@ -60,20 +60,20 @@ export const Assets = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2 max-sm:grid-cols-1 sm:p-4">
+      <div className="grid grid-cols-4 gap-2 max-sm:grid-cols-1 sm:p-4">
         {Asset.map((assets) => (
           <div key={assets.id} className="w-full gap-3 rounded bg-white px-4 py-2 shadow">
             <div className="flex flex-row gap-2">
-              <Image className="object-contain" src={assets.image} width={26} height={27} alt="dekalo" />
+              <Image className="object-contain" src={assets.image} width={35} height={27} alt="dekalo" />
               <div className="flex w-full justify-between">
                 <div>
                   <p className="text-xs text-[#69B7FF]">Updated by</p>
-                  <h6 className="text-base font-semibold">{assets.name}</h6>
+                  <h6 className="text-sm font-semibold">{assets.name}</h6>
                   <p className="text-xs">{assets.location}</p>
                 </div>
                 <div className="flex flex-col items-end justify-end">
                   <p className="text-xs">{assets.day}</p>
-                  <p className="">{assets.time}</p>
+                  <p className="text-sm">{assets.time}</p>
                 </div>
               </div>
             </div>

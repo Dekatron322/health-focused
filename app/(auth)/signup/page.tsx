@@ -45,12 +45,12 @@ export default function SignUp() {
           }}
         >
           <div className="my-5 items-center px-5 md:my-auto lg:px-20 xl:px-28 3xl:px-40 ">
-            <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
               <p className="inter-font font-extrabold max-md:px-0 max-md:text-center max-md:text-[20px]  md:text-2xl">
                 Health Focused{" "}
               </p>
-            </div>
+            </Link>
 
             <h5 className="inter-font mt-6 font-bold  max-md:px-4 max-md:text-[24px]  md:text-[24px]">Sign Up</h5>
 
@@ -123,9 +123,13 @@ export default function SignUp() {
                   </div>
                 </div>
 
-                <button type="button" className="h-[52px] rounded-lg bg-[#0052FF] p-3 text-sm text-white">
+                <Link
+                  href="/sign-in"
+                  type="button"
+                  className="flex h-[48px] items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+                >
                   SIGN UP
-                </button>
+                </Link>
               </form>
             </div>
 

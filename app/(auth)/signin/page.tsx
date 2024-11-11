@@ -48,12 +48,12 @@ export default function Signin() {
           }}
         >
           <div className="my-5 items-center px-5 md:my-auto lg:px-20 xl:px-28 3xl:px-40 ">
-            <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
               <p className="inter-font font-extrabold max-md:px-0 max-md:text-center max-md:text-[20px]  md:text-2xl">
                 Health Focused{" "}
               </p>
-            </div>
+            </Link>
 
             <h5 className="inter-font font-bold max-md:mt-6  max-md:px-4 max-md:text-[24px] md:mt-16 md:text-[24px]">
               Sign in
@@ -108,9 +108,13 @@ export default function Signin() {
                   </div>
                 </div>
 
-                <button type="button" className="h-[52px] rounded-lg bg-[#0052FF] p-3 text-sm text-white">
+                <Link
+                  href="/dashboard"
+                  type="button"
+                  className="flex h-[48px] items-center justify-center rounded-lg bg-[#0052FF]  text-sm text-white"
+                >
                   SIGN IN
-                </button>
+                </Link>
               </form>
             </div>
             <div className="mt-6 max-md:px-4">
