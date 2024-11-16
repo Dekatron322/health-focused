@@ -433,6 +433,11 @@ export const Plans = [
     title: "Miscellaneous Reports ",
     link: "/miscellaneous-reports",
   },
+  {
+    id: 8,
+    title: "LAC Notes ",
+    link: "/lac-notes",
+  },
 ]
 
 export const Alerts = [

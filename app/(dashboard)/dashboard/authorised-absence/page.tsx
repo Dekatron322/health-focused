@@ -222,15 +222,15 @@ export default function AuthorisedAbsense() {
                     </div>
                   </div>
 
-                  <div className="mb-3 flex w-full flex-col items-start">
+                  <div className="my-3 flex w-full flex-col items-start">
                     <label htmlFor="email" className="label-title ">
                       Notes
                     </label>
-                    <div className="input-field ">
+                    <div className="textarea-field bg-white">
                       <textarea
                         id="email"
                         placeholder="Separate names by comma"
-                        className="bg-transparent outline-none focus:outline-none"
+                        className="bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
                     </div>

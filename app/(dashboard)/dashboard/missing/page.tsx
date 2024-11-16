@@ -181,11 +181,11 @@ export default function MissingForm() {
                     <label htmlFor="email" className="label-title ">
                       Notes
                     </label>
-                    <div className="input-field ">
+                    <div className="textarea-field bg-white">
                       <textarea
                         id="email"
                         placeholder="Separate names by comma"
-                        className="bg-transparent outline-none focus:outline-none"
+                        className="bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
                     </div>
