@@ -205,14 +205,14 @@ export default function ServiceUsers() {
             <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] bg-white p-4">
                 <div className="flex w-full justify-between">
-                  <div className="flex items-center gap-3">
+                  <div className="flex w-full items-center gap-3">
                     <Link href="/placement/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
                       <p className="text-white max-md:px-0">New Placements</p>
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-full max-md:hidden">
+                  <div className="flex w-full items-center justify-end gap-4">
+                    <div className="max-md:hidden">
                       <Search />
                     </div>
 
@@ -289,7 +289,7 @@ export default function ServiceUsers() {
                             {visibleDropdownId === row.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
                                 <ul className="py-1">
-                                  <Link href="/service-users/user/">
+                                  <Link href="/placement/placement-profile/">
                                     <li
                                       className="cursor-pointer px-4 py-2  hover:bg-gray-100"
                                       onClick={() => handleDropdownAction("View", row)}
