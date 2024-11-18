@@ -62,29 +62,29 @@ export const Assets = () => {
 
       <div className="grid grid-cols-4 gap-2 max-sm:grid-cols-1 sm:p-4">
         {Asset.map((assets) => (
-          <div key={assets.id} className="w-full gap-3 rounded bg-white px-4 py-2 shadow">
+          <div key={assets.id} className="w-full gap-3 rounded bg-white px-4 py-2 shadow lg:px-3 xl:px-3 2xl:px-4">
             <div className="flex flex-row gap-2">
               <Image className="object-contain" src={assets.image} width={35} height={27} alt="dekalo" />
               <div className="flex w-full justify-between">
                 <div>
-                  <p className="text-xs text-[#69B7FF]">Updated by</p>
-                  <h6 className="text-sm font-semibold">{assets.name}</h6>
-                  <p className="text-xs">{assets.location}</p>
+                  <p className="text-xs text-[#69B7FF] xl:text-[10px] 2xl:text-xs">Updated by</p>
+                  <h6 className="text-sm font-semibold lg:text-xs xl:text-xs 2xl:text-sm">{assets.name}</h6>
+                  <p className="text-xs lg:text-[10px] xl:text-[10px] 2xl:text-xs">{assets.location}</p>
                 </div>
                 <div className="flex flex-col items-end justify-end">
-                  <p className="text-xs">{assets.day}</p>
-                  <p className="text-sm">{assets.time}</p>
+                  <p className="text-xs lg:text-xs xl:text-[10px] 2xl:text-xs">{assets.day}</p>
+                  <p className="text-sm xl:text-[10px] 2xl:text-sm ">{assets.time}</p>
                 </div>
               </div>
             </div>
             <div className="py-3">
-              <p className="text-sm">{assets.content}</p>
+              <p className="text-sm lg:text-xs xl:text-xs 2xl:text-sm">{assets.content}</p>
             </div>
             <div className="border-b"></div>
             <div className="flex items-center justify-between">
               <div className="py-3">
                 <p className="text-xs text-[#69B7FF]">Service User</p>
-                <p className="text-sm">{assets.user}</p>
+                <p className="text-sm lg:text-xs xl:text-xs 2xl:text-sm">{assets.user}</p>
               </div>
               <Link href="/dashboard/post" className="flex items-center gap-2 rounded-md bg-[#69B7FF] px-3 py-2">
                 <p className="text-xs text-white max-md:px-0">View</p>

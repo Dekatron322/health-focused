@@ -16,7 +16,7 @@ export const Transactions = () => {
     <section className="max-md:hidden">
       <div className={styles.transactions}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold text-white">Latest Appointments</p>
+          <p className="font-semibold text-white lg:text-sm xl:text-sm 2xl:text-base">Latest Appointments</p>
           <Link href="/dashboard/appointment" className="rounded-md border p-2 text-[10px] text-white">
             VIEW ALL
           </Link>
@@ -38,13 +38,17 @@ export const Transactions = () => {
                     <div className="flex justify-between">
                       <div className="flex items-center justify-center gap-2">
                         <div>
-                          <p className="text-sm font-medium text-black">{item.user}</p>
-                          <p className="text-sm font-bold text-black">{item.name}</p>
+                          <p className="text-sm font-medium text-black lg:text-xs xl:text-xs 2xl:text-sm">
+                            {item.user}
+                          </p>
+                          <p className="text-sm font-bold text-black lg:text-xs xl:text-xs 2xl:text-sm">{item.name}</p>
                         </div>
                       </div>
                       <div className="flex flex-col items-end">
                         <p className="text-xs text-black">{item.status}</p>
-                        <p className="whitespace-nowrap text-lg font-bold text-black">{item.time}</p>
+                        <p className="whitespace-nowrap text-lg font-bold text-black lg:text-sm xl:text-sm 2xl:text-lg">
+                          {item.time}
+                        </p>
                         <p className="text-xs text-black">{item.date}</p>
                       </div>
                     </div>
@@ -63,7 +67,7 @@ export const Transactions = () => {
       </div>
       <div className={styles.alerts}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold text-white">Latest Alerts</p>
+          <p className="font-semibold text-white lg:text-sm xl:text-sm 2xl:text-base">Latest Alerts</p>
           <Link href="/dashboard/alerts" className="rounded-md border p-2 text-[10px] text-white">
             VIEW ALL
           </Link>
@@ -85,13 +89,17 @@ export const Transactions = () => {
                     <div className="flex justify-between">
                       <div className="flex items-center justify-center gap-2">
                         <div>
-                          <p className="text-xs font-medium text-black">{item.user}</p>
-                          <p className="text-sm font-bold text-black">{item.name}</p>
+                          <p className="text-sm font-medium text-black lg:text-xs xl:text-xs 2xl:text-sm">
+                            {item.user}
+                          </p>
+                          <p className="text-sm font-bold text-black lg:text-xs xl:text-xs 2xl:text-sm">{item.name}</p>
                         </div>
                       </div>
                       <div className="flex flex-col items-end">
                         <p className="text-xs text-black">{item.date}</p>
-                        <p className="whitespace-nowrap text-lg font-bold text-black">{item.time}</p>
+                        <p className="whitespace-nowrap text-lg font-bold text-black lg:text-sm xl:text-sm 2xl:text-lg">
+                          {item.time}
+                        </p>
                       </div>
                     </div>
                   </div>

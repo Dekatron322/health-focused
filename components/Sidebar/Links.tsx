@@ -46,10 +46,10 @@ export function Links() {
                 "active-dashboard": pathname.startsWith(link.href),
               })}
             >
-              <div className="flex items-center gap-2 pl-5">
+              <div className="flex items-center gap-2  lg:pl-3 xl:pl-5">
                 <LinkIcon />
                 <p
-                  className={clsx("hidden text-sm font-semibold lg:block", {
+                  className={clsx("hidden text-sm font-semibold md:text-xs lg:block lg:text-xs", {
                     "font-extrabold": pathname.startsWith(link.href),
                   })}
                 >
