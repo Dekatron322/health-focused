@@ -66,9 +66,9 @@ export default function IncidenceForm() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-4 md:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-6 md:w-1/3 lg:w-[45%] xl:w-1/3">
                 <div className="flex w-full justify-between">
-                  <p className="text-2xl">Incident Form</p>
+                  <p className="text-xl font-bold">Incident Form</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <form className=" flex w-full flex-col ">
@@ -81,7 +81,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="serviceUserName"
                         placeholder="Type and select your name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -97,7 +97,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="updatedBy"
                         placeholder="Type and select your name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -113,7 +113,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="placement"
                         placeholder="Select the Placement"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -129,7 +129,7 @@ export default function IncidenceForm() {
                           type="date"
                           id="staffOnDuty"
                           placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
+                          className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                           style={{ width: "100%" }}
                         />
                       </div>
@@ -143,7 +143,7 @@ export default function IncidenceForm() {
                           type="time"
                           id="staffOnDuty"
                           placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
+                          className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                           style={{ width: "100%" }}
                         />
                       </div>
@@ -158,7 +158,7 @@ export default function IncidenceForm() {
                       <textarea
                         id="email"
                         placeholder="Separate names by comma"
-                        className="bg-transparent outline-none focus:outline-none"
+                        className="bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
                     </div>
@@ -172,7 +172,7 @@ export default function IncidenceForm() {
                       <textarea
                         id="email"
                         placeholder="Separate names by comma"
-                        className="bg-transparent outline-none focus:outline-none"
+                        className="bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
                     </div>
@@ -191,7 +191,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="staffOnDuty"
                         placeholder="Enter manager name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -205,7 +205,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="staffOnDuty"
                         placeholder="Enter the accompanying staff"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -220,7 +220,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="placement"
                         placeholder="Enter the location of the appointment"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -235,7 +235,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="placement"
                         placeholder="Use full name, separate by comma"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -283,7 +283,7 @@ export default function IncidenceForm() {
                         type="text"
                         id="staffOnDuty"
                         placeholder="Enter manager name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -297,7 +297,7 @@ export default function IncidenceForm() {
                       <textarea
                         id="email"
                         placeholder="Separate names by comma"
-                        className="bg-transparent outline-none focus:outline-none"
+                        className="bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
                     </div>

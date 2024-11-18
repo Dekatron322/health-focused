@@ -64,9 +64,9 @@ export default function NewLogs() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="my-8  flex flex-col items-center gap-4 rounded-md border-[1px] bg-white p-4 md:w-1/3">
+              <div className="my-8  flex flex-col items-center gap-4 rounded-md border-[1px] bg-white p-6 md:w-1/3 lg:w-[45%] xl:w-1/3">
                 <div className="flex w-full justify-between">
-                  <p className="text-2xl">New Appointment</p>
+                  <p className="text-xl font-bold">New Appointment</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <form className=" flex w-full flex-col ">

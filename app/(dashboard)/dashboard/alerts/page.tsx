@@ -308,13 +308,13 @@ export default function Alerts() {
                     <thead>
                       <tr>
                         <th className="p-3 max-md:hidden"></th>
-                        <th className="max-md:text-sm md:p-3">Service User</th>
-                        <th className="max-md:text-sm md:p-3">Placement</th>
-                        <th className="p-3 max-md:hidden">Date</th>
-                        <th className="p-3 max-md:hidden">Key Worker</th>
-                        <th className="max-md:text-sm md:p-3">Alert Type</th>
-                        <th className="p-3 max-md:hidden">Status</th>
-                        <th className="p-3">Action</th>
+                        <th className="max-lg:text-sm  md:p-3 lg:text-xs xl:text-sm">Service User</th>
+                        <th className="max-md:text-sm md:p-3 lg:text-xs xl:text-sm">Placement</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Date</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Key Worker</th>
+                        <th className="whitespace-nowrap max-md:text-sm md:p-3 lg:text-xs xl:text-sm">Alert Type</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Status</th>
+                        <th className="p-3 lg:text-xs xl:text-sm">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -323,37 +323,37 @@ export default function Alerts() {
                           <td className="p-3 text-sm max-md:hidden">
                             <Checkbox className="checkboxes2" />
                           </td>
-                          <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm">{row.placement}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
-                          <td className="p-3 text-sm">{row.alertType}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.status}</td>
+                          <td className="p-3 text-sm lg:text-xs xl:text-sm">{row.name}</td>
+                          <td className="p-3 text-sm lg:text-xs xl:text-sm">{row.placement}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.date}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.keyWorker}</td>
+                          <td className="p-3 text-sm lg:text-xs xl:text-sm">{row.alertType}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.status}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
                                 <ul className="py-1">
                                   <li
-                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100 lg:text-xs xl:text-sm"
                                     onClick={() => handleDropdownAction("View", row)}
                                   >
                                     View
                                   </li>
                                   <li
-                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100 lg:text-xs xl:text-sm"
                                     onClick={() => handleDropdownAction("Mark as Resolved", row)}
                                   >
                                     Mark as Resolved
                                   </li>
                                   <li
-                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100 lg:text-xs xl:text-sm"
                                     onClick={() => handleDropdownAction("Mark as Unresolved", row)}
                                   >
                                     Mark as Unresolved
                                   </li>
                                   <li
-                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100 lg:text-xs xl:text-sm"
                                     onClick={() => handleDropdownAction("Mark as Pending", row)}
                                   >
                                     Mark as Pending

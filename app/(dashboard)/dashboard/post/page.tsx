@@ -77,25 +77,25 @@ export default function NewLogs() {
                     />
                     <div>
                       <p className="text-xs text-[#69B7FF]">Updated by</p>
-                      <p className="text-base">Lade Maxwell</p>
+                      <p className="lg:text-sm xl:text-base">Lade Maxwell</p>
                       <p className="text-xs">Keystone Avenue</p>
                     </div>
                   </div>
                   <div>
                     <p className="text-xs text-[#69B7FF]">Service User</p>
-                    <p className="text-base">Marvin Martin</p>
+                    <p className="lg:text-sm xl:text-base">Marvin Martin</p>
                   </div>
                   <div>
                     <p className="text-xs text-[#69B7FF]">Staff on Duty</p>
-                    <p className="text-base">Toby, Adeoye, Kevin</p>
+                    <p className="lg:text-sm xl:text-base">Toby, Adeoye, Kevin</p>
                   </div>
                   <div className="max-sm:hidden">
                     <p className="text-xs text-[#69B7FF] ">11:55 AM</p>
-                    <p className="text-base">25 January 2024</p>
+                    <p className="lg:text-sm xl:text-base">25 January 2024</p>
                   </div>
                 </div>
                 <div className="w-full border-b"></div>
-                <p className="md:p-4">
+                <p className="md:p-4 lg:text-sm xl:text-base">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                   aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -128,7 +128,7 @@ export default function NewLogs() {
                 <div className="items-center justify-between sm:p-4  md:flex">
                   <div className="flex items-center gap-2">
                     <IoCheckmarkCircle size={24} className="text-[#B5DBFF]" />
-                    <p>Marked relevant for weekly report</p>
+                    <p className="lg:text-sm xl:text-base">Marked relevant for weekly report</p>
                   </div>
                   <div className="flex gap-4 max-md:mt-5">
                     <button className="flex h-10 items-center gap-2 rounded-md  bg-[#0085FF] p-2 text-xs text-[#fff]">

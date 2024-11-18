@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import styles from "./CustomDropdown.module.css"
-import Image from "next/image"
 import { RiSearch2Line } from "react-icons/ri"
 import { MdCancel } from "react-icons/md"
 
@@ -80,7 +79,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, selectedOption
           {filteredOptions.map((option) => (
             <div
               key={option.id}
-              className="cursor-pointer overflow-hidden px-4 py-2 hover:bg-[#747A80]"
+              className="cursor-pointer overflow-hidden px-2 py-2 hover:bg-[#747A80]"
               onClick={() => handleOptionClick(option.id)}
             >
               {option.name}
