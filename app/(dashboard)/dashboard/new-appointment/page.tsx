@@ -79,7 +79,7 @@ export default function NewLogs() {
                         type="text"
                         id="serviceUserName"
                         placeholder="Type and select your name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -95,7 +95,7 @@ export default function NewLogs() {
                         type="text"
                         id="updatedBy"
                         placeholder="Type and select your name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -111,7 +111,7 @@ export default function NewLogs() {
                         type="text"
                         id="placement"
                         placeholder="Select the Placement"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -126,7 +126,7 @@ export default function NewLogs() {
                           type="date"
                           id="staffOnDuty"
                           placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
+                          className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                           style={{ width: "100%" }}
                         />
                       </div>
@@ -140,7 +140,7 @@ export default function NewLogs() {
                           type="time"
                           id="staffOnDuty"
                           placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
+                          className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                           style={{ width: "100%" }}
                         />
                       </div>
@@ -156,7 +156,7 @@ export default function NewLogs() {
                           type="date"
                           id="staffOnDuty"
                           placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
+                          className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                           style={{ width: "100%" }}
                         />
                       </div>
@@ -170,7 +170,7 @@ export default function NewLogs() {
                           type="time"
                           id="staffOnDuty"
                           placeholder="Separate names by comma"
-                          className="w-40 bg-transparent outline-none focus:outline-none"
+                          className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                           style={{ width: "100%" }}
                         />
                       </div>
@@ -185,7 +185,7 @@ export default function NewLogs() {
                         type="text"
                         id="placement"
                         placeholder="Enter who the service user is meeting"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -199,7 +199,7 @@ export default function NewLogs() {
                         type="text"
                         id="placement"
                         placeholder="Enter the location of the appointment"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -213,7 +213,7 @@ export default function NewLogs() {
                         type="text"
                         id="placement"
                         placeholder="Enter the accompanying staff"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -226,7 +226,7 @@ export default function NewLogs() {
                       <textarea
                         id="email"
                         placeholder="Separate names by comma"
-                        className="bg-transparent outline-none focus:outline-none"
+                        className="bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
                     </div>

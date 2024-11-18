@@ -274,13 +274,13 @@ export default function ServiceUsers() {
                     <thead>
                       <tr>
                         <th className="p-3 max-md:hidden"></th>
-                        <th className="p-3">Service User</th>
-                        <th className="p-3 max-md:hidden">Placement</th>
-                        <th className="p-3 max-md:hidden">Date</th>
-                        <th className="p-3 max-md:hidden">Key Worker</th>
-                        <th className="p-3 ">Alert Type</th>
-                        <th className="p-3 max-md:hidden">Status</th>
-                        <th className="p-3">Action</th>
+                        <th className="p-3 lg:text-xs xl:text-sm">Service User</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Placement</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Date</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Key Worker</th>
+                        <th className="p-3 lg:text-xs xl:text-sm">Alert Type</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Status</th>
+                        <th className="p-3 lg:text-xs xl:text-sm">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -289,12 +289,12 @@ export default function ServiceUsers() {
                           <td className="p-3 text-sm max-md:hidden">
                             <Checkbox className="checkboxes2" />
                           </td>
-                          <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
-                          <td className="p-3 text-sm">{row.localAuthority}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.status}</td>
+                          <td className="p-3 text-sm lg:text-xs xl:text-sm">{row.name}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.placement}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.date}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.keyWorker}</td>
+                          <td className="p-3 text-sm lg:text-xs xl:text-sm">{row.localAuthority}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.status}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
