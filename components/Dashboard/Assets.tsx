@@ -53,21 +53,21 @@ export const Assets = () => {
               type="date"
               id="search"
               placeholder="Type to search..."
-              className="w-full bg-transparent outline-none focus:outline-none"
+              className="w-full bg-transparent outline-none focus:outline-none lg:text-xs xl:text-sm"
               style={{ width: "100%" }}
             />
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 max-sm:grid-cols-1 sm:p-4">
+      <div className="grid grid-cols-4 gap-2 max-sm:grid-cols-1 sm:p-4 lg:grid-cols-3 xl:grid-cols-4">
         {Asset.map((assets) => (
           <div key={assets.id} className="w-full gap-3 rounded bg-white px-4 py-2 shadow lg:px-3 xl:px-3 2xl:px-4">
             <div className="flex flex-row gap-2">
               <Image className="object-contain" src={assets.image} width={35} height={27} alt="dekalo" />
               <div className="flex w-full justify-between">
                 <div>
-                  <p className="text-xs text-[#69B7FF] xl:text-[10px] 2xl:text-xs">Updated by</p>
+                  <p className="text-xs text-[#69B7FF] lg:text-[10px] xl:text-xs 2xl:text-xs">Updated by</p>
                   <h6 className="text-sm font-semibold lg:text-xs xl:text-xs 2xl:text-sm">{assets.name}</h6>
                   <p className="text-xs lg:text-[10px] xl:text-[10px] 2xl:text-xs">{assets.location}</p>
                 </div>

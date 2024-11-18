@@ -13,7 +13,6 @@ import {
   TransactionsIcon,
 } from "./Icons"
 import { useState } from "react"
-import { Box, Skeleton } from "@mui/material"
 
 const links = [
   { name: "DASHBOARD", href: "/dashboard", icon: DashboardIcon },
@@ -34,7 +33,7 @@ export function Links() {
   setTimeout(() => setLoading(false), 5000)
   const pathname = usePathname()
   return (
-    <div className="flex h-full flex-row   border-black  lg:h-80 lg:flex-col">
+    <div className="flex h-full flex-row border-black lg:h-80 lg:flex-col">
       {links.map((link) => {
         const LinkIcon = link.icon
         return (
@@ -49,7 +48,7 @@ export function Links() {
               <div className="flex items-center gap-2  lg:pl-3 xl:pl-5">
                 <LinkIcon />
                 <p
-                  className={clsx("hidden text-sm font-semibold md:text-xs lg:block lg:text-xs", {
+                  className={clsx("hidden text-sm font-semibold md:text-xs lg:block lg:text-[11px]", {
                     "font-extrabold": pathname.startsWith(link.href),
                   })}
                 >

@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styles from "../../components/Dashboard/dashboard.module.css"
 import { Alerts, Transaction } from "utils"
-import { GoArrowUpRight } from "react-icons/go"
 import dynamic from "next/dynamic"
 import clsx from "clsx"
 import Link from "next/link"

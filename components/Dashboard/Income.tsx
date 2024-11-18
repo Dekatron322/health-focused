@@ -10,7 +10,7 @@ const Income = () => {
   const [loading, setLoading] = useState(true)
   setTimeout(() => setLoading(false), 5000)
   return (
-    <section className="scrollbar-hide w-full gap-2 overflow-x-auto max-md:flex max-md:flex-shrink-0 md:grid md:grid-cols-4">
+    <section className="scrollbar-hide w-full gap-2 overflow-x-auto max-md:flex max-md:flex-shrink-0 md:grid lg:grid-cols-4">
       <div className="w-[100%]  rounded border-[0.5px] bg-[#FFFFFF] p-4 shadow-md shadow-white  max-md:flex-shrink-0 max-sm:w-2/3 lg:px-2">
         <div className="mb-4 flex  flex-shrink-0 justify-between ">
           <h6 className="text-xs font-bold">Active Service Users</h6>
@@ -73,8 +73,8 @@ const Income = () => {
       </div>
       <div className="w-[100%] rounded border-[0.5px] bg-white p-4 shadow max-md:flex-shrink-0 max-sm:w-1/2 lg:px-2">
         <div className="mb-4 flex  flex-shrink-0 justify-between">
-          <h6 className="text-xs font-bold">Active Local Authorities</h6>
-          <Link href="/authorities" className="rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
+          <h6 className="gap-2 overflow-hidden text-xs font-bold">Active Local Authorities</h6>
+          <Link href="/authorities" className="h-[25px] rounded-md bg-[#50c9f4] px-2 py-1 text-xs text-[#000000]">
             View
           </Link>
         </div>
