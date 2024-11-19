@@ -194,7 +194,7 @@ export default function ServiceUsers() {
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
-              <div className="mt-4 flex w-full gap-4  px-16 max-md:flex-col max-md:px-3">
+              <div className="mt-4 flex w-full gap-4  px-16 max-md:flex-col max-md:px-3 lg:px-8 2xl:px-16">
                 <div className={styles.dashboard_body__lhs}>
                   <div className={styles.service_users}>
                     <Staffs />
@@ -203,7 +203,7 @@ export default function ServiceUsers() {
               </div>
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3">
+            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3 lg:px-8 2xl:px-16">
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] bg-white p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">

@@ -668,9 +668,9 @@ export default function AddPlacementUser() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md bg-[#f5f5f5] p-4 md:w-1/3">
+              <div className=" mb-6 flex flex-col  rounded-md bg-[#f5f5f5] p-6 md:w-1/2 2xl:w-1/3 ">
                 <div className="flex w-full justify-between">
-                  <p className="text-lg font-semibold">New Placement</p>
+                  <p className="text-lg font-bold">New Placement</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 {/* <div className="flex w-full justify-between">
@@ -694,7 +694,7 @@ export default function AddPlacementUser() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

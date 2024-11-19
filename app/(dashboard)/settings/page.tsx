@@ -596,7 +596,7 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

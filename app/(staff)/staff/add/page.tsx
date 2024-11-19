@@ -55,7 +55,7 @@ export default function AddStaff() {
     switch (activeTab) {
       case "general-info":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Staff’s Full Name
@@ -156,11 +156,11 @@ export default function AddStaff() {
       case "risk-to-self":
         return (
           <form className="mt-4 flex w-full flex-col  rounded-md bg-[#f5f5f5]">
-            <div className="mb-3 flex w-full flex-col items-end px-4 pt-4">
+            <div className="mb-3 flex w-full flex-col items-end px-6 pt-4">
               <p className="text-end">Tick which applies</p>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Profile</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -169,7 +169,7 @@ export default function AddStaff() {
             </div>
 
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Daily logs</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -177,7 +177,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Weekly and Monthly Reports</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -185,7 +185,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Units</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -193,7 +193,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Care/support plans</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -201,7 +201,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Lac reports and notes</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -209,7 +209,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Local Authorities</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -217,7 +217,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Risk assessment</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -225,7 +225,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Alerts - Incident, Missing, Absent, Accident</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -233,7 +233,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Staff Management</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -241,7 +241,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Email Settings</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -249,7 +249,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Appointments</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -257,7 +257,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">User Management</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -265,7 +265,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">PEP Plan/Report</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -273,7 +273,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Admin Centre</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -281,7 +281,7 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Independent Living Skill Inventory</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -289,14 +289,14 @@ export default function AddStaff() {
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between px-4">
+            <div className="mb-3 flex w-full justify-between px-6">
               <p className="text-sm">Keywork Activity Planner</p>
               <div className="flex w-40 gap-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
-            <div className="p-4">
+            <div className="p-6">
               <Link
                 href="/dashboard/post/"
                 type="button"
@@ -310,13 +310,13 @@ export default function AddStaff() {
       case "risk-to-others":
         return (
           <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5]">
-            <div className="mb-3 flex w-full justify-end gap-2 p-4">
+            <div className="mb-3 flex w-full justify-end gap-2 p-4 px-6">
               <MdOutlineCheckBoxOutlineBlank size={24} />
               <p className="text-end">Assign</p>
             </div>
 
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between  px-4">
+            <div className="mb-3 flex w-full justify-between  px-6">
               <p className="text-sm">London</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -324,7 +324,7 @@ export default function AddStaff() {
             </div>
 
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between  px-4">
+            <div className="mb-3 flex w-full justify-between  px-6">
               <p className="text-sm">Manchester</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -332,34 +332,34 @@ export default function AddStaff() {
             </div>
 
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between  px-4">
+            <div className="mb-3 flex w-full justify-between  px-6">
               <p className="text-sm">King’s Landing</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between  px-4">
+            <div className="mb-3 flex w-full justify-between  px-6">
               <p className="text-sm">River Couts</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between  px-4">
+            <div className="mb-3 flex w-full justify-between  px-6">
               <p className="text-sm">Magic Gardens</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="mb-3 flex w-full justify-between  px-4">
+            <div className="mb-3 flex w-full justify-between  px-6">
               <p className="text-sm">London</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
-            <div className="p-4">
+            <div className="p-6">
               <Link
                 href="/dashboard/post/"
                 type="button"
@@ -392,7 +392,7 @@ export default function AddStaff() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col   md:w-1/3">
+              <div className=" mb-6 flex flex-col   md:w-1/3 lg:w-1/2 2xl:w-1/3">
                 <div className="flex w-full justify-between rounded-md bg-white p-4">
                   <p className="text-lg font-semibold">New Staff</p>
                   <p className="text-xs">25 January 2024</p>

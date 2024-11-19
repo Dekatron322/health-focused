@@ -196,7 +196,7 @@ export default function ServiceUsers() {
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
-              <div className="flex w-full gap-4 px-16  max-md:flex-col max-md:px-3">
+              <div className="flex w-full gap-4  px-16 max-md:flex-col max-md:px-3 lg:px-8 2xl:px-16">
                 <div className={styles.dashboard_body__lhs}>
                   <div className="my-4 flex items-center gap-3">
                     <Link href="/policy/add" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
