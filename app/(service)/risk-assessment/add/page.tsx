@@ -55,7 +55,7 @@ export default function AddServiceUser() {
     switch (activeTab) {
       case "general-info":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name of Service User
@@ -114,11 +114,11 @@ export default function AddServiceUser() {
       case "risk-to-self":
         return (
           <form className="mt-4 flex w-full flex-col rounded-md bg-[#F5F5F5]">
-            <div className="mb-3 flex w-full flex-col items-end px-4 pt-4">
+            <div className="mb-3 flex w-full flex-col items-end px-6 pt-4">
               <p className="text-end">Tick which applies</p>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Physical self injury</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -126,91 +126,91 @@ export default function AddServiceUser() {
             </div>
 
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Drug abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Substance abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Alcohol abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Deliberate starvation</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Over eating</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Suicide ideation / attempts</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Prostitution (Uncoerced)</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Medication: dosage refusal</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Medication: Treatment refusal</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Gang affiliation</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Smoking</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Missing episodes</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Unauthorised absence</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -218,7 +218,7 @@ export default function AddServiceUser() {
             </div>
             <div className="mb-6 border"></div>
 
-            <div className="mb-6 flex w-full flex-col items-start px-4">
+            <div className="mb-6 flex w-full flex-col items-start px-6">
               <label htmlFor="email" className="label-title ">
                 Add Other Risks
               </label>
@@ -226,7 +226,7 @@ export default function AddServiceUser() {
                 <textarea
                   id="email"
                   placeholder="e.g johndoe@gmail.com"
-                  className="bg-transparent px-4 outline-none focus:outline-none"
+                  className="bg-transparent px-6 outline-none focus:outline-none"
                   style={{ width: "100%", background: "transparent" }}
                 ></textarea>
               </div>
@@ -243,12 +243,12 @@ export default function AddServiceUser() {
       case "risk-to-others":
         return (
           <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5]">
-            <div className="mb-3 flex w-full flex-col items-end px-4  pt-4">
+            <div className="mb-3 flex w-full flex-col items-end px-6  pt-4">
               <p className="text-end">Tick which applies</p>
             </div>
 
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Aggressive Confrontations</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -256,91 +256,91 @@ export default function AddServiceUser() {
             </div>
 
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Drug abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Substance abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Alcohol abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Deliberate starvation</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Over eating</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Suicide ideation / attempts</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Prostitution (Uncoerced)</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Medication: dosage refusal</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Medication: Treatment refusal</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Gang affiliation</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Smoking</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Missing episodes</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Unauthorised absence</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -348,7 +348,7 @@ export default function AddServiceUser() {
             </div>
             <div className="mb-6 border"></div>
 
-            <div className="mb-6 flex w-full flex-col items-start px-4">
+            <div className="mb-6 flex w-full flex-col items-start px-6">
               <label htmlFor="email" className="label-title ">
                 Add Other Risks
               </label>
@@ -374,12 +374,12 @@ export default function AddServiceUser() {
       case "risk-from-others":
         return (
           <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5]">
-            <div className="mb-3 flex w-full flex-col items-end px-4 pt-4">
+            <div className="mb-3 flex w-full flex-col items-end px-6 pt-4">
               <p className="text-end">Tick which applies</p>
             </div>
 
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Aggressive Confrontations</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -387,91 +387,91 @@ export default function AddServiceUser() {
             </div>
 
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Drug abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Substance abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Alcohol abuse</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Deliberate starvation</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Over eating</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Suicide ideation / attempts</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Prostitution (Uncoerced)</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Medication: dosage refusal</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Medication: Treatment refusal</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Gang affiliation</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Smoking</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Missing episodes</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Unauthorised absence</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -479,7 +479,7 @@ export default function AddServiceUser() {
             </div>
             <div className="mb-6 border"></div>
 
-            <div className="mb-6 flex w-full flex-col items-start px-4">
+            <div className="mb-6 flex w-full flex-col items-start px-6">
               <label htmlFor="email" className="label-title ">
                 Add Other Risks
               </label>
@@ -504,12 +504,12 @@ export default function AddServiceUser() {
       case "environmental-risks":
         return (
           <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5]">
-            <div className="mb-3 flex w-full flex-col items-end px-4 pt-4">
+            <div className="mb-3 flex w-full flex-col items-end px-6 pt-4">
               <p className="text-end">Tick which applies</p>
             </div>
 
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Transit risks</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -517,84 +517,84 @@ export default function AddServiceUser() {
             </div>
 
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Crowd space</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Claustrophobia</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Excessive noise</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Weather</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">High temperatures</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Low temperatures</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Hospital environment</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Emotional trigger</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Suicide pact</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Smoking</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">County lines grooming</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
               </div>
             </div>
             <div className="mb-3 border"></div>
-            <div className="mb-3 flex w-full  justify-between px-4">
+            <div className="mb-3 flex w-full  justify-between px-6">
               <p className="text-sm">Other criminal activity</p>
               <div className="w-20">
                 <MdOutlineCheckBoxOutlineBlank size={24} />
@@ -603,7 +603,7 @@ export default function AddServiceUser() {
 
             <div className="mb-6 border"></div>
 
-            <div className="mb-6 flex w-full flex-col items-start px-4">
+            <div className="mb-6 flex w-full flex-col items-start px-6">
               <label htmlFor="email" className="label-title ">
                 Add Other Risks
               </label>
@@ -646,7 +646,7 @@ export default function AddServiceUser() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md  md:w-1/2">
+              <div className=" mb-6 flex flex-col  rounded-md  md:w-1/2 lg:w-2/3 2xl:w-1/2">
                 <div className="flex w-full items-center justify-between rounded-md bg-[#f5f5f5] p-4">
                   <p className="text-lg  font-semibold max-md:text-lg">Risk Assessment Form</p>
                   <p className="text-xs">25 January 2024</p>

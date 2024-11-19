@@ -58,7 +58,7 @@ export default function MonthlyReport() {
     switch (activeTab) {
       case "general-info":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name of Service User
@@ -216,7 +216,7 @@ export default function MonthlyReport() {
         )
       case "skill":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Self Care / Personal Hygeine
@@ -457,7 +457,7 @@ export default function MonthlyReport() {
         )
       case "skill(2)":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Physical Health
@@ -746,7 +746,7 @@ export default function MonthlyReport() {
       case "appointments":
         return (
           <>
-            <div className="mt-4 rounded-md bg-[#f5f5f5] p-4">
+            <div className="mt-4 rounded-md bg-[#f5f5f5] p-6">
               <p className="mb-3 text-base">Health Registration/Examination</p>
               <form className=" ] flex w-full flex-col rounded-md bg-[#C0C0C0] p-4">
                 <div className="grid grid-cols-3 gap-2">
@@ -876,12 +876,12 @@ export default function MonthlyReport() {
       case "behaviour":
         return (
           <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5]">
-            <div className="mb-3 flex w-full flex-col items-end px-4 pt-4">
+            <div className="mb-3 flex w-full flex-col items-end px-6 pt-4">
               <p className="text-end">Tick which applies</p>
             </div>
 
             <div className="mb-3 border-b"></div>
-            <div className="flex w-full items-center  justify-between px-4">
+            <div className="flex w-full items-center  justify-between px-6">
               <p className="text-sm">Medical Registrations</p>
               <div className="w-20">
                 <Checkbox className="checkboxes22" />
@@ -889,28 +889,28 @@ export default function MonthlyReport() {
             </div>
 
             <div className="mb-3 border-b"></div>
-            <div className="flex w-full items-center  justify-between px-4">
+            <div className="flex w-full items-center  justify-between px-6">
               <p className="text-sm">In Education</p>
               <div className="w-20">
                 <Checkbox className="checkboxes22" />
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="flex w-full items-center  justify-between px-4">
+            <div className="flex w-full items-center  justify-between px-6">
               <p className="text-sm">Job Ready</p>
               <div className="w-20">
                 <Checkbox className="checkboxes22" />
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="flex w-full items-center  justify-between px-4">
+            <div className="flex w-full items-center  justify-between px-6">
               <p className="text-sm">Risk Assessed</p>
               <div className="w-20">
                 <Checkbox className="checkboxes22" />
               </div>
             </div>
             <div className="mb-3 border-b"></div>
-            <div className="flex w-full items-center  justify-between px-4">
+            <div className="flex w-full items-center  justify-between px-6">
               <p className="text-sm">Fully Self Dependent</p>
               <div className="w-20">
                 <Checkbox className="checkboxes22" />
@@ -939,7 +939,7 @@ export default function MonthlyReport() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  md:w-1/2 lg:w-2/3 xl:w-1/2">
+              <div className=" mb-6 flex flex-col  md:w-1/2 lg:w-2/3 2xl:w-1/2">
                 <div className="flex w-full items-center justify-between rounded-md bg-white p-4">
                   <p className="text-lg font-semibold max-md:text-xl">Support Plan</p>
                   <p className="text-xs">25 January 2024</p>

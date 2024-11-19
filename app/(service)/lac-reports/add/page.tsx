@@ -54,7 +54,7 @@ export default function AddServiceUser() {
     switch (activeTab) {
       case "section1":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name of Service User
@@ -142,7 +142,7 @@ export default function AddServiceUser() {
         )
       case "section2":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Preparation between carer and young person for LAC review:
@@ -284,7 +284,7 @@ export default function AddServiceUser() {
       case "section3":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
                   General state of physical health
@@ -571,7 +571,7 @@ export default function AddServiceUser() {
       case "section4":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
               <p className="mb-4 text-xl">Contact</p>
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
@@ -658,7 +658,7 @@ export default function AddServiceUser() {
       case "section5":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
               <p className="mb-4 text-xl">Savings</p>
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
@@ -717,7 +717,7 @@ export default function AddServiceUser() {
       case "section6":
         return (
           <>
-            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+            <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
               <div className="my-3 flex w-full flex-col items-start">
                 <p className="mb-4 text-xl">Holidays</p>
 
@@ -864,7 +864,7 @@ export default function AddServiceUser() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col rounded-md   md:w-1/2 lg:w-2/3 xl:w-1/2">
+              <div className=" mb-6 flex flex-col rounded-md   md:w-1/2 lg:w-2/3 2xl:w-1/2">
                 <div className="flex w-full items-center justify-between rounded-md bg-white p-4">
                   <p className="font-bold max-md:text-xl">LAC Report</p>
                   <p className="text-xs">25 January 2024</p>

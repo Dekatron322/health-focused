@@ -713,7 +713,7 @@ export default function AddServiceUser() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md    md:w-2/3 lg:w-[45%] xl:w-1/3">
+              <div className=" mb-6 flex flex-col  rounded-md    md:w-2/3 lg:w-[45%] 2xl:w-1/3">
                 <div className="flex w-full items-center justify-between rounded-md bg-[#f5f5f5] p-4">
                   <p className="text-xl font-bold">New Service User</p>
                   <p className="text-xs">25 January 2024</p>

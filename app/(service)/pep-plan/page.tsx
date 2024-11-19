@@ -232,8 +232,8 @@ export default function PepPlanReport() {
                       <tr>
                         <th className="p-3 max-md:hidden"></th>
                         <th className="p-3 text-sm">Name of Document</th>
-                        <th className="hidden p-3">Creation Date</th>
-                        <th className="hidden p-3">Plan Date</th>
+                        <th className="p-3 max-md:hidden">Creation Date</th>
+                        <th className="p-3 max-md:hidden">Plan Date</th>
                         <th className="p-3 text-sm">Created by</th>
 
                         <th className="p-3 text-sm">Action</th>

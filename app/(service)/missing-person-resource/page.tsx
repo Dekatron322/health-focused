@@ -55,7 +55,7 @@ export default function AddServiceUser() {
     switch (activeTab) {
       case "general-info":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Name of Service User
@@ -142,7 +142,7 @@ export default function AddServiceUser() {
         )
       case "physical-appearance":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className="mb-3 flex w-full flex-col items-start">
               <label htmlFor="serviceUserName" className="label-title">
                 Physical Apperance/Body type
@@ -258,7 +258,7 @@ export default function AddServiceUser() {
       case "contacts":
         return (
           <>
-            <div className="mt-4 rounded-md bg-[#f5f5f5] p-4">
+            <div className="mt-4 rounded-md bg-[#f5f5f5] p-6">
               <>
                 <p className="mb-4">Family Contact</p>
 
@@ -472,7 +472,7 @@ export default function AddServiceUser() {
         )
       case "images":
         return (
-          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-4">
+          <form className="mt-4 flex w-full flex-col rounded-md bg-[#f5f5f5] p-6">
             <div className=" flex w-full flex-col items-start">
               <label htmlFor="addMedia" className="label-title ">
                 Add Media
@@ -527,9 +527,9 @@ export default function AddServiceUser() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col     lg:w-[40%] ">
+              <div className=" mb-6 flex flex-col     lg:w-2/3 2xl:w-1/2 ">
                 <div className="flex w-full justify-between rounded-md bg-white p-4">
-                  <p className="text-xl max-md:text-lg">Missing Person Resources</p>
+                  <p className="text-xl font-bold max-md:text-lg">Missing Person Resources</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
                 <div className="mt-3 flex w-full justify-between rounded-t-md bg-white">
@@ -550,7 +550,7 @@ export default function AddServiceUser() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

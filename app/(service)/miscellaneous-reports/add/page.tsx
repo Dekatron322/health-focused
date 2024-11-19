@@ -65,7 +65,7 @@ export default function NewLogs() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-4 md:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-4 md:w-1/2 2xl:w-1/3">
                 <div className="flex w-full items-center justify-between">
                   <p className="w-[60%] font-semibold md:text-xl">Miscellaneous Report Form</p>
                   <p className="text-xs">25 January 2024</p>
