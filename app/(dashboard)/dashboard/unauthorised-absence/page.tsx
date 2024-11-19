@@ -50,7 +50,7 @@ export default function UnauthorisedAbsense() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-6 md:w-1/3 lg:w-[45%] xl:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#f5f5f5] p-6 md:w-1/3 lg:w-[45%] 2xl:w-1/3">
                 <div className="flex w-full justify-between">
                   <p className="text-xl font-bold">Unauthorised Absence Form</p>
                   <p className="text-xs">25 January 2024</p>

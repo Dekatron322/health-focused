@@ -225,7 +225,7 @@ export default function Alerts() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-4 md:w-2/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-4 md:w-2/3 lg:w-[70%] 2xl:w-2/3">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
                     <p className="text-2xl">Alerts</p>

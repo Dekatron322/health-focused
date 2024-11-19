@@ -65,7 +65,7 @@ export default function NewLogs() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col gap-4  rounded-md bg-white md:w-1/2 md:border-[1px]">
+              <div className="mb-6 flex flex-col gap-4  rounded-md bg-white md:w-1/2 md:border-[1px] lg:w-2/3 2xl:w-1/2">
                 <div className="flex w-full justify-between md:p-4">
                   <div className="flex flex-row gap-3">
                     <Image
@@ -77,25 +77,25 @@ export default function NewLogs() {
                     />
                     <div>
                       <p className="text-xs text-[#69B7FF]">Updated by</p>
-                      <p className="lg:text-sm xl:text-base">Lade Maxwell</p>
+                      <p className="lg:text-sm 2xl:text-base">Lade Maxwell</p>
                       <p className="text-xs">Keystone Avenue</p>
                     </div>
                   </div>
                   <div>
                     <p className="text-xs text-[#69B7FF]">Service User</p>
-                    <p className="lg:text-sm xl:text-base">Marvin Martin</p>
+                    <p className="lg:text-sm 2xl:text-base">Marvin Martin</p>
                   </div>
                   <div>
                     <p className="text-xs text-[#69B7FF]">Staff on Duty</p>
-                    <p className="lg:text-sm xl:text-base">Toby, Adeoye, Kevin</p>
+                    <p className="lg:text-sm 2xl:text-base">Toby, Adeoye, Kevin</p>
                   </div>
                   <div className="max-sm:hidden">
                     <p className="text-xs text-[#69B7FF] ">11:55 AM</p>
-                    <p className="lg:text-sm xl:text-base">25 January 2024</p>
+                    <p className="lg:text-sm 2xl:text-base">25 January 2024</p>
                   </div>
                 </div>
                 <div className="w-full border-b"></div>
-                <p className="md:p-4 lg:text-sm xl:text-base">
+                <p className="md:p-4 lg:text-sm 2xl:text-base">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                   aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum

@@ -65,7 +65,7 @@ export default function NewLogs() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="bg-[#1e1e1e] text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md  bg-[#F5F5F5] p-6  md:w-1/3 lg:w-[45%] xl:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md  bg-[#F5F5F5] p-6  md:w-1/3 lg:w-[45%] 2xl:w-1/3">
                 <div className="flex w-full justify-between">
                   <p className="text-xl font-bold">New Daily Log</p>
                   <p className="text-xs">25 January 2024</p>
@@ -147,14 +147,14 @@ export default function NewLogs() {
                       ></textarea>
                     </div>
                   </div>
-                  <div className="mb-6 flex w-full flex-col items-start">
+                  <div className="mb-6 flex w-full flex-col items-start ">
                     <label htmlFor="addMedia" className="label-title ">
                       Add Media
                     </label>
                     <div
                       {...getRootProps({
                         className:
-                          "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
+                          "flex w-full bg-white flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
                       })}
                     >
                       <input {...getInputProps()} />
