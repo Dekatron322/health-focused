@@ -60,7 +60,7 @@ export const Assets = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 max-sm:grid-cols-1 sm:p-4 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-4 gap-2 max-sm:grid-cols-1 sm:p-4 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
         {Asset.map((assets) => (
           <div key={assets.id} className="w-full gap-3 rounded bg-white px-4 py-2 shadow lg:px-3 xl:px-3 2xl:px-4">
             <div className="flex flex-row gap-2">

@@ -67,7 +67,7 @@ export default function WeeklyReport() {
                   type="text"
                   id="serviceUserName"
                   placeholder="Enter name"
-                  className="w-40 bg-transparent outline-none focus:outline-none"
+                  className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                   style={{ width: "100%" }}
                 />
               </div>
@@ -82,7 +82,7 @@ export default function WeeklyReport() {
                   type="text"
                   id="placement"
                   placeholder="Type and select your name"
-                  className="w-40 bg-transparent outline-none focus:outline-none"
+                  className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                   style={{ width: "100%" }}
                 />
               </div>
@@ -97,7 +97,7 @@ export default function WeeklyReport() {
                   type="text"
                   id="updatedBy"
                   placeholder="Select the Placement "
-                  className="w-40 bg-transparent outline-none focus:outline-none"
+                  className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                   style={{ width: "100%" }}
                 />
                 <IoIosArrowDropdown size={18} />
@@ -114,7 +114,7 @@ export default function WeeklyReport() {
                     type="date"
                     id="staffOnDuty"
                     placeholder="Separate names by comma"
-                    className="w-40 bg-transparent outline-none focus:outline-none"
+                    className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -128,7 +128,7 @@ export default function WeeklyReport() {
                     type="date"
                     id="staffOnDuty"
                     placeholder="Separate names by comma"
-                    className="w-40 bg-transparent outline-none focus:outline-none"
+                    className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -680,136 +680,136 @@ export default function WeeklyReport() {
             <div className="my-3 mb-3 flex w-full  items-center justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Bullying</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Fire Setting</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Criminal Damage</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Property Damage</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Drug/Substance Use</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Drug Dealing</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Racial Abuse</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Verbal Abuse</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Argument or Altercation</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Assault</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Smoking</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Non-cooperation or non compliance</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Unauthorised Absence</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Inciting Terrorist Acts</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Self Harm</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Suicidal Ideation</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
             <div className="mb-3 flex w-full items-center  justify-between bg-[#F5F5F5] px-4">
               <p className="text-sm">Theft</p>
               <div className="flex gap-60 max-md:gap-32">
-                <Checkbox className="checkboxes" />
-                <Checkbox className="checkboxes" />
+                <Checkbox className="checkboxes2" />
+                <Checkbox className="checkboxes2" />
               </div>
             </div>
 
@@ -861,7 +861,7 @@ export default function WeeklyReport() {
                   <p className="text-base font-semibold">New Weekly Report</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
-                <div className="my-4 flex w-full justify-between rounded-md bg-white px-4 pt-4">
+                <div className="my-4 flex w-full justify-between  rounded-t-md bg-white pt-2  lg:text-xs xl:text-sm">
                   <Tab
                     label="General"
                     onClick={() => setActiveTab("general-info")}

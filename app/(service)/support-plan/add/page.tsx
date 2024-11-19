@@ -68,7 +68,7 @@ export default function MonthlyReport() {
                   type="text"
                   id="serviceUserName"
                   placeholder="Enter name"
-                  className="w-40 bg-transparent outline-none focus:outline-none"
+                  className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                   style={{ width: "100%" }}
                 />
                 <IoIosArrowDropdown size={18} />
@@ -84,7 +84,7 @@ export default function MonthlyReport() {
                   type="text"
                   id="placement"
                   placeholder="Type and select your name"
-                  className="w-40 bg-transparent outline-none focus:outline-none"
+                  className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                   style={{ width: "100%" }}
                 />
                 <IoIosArrowDropdown size={18} />
@@ -101,7 +101,7 @@ export default function MonthlyReport() {
                     type="date"
                     id="staffOnDuty"
                     placeholder="Separate names by comma"
-                    className="w-40 bg-transparent outline-none focus:outline-none"
+                    className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -115,7 +115,7 @@ export default function MonthlyReport() {
                     type="date"
                     id="staffOnDuty"
                     placeholder="Separate names by comma"
-                    className="w-40 bg-transparent outline-none focus:outline-none"
+                    className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -131,7 +131,7 @@ export default function MonthlyReport() {
                   type="text"
                   id="placement"
                   placeholder="Type and select your name"
-                  className="w-40 bg-transparent outline-none focus:outline-none"
+                  className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                   style={{ width: "100%" }}
                 />
                 <IoIosArrowDropdown size={18} />
@@ -151,7 +151,7 @@ export default function MonthlyReport() {
                     type="text"
                     id="staffOnDuty"
                     placeholder=""
-                    className="w-40 bg-transparent outline-none focus:outline-none"
+                    className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -166,7 +166,7 @@ export default function MonthlyReport() {
                     type="text"
                     id="staffOnDuty"
                     placeholder=""
-                    className="w-40 bg-transparent outline-none focus:outline-none"
+                    className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -182,7 +182,7 @@ export default function MonthlyReport() {
                   type="date"
                   id="staffOnDuty"
                   placeholder="Separate names by comma"
-                  className="w-40 bg-transparent outline-none focus:outline-none"
+                  className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                   style={{ width: "100%" }}
                 />
               </div>
@@ -939,12 +939,12 @@ export default function MonthlyReport() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  md:w-1/2 ">
+              <div className=" mb-6 flex flex-col  md:w-1/2 lg:w-2/3 xl:w-1/2">
                 <div className="flex w-full items-center justify-between rounded-md bg-white p-4">
                   <p className="text-lg font-semibold max-md:text-xl">Support Plan</p>
                   <p className="text-xs">25 January 2024</p>
                 </div>
-                <div className="mt-4 flex w-full justify-between rounded-t-md bg-white">
+                <div className="mt-4 flex w-full justify-between rounded-t-md bg-white lg:text-sm xl:text-sm">
                   <Tab
                     label="General"
                     onClick={() => setActiveTab("general-info")}

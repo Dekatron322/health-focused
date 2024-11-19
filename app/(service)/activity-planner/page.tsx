@@ -182,7 +182,7 @@ export default function LACNotes() {
                       href="/activity-planner/add"
                       className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
                     >
-                      <p className="text-white max-md:px-0">New Key Work Planner</p>
+                      <p className="text-white max-md:px-0 lg:text-xs xl:text-sm">New Key Work Planner</p>
                       <IoAddCircleOutline className="text-white" size={20} />
                     </Link>
                   </div>
@@ -227,13 +227,13 @@ export default function LACNotes() {
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
-                        <th className="p-3 text-sm max-md:hidden"></th>
-                        <th className="p-3 text-sm">Name of Document</th>
-                        <th className="p-3 text-sm">Creation Date</th>
-                        <th className="p-3 text-sm max-md:hidden">Plan Date</th>
-                        <th className="p-3 text-sm max-md:hidden">Created by</th>
+                        <th className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm"></th>
+                        <th className="p-3 text-sm lg:text-xs xl:text-sm">Name of Document</th>
+                        <th className="p-3 text-sm lg:text-xs xl:text-sm">Creation Date</th>
+                        <th className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">Plan Date</th>
+                        <th className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">Created by</th>
 
-                        <th className="p-3 text-sm">Action</th>
+                        <th className="p-3 text-sm lg:text-xs xl:text-sm">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -242,11 +242,11 @@ export default function LACNotes() {
                           <td className="p-3 text-sm max-md:hidden">
                             <Checkbox className="checkboxes22" />
                           </td>
-                          <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm">{row.placement}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
-                          <td className="relative cursor-pointer p-3 text-sm">
+                          <td className="p-3 text-sm lg:text-xs xl:text-sm">{row.name}</td>
+                          <td className="p-3 text-sm lg:text-xs xl:text-sm">{row.placement}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.date}</td>
+                          <td className="p-3 text-sm max-md:hidden lg:text-xs xl:text-sm">{row.keyWorker}</td>
+                          <td className="relative cursor-pointer p-3 text-sm lg:text-xs xl:text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
@@ -318,7 +318,7 @@ export default function LACNotes() {
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   )

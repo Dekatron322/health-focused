@@ -817,12 +817,12 @@ export default function AddServiceUser() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md  md:w-1/2">
+              <div className=" mb-6 flex flex-col  rounded-md  md:w-1/2 lg:w-2/3 xl:w-1/2">
                 <div className="flex w-full justify-between rounded-md bg-white p-4">
                   <p className="text-lg font-semibold max-md:text-lg">Risk Assessment Form</p>
                   {/* <p className="text-xs">25 January 2024</p> */}
                 </div>
-                <div className="mt-4 flex w-full justify-between rounded-t-md bg-white">
+                <div className="mt-4 flex w-full justify-between rounded-t-md bg-white lg:text-sm xl:text-sm">
                   <Tab
                     label="Key work Discussion Planner"
                     onClick={() => setActiveTab("general-info")}

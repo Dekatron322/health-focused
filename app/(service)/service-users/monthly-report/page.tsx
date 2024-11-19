@@ -945,12 +945,12 @@ export default function MonthlyReport() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="text-[#0085FF]">GO BACK</p>
               </button>
-              <div className=" mb-6 flex flex-col  rounded-md  md:w-2/3">
+              <div className=" mb-6 flex flex-col  rounded-md  md:w-2/3 lg:w-[80%] xl:w-2/3">
                 <div className="mb-4 flex w-full items-center justify-between rounded-md bg-white p-4">
                   <p className="text-lg font-semibold">New Monthly Report</p>
                   <p className="whitespace-nowrap text-xs">25 January 2024</p>
                 </div>
-                <div className="flex w-full justify-between rounded-t-md bg-white">
+                <div className="my-4 flex w-full justify-between  whitespace-nowrap rounded-t-md bg-white  pt-2 lg:text-xs xl:text-sm">
                   <Tab
                     label="General"
                     onClick={() => setActiveTab("general-info")}
@@ -982,7 +982,7 @@ export default function MonthlyReport() {
               </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </section>

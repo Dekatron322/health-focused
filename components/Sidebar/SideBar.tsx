@@ -12,11 +12,11 @@ const SideBar = () => {
   return (
     <div className="sidebar flex h-full flex-col justify-between overflow-auto border-0 border-black max-md:hidden ">
       <div className="h-full justify-between border-0 border-red-700 lg:mt-6 lg:h-auto lg:space-y-8">
-        <div className="hidden border-0 border-white px-7 lg:block lg:px-4 xl:px-7">
+        <div className="hidden border-0 border-white px-7 lg:block lg:px-4 xl:px-5 2xl:px-7">
           <Link href="/">
             <div className="flex items-center gap-2">
               <Image className="" src="/images/logo.png" width={25} height={25} alt="smup" />
-              <p className="inter-font font-normal text-white max-md:px-0 max-md:text-center max-md:text-[18px] md:text-lg lg:text-sm">
+              <p className="inter-font font-normal text-white max-md:px-0 max-md:text-center max-md:text-[18px] md:text-lg lg:text-sm xl:text-sm 2xl:text-lg">
                 Health Focused{" "}
               </p>
             </div>

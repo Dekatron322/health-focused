@@ -65,7 +65,7 @@ export default function NewLogs() {
                 <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
                 <p className="bg-[#1e1e1e] text-[#0085FF]">GO BACK</p>
               </button>
-              <div className="mb-6 flex flex-col items-center gap-4 rounded-md  bg-[#F5F5F5] p-4  md:w-1/3">
+              <div className="mb-6 flex flex-col items-center gap-4 rounded-md border-[1px] bg-[#F5F5F5] p-6 md:w-1/3 lg:w-[45%] xl:w-1/3">
                 <div className="flex w-full justify-between">
                   <p className="text-xl font-semibold">Handover Note</p>
                   <p className="text-xs">25 January 2024</p>
@@ -80,7 +80,7 @@ export default function NewLogs() {
                         type="text"
                         id="serviceUserName"
                         placeholder="Type and select your name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -96,7 +96,7 @@ export default function NewLogs() {
                         type="text"
                         id="updatedBy"
                         placeholder="Type and select your name"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -112,7 +112,7 @@ export default function NewLogs() {
                         type="text"
                         id="placement"
                         placeholder="Select the Placement"
-                        className="w-40 bg-transparent outline-none focus:outline-none"
+                        className="w-40 bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%" }}
                       />
                       <IoIosArrowDropdown size={18} />
@@ -127,7 +127,7 @@ export default function NewLogs() {
                       <textarea
                         id="email"
                         placeholder="enter note"
-                        className="bg-transparent outline-none focus:outline-none"
+                        className="bg-transparent text-sm outline-none focus:outline-none"
                         style={{ width: "100%", background: "transparent" }}
                       ></textarea>
                     </div>
@@ -139,7 +139,7 @@ export default function NewLogs() {
                     <div
                       {...getRootProps({
                         className:
-                          "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer",
+                          "flex w-full flex-col items-center justify-center rounded-xl border-[1px] py-4 cursor-pointer bg-white",
                       })}
                     >
                       <input {...getInputProps()} />
