@@ -18,14 +18,14 @@ export default function Dashboard() {
           <div className="flex w-full  flex-col ">
             <DashboardNav />
 
-            <div className="my-4 flex w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3">
+            <div className="my-4 flex w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3 lg:px-8 2xl:px-16 ">
               <div>
                 <ProfileInfo />
               </div>
-              <div className={styles.dashboard_body__lhs}>
+              <div>
                 <Logger />
               </div>
-              <div className={styles.dashboard_body__rhs}>
+              <div className=" w-full">
                 <SkillsInfo />
               </div>
             </div>

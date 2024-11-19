@@ -63,7 +63,7 @@ export const Logger = () => {
             <button
               key={tab.id}
               onClick={() => setSelectedTab(tab.id)}
-              className={`flex justify-between px-2  py-2 text-sm ${
+              className={`flex justify-between px-2 py-2  font-semibold md:text-xs 2xl:text-sm ${
                 selectedTab === tab.id ? "border-b-2 border-[#0052FF] text-[#0052FF]" : "bg-transparent text-black"
               }`}
             >
@@ -74,7 +74,7 @@ export const Logger = () => {
       </div>
 
       {/* Render the selected tab content */}
-      <div className="grid gap-3 p-2">{renderContent()}</div>
+      <div className="grid gap-3 py-2">{renderContent()}</div>
     </div>
   )
 }
@@ -88,11 +88,11 @@ const DailyLog = () => {
           href="/dashboard/new-logs"
           className="flex items-center gap-2 whitespace-nowrap rounded-md bg-[#0085FF] px-3 py-2"
         >
-          <p className="text-white max-md:hidden max-md:px-0">New Daily Log</p>
+          <p className="text-white max-md:hidden max-md:px-0 lg:text-xs 2xl:text-sm">New Daily Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden lg:w-[160px]">
+        <div className="flex items-center gap-3 ">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden lg:hidden lg:w-[160px] 2xl:block">
             <input
               type="date"
               id="search"
@@ -113,7 +113,7 @@ const DailyLog = () => {
             <div className="flex w-full justify-between">
               <div>
                 <p className="text-xs text-[#69B7FF]">Updated by</p>
-                <h6 className="text-base font-semibold">{assets.name}</h6>
+                <h6 className="font-semibold md:text-sm 2xl:text-base">{assets.name}</h6>
                 <p className="text-xs">{assets.location}</p>
               </div>
               <div className="flex flex-col items-end justify-end">
@@ -123,7 +123,7 @@ const DailyLog = () => {
             </div>
           </div>
           <div className="py-3">
-            <p>
+            <p className="md:text-sm 2xl:text-base">
               Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
               Martin has engaged the staff for about 30 minutes. They are holding a conversation about how to make
               Martin has engaged the staff for about 30 minutes. They are holding a conversation about how tMartin has

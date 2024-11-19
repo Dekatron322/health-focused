@@ -76,6 +76,7 @@
 
 .transactions2 {
   flex: 1;
+  width: 100%;
   /* border-width: 1px; */
   border-radius: 5px;
   height: auto;
