@@ -48,7 +48,7 @@ export function Links() {
               <div className="flex items-center gap-2  lg:pl-3 xl:pl-5">
                 <LinkIcon />
                 <p
-                  className={clsx("hidden text-sm font-semibold md:text-xs lg:block lg:text-[11px]", {
+                  className={clsx("hidden text-[11px] font-semibold  lg:block 2xl:text-sm ", {
                     "font-extrabold": pathname.startsWith(link.href),
                   })}
                 >

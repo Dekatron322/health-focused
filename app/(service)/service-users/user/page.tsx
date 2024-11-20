@@ -19,7 +19,7 @@ export default function Dashboard() {
             <DashboardNav />
 
             <div className="my-4 flex w-full gap-4 px-16 pb-16 max-md:flex-col max-md:px-3 lg:px-8 2xl:px-16 ">
-              <div>
+              <div className="min-w-[240px]">
                 <ProfileInfo />
               </div>
               <div className={styles.dashboard_body__lhs}>

@@ -20,7 +20,7 @@ export const SkillsInfo = () => {
       <div className={styles.transactions2}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
           <p className="font-semibold">Skill Developer</p>
-          <GoArrowUpRight />
+          {/* <GoArrowUpRight /> */}
         </div>
         <div className="border-b"></div>
         <div className="py-4 max-md:px-0">
