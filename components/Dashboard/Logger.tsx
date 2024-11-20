@@ -88,11 +88,11 @@ const DailyLog = () => {
           href="/dashboard/new-logs"
           className="flex items-center gap-2 whitespace-nowrap rounded-md bg-[#0085FF] px-3 py-2"
         >
-          <p className="text-white max-md:hidden max-md:px-0 lg:text-xs 2xl:text-sm">New Daily Log</p>
+          <p className="text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">New Daily Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
         <div className="flex items-center gap-3 ">
-          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden lg:hidden lg:w-[160px] 2xl:block">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden md:hidden lg:w-[160px] 2xl:block">
             <input
               type="date"
               id="search"
@@ -163,11 +163,11 @@ const WeeklyReport = () => {
     <>
       <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
         <Link href="/service-users/weekly-report" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-          <p className="whitespace-nowrap text-white max-md:hidden max-md:px-0">New Weekly Log</p>
+          <p className="whitespace-nowrap text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">New Weekly Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
         <div className="flex items-center gap-3 ">
-          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden lg:w-[160px]">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden md:hidden lg:w-[160px] 2xl:block">
             <input
               type="date"
               id="search"
@@ -230,16 +230,16 @@ const WeeklyReport = () => {
 const MonthlyReport = () => {
   return (
     <>
-      <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
+      <div className="flex w-full items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
         <Link
           href="/service-users/monthly-report"
           className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
         >
-          <p className="whitespace-nowrap text-white max-md:hidden max-md:px-0">New Monthly Log</p>
+          <p className="whitespace-nowrap text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">New Monthly Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
         <div className="flex items-center gap-3">
-          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden lg:w-[160px]">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden md:hidden lg:w-[120px] 2xl:block">
             <input
               type="date"
               id="search"
@@ -322,7 +322,7 @@ const SkillsProgress = () => {
       {
         label: "Actual Progress",
         data: [85, 75, 90, 70],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        backgroundColor: "rgba(105, 183, 255, 1)",
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
@@ -345,10 +345,10 @@ const SkillsProgress = () => {
   }
 
   return (
-    <div className=" w-full bg-[#ffffff] p-4">
+    <div className="flex w-full bg-[#ffffff] p-4">
       {" "}
       {/* Adjust the height value here */}
-      <Bar data={data} options={options} max-height={500} />
+      <Bar data={data} options={options} max-height={800} />
     </div>
   )
 }
@@ -360,11 +360,13 @@ const HandoverNote = () => {
     <>
       <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
         <Link href="/service-users/handover-note" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-          <p className="whitespace-nowrap text-white max-md:hidden max-md:px-0">New Handover Note</p>
+          <p className="whitespace-nowrap text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">
+            New Handover Note
+          </p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
         <div className="flex items-center gap-3">
-          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden lg:w-[160px]">
+          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden md:hidden lg:w-[160px] 2xl:block">
             <input
               type="date"
               id="search"

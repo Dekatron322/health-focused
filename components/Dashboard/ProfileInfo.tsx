@@ -37,12 +37,11 @@ export const ProfileInfo = () => {
         </div>
       </div>
       <div className={styles.transactions2}>
-        <div className="flex items-center justify-between p-4 max-md:px-0">
+        <div className="flex items-center justify-between p-2 max-md:px-0 2xl:p-4">
           <p className="font-semibold">Placement Info</p>
-          <GoArrowUpRight />
         </div>
         <div className="border-b"></div>
-        <div className="px-4 py-4 max-md:px-0">
+        <div className="px-2 py-4 max-md:px-0 2xl:px-4">
           {Placement.map((placement, index) => (
             <div key={placement.id}>
               <div className="flex justify-between">
@@ -59,12 +58,11 @@ export const ProfileInfo = () => {
         </div>
       </div>
       <div className={styles.transactions2}>
-        <div className="flex items-center justify-between p-4 max-md:px-0">
+        <div className="flex items-center justify-between p-2 max-md:px-0 2xl:p-4">
           <p className="font-semibold">About</p>
-          <GoArrowUpRight />
         </div>
         <div className="border-b"></div>
-        <div className="px-4 py-4 max-md:px-0">
+        <div className="px-2 py-4 max-md:px-0 2xl:px-4">
           {About.map((placement, index) => (
             <div key={placement.id}>
               <div className="flex justify-between">
@@ -81,12 +79,11 @@ export const ProfileInfo = () => {
         </div>
       </div>
       <div className={styles.transactions2}>
-        <div className="flex items-center justify-between p-4 max-md:px-0">
+        <div className="flex items-center justify-between p-2 max-md:px-0 2xl:p-4">
           <p className="font-semibold">Contact</p>
-          <GoArrowUpRight />
         </div>
         <div className="border-b"></div>
-        <div className="px-4 py-4 max-md:px-0">
+        <div className="px-2 py-4 max-md:px-0 2xl:px-4">
           {Contact.map((placement, index) => (
             <div key={placement.id}>
               <div className="flex justify-between">
@@ -94,7 +91,7 @@ export const ProfileInfo = () => {
                   <Image src={placement.icon} width={30} height={30} alt="" />
                   <div>
                     <p className="text-xs font-bold text-[#C0C0C0]">{placement.title}</p>
-                    <p className="font-regular ">{placement.value}</p>
+                    <p className="font-regular md:text-sm 2xl:text-sm">{placement.value}</p>
                   </div>
                 </div>
               </div>
@@ -103,24 +100,25 @@ export const ProfileInfo = () => {
         </div>
       </div>
       <div className={styles.transactions3}>
-        <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Other Important Information</p>
-          <GoArrowUpRight />
+        <div className="flex items-center justify-between p-2 max-md:px-0 2xl:p-4">
+          <p className="font-semibold md:text-sm 2xl:text-base">Other Important Information</p>
         </div>
         <div className="border-b"></div>
         <div className="py-4 max-md:px-0">
           {OtherInfo.map((placement) => (
             <div key={placement.id}>
               <div
-                className="flex cursor-pointer items-center justify-between px-4 py-3"
+                className="flex cursor-pointer items-center justify-between px-2 py-3 2xl:px-4"
                 onClick={() => toggleAccordion(placement.id)}
               >
-                <p className="text-sm font-bold">{placement.title}</p>
+                <p className="text-xs font-bold 2xl:text-sm">{placement.title}</p>
                 {openItemId === placement.id ? <FaChevronUp /> : <FaChevronDown />}
               </div>
               {openItemId === placement.id && (
                 <div className="px-4 pb-4">
-                  <p className="text-sm">Here is the detailed information about {placement.title}.</p>
+                  <p className="text-sm md:text-xs 2xl:text-base">
+                    Here is the detailed information <br /> about {placement.title}.
+                  </p>
                   {/* Add more content related to the placement here */}
                 </div>
               )}

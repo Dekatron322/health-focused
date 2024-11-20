@@ -71,14 +71,14 @@ export const SkillsInfo = () => {
                       <div className="flex justify-between">
                         <div className="flex items-center justify-center gap-2">
                           <div>
-                            <p className="text-sm font-medium text-black">{item.user}</p>
-                            <p className="text-sm font-bold text-black">{item.name}</p>
+                            <p className="text-sm font-medium text-black md:text-xs 2xl:text-sm">{item.user}</p>
+                            <p className="text-sm font-bold text-black md:text-xs 2xl:text-sm">{item.name}</p>
                           </div>
                         </div>
                         <div className="flex flex-col items-end">
                           <p className="text-xs text-black">{item.status}</p>
-                          <p className="whitespace-nowrap text-lg font-bold text-black">{item.time}</p>
-                          <p className="text-xs text-black">{item.date}</p>
+                          <p className="whitespace-nowrap text-sm font-bold text-black  2xl:text-lg">{item.time}</p>
+                          <p className="text-[10px] text-black 2xl:text-xs">{item.date}</p>
                         </div>
                       </div>
                     </div>
@@ -133,12 +133,12 @@ export const SkillsInfo = () => {
                         <div className="flex items-center justify-center gap-2">
                           <div>
                             <p className="text-xs font-medium text-black">{item.user}</p>
-                            <p className="text-sm font-bold text-black">{item.name}</p>
+                            <p className="text-xs font-bold  text-black 2xl:text-sm">{item.name}</p>
                           </div>
                         </div>
                         <div className="flex flex-col items-end">
                           <p className="text-xs text-black">{item.date}</p>
-                          <p className="whitespace-nowrap text-lg font-bold text-black">{item.time}</p>
+                          <p className="whitespace-nowrap text-sm font-bold text-black 2xl:text-lg">{item.time}</p>
                         </div>
                       </div>
                     </div>
@@ -158,8 +158,7 @@ export const SkillsInfo = () => {
 
       <div className={styles.transactions2}>
         <div className="flex items-center justify-between p-4 max-md:px-0">
-          <p className="font-semibold">Plans, Reports and Resources</p>
-          <GoArrowUpRight />
+          <p className="text-sm font-bold 2xl:text-base">Plans, Reports and Resources</p>
         </div>
         <div className="border-b"></div>
         <div className="py-4 max-md:px-0">
@@ -168,7 +167,7 @@ export const SkillsInfo = () => {
               <Link href={placement.link} className="flex cursor-pointer items-center gap-3 px-4 py-3">
                 <FaFolder size={18} className="text-[#0085FF]" />
 
-                <p className="text-sm font-bold">{placement.title}</p>
+                <p className="text-xs  font-bold 2xl:text-sm">{placement.title}</p>
               </Link>
             </div>
           ))}

@@ -36,6 +36,12 @@
   flex-direction: row;
 }
 
+.dashboard_body__2rhs {
+  flex: 1;
+  min-width: 250px;
+  flex-direction: row;
+}
+
 .income {
   flex: 1.5;
   border-width: 1px;
@@ -76,7 +82,6 @@
 
 .transactions2 {
   flex: 1;
-  width: 100%;
   /* border-width: 1px; */
   border-radius: 5px;
   height: auto;

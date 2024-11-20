@@ -322,7 +322,7 @@ export const Contact = [
     id: 2,
     icon: "/email.svg",
     title: "Email",
-    value: "london@mavinlondon.com",
+    value: "london@mavin.com",
   },
 ]
 

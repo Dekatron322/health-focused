@@ -22,10 +22,10 @@ export default function Dashboard() {
               <div>
                 <ProfileInfo />
               </div>
-              <div>
+              <div className={styles.dashboard_body__lhs}>
                 <Logger />
               </div>
-              <div className=" w-full">
+              <div className={styles.dashboard_body__2rhs}>
                 <SkillsInfo />
               </div>
             </div>
