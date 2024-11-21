@@ -34,7 +34,7 @@ const SideBar = () => {
           className="flex h-10 items-center space-x-2 border-0 border-black text-[#747A80] hover:bg-blue-100"
         >
           <SettingsIcon />
-          <p className="hidden text-sm font-semibold text-[#747A80] lg:block">Profile Settings</p>
+          <p className="hidden text-xs font-semibold text-[#747A80] lg:block 2xl:text-sm">Profile Settings</p>
         </Link>
       </div>
     </div>
