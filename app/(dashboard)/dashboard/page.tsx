@@ -18,7 +18,7 @@ export default function Dashboard() {
 
         <div className="mx-auto flex min-h-screen bg-[#171818] max-sm:h-auto">
           <div className="flex w-full  flex-col ">
-            <div className=" flex  w-full gap-4 px-16 py-16 max-md:flex-col max-md:px-3 lg:px-5">
+            <div className=" flex  w-full gap-4 px-5 py-16 max-md:flex-col max-md:px-3 2xl:px-16">
               <div className={styles.dashboard_body__lhs}>
                 <div className={styles.in_out}>
                   <Income />

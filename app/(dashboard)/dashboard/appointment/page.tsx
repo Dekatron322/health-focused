@@ -125,17 +125,17 @@ const Events = () => {
         <div className="mx-auto flex min-h-screen ">
           <div className="flex w-full  flex-col ">
             <DashboardNav />
-            <div className=" flex justify-between bg-[#171818] px-16 pb-16 max-md:px-3">
+            <div className=" flex justify-between bg-[#171818] px-5 pb-16 max-md:px-3 2xl:px-16">
               <div className="mt-6">
                 <Link
                   href="/dashboard/new-appointment"
                   className="flex h-10 items-center gap-2 rounded-md border-[1px] border-[#0085FF] p-2 text-xs"
                 >
-                  <IoIosArrowDropleft className="text-xl text-[#0085FF]" />
-                  <p className="text-base text-[#0085FF]">Add Appointment</p>
+                  <IoIosArrowDropleft className="text-lg text-[#0085FF] 2xl:text-xl" />
+                  <p className="text-sm text-[#0085FF] 2xl:text-base">Add Appointment</p>
                 </Link>
                 <p className="mt-4 text-sm">Show Appointments for</p>
-                <div className="mt-3 flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] bg-white px-3 py-1 lg:w-[200px]">
+                <div className="mt-3 flex h-10 w-40 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] bg-white px-3 py-1 2xl:w-[200px]">
                   <input
                     type="text"
                     id="search"
@@ -147,43 +147,52 @@ const Events = () => {
                 </div>
                 <div className="mt-3 flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">All Placement</p>
+                  <p className="text-sm text-white 2xl:text-base">All Placement</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">John Cena</p>
+                  <p className="text-sm text-white 2xl:text-base">John Cena</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">Mary Earps</p>
+                  <p className="text-sm text-white 2xl:text-base">Mary Earps</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">Rivaldo Henry</p>
+                  <p className="text-sm text-white 2xl:text-base">Rivaldo Henry</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">Black Widow</p>
+                  <p className="text-sm text-white 2xl:text-base">Black Widow</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">Alisson Coursera</p>
+                  <p className="text-sm text-white 2xl:text-base">Alisson Coursera</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">Maria Maria</p>
+                  <p className="text-sm text-white 2xl:text-base">Maria Maria</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">Helen Aaland</p>
+                  <p className="text-sm text-white 2xl:text-base">Helen Aaland</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Checkbox className="checkboxes" />
-                  <p className="text-white">Riquelme Joan</p>
+                  <p className="text-sm text-white 2xl:text-base">Riquelme Joan</p>
                 </div>
               </div>
-              <div className={styles.teacters_dashboard_lhs}>
-                <div className="flex items-center justify-between">
+
+              {/* .teacters_dashboard_lhs {
+  flex: 3;
+  margin: 15px 15px 0 48px;
+  transition: ease-in-out;
+  background-color: #ffffff;
+  padding: 4px;
+} */}
+
+              <div className="mx-4 mt-6 flex w-full flex-col rounded-md bg-white p-4">
+                <div className=" flex items-center justify-between">
                   <div className={styles.page}>
                     <p>Home</p>
                     <IoChevronForward />
@@ -205,15 +214,15 @@ const Events = () => {
 
                 <Calendar />
               </div>
-              <div className={styles.teacters_dashboard_rhs}>
+              <div>
                 <div className=" my-3 flex justify-between gap-8">
                   <div className="flex  w-full rounded-2xl border bg-[#ffffff] p-2">
                     <div className="">
-                      <div className="mx-auto  w-[420px] p-3 ">
+                      <div className="mx-auto w-[260px]   2xl:w-[420px] ">
                         <div className="">
                           <div className="">
                             <div className="flex items-center">
-                              <h5 className="flex-auto font-semibold text-gray-900">
+                              <h5 className="flex-auto  font-bold text-gray-900">
                                 {format(firstDayCurrentMonth, "MMMM yyyy")}
                               </h5>
                               <button

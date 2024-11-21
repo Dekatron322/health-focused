@@ -10,7 +10,6 @@ import { EventContentArg } from "@fullcalendar/core"
 interface CalendarProps {}
 
 const Calendar: React.FC<CalendarProps> = () => {
-  // Sample events data
   const events = [
     {
       title: "12am Gardening",
@@ -18,7 +17,7 @@ const Calendar: React.FC<CalendarProps> = () => {
       end: "2024-09-05T12:00:00",
     },
     {
-      title: "12PM Weekly  Exercises",
+      title: "12PM Weekly Exercises",
       start: "2024-09-07T14:00:00",
       end: "2024-09-08T16:00:00",
     },
@@ -39,56 +38,37 @@ const Calendar: React.FC<CalendarProps> = () => {
     },
   ]
 
-  const getEventBackgroundColor = (title: string): string => {
-    // Implement your logic to determine the background color based on the event title
-    // For example, you can use a switch statement or if conditions
-    switch (title) {
-      case "12am Gardening":
-        return "#9654F4"
-      case "12PM Weekly  Exercises":
-        return "#38a169"
-      case "11.00 AM Doctor’s Appointment":
-        return "#F46B06"
-      case "Interhouse sport":
-        return "#5782FF"
-      case "Educational Tour":
-        return "#360083"
-      default:
-        return "#9654F4" // Default color
-    }
-  }
-
   const eventContent = (eventInfo: EventContentArg) => {
-    const backgroundColor = getEventBackgroundColor(eventInfo.event.title)
-
     const eventStyle: React.CSSProperties = {
-      backgroundColor,
+      backgroundColor: "#5782FF",
       color: "#fff",
-      padding: "15px",
-      width: "100%",
-      //   borderRadius: "32px",
-      height: "20px",
+      padding: "10px",
+      borderRadius: "8px",
       display: "flex",
-      gap: "8px",
       alignItems: "center",
-      justifyContent: "space-between",
     }
 
     return (
       <div style={eventStyle}>
         <div className="flex items-center gap-2">
           <Image src="/Img.svg" width={20} height={20} alt="" className="rounded-full " />
-          <p className="text-xs">{eventInfo.event.title}</p>
+          <p>{eventInfo.event.title}</p>
         </div>
-        <div className="rounded-full p-1 shadow-md">
-          <IoIosArrowForward size={14} />
-        </div>
+        <IoIosArrowForward size={14} />
       </div>
     )
   }
 
   return (
     <div>
+      <style jsx>{`
+        /* Customize FullCalendar title */
+        .fc-toolbar-title {
+          font-size: 10px; /* Adjust size here */
+          font-weight: bold;
+          text-align: center;
+        }
+      `}</style>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView={"dayGridMonth"}
