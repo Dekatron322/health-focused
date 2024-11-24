@@ -17,18 +17,28 @@ const PolicyDocument = () => {
       {Policies.map((policy, index) => (
         <div className=" w-full rounded border-[0.5px] bg-white p-4 shadow" key={policy.id}>
           <div>
-            <Image src={policy.icon} height={45} width={36} alt="" />
+            <div className="flex justify-between">
+              <Image src={policy.icon} height={45} width={36} alt="" />
+              <Link
+                href="/policy/view"
+                className="flex h-6 items-center justify-center  rounded-md border border-[#000000] bg-blue-400 px-2 text-xs text-[#000000] text-white"
+              >
+                View
+              </Link>
+            </div>
             <h6 className="mt-3 text-base font-bold">{policy.title}</h6>
+
             <p>{policy.value}</p>
+
             <div className="mt-2 flex gap-2">
               <Link
-                href="/department"
+                href="#"
                 className="flex w-full items-center justify-center rounded-md  border border-[#000000] px-2 py-2 text-xs text-[#000000]"
               >
                 DOWNLOAD
               </Link>
               <Link
-                href="/department"
+                href="/policy/edit"
                 className="flex w-full items-center justify-center rounded-md  border border-[#000000] px-2 py-2 text-xs text-[#000000]"
               >
                 EDIT
