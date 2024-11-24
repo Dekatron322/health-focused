@@ -290,7 +290,7 @@ export default function ServiceUsers() {
                             {visibleDropdownId === row.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
                                 <ul className="py-1">
-                                  <Link href="/service-users/user/">
+                                  <Link href="/authorities/profile/">
                                     <li
                                       className="cursor-pointer px-4 py-2  hover:bg-gray-100"
                                       onClick={() => handleDropdownAction("View", row)}
@@ -299,12 +299,14 @@ export default function ServiceUsers() {
                                     </li>
                                   </Link>
 
-                                  <li
-                                    className="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                                    onClick={() => handleDropdownAction("End Placement", row)}
-                                  >
-                                    Edit
-                                  </li>
+                                  <Link href="/authorities/edit/">
+                                    <li
+                                      className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                                      onClick={() => handleDropdownAction("End Placement", row)}
+                                    >
+                                      Edit
+                                    </li>
+                                  </Link>
                                 </ul>
                               </div>
                             )}
