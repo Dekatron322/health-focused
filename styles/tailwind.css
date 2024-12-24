@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: #171818;
+}
+
+h1 {
+  @apply text-[42px] font-extrabold;
+}
+
+h2 {
+  @apply text-[34px] font-extrabold;
+}
+
+h3 {
+  @apply text-[28px] font-extrabold;
+}
+
+h4 {
+  @apply text-[24px] font-extrabold;
+}
+
+h5 {
+  @apply text-[20px] font-extrabold leading-7;
+}
+
+h6 {
+  @apply text-[18px] font-extrabold leading-6;
+}
+
+.p-lg {
+  @apply text-[16px] leading-6 text-[#000000];
+}
+
+.p-sm {
+  @apply text-[14px] leading-[21px] text-[#747A80];
+}
+
+.date-bg {
+  @apply bg-[#EBF0F0] text-[#747A80];
+}
+
+.p-sm.bold {
+  @apply text-[14px] font-bold leading-[21px] text-[#000000];
+}
+
+.dashboard-style {
+  @apply flex grow items-center justify-center  border-0 border-black px-2 text-[#FFFFFF] transition duration-300 hover:text-[#69B7FF] lg:justify-normal lg:space-x-2;
+}
+
+.active-dashboard {
+  @apply bg-[#0052FF] font-extrabold max-md:my-2 max-md:rounded-md max-md:text-white lg:border-r-2 lg:border-[#0052FF] lg:bg-inherit lg:text-[#69B7FF];
+}
+
+.p-xs {
+  @apply text-[12px] leading-[18px] text-[#747A80];
+}
+
+.p-xs.medium {
+  @apply text-[12px] font-medium leading-[18px] text-[#000000];
+}
+
+.p-xs.medium {
+  @apply text-[12px] font-medium leading-[18px] text-[#747A80];
+}
+
+.active-tab {
+  @apply flex items-center rounded-lg bg-black p-2 px-4  text-xs font-semibold text-[sidebar] text-white;
+}
+
+.inactive-tab {
+  @apply px-2 text-xs font-semibold;
+}
+
+.bg-gray {
+  @apply bg-gray-100;
+}
+
+.white-bg {
+  @apply bg-white;
+}
+
+.inactive {
+  @apply bg-[#1E1E1E] text-[#ffffff];
+}
+
+.active {
+  @apply bg-[#69B7FF] text-[#1E1E1E] transition-colors duration-300;
+}
+
+.active:hover {
+  @apply bg-blue-500 text-[#ffffff];
+}
+
+.report-card {
+  @apply small-card flex h-[114px] basis-1/2 flex-col justify-center rounded-md border p-3 max-md:border-0;
+}
+
+.input-field {
+  @apply flex h-11 w-full items-center rounded-lg border bg-white p-3 hover:border-[#0052FF] focus:border-[#0052FF] active:border-[#0052FF];
+}
+
+.input-field__sm {
+  @apply flex h-12 w-20 items-center rounded-lg border p-3 hover:border-[#0052FF] focus:border-[#0052FF] active:border-[#0052FF];
+}
+
+.textarea-field {
+  @apply flex  w-full items-center rounded-lg border bg-white p-3 hover:border-[#0052FF] focus:border-[#0052FF] active:border-[#0052FF];
+}
+
+.label-title {
+  @apply mb-2 text-xs font-bold;
+}
+
+.tab-bg {
+  @apply md:bg-[#EBF0F0];
+}
+
+.mobiletab-bg {
+  @apply max-md:bg-gray-100;
+}
+
+.small-card {
+  @apply h-[178px] max-md:mb-2  max-md:rounded-lg  max-md:bg-white max-md:px-2 max-md:shadow;
+}
+
+.sidbar-title {
+  @apply hidden px-7 text-sm text-[#747A80] lg:block;
+}
+
+/* [data-theme="dark"] .small-card {
+  @apply max-md:bg-black;
+}
+
+[data-theme="dark"] .tab-bg {
+  @apply md:bg-gray-700;
+}
+
+[data-theme="dark"] .mobiletab-bg {
+  @apply max-md:bg-gray-700;
+} */
+
+/* [data-theme="dark"] body {
+  background-color: #171818;
+} */
+
+.sidebar {
+  @apply bg-[#000000];
+}
+
+/* [data-theme="dark"] .sidebar {
+  @apply bg-[#000000];
+} */
+
+.flexCenter {
+  @apply flex items-center justify-center;
+}
+
+.flexBetween {
+  @apply flex items-center justify-between;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+.text-small {
+  @apply text-sm font-medium;
+}
+
+.paddings {
+  @apply px-5 py-6 lg:px-20 xl:px-28 3xl:px-72;
+}
+
+.navbar {
+  @apply paddings relative w-screen border-b;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 12px;
+}
+
+.footer {
+  @apply paddings w-full flex-col gap-20 bg-primary-900;
+}
+
+.inter-font {
+  font-family: "Inter", sans-serif;
+}
+
+.subscription {
+  @apply bg-white;
+}
+
+/* [data-theme="dark"] .subscription {
+  @apply bg-black;
+} */
+
+.checkboxes {
+  @apply text-[#ffffff];
+}
+
+.checkboxes2 {
+  @apply text-[#000000];
+}
+
+/* [data-theme="dark"] .checkboxes {
+  @apply text-[#ffffff];
+} */
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: black;
+}

@@ -1,0 +1,180 @@
+.dashboard_body__lhs {
+  flex: 4.5;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.in_out {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.service_users {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .service_users {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns */
+  }
+}
+
+/* For small screens (mobile phones) */
+@media (max-width: 480px) {
+  .service_users {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+}
+
+.dashboard_body__rhs {
+  flex: 1.5;
+
+  flex-direction: row;
+}
+
+.dashboard_body__2rhs {
+  flex: 1;
+  min-width: 250px;
+  flex-direction: row;
+}
+
+.income {
+  flex: 1.5;
+  border-width: 1px;
+  border-radius: 8px;
+  height: 105px;
+  padding: 10px;
+}
+
+.spending {
+  flex: 1.5;
+  border-width: 1px;
+  border-radius: 8px;
+  height: 105px;
+  padding: 10px;
+}
+
+.alerts {
+  flex: 1;
+  /* border-width: 1px; */
+  border-radius: 8px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #09074a;
+  box-shadow: #ffe6e6;
+}
+
+.transactions {
+  flex: 1;
+  /* border-width: 1px; */
+  border-radius: 5px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #100606;
+  box-shadow: #ffe6e6;
+}
+
+.transactions2 {
+  flex: 1;
+  /* border-width: 1px; */
+  border-radius: 5px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: #ffe6e6;
+}
+
+.transactions3 {
+  flex: 1;
+  /* border-width: 1px; */
+  border-radius: 5px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #e3f2ff;
+  box-shadow: #ffe6e6;
+}
+
+.account_transactions {
+  flex: 1;
+  height: auto;
+}
+
+.assets {
+}
+
+@media only screen and (max-width: 600px) {
+  .assets {
+    flex: 1;
+    flex-direction: column;
+    border-width: 0;
+    border-radius: 0;
+    height: auto;
+  }
+  .horizontal_line {
+    display: hidden;
+  }
+
+  .transactions {
+    flex: 1;
+    border-width: 0;
+    border-radius: 0;
+    height: auto;
+  }
+}
+
+.horizontal_line {
+  flex: 1;
+  display: none;
+  height: 1px;
+  background-color: rgb(239, 239, 239);
+}
+
+.cancelled {
+  background-color: #ffe6e6; /* Light red */
+}
+
+.missed {
+  background-color: #fff0b3; /* Light yellow */
+}
+
+.booked {
+  background-color: #e6ffe6; /* Light green */
+}
+
+.accident {
+  background-color: #7effa2;
+}
+
+.incidence {
+  background-color: #b5dbff;
+}
+
+.missing {
+  background-color: #de5753;
+}
+
+.teacters_dashboard_lhs {
+  flex: 3;
+  margin: 15px 15px 0 48px;
+  transition: ease-in-out;
+  background-color: #ffffff;
+  padding: 4px;
+}
+
+.teacters_dashboard_rhs {
+  flex: 1;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
