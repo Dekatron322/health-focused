@@ -5,7 +5,7 @@ import { IoIosArrowDropleft } from "react-icons/io"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { IoCheckmarkCircle } from "react-icons/io5"
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material"
 
 // Extend the File type to include a preview property
 interface PreviewFile extends File {
@@ -13,23 +13,22 @@ interface PreviewFile extends File {
 }
 
 interface LogDetails {
-  id: string;
-  service_user_name: string;
-  updated_by: string;
-  placement: string;
-  staff_on_duty: string;
-  update: string;
-  status: boolean;
-  pub_date: string;
+  id: string
+  service_user_name: string
+  updated_by: string
+  placement: string
+  staff_on_duty: string
+  update: string
+  status: boolean
+  pub_date: string
 }
 
 export default function NewLogs() {
   const [hasTransactions, setHasTransactions] = useState<boolean>(true)
-  const [logDetails, setLogDetails] = useState<LogDetails | null>(null);
+  const [logDetails, setLogDetails] = useState<LogDetails | null>(null)
   const [files, setFiles] = useState<PreviewFile[]>([])
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editLog, setEditLog] = useState<Partial<LogDetails>>({});
-
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [editLog, setEditLog] = useState<Partial<LogDetails>>({})
 
   const onDrop = (acceptedFiles: File[]) => {
     setFiles(
@@ -41,101 +40,93 @@ export default function NewLogs() {
     )
   }
 
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
-    const logId = localStorage.getItem("selectedLogId");
+    const logId = localStorage.getItem("selectedLogId")
 
     if (!logId) {
-      router.push("/dashboard");
-      return;
+      router.push("/dashboard")
+      return
     }
 
     const fetchLogDetails = async () => {
       try {
-        const response = await fetch(
-          `https://health-focused.fyber.site/daily-log/daily-logo/${logId}`
-        );
-        const data = await response.json() as LogDetails;
-        setLogDetails(data);
+        const response = await fetch(`https://health-focused.fyber.site/daily-log/daily-logo/${logId}`)
+        const data = (await response.json()) as LogDetails
+        setLogDetails(data)
       } catch (error) {
-        console.error("Error fetching log details:", error);
+        console.error("Error fetching log details:", error)
       }
-    };
+    }
 
-    fetchLogDetails();
-  }, [logDetails]);
+    fetchLogDetails()
+  }, [logDetails])
 
   const handleBackButtonClick = () => {
-    router.back();
-  };
+    router.back()
+  }
 
   const formatPubDate = (pub_date: string) => {
-    const date = new Date(pub_date);
+    const date = new Date(pub_date)
 
-    const time = date.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
+    const time = date.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
       hour12: true,
-    });
+    })
 
-    const formattedDate = date.toLocaleDateString('en-GB', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    });
+    const formattedDate = date.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    })
 
-    return { time, formattedDate };
-  };
+    return { time, formattedDate }
+  }
 
-  const formattedPubDate = logDetails ? formatPubDate(logDetails.pub_date) : null;
+  const formattedPubDate = logDetails ? formatPubDate(logDetails.pub_date) : null
 
   const handleEditClick = () => {
     if (logDetails) {
-      setEditLog(logDetails);
-      setIsModalOpen(true);
+      setEditLog(logDetails)
+      setIsModalOpen(true)
     }
-  };
+  }
 
   const handleModalClose = () => {
-    setIsModalOpen(false);
-  };
+    setIsModalOpen(false)
+  }
 
   const handleInputChange = (field: keyof LogDetails, value: string | boolean) => {
-    setEditLog({ ...editLog, [field]: value });
-  };
+    setEditLog({ ...editLog, [field]: value })
+  }
 
   const handleSaveChanges = async () => {
-    if (!logDetails) return;
-  
+    if (!logDetails) return
+
     try {
-      const updatedPayload = { ...logDetails, ...editLog };
-      const response = await fetch(
-        `https://health-focused.fyber.site/daily-log/daily-logo/${logDetails.id}/`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedPayload),
-        }
-      );
-  
+      const updatedPayload = { ...logDetails, ...editLog }
+      const response = await fetch(`https://health-focused.fyber.site/daily-log/daily-logo/${logDetails.id}/`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedPayload),
+      })
+
       if (response.ok) {
-        const updatedLog = await response.json();
-        console.log("Updated log from server:", updatedLog); // Debugging
+        const updatedLog = await response.json()
+        console.log("Updated log from server:", updatedLog) // Debugging
         // Test with dummy data
-        setLogDetails({ ...logDetails }); // Test simple state update
-        setIsModalOpen(false);
+        setLogDetails({ ...logDetails }) // Test simple state update
+        setIsModalOpen(false)
       } else {
-        const errorResponse = await response.json();
-        console.error("Failed to update log:", errorResponse);
+        const errorResponse = await response.json()
+        console.error("Failed to update log:", errorResponse)
       }
     } catch (error) {
-      console.error("Error updating log:", error);
+      console.error("Error updating log:", error)
     }
-  };
-  
-  
-
+  }
 
   return (
     <>
@@ -219,7 +210,10 @@ export default function NewLogs() {
                     <button className="flex h-10 items-center gap-2 rounded-md bg-[#0085FF] p-2 text-xs text-[#fff]">
                       VIEW IN LOG
                     </button>
-                    <button onClick={handleEditClick}className="flex h-10 items-center gap-2 rounded-md bg-[#0085FF] px-4 py-2 text-xs text-[#fff]">
+                    <button
+                      onClick={handleEditClick}
+                      className="flex h-10 items-center gap-2 rounded-md bg-[#0085FF] px-4 py-2 text-xs text-[#fff]"
+                    >
                       Edit
                     </button>
                   </div>

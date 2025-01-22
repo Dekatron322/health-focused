@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
-import Footer from "components/Footer/Footer"
+
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
 import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Search from "components/Search/Search"
@@ -11,14 +11,15 @@ import styles from "../../../components/Dashboard/dashboard.module.css"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
 import Placements from "components/Dashboard/Placements"
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material"
 
 interface Placement {
   id: string
   name: string
-  location: string
+  locaton: string
   post_code: string
   bedrooms: string
-  additional_info: string
+  addition_info: string
   status: string // Updated to string for filter matching
   pub_date: string
 }
@@ -27,6 +28,61 @@ export default function ServiceUsers() {
   const [tableData, setTableData] = useState<Placement[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [editModalOpen, setEditModalOpen] = useState(false)
+  const [selectedPlacement, setSelectedPlacement] = useState<Placement | null>(null)
+
+  const handleEdit = (placement: Placement) => {
+    setSelectedPlacement(placement)
+    setEditModalOpen(true)
+  }
+
+  const handleEditModalClose = () => {
+    setEditModalOpen(false)
+    setSelectedPlacement(null)
+  }
+
+  const handleEditSave = async () => {
+    if (!selectedPlacement) return
+
+    try {
+      console.log("Selected Placement:", selectedPlacement)
+
+      const response = await fetch(`https://health-focused.fyber.site/placement/placement/${selectedPlacement.id}/`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: selectedPlacement.name,
+          locaton: selectedPlacement.locaton,
+          post_code: selectedPlacement.post_code,
+          bedrooms: selectedPlacement.bedrooms,
+          addition_info: selectedPlacement.addition_info,
+        }),
+      })
+
+      console.log("Response status:", response.status)
+
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error("Error response body:", errorText)
+        throw new Error("Failed to save placement")
+      }
+
+      const updatedPlacement = (await response.json()) as Placement
+      console.log("Updated Placement:", updatedPlacement)
+
+      setTableData((prev) =>
+        prev.map((placement) => (placement.id === updatedPlacement.id ? updatedPlacement : placement))
+      )
+
+      setEditModalOpen(false)
+      setSelectedPlacement(null)
+    } catch (err: any) {
+      console.error("Error:", err)
+      setError(err.message)
+    }
+  }
 
   const [currentPage, setCurrentPage] = useState(1)
   const rowsPerPage = 5
@@ -40,10 +96,9 @@ export default function ServiceUsers() {
         }
         const data = (await response.json()) as Placement[]
 
-        // Map 'locaton' to 'location'
+        // Map 'locaton' to 'location' and 'addition_info' to 'additional_info'
         const mappedData = data.map((item: any) => ({
           ...item,
-          location: item.locaton, // Correct the typo here
         }))
 
         setTableData(mappedData)
@@ -162,7 +217,7 @@ export default function ServiceUsers() {
                           <td className="p-3 text-sm">{row.name}</td>
                           <td className="p-3 text-sm max-md:hidden">{row.post_code}</td>
                           <td className="p-3 text-sm">{row.bedrooms}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.location}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.locaton}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
@@ -179,7 +234,7 @@ export default function ServiceUsers() {
 
                                   <li
                                     className="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                                    onClick={() => handleDropdownAction("End Placement", row)}
+                                    onClick={() => handleEdit(row)}
                                   >
                                     Edit
                                   </li>
@@ -217,6 +272,55 @@ export default function ServiceUsers() {
           </div>
         </div>
       </section>
+      <Dialog open={editModalOpen} onClose={handleEditModalClose}>
+        <DialogTitle>Edit Placement</DialogTitle>
+        <DialogContent>
+          <TextField
+            margin="dense"
+            label="Name"
+            fullWidth
+            value={selectedPlacement?.name || ""}
+            onChange={(e) => setSelectedPlacement((prev) => (prev ? { ...prev, name: e.target.value } : null))}
+          />
+          <TextField
+            margin="dense"
+            label="Postcode"
+            fullWidth
+            value={selectedPlacement?.post_code || ""}
+            onChange={(e) => setSelectedPlacement((prev) => (prev ? { ...prev, post_code: e.target.value } : null))}
+          />
+          <TextField
+            margin="dense"
+            label="Number of Rooms"
+            fullWidth
+            type="number" // Specify type for number input
+            value={selectedPlacement?.bedrooms || ""}
+            onChange={
+              (e) => setSelectedPlacement((prev) => (prev ? { ...prev, bedrooms: e.target.value } : null)) // Cast to number
+            }
+          />
+          <TextField
+            margin="dense"
+            label="Location"
+            fullWidth
+            value={selectedPlacement?.locaton || ""}
+            onChange={(e) => setSelectedPlacement((prev) => (prev ? { ...prev, locaton: e.target.value } : null))}
+          />
+          <TextField
+            margin="dense"
+            label="Additional Info"
+            fullWidth
+            multiline
+            rows={4}
+            value={selectedPlacement?.addition_info || ""}
+            onChange={(e) => setSelectedPlacement((prev) => (prev ? { ...prev, addition_info: e.target.value } : null))}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleEditModalClose}>Cancel</Button>
+          <Button onClick={handleEditSave}>Save</Button>
+        </DialogActions>
+      </Dialog>
     </>
   )
 }
