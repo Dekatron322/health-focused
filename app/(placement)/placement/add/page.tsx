@@ -72,7 +72,7 @@ export default function AddPlacementUser() {
 
       if (response.ok) {
         alert("Placement added successfully!")
-        router.push("/placemnt/")
+        router.push("/placement/")
       } else {
         alert("Failed to add placement. Please try again.")
       }
