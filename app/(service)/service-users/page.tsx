@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
@@ -12,102 +12,30 @@ import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
 import { Checkbox } from "@mui/material"
 
+// Define the structure of a service user
+interface ServiceUser {
+  id: string
+  name_of_service_user: string
+  placement: string
+  placement_start_date: string
+  name_of_keyworker: string
+  name_of_local_authority: string
+  status: string
+}
+
 // Define the structure of a table row
 interface TableRow {
-  id: number
+  id: string
   name: string
   placement: string
-  date: any
+  date: string
   keyWorker: string
   localAuthority: string
   status: string
 }
 
 export default function ServiceUsers() {
-  const [tableData, setTableData] = useState<TableRow[]>([
-    {
-      id: 1,
-      name: "Michael Dre",
-      placement: "King’s Street",
-      date: "25/06/2001",
-      keyWorker: "Adeola Odeku",
-      localAuthority: "Croydon",
-      status: "Active Service User",
-    },
-    {
-      id: 2,
-      name: "John Cena",
-      placement: "24 Madrid Road",
-      date: "11/03/2004",
-      keyWorker: "Adewale Peter",
-      localAuthority: "Kent",
-      status: "Inactive Service User",
-    },
-    {
-      id: 3,
-      name: "Mary Earps",
-      placement: "Queen’s Court",
-      date: "16/01/2009",
-      keyWorker: "Marko Dean",
-      localAuthority: "Kent",
-      status: "Active Service User",
-    },
-    {
-      id: 4,
-      name: "Rivaldo Henry",
-      placement: "Love Avenue",
-      date: "27/12/2006",
-      keyWorker: "Michael Andrews",
-      localAuthority: "Harrington",
-      status: "Active Service User",
-    },
-    {
-      id: 5,
-      name: "Black Widow",
-      placement: "Avenue Lane",
-      date: "15/11/2002",
-      keyWorker: "Iyanu Iyanu",
-      localAuthority: "Buckinghamshire",
-      status: "Active Service User",
-    },
-    {
-      id: 6,
-      name: "Alisson Coursera",
-      placement: "King’s Street",
-      date: "11/05/2008",
-      keyWorker: "Maxwell Ings",
-      localAuthority: "Arlington",
-      status: "Inactive Service User",
-    },
-    {
-      id: 7,
-      name: "Maria Maria",
-      placement: "Queen’s Court",
-      date: "11/09/2009",
-      keyWorker: "Loretta James",
-      localAuthority: "Kent",
-      status: "Active Service User",
-    },
-    {
-      id: 8,
-      name: "Helen Aaland",
-      placement: "42 Zero Street",
-      date: "27/12/2006",
-      keyWorker: "Tems Ayra",
-      localAuthority: "Croydon",
-      status: "Active Service User",
-    },
-    {
-      id: 9,
-      name: "Riquelme Joan",
-      placement: "Mavin Estate",
-      date: "27/12/2006",
-      keyWorker: "Ireoluwa David",
-      localAuthority: "Hounslow",
-      status: "Active Service User",
-    },
-  ])
-
+  const [tableData, setTableData] = useState<TableRow[]>([])
   const [filters, setFilters] = useState({
     name: "",
     placement: "",
@@ -119,6 +47,35 @@ export default function ServiceUsers() {
 
   const [currentPage, setCurrentPage] = useState(1)
   const rowsPerPage = 5
+
+  // Fetch service users from the API
+  useEffect(() => {
+    const fetchServiceUsers = async () => {
+      try {
+        const response = await fetch("https://health-focused.fyber.site/service-user/service-user/")
+        if (response.ok) {
+          const data = (await response.json()) as ServiceUser[]
+          // Map the fetched data to table rows
+          const mappedData = data.map((user) => ({
+            id: user.id,
+            name: user.name_of_service_user,
+            placement: user.placement,
+            date: user.placement_start_date,
+            keyWorker: user.name_of_keyworker,
+            localAuthority: user.name_of_local_authority,
+            status: user.status ? "Active Service User" : "Inactive Service User",
+          }))
+          setTableData(mappedData)
+        } else {
+          console.error("Failed to fetch service users")
+        }
+      } catch (error) {
+        console.error("Error fetching service users:", error)
+      }
+    }
+
+    fetchServiceUsers()
+  }, [])
 
   // Function to extract unique values for dropdowns
   const getUniqueValues = (key: keyof TableRow) => {
@@ -137,9 +94,10 @@ export default function ServiceUsers() {
     console.log(`${action} selected for`, row)
     // Implement your logic for each action
   }
-  const [visibleDropdownId, setVisibleDropdownId] = useState<number | null>(null)
 
-  const toggleDropdown = (id: number) => {
+  const [visibleDropdownId, setVisibleDropdownId] = useState<string | null>(null)
+
+  const toggleDropdown = (id: string) => {
     setVisibleDropdownId(visibleDropdownId === id ? null : id)
   }
 
@@ -175,16 +133,6 @@ export default function ServiceUsers() {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1)
     }
-  }
-
-  // Function to add a new row
-  const addRow = () => {
-    // ... (same addRow logic)
-  }
-
-  // Function to remove a row
-  const removeRow = (id: number) => {
-    // ... (same removeRow logic)
   }
 
   return (
@@ -232,44 +180,7 @@ export default function ServiceUsers() {
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  <div className="mb-4 flex justify-between gap-4">
-                    {/* <CustomDropdown
-                      options={getUniqueValues("name")}
-                      selectedOption={filters.name}
-                      onChange={(value) => handleFilterChange("name", value)}
-                      placeholder="Service User"
-                    />
-
-                    <CustomDropdown
-                      options={getUniqueValues("placement")}
-                      selectedOption={filters.placement}
-                      onChange={(value) => handleFilterChange("placement", value)}
-                      placeholder="Placement"
-                    />
-
-                    <input
-                      type="date"
-                      name="date"
-                      value={filters.date}
-                      onChange={(e) => handleFilterChange("date", e.target.value)}
-                      className="rounded bg-white px-4 text-sm text-black max-md:hidden"
-                    />
-
-                    <div className="w-full max-md:hidden">
-                      <CustomDropdown
-                        options={getUniqueValues("keyWorker")}
-                        selectedOption={filters.keyWorker}
-                        onChange={(value) => handleFilterChange("keyWorker", value)}
-                        placeholder="Key Worker"
-                      />
-                    </div>
-                    <CustomDropdown
-                      options={getUniqueValues("localAuthority")}
-                      selectedOption={filters.localAuthority}
-                      onChange={(value) => handleFilterChange("localAuthority", value)}
-                      placeholder="Alert Type"
-                    /> */}
-                  </div>
+                  <div className="mb-4 flex justify-between gap-4"></div>
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
@@ -278,7 +189,7 @@ export default function ServiceUsers() {
                         <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Placement</th>
                         <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Date</th>
                         <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Key Worker</th>
-                        <th className="p-3 lg:text-xs xl:text-sm">Alert Type</th>
+                        <th className="p-3 lg:text-xs xl:text-sm">Local Authority</th>
                         <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Status</th>
                         <th className="p-3 lg:text-xs xl:text-sm">Action</th>
                       </tr>
@@ -300,7 +211,7 @@ export default function ServiceUsers() {
                             {visibleDropdownId === row.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
                                 <ul className="py-1">
-                                  <Link href="/service-users/user/">
+                                  <Link href={`/service-users/user/${row.id}`}>
                                     <li
                                       className="cursor-pointer px-4 py-2  hover:bg-gray-100"
                                       onClick={() => handleDropdownAction("View", row)}
