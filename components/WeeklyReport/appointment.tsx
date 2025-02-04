@@ -67,7 +67,10 @@ const Appointment: React.FC<GeneralInfoProps> = ({ onSuccess }) => {
       <div className="mt-4 w-full rounded-md bg-white p-6">
         <form onSubmit={handleSubmit}>
           {appointments.map((appointment) => (
-            <div className=" mb-4 flex w-full flex-col gap-3 rounded-md border-[1px] border-[#C0C0C0] bg-[#E6E6E6] p-4">
+            <div
+              key={appointment.id}
+              className=" mb-4 flex w-full flex-col gap-3 rounded-md border-[1px] border-[#C0C0C0] bg-[#E6E6E6] p-4"
+            >
               <div className="mb-3 flex w-full flex-col items-start">
                 <label htmlFor="serviceUserName" className="label-title">
                   Title of Appointment
