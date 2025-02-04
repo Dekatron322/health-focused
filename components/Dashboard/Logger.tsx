@@ -23,7 +23,7 @@ import { Asset } from "utils"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, LineController, BarController)
 
-export const Logger = () => {
+export const Logger = ({ serviceUser }: { serviceUser: any }) => {
   const [loading, setLoading] = useState(true)
   const [selectedTab, setSelectedTab] = useState("daily-log")
 
@@ -36,6 +36,10 @@ export const Logger = () => {
     { id: "skills-progress", name: "Skills Progress" },
     { id: "handover-note", name: "Handover Note" },
   ]
+
+  if (!serviceUser) {
+    return <div>No service user data available</div>
+  }
 
   const renderContent = () => {
     switch (selectedTab) {
@@ -85,7 +89,7 @@ const DailyLog = () => {
     <>
       <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
         <Link
-          href="/dashboard/new-logs"
+          href="/service-users/daily-report"
           className="flex items-center gap-2 whitespace-nowrap rounded-md bg-[#0085FF] px-3 py-2"
         >
           <p className="text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">New Daily Log</p>

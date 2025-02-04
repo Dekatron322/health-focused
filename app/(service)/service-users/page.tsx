@@ -91,8 +91,14 @@ export default function ServiceUsers() {
   }
 
   const handleDropdownAction = (action: string, row: TableRow) => {
-    console.log(`${action} selected for`, row)
-    // Implement your logic for each action
+    if (action === "View") {
+      localStorage.setItem("serviceUserId", row.id)
+      // Navigate to the service user's profile page
+      window.location.href = `/service-users/user/`
+    } else {
+      console.log(`${action} selected for`, row)
+      // Implement your logic for other actions
+    }
   }
 
   const [visibleDropdownId, setVisibleDropdownId] = useState<string | null>(null)
@@ -211,7 +217,7 @@ export default function ServiceUsers() {
                             {visibleDropdownId === row.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
                                 <ul className="py-1">
-                                  <Link href={`/service-users/user/${row.id}`}>
+                                  <Link href={`/service-users/user/`}>
                                     <li
                                       className="cursor-pointer px-4 py-2  hover:bg-gray-100"
                                       onClick={() => handleDropdownAction("View", row)}

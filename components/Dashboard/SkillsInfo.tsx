@@ -11,9 +11,13 @@ import { FaFolder } from "react-icons/fa"
 
 const DynamicImage = dynamic(() => import("next/image"), { ssr: false })
 
-export const SkillsInfo = () => {
+export const SkillsInfo = ({ serviceUser }: { serviceUser: any }) => {
   const [loading, setLoading] = useState(true)
   setTimeout(() => setLoading(false), 5000)
+
+  if (!serviceUser) {
+    return <div>No service user data available</div>
+  }
 
   return (
     <>
