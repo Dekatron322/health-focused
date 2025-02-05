@@ -20,7 +20,7 @@ interface ServiceUser {
   placement_start_date: string
   name_of_keyworker: string
   name_of_local_authority: string
-  status: string
+  status: boolean
 }
 
 // Define the structure of a table row
@@ -90,14 +90,55 @@ export default function ServiceUsers() {
     })
   }
 
-  const handleDropdownAction = (action: string, row: TableRow) => {
+  const handleDropdownAction = async (action: string, row: TableRow) => {
     if (action === "View") {
       localStorage.setItem("serviceUserId", row.id)
       // Navigate to the service user's profile page
       window.location.href = `/service-users/user/`
+    } else if (action === "End Placement") {
+      await updateServiceUserStatus(row.id, false)
     } else {
       console.log(`${action} selected for`, row)
       // Implement your logic for other actions
+    }
+  }
+
+  const updateServiceUserStatus = async (id: string, status: boolean) => {
+    try {
+      // Fetch the existing service user data
+      const userResponse = await fetch(`https://health-focused.fyber.site/service-user/service-user/${id}/`)
+
+      if (!userResponse.ok) {
+        throw new Error("Failed to fetch existing service user data")
+      }
+
+      const existingUser = (await userResponse.json()) as ServiceUser // Explicitly type
+
+      // Ensure all required fields are included in the update request
+      const updatedUser: ServiceUser = {
+        ...existingUser,
+        status, // Update only the status
+      }
+
+      const response = await fetch(`https://health-focused.fyber.site/service-user/service-user/${id}/`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedUser),
+      })
+
+      if (response.ok) {
+        setTableData((prevData) =>
+          prevData.map((row) =>
+            row.id === id ? { ...row, status: status ? "Active Service User" : "Inactive Service User" } : row
+          )
+        )
+      } else {
+        console.error("Failed to update service user status")
+      }
+    } catch (error) {
+      console.error("Error updating service user status:", error)
     }
   }
 
@@ -192,7 +233,7 @@ export default function ServiceUsers() {
                       <tr>
                         <th className="p-3 max-md:hidden"></th>
                         <th className="p-3 lg:text-xs xl:text-sm">Service User</th>
-                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Placement</th>
+                        <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Placement Date</th>
                         <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Date</th>
                         <th className="p-3 max-md:hidden lg:text-xs xl:text-sm">Key Worker</th>
                         <th className="p-3 lg:text-xs xl:text-sm">Local Authority</th>
