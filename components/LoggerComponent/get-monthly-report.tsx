@@ -67,8 +67,11 @@ const GetMonthlyReport = () => {
   return (
     <>
       <div className="flex items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
-        <Link href="/service-users/weekly-report" className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2">
-          <p className="whitespace-nowrap text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">New Weekly Log</p>
+        <Link
+          href="/service-users/monthly-report"
+          className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
+        >
+          <p className="whitespace-nowrap text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">New Monthly Log</p>
           <IoAddCircleOutline className="text-white" size={20} />
         </Link>
         <div className="flex items-center gap-3 ">
