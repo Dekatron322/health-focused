@@ -22,6 +22,7 @@ import Search from "components/Search/Search"
 import { Asset } from "utils"
 import GetDailyLogger from "components/LoggerComponent/get-daily-logger"
 import GetWeeklyReport from "components/LoggerComponent/get-weekly-report"
+import GetMonthlyReport from "components/LoggerComponent/get-monthly-report"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, LineController, BarController)
 
@@ -95,75 +96,7 @@ const WeeklyReport = () => {
 }
 
 const MonthlyReport = () => {
-  return (
-    <>
-      <div className="flex w-full items-center justify-between gap-3 bg-[#E3F2FF] px-4 py-3">
-        <Link
-          href="/service-users/monthly-report"
-          className="flex items-center gap-2 rounded-md bg-[#0085FF] px-3 py-2"
-        >
-          <p className="whitespace-nowrap text-xs text-white max-md:hidden max-md:px-0 2xl:text-sm">New Monthly Log</p>
-          <IoAddCircleOutline className="text-white" size={20} />
-        </Link>
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 items-center justify-between gap-2 rounded-lg border border-[#CFDBD5] px-3 py-1 max-md:hidden md:hidden lg:w-[120px] 2xl:block">
-            <input
-              type="date"
-              id="search"
-              placeholder="Type to search..."
-              className="w-full bg-transparent outline-none focus:outline-none"
-              style={{ width: "100%" }}
-            />
-          </div>
-          <Search />
-          <MdOutlineMail size={24} />
-          <MdLocalPrintshop size={24} />
-        </div>
-      </div>
-      {Asset.map((assets) => (
-        <div key={assets.id} className="w-full gap-3 rounded border-[0.5px] bg-[#ffffff] px-4 py-2 shadow">
-          <div className="flex flex-row gap-2">
-            <Image className="object-contain" src="/images/user.png" width={35} height={35} alt="dekalo" />
-            <div className="flex w-full justify-between">
-              <div>
-                <p className="text-xs text-[#69B7FF]">Updated by</p>
-                <h6 className="text-base font-semibold">{assets.name}</h6>
-                <p className="text-xs">{assets.location}</p>
-              </div>
-              <div className="flex flex-col items-end ">
-                <p className="text-xs">January 2024</p>
-              </div>
-            </div>
-          </div>
-          <div className="my-4 flex items-center gap-2">
-            <MdOutlineCheckBoxOutlineBlank />
-            <p className="text-[#0085FF]">22nd January 2024 - 28th January 2024</p>
-          </div>
-
-          <div className="flex items-center justify-end">
-            <div className="flex items-center gap-2">
-              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
-                <MdOutlineLocalPrintshop />
-
-                <p className="text-xs max-md:px-0">Print</p>
-              </Link>
-
-              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
-                <LuMail />
-                <p className="text-xs max-md:px-0">Share</p>
-              </Link>
-
-              <Link href="/" className="flex items-center gap-2 rounded-md  px-3 py-2">
-                <TbEdit />
-
-                <p className="text-xs max-md:px-0">Edit</p>
-              </Link>
-            </div>
-          </div>
-        </div>
-      ))}
-    </>
-  )
+  return <GetMonthlyReport />
 }
 
 const SkillsProgress = () => {
