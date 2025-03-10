@@ -1,7 +1,6 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
-import Footer from "components/Footer/Footer"
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
 import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Search from "components/Search/Search"
@@ -10,7 +9,6 @@ import { HiOutlineDotsVertical } from "react-icons/hi"
 import styles from "../../../components/Dashboard/dashboard.module.css"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
-import Placements from "components/Dashboard/Placements"
 import Staffs from "components/Dashboard/Staff"
 
 // Define the structure of a table row
