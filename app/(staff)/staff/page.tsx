@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
@@ -15,116 +15,65 @@ import Staffs from "components/Dashboard/Staff"
 
 // Define the structure of a table row
 interface TableRow {
-  id: number
+  id: string
   name: string
-  placement: string
-  date: any
-  keyWorker: string
-  //   localAuthority: string
-  status: string
+  email: string
+  phone: string
+  user_role: string
+  placements: { name: string }[]
+  permissions: { name: string }[]
 }
 
 export default function ServiceUsers() {
-  const [tableData, setTableData] = useState<TableRow[]>([
-    {
-      id: 1,
-      name: "Adeola Odeku",
-      placement: "adeola.ode@ymail.com",
-      date: "08040303032",
-      keyWorker: "Admin",
-      //   localAuthority: "Croydon",
-      status: "King’s Street",
-    },
-    {
-      id: 2,
-      name: "Adewale Peter",
-      placement: "adewalepeter@primarycare.com",
-      date: "133949392",
-      keyWorker: "Staf fUser",
-      //   localAuthority: "Kent",
-      status: "24 Madrid Road",
-    },
-    {
-      id: 3,
-      name: "Marko Dean",
-      placement: "marko.dean@primarycare.com",
-      date: "304493294",
-      keyWorker: "Staff User",
-      //   localAuthority: "Kent",
-      status: "Queen’s Court",
-    },
-    {
-      id: 4,
-      name: "Michael Andrews",
-      placement: "michael.andrews@primarycare.com",
-      date: "594924943",
-      keyWorker: "Staff User",
-      //   localAuthority: "Harrington",
-      status: "Love Avenue",
-    },
-    {
-      id: 5,
-      name: "Iyanu Iyanu",
-      placement: "iyanu.iyanu@primarycare.com",
-      date: "558583495",
-      keyWorker: "Staff User",
-      //   localAuthority: "Buckinghamshire",
-      status: "Avenue Lane",
-    },
-    {
-      id: 6,
-      name: "Maxwell Ings",
-      placement: "maxwell.ings@primarycare.com",
-      date: "099334852",
-      keyWorker: "Staff User",
-      //   localAuthority: "Arlington",
-      status: "King’s Street",
-    },
-    {
-      id: 7,
-      name: "Loretta James",
-      placement: "loretta.james@primarycare.com",
-      date: "09068482054",
-      keyWorker: "Staff User",
-      //   localAuthority: "Kent",
-      status: "Queen’s Court",
-    },
-    {
-      id: 8,
-      name: "Tems Ayra",
-      placement: "tems.ayra@primarycare.com",
-      date: "095858494",
-      keyWorker: "Admin",
-      //   localAuthority: "Croydon",
-      status: "42 Zero Street",
-    },
-    {
-      id: 9,
-      name: "Ireoluwa David",
-      placement: "ireoluwa.david@primarycare.com",
-      date: "050558585",
-      keyWorker: "Super Admin",
-      //   localAuthority: "Hounslow",
-      status: "Unassigned",
-    },
-  ])
-
+  const [tableData, setTableData] = useState<TableRow[]>([])
   const [filters, setFilters] = useState({
     name: "",
-    placement: "",
-    date: "",
-    keyWorker: "",
-    localAuthority: "",
+    email: "",
+    phone: "",
+    user_role: "",
     status: "",
   })
-
   const [currentPage, setCurrentPage] = useState(1)
   const rowsPerPage = 5
 
-  // Function to extract unique values for dropdowns
+  // Fetch staff data from the API
+  useEffect(() => {
+    const fetchStaffData = async () => {
+      try {
+        const response = await fetch("https://health-focused.fyber.site/staff/staff/")
+        const data = (await response.json()) as Array<{
+          id: string
+          full_name: string
+          email: string
+          phone: string
+          user_role: string
+          kplacements: Array<{ name: string }>
+          kpermissions: Array<{ name: string }>
+        }>
+
+        const formattedData = data.map((staff) => ({
+          id: staff.id,
+          name: staff.full_name,
+          email: staff.email,
+          phone: staff.phone,
+          user_role: staff.user_role,
+          placements: staff.kplacements,
+          permissions: staff.kpermissions,
+        }))
+        setTableData(formattedData)
+      } catch (error) {
+        console.error("Error fetching staff data:", error)
+      }
+    }
+
+    fetchStaffData()
+  }, [])
+
   const getUniqueValues = (key: keyof TableRow) => {
     const uniqueValues = Array.from(new Set(tableData.map((row) => row[key])))
-    return uniqueValues.map((value) => ({ id: value, name: value }))
+    return uniqueValues
+      .filter((value) => typeof value === "string") // Ensure the value is a string
+      .map((value) => ({ id: value as string, name: value as string }))
   }
 
   const handleFilterChange = (filterName: keyof typeof filters, selectedValue: string) => {
@@ -138,19 +87,19 @@ export default function ServiceUsers() {
     console.log(`${action} selected for`, row)
     // Implement your logic for each action
   }
-  const [visibleDropdownId, setVisibleDropdownId] = useState<number | null>(null)
 
-  const toggleDropdown = (id: number) => {
+  const [visibleDropdownId, setVisibleDropdownId] = useState<string | null>(null)
+
+  const toggleDropdown = (id: string) => {
     setVisibleDropdownId(visibleDropdownId === id ? null : id)
   }
 
   const filteredData = tableData.filter((row) => {
     return (
-      (filters.name === "" || row.name === filters.name) &&
-      (filters.placement === "" || row.placement === filters.placement) &&
-      (filters.date === "" || row.date.includes(filters.date)) &&
-      (filters.keyWorker === "" || row.keyWorker === filters.keyWorker) &&
-      (filters.status === "" || row.status === filters.status)
+      (filters.name === "" || row.name.includes(filters.name)) &&
+      (filters.email === "" || row.email.includes(filters.email)) &&
+      (filters.phone === "" || row.phone.includes(filters.phone)) &&
+      (filters.user_role === "" || row.user_role.includes(filters.user_role))
     )
   })
 
@@ -177,16 +126,6 @@ export default function ServiceUsers() {
     }
   }
 
-  // Function to add a new row
-  const addRow = () => {
-    // ... (same addRow logic)
-  }
-
-  // Function to remove a row
-  const removeRow = (id: number) => {
-    // ... (same removeRow logic)
-  }
-
   return (
     <>
       <section className="h-full">
@@ -194,7 +133,7 @@ export default function ServiceUsers() {
           <div className="flex w-full flex-col">
             <div>
               <DashboardNav />
-              <div className="mt-4 flex w-full gap-4  px-16 max-md:flex-col max-md:px-3 lg:px-8 2xl:px-16">
+              <div className="mt-4 flex w-full gap-4 px-16 max-md:flex-col max-md:px-3 lg:px-8 2xl:px-16">
                 <div className={styles.dashboard_body__lhs}>
                   <div className={styles.service_users}>
                     <Staffs />
@@ -203,7 +142,7 @@ export default function ServiceUsers() {
               </div>
             </div>
 
-            <div className=" flex  flex-row justify-center gap-3 px-16 max-md:px-3 lg:px-8 2xl:px-16">
+            <div className="flex flex-row justify-center gap-3 px-16 max-md:px-3 lg:px-8 2xl:px-16">
               <div className="mb-6 flex w-full flex-col items-center gap-4 rounded-md border-[1px] bg-white p-4">
                 <div className="flex w-full justify-between">
                   <div className="flex items-center gap-3">
@@ -218,48 +157,16 @@ export default function ServiceUsers() {
                     </div>
 
                     <CustomDropdown
-                      options={getUniqueValues("status")}
-                      selectedOption={filters.status}
-                      onChange={(value) => handleFilterChange("status", value)}
-                      placeholder="Service Users"
+                      options={getUniqueValues("user_role")}
+                      selectedOption={filters.user_role}
+                      onChange={(value) => handleFilterChange("user_role", value)}
+                      placeholder="User Role"
                     />
                   </div>
                 </div>
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  {/* <div className="mb-4 flex justify-between gap-4">
-                    <CustomDropdown
-                      options={getUniqueValues("name")}
-                      selectedOption={filters.name}
-                      onChange={(value) => handleFilterChange("name", value)}
-                      placeholder="Service User"
-                    />
-
-                    <CustomDropdown
-                      options={getUniqueValues("placement")}
-                      selectedOption={filters.placement}
-                      onChange={(value) => handleFilterChange("placement", value)}
-                      placeholder="Placement"
-                    />
-                    <div className="w-full max-md:hidden">
-                      <input
-                        type="date"
-                        name="date"
-                        value={filters.date}
-                        onChange={(e) => handleFilterChange("date", e.target.value)}
-                        className="rounded border px-4 py-2"
-                      />
-                    </div>
-                    <div className="w-full max-md:hidden">
-                      <CustomDropdown
-                        options={getUniqueValues("keyWorker")}
-                        selectedOption={filters.keyWorker}
-                        onChange={(value) => handleFilterChange("keyWorker", value)}
-                        placeholder="Key Worker"
-                      />
-                    </div>
-                  </div> */}
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
@@ -267,9 +174,8 @@ export default function ServiceUsers() {
                         <th className="p-3 text-sm">Staff Name</th>
                         <th className="p-3 text-sm max-md:hidden">Email</th>
                         <th className="p-3 text-sm max-md:hidden">Phone Number</th>
-                        <th className="p-3 text-sm max-md:hidden">Active Service Users</th>
+                        <th className="p-3 text-sm max-md:hidden">Placements</th>
                         <th className="p-3 text-sm">User Role</th>
-                        {/* <th className="p-3">Status</th> */}
                         <th className="p-3 text-sm">Action</th>
                       </tr>
                     </thead>
@@ -280,28 +186,29 @@ export default function ServiceUsers() {
                             <MdCheckBoxOutlineBlank size={18} />
                           </td>
                           <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.keyWorker}</td>
-
-                          <td className="p-3 text-sm">{row.status}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.email}</td>
+                          <td className="p-3 text-sm max-md:hidden">{row.phone}</td>
+                          <td className="p-3 text-sm max-md:hidden">
+                            {row.placements.map((placement) => placement.name).join(", ")}
+                          </td>
+                          <td className="p-3 text-sm">{row.user_role}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
                             <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
                             {visibleDropdownId === row.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
                                 <ul className="py-1">
-                                  <Link href="/staff/profile/">
+                                  <Link href={`/staff/profile/${row.id}`}>
                                     <li
-                                      className="cursor-pointer px-4 py-2  hover:bg-gray-100"
+                                      className="cursor-pointer px-4 py-2 hover:bg-gray-100"
                                       onClick={() => handleDropdownAction("View", row)}
                                     >
                                       View Profile
                                     </li>
                                   </Link>
-                                  <Link href="/staff/edit/">
+                                  <Link href={`/staff/edit/${row.id}`}>
                                     <li
                                       className="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                                      onClick={() => handleDropdownAction("End Placement", row)}
+                                      onClick={() => handleDropdownAction("Edit", row)}
                                     >
                                       Edit
                                     </li>
@@ -336,7 +243,7 @@ export default function ServiceUsers() {
                     ))}
                     <button
                       className={`flex items-center justify-center gap-4 rounded p-2 ${
-                        currentPage === totalPages ? "inactive cursor-not-allowed" : "active "
+                        currentPage === totalPages ? "inactive cursor-not-allowed" : "active"
                       }`}
                       onClick={nextPage}
                       disabled={currentPage === totalPages}
@@ -350,7 +257,6 @@ export default function ServiceUsers() {
             </div>
           </div>
         </div>
-        {/* <Footer /> */}
       </section>
     </>
   )
