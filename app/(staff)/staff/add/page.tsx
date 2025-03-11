@@ -26,6 +26,7 @@ export default function AddStaff() {
   })
   const [permissions, setPermissions] = useState<string[]>([])
   const [allocations, setAllocations] = useState<string[]>([])
+  const [loading, setLoading] = useState<boolean>(false) // Loading state to disable the button
 
   const router = useRouter()
 
@@ -81,65 +82,72 @@ export default function AddStaff() {
 
   const handleSaveAndContinue = async (e: React.FormEvent) => {
     e.preventDefault()
+    setLoading(true) // Disable the button
 
-    if (activeTab === "general-info") {
-      // Create staff
-      const response = await fetch("https://health-focused.fyber.site/staff/staff/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          status: true,
-          pub_date: new Date().toISOString(),
-        }),
-      })
-
-      const data = (await response.json()) as any
-      if (data.id) {
-        localStorage.setItem("staffId", data.id)
-        setStaffId(data.id)
-        setActiveTab("risk-to-self")
-      }
-    } else if (activeTab === "risk-to-self" && staffId) {
-      // Add permissions individually
-      for (const permission of permissions) {
-        await fetch(`https://health-focused.fyber.site/staff/add-permission-to-staff/${staffId}/`, {
+    try {
+      if (activeTab === "general-info") {
+        // Create staff
+        const response = await fetch("https://health-focused.fyber.site/staff/staff/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: permission,
+            ...formData,
             status: true,
             pub_date: new Date().toISOString(),
           }),
         })
-      }
 
-      setActiveTab("risk-to-others")
-    } else if (activeTab === "risk-to-others" && staffId) {
-      // Add allocations individually
-      for (const allocation of allocations) {
-        await fetch(`https://health-focused.fyber.site/staff/add-placement-to-staff/${staffId}/`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: allocation,
-            status: true,
-            pub_date: new Date().toISOString(),
-          }),
-        })
-      }
+        const data = (await response.json()) as any
+        if (data.id) {
+          localStorage.setItem("staffId", data.id)
+          setStaffId(data.id)
+          setActiveTab("risk-to-self")
+        }
+      } else if (activeTab === "risk-to-self" && staffId) {
+        // Add permissions individually
+        for (const permission of permissions) {
+          await fetch(`https://health-focused.fyber.site/staff/add-permission-to-staff/${staffId}/`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: permission,
+              status: true,
+              pub_date: new Date().toISOString(),
+            }),
+          })
+        }
 
-      // Clear local storage after all steps are done
-      localStorage.removeItem("staffId")
-      setStaffId(null)
-      alert("Staff created successfully!")
-      router.push("/dashboard") // Redirect to dashboard or another page
+        setActiveTab("risk-to-others")
+      } else if (activeTab === "risk-to-others" && staffId) {
+        // Add allocations individually
+        for (const allocation of allocations) {
+          await fetch(`https://health-focused.fyber.site/staff/add-placement-to-staff/${staffId}/`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: allocation,
+              status: true,
+              pub_date: new Date().toISOString(),
+            }),
+          })
+        }
+
+        // Clear local storage after all steps are done
+        localStorage.removeItem("staffId")
+        setStaffId(null)
+        alert("Staff created successfully!")
+        router.push("/staff") // Redirect to dashboard or another page
+      }
+    } catch (error) {
+      console.error("Error during form submission:", error)
+    } finally {
+      setLoading(false) // Re-enable the button
     }
   }
 
@@ -262,8 +270,9 @@ export default function AddStaff() {
             <button
               type="submit"
               className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              disabled={loading} // Disable button when loading
             >
-              SAVE AND CONTINUE
+              {loading ? "Processing..." : "SAVE AND CONTINUE"}
             </button>
           </form>
         )
@@ -310,8 +319,9 @@ export default function AddStaff() {
             <button
               type="submit"
               className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              disabled={loading} // Disable button when loading
             >
-              SAVE AND CONTINUE
+              {loading ? "Processing..." : "SAVE AND CONTINUE"}
             </button>
           </form>
         )
@@ -341,8 +351,9 @@ export default function AddStaff() {
             <button
               type="submit"
               className="mt-4 flex h-[52px] w-full items-center justify-center rounded-lg bg-[#0052FF] p-3 text-sm text-white"
+              disabled={loading} // Disable button when loading
             >
-              SAVE AND CONTINUE
+              {loading ? "Processing..." : "SAVE AND CONTINUE"}
             </button>
           </form>
         )
