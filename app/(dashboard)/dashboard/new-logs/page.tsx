@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import Footer from "components/Footer/Footer"
 import { IoIosArrowDropdown, IoIosArrowDropleft } from "react-icons/io"
@@ -8,17 +8,13 @@ import { useDropzone } from "react-dropzone"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 
-
 // Extend the File type to include a preview property
 interface PreviewFile extends File {
   preview: string
 }
 
 export default function NewLogs() {
-  // Simulating user account existence with a state
   const [hasTransactions, setHasTransactions] = useState<boolean>(true)
-
-  // Use an array of PreviewFile for files state
   const [files, setFiles] = useState<PreviewFile[]>([])
   const [formData, setFormData] = useState({
     service_user_name: "",
@@ -26,9 +22,53 @@ export default function NewLogs() {
     placement: "",
     staff_on_duty: "",
     update: "",
-  });
-  const [loading, setLoading] = useState(false);
-  
+  })
+  const [loading, setLoading] = useState(false)
+  const [serviceUsers, setServiceUsers] = useState<string[]>([])
+  const [placements, setPlacements] = useState<{ id: string; name: string }[]>([])
+  const [isServiceUserDropdownOpen, setIsServiceUserDropdownOpen] = useState(false)
+  const [isPlacementDropdownOpen, setIsPlacementDropdownOpen] = useState(false)
+
+  // Fetch service users
+  useEffect(() => {
+    const fetchServiceUsers = async () => {
+      try {
+        const response = await fetch("https://health-focused.fyber.site/service-user/service-user/")
+        if (!response.ok) {
+          throw new Error("Failed to fetch service users")
+        }
+        const data = (await response.json()) as any
+        const names = data.map((user: any) => user.name_of_service_user)
+        setServiceUsers(names)
+      } catch (error) {
+        console.error("Error fetching service users:", error)
+      }
+    }
+
+    fetchServiceUsers()
+  }, [])
+
+  // Fetch placements
+  useEffect(() => {
+    const fetchPlacements = async () => {
+      try {
+        const response = await fetch("https://health-focused.fyber.site/placement/placement/")
+        if (!response.ok) {
+          throw new Error("Failed to fetch placements")
+        }
+        const data = (await response.json()) as any
+        const placementList = data.map((placement: any) => ({
+          id: placement.id,
+          name: placement.name,
+        }))
+        setPlacements(placementList)
+      } catch (error) {
+        console.error("Error fetching placements:", error)
+      }
+    }
+
+    fetchPlacements()
+  }, [])
 
   const onDrop = (acceptedFiles: File[]) => {
     setFiles(
@@ -60,23 +100,33 @@ export default function NewLogs() {
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
+    const { id, value } = e.target
+    setFormData({ ...formData, [id]: value })
+  }
+
+  const handleServiceUserSelect = (name: string) => {
+    setFormData({ ...formData, service_user_name: name })
+    setIsServiceUserDropdownOpen(false)
+  }
+
+  const handlePlacementSelect = (name: string) => {
+    setFormData({ ...formData, placement: name })
+    setIsPlacementDropdownOpen(false)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
 
     try {
-      const userId = localStorage.getItem("userId"); // Retrieve the user ID
-      if (!userId) throw new Error("User ID not found in localStorage.");
+      const userId = localStorage.getItem("userId") // Retrieve the user ID
+      if (!userId) throw new Error("User ID not found in localStorage.")
 
       const payload = {
         ...formData,
         status: true,
         pub_date: new Date().toISOString(),
-      };
+      }
 
       const response = await fetch("https://health-focused.fyber.site/daily-log/daily-logo/", {
         method: "POST",
@@ -84,21 +134,21 @@ export default function NewLogs() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
-      });
+      })
 
       if (!response.ok) {
-        throw new Error("Failed to submit the log. Please try again.");
+        throw new Error("Failed to submit the log. Please try again.")
       }
 
-      alert("Daily log submitted successfully!");
-      
-      router.push("/dashboard");
+      alert("Daily log submitted successfully!")
+
+      router.push("/dashboard")
     } catch (error: any) {
-      alert(error.message || "An error occurred while submitting the log.");
+      alert(error.message || "An error occurred while submitting the log.")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <>
@@ -126,7 +176,7 @@ export default function NewLogs() {
                     <label htmlFor="service_user_name" className="label-title">
                       Name of Service User
                     </label>
-                    <div className="input-field ">
+                    <div className="input-field relative">
                       <input
                         type="text"
                         id="service_user_name"
@@ -135,8 +185,62 @@ export default function NewLogs() {
                         placeholder="Type and select your name"
                         className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
+                        onFocus={() => setIsServiceUserDropdownOpen(true)}
                       />
-                      <IoIosArrowDropdown size={18} />
+                      <IoIosArrowDropdown
+                        size={18}
+                        onClick={() => setIsServiceUserDropdownOpen(!isServiceUserDropdownOpen)}
+                        className="cursor-pointer"
+                      />
+                      {isServiceUserDropdownOpen && (
+                        <div className="absolute left-0 top-full z-10 mt-1 w-full rounded-md border border-gray-300 bg-white shadow-lg">
+                          {serviceUsers.map((name, index) => (
+                            <div
+                              key={index}
+                              className="cursor-pointer p-2 hover:bg-gray-100"
+                              onClick={() => handleServiceUserSelect(name)}
+                            >
+                              {name}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="mb-3 flex w-full flex-col items-start">
+                    <label htmlFor="placement" className="label-title">
+                      Placement
+                    </label>
+                    <div className="input-field relative">
+                      <input
+                        type="text"
+                        id="placement"
+                        value={formData.placement}
+                        onChange={handleInputChange}
+                        placeholder="Select the Placement"
+                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
+                        style={{ width: "100%" }}
+                        onFocus={() => setIsPlacementDropdownOpen(true)}
+                      />
+                      <IoIosArrowDropdown
+                        size={18}
+                        onClick={() => setIsPlacementDropdownOpen(!isPlacementDropdownOpen)}
+                        className="cursor-pointer"
+                      />
+                      {isPlacementDropdownOpen && (
+                        <div className="absolute left-0 top-full z-10 mt-1 w-full rounded-md border border-gray-300 bg-white shadow-lg">
+                          {placements.map((placement) => (
+                            <div
+                              key={placement.id}
+                              className="cursor-pointer p-2 hover:bg-gray-100"
+                              onClick={() => handlePlacementSelect(placement.name)}
+                            >
+                              {placement.name}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -150,29 +254,10 @@ export default function NewLogs() {
                         id="updated_by"
                         value={formData.updated_by}
                         onChange={handleInputChange}
-                        placeholder="Type and select your name"
+                        placeholder="Type  your name"
                         className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
                         style={{ width: "100%" }}
                       />
-                      <IoIosArrowDropdown size={18} />
-                    </div>
-                  </div>
-
-                  <div className="mb-3 flex w-full flex-col items-start">
-                    <label htmlFor="placement" className="label-title">
-                      Placement
-                    </label>
-                    <div className="input-field w-40">
-                      <input
-                        type="text"
-                        id="placement"
-                        value={formData.placement}
-                        onChange={handleInputChange}
-                        placeholder="Select the Placement"
-                        className="w-40 bg-transparent outline-none focus:outline-none lg:text-sm"
-                        style={{ width: "100%" }}
-                      />
-                      <IoIosArrowDropdown size={18} />
                     </div>
                   </div>
 

@@ -83,11 +83,10 @@ const KeyworkSession: React.FC<KeyworkSessionProps> = ({ onSuccess }) => {
             type="text"
             id="deliveredBy"
             name="deliveredBy"
-            placeholder="Select between 1 and 10"
+            placeholder="enter name"
             className="w-20 bg-transparent outline-none focus:outline-none"
             style={{ width: "100%" }}
           />
-          <CiCircleChevDown size={18} />
         </div>
       </div>
 
@@ -97,7 +96,7 @@ const KeyworkSession: React.FC<KeyworkSessionProps> = ({ onSuccess }) => {
         </label>
         <div className="input-field w-20">
           <input
-            type="date"
+            type="text"
             id="totalDuration"
             name="totalDuration"
             placeholder="Select between 1 and 10"
