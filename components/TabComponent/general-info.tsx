@@ -36,7 +36,7 @@ const GeneralInfo = ({ onSaveAndContinue }: { onSaveAndContinue: (data: any) => 
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await fetch("https://health-focused.fyber.site/placement/placement/")
+        const response = await fetch("https://hf-api.craftandurban.com/placement/placement/")
         if (response.ok) {
           const data = (await response.json()) as Placement[]
           setPlacements(data)

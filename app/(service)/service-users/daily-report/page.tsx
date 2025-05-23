@@ -80,7 +80,7 @@ export default function NewLogs() {
 
       // Make the API request to add the daily log
       const response = await fetch(
-        `https://health-focused.fyber.site/service-user/add-daily-log-to-service-user/${serviceUserId}/`,
+        `https://hf-api.craftandurban.com/service-user/add-daily-log-to-service-user/${serviceUserId}/`,
         {
           method: "POST",
           headers: {

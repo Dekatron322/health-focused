@@ -47,7 +47,7 @@ export default function ServiceUsers() {
     try {
       console.log("Selected Placement:", selectedPlacement)
 
-      const response = await fetch(`https://health-focused.fyber.site/placement/placement/${selectedPlacement.id}/`, {
+      const response = await fetch(`https://hf-api.craftandurban.com/placement/placement/${selectedPlacement.id}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export default function ServiceUsers() {
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await fetch("https://health-focused.fyber.site/placement/placement/")
+        const response = await fetch("https://hf-api.craftandurban.com/placement/placement/")
         if (!response.ok) {
           throw new Error("Failed to fetch placements")
         }

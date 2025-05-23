@@ -38,7 +38,7 @@ export default function ServiceUsers() {
   useEffect(() => {
     const fetchStaffData = async () => {
       try {
-        const response = await fetch("https://health-focused.fyber.site/staff/staff/")
+        const response = await fetch("https://hf-api.craftandurban.com/staff/staff/")
         const data = (await response.json()) as Array<{
           id: string
           full_name: string

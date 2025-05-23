@@ -63,7 +63,7 @@ const Behaviour: React.FC<GeneralInfoProps> = ({ onSuccess }) => {
 
     try {
       const response = await fetch(
-        `https://health-focused.fyber.site/service-user/add-monthly-report-bs-to-service-user/${serviceUserId}/`,
+        `https://hf-api.craftandurban.com/service-user/add-monthly-report-bs-to-service-user/${serviceUserId}/`,
         {
           method: "POST",
           headers: {

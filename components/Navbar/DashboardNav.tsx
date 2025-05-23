@@ -35,9 +35,8 @@ const DashboardNav: React.FC = () => {
   const router = useRouter()
   const [isMoonIcon, setIsMoonIcon] = useState(true)
   const [mounted, setMounted] = useState(false)
-  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
-  const [error, setError] = useState("");
-
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null)
+  const [error, setError] = useState("")
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -53,48 +52,51 @@ const DashboardNav: React.FC = () => {
 
   useEffect(() => {
     const fetchUserDetails = async () => {
-      const token = localStorage.getItem("token");
-      const userId = localStorage.getItem("userId");
+      const token = localStorage.getItem("token")
+      const userId = localStorage.getItem("userId")
 
       if (!token || !userId) {
-        setError("You are not authenticated. Please sign in.");
+        setError("You are not authenticated. Please sign in.")
         router.push("/signin")
-        return;
+        return
       }
 
       try {
-        const response = await fetch(`https://health-focused.fyber.site/custom-user/get-user-detail/${userId}/`, {
+        const response = await fetch(`https://hf-api.craftandurban.com/custom-user/get-user-detail/${userId}/`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        });
+        })
 
         if (!response.ok) {
-          const errorData = await response.json() as UserDetails;
-          setError("Failed to fetch user details.");
+          const errorData = (await response.json()) as UserDetails
+          setError("Failed to fetch user details.")
           router.push("/signin")
-          return;
+          return
         }
 
-        const data = await response.json() as UserDetails;
-        setUserDetails(data);
+        const data = (await response.json()) as UserDetails
+        setUserDetails(data)
       } catch (err) {
-        setError("An unexpected error occurred while fetching user details.");
+        setError("An unexpected error occurred while fetching user details.")
         router.push("/signin")
       }
-    };
+    }
 
-    fetchUserDetails();
-  }, []);
+    fetchUserDetails()
+  }, [])
 
   if (error) {
-    return <p className="text-red-500">{error}</p>;
+    return <p className="text-red-500">{error}</p>
   }
 
   if (!userDetails) {
-    return <nav className="hidden border-b bg-white px-16 py-4 md:block"><p>Loading user details...</p>
-    </nav>;
+    return (
+      <nav className="hidden border-b bg-white px-16 py-4 md:block">
+        <p>Loading user details...</p>
+      </nav>
+    )
   }
 
   // useEffect(() => {

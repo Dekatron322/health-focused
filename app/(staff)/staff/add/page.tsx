@@ -87,7 +87,7 @@ export default function AddStaff() {
     try {
       if (activeTab === "general-info") {
         // Create staff
-        const response = await fetch("https://health-focused.fyber.site/staff/staff/", {
+        const response = await fetch("https://hf-api.craftandurban.com/staff/staff/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function AddStaff() {
       } else if (activeTab === "risk-to-self" && staffId) {
         // Add permissions individually
         for (const permission of permissions) {
-          await fetch(`https://health-focused.fyber.site/staff/add-permission-to-staff/${staffId}/`, {
+          await fetch(`https://hf-api.craftandurban.com/staff/add-permission-to-staff/${staffId}/`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -125,7 +125,7 @@ export default function AddStaff() {
       } else if (activeTab === "risk-to-others" && staffId) {
         // Add allocations individually
         for (const allocation of allocations) {
-          await fetch(`https://health-focused.fyber.site/staff/add-placement-to-staff/${staffId}/`, {
+          await fetch(`https://hf-api.craftandurban.com/staff/add-placement-to-staff/${staffId}/`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

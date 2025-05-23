@@ -52,7 +52,7 @@ export default function ServiceUsers() {
   useEffect(() => {
     const fetchServiceUsers = async () => {
       try {
-        const response = await fetch("https://health-focused.fyber.site/service-user/service-user/")
+        const response = await fetch("https://hf-api.craftandurban.com/service-user/service-user/")
         if (response.ok) {
           const data = (await response.json()) as ServiceUser[]
           // Map the fetched data to table rows
@@ -106,7 +106,7 @@ export default function ServiceUsers() {
   const updateServiceUserStatus = async (id: string, status: boolean) => {
     try {
       // Fetch the existing service user data
-      const userResponse = await fetch(`https://health-focused.fyber.site/service-user/service-user/${id}/`)
+      const userResponse = await fetch(`https://hf-api.craftandurban.com/service-user/service-user/${id}/`)
 
       if (!userResponse.ok) {
         throw new Error("Failed to fetch existing service user data")
@@ -120,7 +120,7 @@ export default function ServiceUsers() {
         status, // Update only the status
       }
 
-      const response = await fetch(`https://health-focused.fyber.site/service-user/service-user/${id}/`, {
+      const response = await fetch(`https://hf-api.craftandurban.com/service-user/service-user/${id}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

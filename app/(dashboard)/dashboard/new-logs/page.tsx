@@ -33,7 +33,7 @@ export default function NewLogs() {
   useEffect(() => {
     const fetchServiceUsers = async () => {
       try {
-        const response = await fetch("https://health-focused.fyber.site/service-user/service-user/")
+        const response = await fetch("https://hf-api.craftandurban.com/service-user/service-user/")
         if (!response.ok) {
           throw new Error("Failed to fetch service users")
         }
@@ -52,7 +52,7 @@ export default function NewLogs() {
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await fetch("https://health-focused.fyber.site/placement/placement/")
+        const response = await fetch("https://hf-api.craftandurban.com/placement/placement/")
         if (!response.ok) {
           throw new Error("Failed to fetch placements")
         }
@@ -128,7 +128,7 @@ export default function NewLogs() {
         pub_date: new Date().toISOString(),
       }
 
-      const response = await fetch("https://health-focused.fyber.site/daily-log/daily-logo/", {
+      const response = await fetch("https://hf-api.craftandurban.com/daily-log/daily-logo/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

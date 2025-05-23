@@ -62,7 +62,7 @@ export default function AddPlacementUser() {
     }
 
     try {
-      const response = await fetch("https://health-focused.fyber.site/placement/placement/", {
+      const response = await fetch("https://hf-api.craftandurban.com/placement/placement/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -45,7 +45,7 @@ const Appointment: React.FC<GeneralInfoProps> = ({ onSuccess }) => {
         }
 
         await fetch(
-          `https://health-focused.fyber.site/service-user/add-weekly-report-a-to-service-user/${serviceUserId}/`,
+          `https://hf-api.craftandurban.com/service-user/add-weekly-report-a-to-service-user/${serviceUserId}/`,
           {
             method: "POST",
             headers: {

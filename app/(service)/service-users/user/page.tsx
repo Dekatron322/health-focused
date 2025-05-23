@@ -15,7 +15,7 @@ export default function Dashboard() {
       const serviceUserId = localStorage.getItem("serviceUserId")
       if (serviceUserId) {
         try {
-          const response = await fetch(`https://health-focused.fyber.site/service-user/service-user/${serviceUserId}/`)
+          const response = await fetch(`https://hf-api.craftandurban.com/service-user/service-user/${serviceUserId}/`)
           if (response.ok) {
             const data = (await response.json()) as any
             setServiceUser(data)

@@ -81,7 +81,7 @@ export default function AddServiceUser() {
     }
 
     try {
-      const response = await fetch("https://health-focused.fyber.site/service-user/service-user/", {
+      const response = await fetch("https://hf-api.craftandurban.com/service-user/service-user/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

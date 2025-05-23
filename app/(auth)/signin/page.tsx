@@ -1,65 +1,65 @@
-"use client";
+"use client"
 
-import AuthCard from "components/AuthCard/AuthCard";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { FiUser } from "react-icons/fi";
-import { IoCheckbox, IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
-import { RiCheckboxBlankFill } from "react-icons/ri";
+import AuthCard from "components/AuthCard/AuthCard"
+import Image from "next/image"
+import Link from "next/link"
+import React, { useState } from "react"
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
+import { FiUser } from "react-icons/fi"
+import { IoCheckbox, IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5"
+import { RiCheckboxBlankFill } from "react-icons/ri"
 
 type SignInResponse = {
-  token: string;
-  id: string;
-};
+  token: string
+  id: string
+}
 
 export default function Signin() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [emailUpdates, setEmailUpdates] = useState(false);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [emailUpdates, setEmailUpdates] = useState(false)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+    setShowPassword(!showPassword)
+  }
 
   const handleSignIn = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+    e.preventDefault()
+    setLoading(true)
+    setError("")
 
     try {
-      const response = await fetch("https://health-focused.fyber.site/custom-user/sign-in/", {
+      const response = await fetch("https://hf-api.craftandurban.com/custom-user/sign-in/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
-      });
+      })
 
       if (!response.ok) {
-        const errorData = (await response.json()) as { message?: string };
-        setError(errorData.message || "Failed to sign in. Please try again.");
-        return;
+        const errorData = (await response.json()) as { message?: string }
+        setError(errorData.message || "Failed to sign in. Please try again.")
+        return
       }
 
-      const data = await response.json() as SignInResponse;
-      localStorage.setItem("token", data.token); // Store the token
-      localStorage.setItem("userId", data.id); // Store the user ID
-      console.log("Token:", data.token);
-      console.log("User ID:", data.id);
+      const data = (await response.json()) as SignInResponse
+      localStorage.setItem("token", data.token) // Store the token
+      localStorage.setItem("userId", data.id) // Store the user ID
+      console.log("Token:", data.token)
+      console.log("User ID:", data.id)
 
-      alert("Sign-in successful!");
-      window.location.href = "/dashboard"; // Redirect to the dashboard
+      alert("Sign-in successful!")
+      window.location.href = "/dashboard" // Redirect to the dashboard
     } catch (err) {
-      setError("An unexpected error occurred. Please try again.");
+      setError("An unexpected error occurred. Please try again.")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <main>
@@ -87,7 +87,7 @@ export default function Signin() {
 
             <div className="flex flex-col items-center justify-center gap-16 max-md:mt-6 md:mt-12">
               <form className="flex w-full flex-col max-md:px-4" onSubmit={handleSignIn}>
-                {error && <p className="text-red-500 text-sm">{error}</p>}
+                {error && <p className="text-sm text-red-500">{error}</p>}
 
                 <div className="mb-6 flex w-full flex-col items-start">
                   <label htmlFor="email" className="label-title">
@@ -132,9 +132,15 @@ export default function Signin() {
                 <div className="mb-6 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     {emailUpdates ? (
-                      <IoCheckbox className="h-5 w-5 text-lg text-[#0052FF]" onClick={() => setEmailUpdates(!emailUpdates)} />
+                      <IoCheckbox
+                        className="h-5 w-5 text-lg text-[#0052FF]"
+                        onClick={() => setEmailUpdates(!emailUpdates)}
+                      />
                     ) : (
-                      <RiCheckboxBlankFill className="h-5 w-5 text-lg text-[#EBF0F0]" onClick={() => setEmailUpdates(!emailUpdates)} />
+                      <RiCheckboxBlankFill
+                        className="h-5 w-5 text-lg text-[#EBF0F0]"
+                        onClick={() => setEmailUpdates(!emailUpdates)}
+                      />
                     )}
                     <p className={`${emailUpdates ? "text-xs font-bold" : "text-xs font-bold text-[#747A80]"}`}>
                       Remember me
@@ -176,5 +182,5 @@ export default function Signin() {
         ></div>
       </section>
     </main>
-  );
+  )
 }

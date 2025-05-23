@@ -1,81 +1,73 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Import router
+import Image from "next/image"
+import Link from "next/link"
+import React, { useState } from "react"
+import { useRouter } from "next/navigation" // Import router
 // import { toast } from "react-toastify"; // Import toast
 // import "react-toastify/dist/ReactToastify.css";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { FiUser } from "react-icons/fi";
-import { GoOrganization } from "react-icons/go";
-import { MdOutlineMailOutline } from "react-icons/md";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
+import { FiUser } from "react-icons/fi"
+import { GoOrganization } from "react-icons/go"
+import { MdOutlineMailOutline } from "react-icons/md"
 
 export default function SignUp() {
-  const router = useRouter();
-  const [showPasswords, setShowPasswords] = useState<boolean[]>([false]);
+  const router = useRouter()
+  const [showPasswords, setShowPasswords] = useState<boolean[]>([false])
   const [formData, setFormData] = useState({
     name: "",
     organisation_name: "",
     email: "",
     password: "",
-  });
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  })
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
 
   const togglePasswordVisibility = () => {
-    setShowPasswords((prev) => [!prev[0]]);
-  };
+    setShowPasswords((prev) => [!prev[0]])
+  }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    const { name, value } = e.target
+    setFormData({ ...formData, [name]: value })
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     // Basic validation
-    if (
-      !formData.name ||
-      !formData.organisation_name ||
-      !formData.email ||
-      !formData.password
-    ) {
-      setError("All fields are required.");
-      return;
+    if (!formData.name || !formData.organisation_name || !formData.email || !formData.password) {
+      setError("All fields are required.")
+      return
     }
 
-    setError(null);
-    setLoading(true);
+    setError(null)
+    setLoading(true)
 
     try {
-      const response = await fetch(
-        "https://health-focused.fyber.site/custom-user/sign-up/",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("https://hf-api.craftandurban.com/custom-user/sign-up/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
 
       if (!response.ok) {
-        const errorData = (await response.json()) as { message?: string };
-        setError(errorData.message || "Something went wrong.");
-        return;
+        const errorData = (await response.json()) as { message?: string }
+        setError(errorData.message || "Something went wrong.")
+        return
       }
 
       // Show success notification and redirect
-      console.log("Sign-up successful! Redirecting to login...");
+      console.log("Sign-up successful! Redirecting to login...")
       setTimeout(() => {
-        router.push("/signin");
-      }, 2000); // Redirect after 2 seconds
+        router.push("/signin")
+      }, 2000) // Redirect after 2 seconds
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      setError("An error occurred. Please try again.")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <main>
@@ -97,9 +89,7 @@ export default function SignUp() {
               </p>
             </Link>
 
-            <h5 className="inter-font mt-6 font-bold max-md:px-4 max-md:text-[24px] md:text-[24px]">
-              Sign Up
-            </h5>
+            <h5 className="inter-font mt-6 font-bold max-md:px-4 max-md:text-[24px] md:text-[24px]">Sign Up</h5>
 
             {error && <p className="text-red-500">{error}</p>}
 
@@ -173,10 +163,7 @@ export default function SignUp() {
                     className="bg-transparent outline-none focus:outline-none"
                     style={{ width: "100%" }}
                   />
-                  <button
-                    type="button"
-                    onClick={togglePasswordVisibility}
-                  >
+                  <button type="button" onClick={togglePasswordVisibility}>
                     {showPasswords[0] ? <FaRegEye /> : <FaRegEyeSlash />}
                   </button>
                 </div>
@@ -210,5 +197,5 @@ export default function SignUp() {
         ></div>
       </section>
     </main>
-  );
+  )
 }

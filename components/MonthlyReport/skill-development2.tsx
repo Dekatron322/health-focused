@@ -37,7 +37,7 @@ const SkillDevelopment2: React.FC<GeneralInfoProps> = ({ onSuccess }) => {
 
     try {
       const response = await fetch(
-        `https://health-focused.fyber.site/service-user/add-monthly-report-sd2-to-service-user/${serviceUserId}/`,
+        `https://hf-api.craftandurban.com/service-user/add-monthly-report-sd2-to-service-user/${serviceUserId}/`,
         {
           method: "POST",
           headers: {

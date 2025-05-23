@@ -52,7 +52,7 @@ export default function NewLogs() {
 
     const fetchLogDetails = async () => {
       try {
-        const response = await fetch(`https://health-focused.fyber.site/daily-log/daily-logo/${logId}`)
+        const response = await fetch(`https://hf-api.craftandurban.com/daily-log/daily-logo/${logId}`)
         const data = (await response.json()) as LogDetails
         setLogDetails(data)
       } catch (error) {
@@ -107,7 +107,7 @@ export default function NewLogs() {
 
     try {
       const updatedPayload = { ...logDetails, ...editLog }
-      const response = await fetch(`https://health-focused.fyber.site/daily-log/daily-logo/${logDetails.id}/`, {
+      const response = await fetch(`https://hf-api.craftandurban.com/daily-log/daily-logo/${logDetails.id}/`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedPayload),
