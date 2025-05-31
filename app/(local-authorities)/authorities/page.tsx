@@ -1,7 +1,6 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
-import Footer from "components/Footer/Footer"
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
 import { MdCheckBoxOutlineBlank } from "react-icons/md"
 import Search from "components/Search/Search"
@@ -10,121 +9,67 @@ import { HiOutlineDotsVertical } from "react-icons/hi"
 import styles from "../../../components/Dashboard/dashboard.module.css"
 import Link from "next/link"
 import { IoAddCircleOutline } from "react-icons/io5"
-import Placements from "components/Dashboard/Placements"
-import Staffs from "components/Dashboard/Staff"
 import LocalAuthorities from "components/Dashboard/LocalAuthorities"
 
-// Define the structure of a table row
-interface TableRow {
-  id: number
+interface Placement {
+  id: string
   name: string
-  placement: string
-  date: any
-  keyWorker: string
-  //   localAuthority: string
-  status: string
+  locaton: string
+  post_code: string
+  bedrooms: string
+  addition_info: string
+  status: boolean
+  pub_date: string
+}
+
+interface LocalAuthority {
+  id: string
+  placements: Placement[]
+  name: string
+  email: string
+  phone: string
+  bedrooms: string
+  file: string
+  status: boolean
+  pub_date: string
 }
 
 export default function ServiceUsers() {
-  const [tableData, setTableData] = useState<TableRow[]>([
-    {
-      id: 1,
-      name: "Adeola Odeku",
-      placement: "adeola.ode@ymail.com",
-      date: "08040303032",
-      keyWorker: "2",
-      //   localAuthority: "Croydon",
-      status: "7",
-    },
-    {
-      id: 2,
-      name: "Adewale Peter",
-      placement: "adewalepeter@primarycare.com",
-      date: "133949392",
-      keyWorker: "0",
-      //   localAuthority: "Kent",
-      status: "10",
-    },
-    {
-      id: 3,
-      name: "Marko Dean",
-      placement: "marko.dean@primarycare.com",
-      date: "304493294",
-      keyWorker: "1",
-      //   localAuthority: "Kent",
-      status: "8",
-    },
-    {
-      id: 4,
-      name: "Michael Andrews",
-      placement: "michael.andrews@primarycare.com",
-      date: "594924943",
-      keyWorker: "3",
-      //   localAuthority: "Harrington",
-      status: "15",
-    },
-    {
-      id: 5,
-      name: "Iyanu Iyanu",
-      placement: "iyanu.iyanu@primarycare.com",
-      date: "558583495",
-      keyWorker: "0",
-      //   localAuthority: "Buckinghamshire",
-      status: "4",
-    },
-    {
-      id: 6,
-      name: "Maxwell Ings",
-      placement: "maxwell.ings@primarycare.com",
-      date: "099334852",
-      keyWorker: "5",
-      //   localAuthority: "Arlington",
-      status: "8",
-    },
-    {
-      id: 7,
-      name: "Loretta James",
-      placement: "loretta.james@primarycare.com",
-      date: "09068482054",
-      keyWorker: "1",
-      //   localAuthority: "Kent",
-      status: "10",
-    },
-    {
-      id: 8,
-      name: "Tems Ayra",
-      placement: "tems.ayra@primarycare.com",
-      date: "095858494",
-      keyWorker: "3",
-      //   localAuthority: "Croydon",
-      status: "15",
-    },
-    {
-      id: 9,
-      name: "Ireoluwa David",
-      placement: "ireoluwa.david@primarycare.com",
-      date: "050558585",
-      keyWorker: "2",
-      //   localAuthority: "Hounslow",
-      status: "7",
-    },
-  ])
+  const [localAuthorities, setLocalAuthorities] = useState<LocalAuthority[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   const [filters, setFilters] = useState({
     name: "",
-    placement: "",
-    date: "",
-    keyWorker: "",
-    localAuthority: "",
+    email: "",
+    phone: "",
     status: "",
   })
 
   const [currentPage, setCurrentPage] = useState(1)
   const rowsPerPage = 5
 
-  // Function to extract unique values for dropdowns
-  const getUniqueValues = (key: keyof TableRow) => {
-    const uniqueValues = Array.from(new Set(tableData.map((row) => row[key])))
+  useEffect(() => {
+    const fetchLocalAuthorities = async () => {
+      try {
+        const response = await fetch("https://hf-api.craftandurban.com/local-authority/local-authority/")
+        if (!response.ok) {
+          throw new Error("Failed to fetch local authorities")
+        }
+        const data = await response.json()
+        setLocalAuthorities(data as any)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "An unknown error occurred")
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchLocalAuthorities()
+  }, [])
+
+  const getUniqueValues = (key: keyof LocalAuthority) => {
+    const uniqueValues = Array.from(new Set(localAuthorities.map((item) => item[key])))
     return uniqueValues.map((value) => ({ id: value, name: value }))
   }
 
@@ -135,23 +80,22 @@ export default function ServiceUsers() {
     })
   }
 
-  const handleDropdownAction = (action: string, row: TableRow) => {
+  const handleDropdownAction = (action: string, row: LocalAuthority) => {
     console.log(`${action} selected for`, row)
-    // Implement your logic for each action
   }
-  const [visibleDropdownId, setVisibleDropdownId] = useState<number | null>(null)
 
-  const toggleDropdown = (id: number) => {
+  const [visibleDropdownId, setVisibleDropdownId] = useState<string | null>(null)
+
+  const toggleDropdown = (id: string) => {
     setVisibleDropdownId(visibleDropdownId === id ? null : id)
   }
 
-  const filteredData = tableData.filter((row) => {
+  const filteredData = localAuthorities.filter((item) => {
     return (
-      (filters.name === "" || row.name === filters.name) &&
-      (filters.placement === "" || row.placement === filters.placement) &&
-      (filters.date === "" || row.date.includes(filters.date)) &&
-      (filters.keyWorker === "" || row.keyWorker === filters.keyWorker) &&
-      (filters.status === "" || row.status === filters.status)
+      (filters.name === "" || item.name.includes(filters.name)) &&
+      (filters.email === "" || item.email.includes(filters.email)) &&
+      (filters.phone === "" || item.phone.includes(filters.phone)) &&
+      (filters.status === "" || item.status.toString() === filters.status)
     )
   })
 
@@ -178,14 +122,12 @@ export default function ServiceUsers() {
     }
   }
 
-  // Function to add a new row
-  const addRow = () => {
-    // ... (same addRow logic)
+  if (loading) {
+    return <div>Loading...</div>
   }
 
-  // Function to remove a row
-  const removeRow = (id: number) => {
-    // ... (same removeRow logic)
+  if (error) {
+    return <div>Error: {error}</div>
   }
 
   return (
@@ -219,47 +161,19 @@ export default function ServiceUsers() {
                     </div>
 
                     <CustomDropdown
-                      options={getUniqueValues("status")}
+                      options={[
+                        { id: "true", name: "Active" },
+                        { id: "false", name: "Inactive" },
+                      ]}
                       selectedOption={filters.status}
                       onChange={(value) => handleFilterChange("status", value)}
-                      placeholder="Service Users"
+                      placeholder="Filter by status"
                     />
                   </div>
                 </div>
 
                 {/* Table */}
                 <div className="mt-4 w-full">
-                  {/* <div className="mb-4 flex justify-between gap-4">
-                    <CustomDropdown
-                      options={getUniqueValues("name")}
-                      selectedOption={filters.name}
-                      onChange={(value) => handleFilterChange("name", value)}
-                      placeholder="Service User"
-                    />
-                    <CustomDropdown
-                      options={getUniqueValues("placement")}
-                      selectedOption={filters.placement}
-                      onChange={(value) => handleFilterChange("placement", value)}
-                      placeholder="Placement"
-                    />
-                    <div className="w-full max-md:hidden">
-                      <input
-                        type="date"
-                        name="date"
-                        value={filters.date}
-                        onChange={(e) => handleFilterChange("date", e.target.value)}
-                        className="rounded border px-4 py-2"
-                      />
-                    </div>
-                    <div className="w-full max-md:hidden">
-                      <CustomDropdown
-                        options={getUniqueValues("keyWorker")}
-                        selectedOption={filters.keyWorker}
-                        onChange={(value) => handleFilterChange("keyWorker", value)}
-                        placeholder="Key Worker"
-                      />
-                    </div>
-                  </div> */}
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr>
@@ -269,44 +183,42 @@ export default function ServiceUsers() {
                         <th className="p-3 text-sm max-md:hidden">Phone Number</th>
                         <th className="p-3 text-sm">Active Placements</th>
                         <th className="p-3 text-sm max-md:hidden">Total Placements</th>
-                        {/* <th className="p-3">Status</th> */}
                         <th className="p-3 text-sm">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {currentRows.map((row, index) => (
-                        <tr key={row.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
+                      {currentRows.map((item, index) => (
+                        <tr key={item.id} className={index % 2 === 0 ? "bg-gray" : "white-bg"}>
                           <td className="p-3 text-sm max-md:hidden">
                             <MdCheckBoxOutlineBlank size={18} />
                           </td>
-                          <td className="p-3 text-sm">{row.name}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.placement}</td>
-                          <td className="p-3 text-sm max-md:hidden">{row.date}</td>
-                          <td className="p-3 text-sm">{row.keyWorker}</td>
-
-                          <td className="p-3 text-sm max-md:hidden">{row.status}</td>
+                          <td className="p-3 text-sm">{item.name}</td>
+                          <td className="p-3 text-sm max-md:hidden">{item.email}</td>
+                          <td className="p-3 text-sm max-md:hidden">{item.phone}</td>
+                          <td className="p-3 text-sm">{item.placements.filter((p) => p.status).length}</td>
+                          <td className="p-3 text-sm max-md:hidden">{item.placements.length}</td>
                           <td className="relative cursor-pointer p-3 text-sm">
-                            <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(row.id)} />
-                            {visibleDropdownId === row.id && (
+                            <HiOutlineDotsVertical className="self-center" onClick={() => toggleDropdown(item.id)} />
+                            {visibleDropdownId === item.id && (
                               <div className="absolute right-0 z-10 mt-1 w-48 rounded border bg-white shadow-lg">
                                 <ul className="py-1">
-                                  <Link href="/authorities/profile/">
+                                  <Link href={`/authorities/profile/${item.id}`}>
                                     <li
                                       className="cursor-pointer px-4 py-2  hover:bg-gray-100"
-                                      onClick={() => handleDropdownAction("View", row)}
+                                      onClick={() => handleDropdownAction("View", item)}
                                     >
                                       View
                                     </li>
                                   </Link>
 
-                                  <Link href="/authorities/edit/">
+                                  {/* <Link href={`/authorities/edit/${item.id}`}>
                                     <li
                                       className="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                                      onClick={() => handleDropdownAction("End Placement", row)}
+                                      onClick={() => handleDropdownAction("Edit", item)}
                                     >
                                       Edit
                                     </li>
-                                  </Link>
+                                  </Link> */}
                                 </ul>
                               </div>
                             )}
@@ -351,7 +263,6 @@ export default function ServiceUsers() {
             </div>
           </div>
         </div>
-        {/* <Footer /> */}
       </section>
     </>
   )
