@@ -1,11 +1,10 @@
 "use client"
-import { useState, useCallback } from "react"
+import { useCallback, useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
 import { IoIosArrowDropleft } from "react-icons/io"
 import { FaCloudArrowUp } from "react-icons/fa6"
 import { useDropzone } from "react-dropzone"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 
 interface PreviewFile extends File {
   preview: string

@@ -1,10 +1,9 @@
 // app/dashboard/settings/page.tsx
 "use client"
 import { useState } from "react"
-import { IoIosArrowDropleft, IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
+import { IoIosArrowDropleft } from "react-icons/io"
 import { useRouter } from "next/navigation"
-import { useDropzone, DropzoneRootProps, DropzoneInputProps } from "react-dropzone"
-import { FaCloudArrowUp } from "react-icons/fa6"
+import { useDropzone } from "react-dropzone"
 import { Filters, PaymentHistoryTab, TableRow } from "components/Settings/PaymentHistoryTab"
 import { ProfileTab } from "components/Settings/ProfileTab"
 import { PasswordTab } from "components/Settings/PasswordTab"

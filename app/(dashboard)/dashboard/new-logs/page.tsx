@@ -1,12 +1,10 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
-import Footer from "components/Footer/Footer"
 import { IoIosArrowDropdown, IoIosArrowDropleft } from "react-icons/io"
 import { FaCloudArrowUp } from "react-icons/fa6"
 import { useDropzone } from "react-dropzone"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 
 // Extend the File type to include a preview property
 interface PreviewFile extends File {

@@ -1,12 +1,9 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import DashboardNav from "components/Navbar/DashboardNav"
-import Footer from "components/Footer/Footer"
 import { IoIosArrowDropdown, IoIosArrowDropleft } from "react-icons/io"
-import { FaCloudArrowUp } from "react-icons/fa6"
 import { useDropzone } from "react-dropzone"
-import { useRouter, useParams } from "next/navigation"
-import Link from "next/link"
+import { useParams, useRouter } from "next/navigation"
 
 interface LocalAuthority {
   id: string
